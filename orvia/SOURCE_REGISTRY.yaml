@@ -147,3 +147,42 @@ sources:
       - "Upstream Material Components token set changes"
       - "Generated token version changes"
       - "ORVIA motion, shape, surface-depth, or state-feedback resolver changes"
+
+  - id: FIGMA_EMPTY_STATE_KIT_2026_09_24
+    title: "Empty State Illustration Kit (Community)"
+    canonical_url: "https://www.figma.com/design/KxeJeFASeMwg6EiW0EzeUp/Empty-State-Illustration-Kit--Community-?node-id=71-17946"
+    source_class: PROJECT_EVIDENCE
+    provenance_scope: "Visual and structural examples for empty-state illustration semantics, metaphor selection, illustration composition, and state-family coverage."
+    inspected_page: "71:17946 Thumbnail"
+    observed_cover_label:
+      publisher_label: "UITREND"
+      version_label: "v1.0"
+      quantity_label: "200+"
+    inspected_named_examples:
+      - "No Message"
+      - "No Internet"
+      - "Wallet is Empty"
+      - "No Results"
+      - "No Chat History"
+      - "No Upcoming Trips"
+      - "Save a problem backup"
+      - "network connection failure backup"
+      - "Payment successfully backed up"
+      - "Payment Failed Backup 2"
+      - "Search with no results Backup"
+      - "Camera Access"
+      - "Enable Push Notifications"
+      - "Enabble Location"
+    directly_rendered_samples:
+      - "No Results"
+      - "Camera Access"
+      - "Enabble Location"
+      - "Payment Failed Backup 2"
+    retrieval_limitations:
+      - "Figma get_design_context and variable extraction could not be completed because the connector required an active layer selection for this community file."
+      - "Further screenshot calls reached the connected Figma Starter-plan MCP call limit."
+    authority_note: "Use as visual pattern evidence only. The file does not establish universal empty-state rules, accessibility requirements, exact color tokens, or implementation thresholds."
+    revalidation_trigger:
+      - "The source file changes materially"
+      - "Design-context/variable access becomes available for a deeper pass"
+      - "ORVIA illustration-state taxonomy changes"
