@@ -1,0 +1,83 @@
+version: "0.1.0"
+status: DRAFT
+governance:
+  extraction_protocol: "ORVIA Design Parameter Extraction Protocol v0.1.0 DRAFT"
+  promotion_rule: "Extraction never promotes a rule to ORVIA_CORE without deliberate approval."
+
+sources:
+  - id: ITL_REPO_MASTER_2026_07_19
+    title: "InclusiveTechLab/web"
+    canonical_url: "https://github.com/InclusiveTechLab/web"
+    source_class: PROJECT_EVIDENCE
+    provenance_scope: "Inclusive design examples, AI sprint prompts, exclusion taxonomies, interrelated-needs examples, WCAG traceability, and implementation examples."
+    upstream_branch: master
+    upstream_commit: "14b9e3b4ed92f5780b6e62b996e09fa8afd80c8e"
+    mirrored_repo: "rehmantraders550-lab/inclusive-design-control-framework"
+    mirrored_branch: main
+    mirrored_head_at_extraction_start: "72131a13335861369e63243ce7422691a2698588"
+    authority_note: "Repository material is valuable operational evidence but must not be treated as a normative standard unless an individual record is explicitly mapped to a normative source such as WCAG."
+    revalidation_trigger:
+      - "Upstream repository materially changes"
+      - "Relevant accessibility standard changes"
+      - "A source file is superseded"
+
+  - id: ITL_RECOGNIZE_EXCLUSION
+    title: "ITL_RecognizeExclusion.md"
+    path: "ITL_RecognizeExclusion.md"
+    source_class: PROJECT_EVIDENCE
+    provenance_scope: "Structured exclusion discovery workflow for website, app, and game contexts."
+    key_native_categories:
+      - PERCEIVABLE
+      - OPERABLE
+      - UNDERSTANDABLE
+
+  - id: ITL_SOLVE_FOR_ONE
+    title: "ITL_SolveForOneExtendToMany.md"
+    path: "ITL_SolveForOneExtendToMany.md"
+    source_class: PROJECT_EVIDENCE
+    provenance_scope: "Permanent/temporary/situational shared-limitation reasoning and interrelated-needs taxonomy."
+
+  - id: ITL_WCAG_TRACEABILITY
+    title: "ITL_AI-Inclusive-Design-Sprints_wcag_traceability_table.html"
+    path: "ITL_AI-Inclusive-Design-Sprints_wcag_traceability_table.html"
+    source_class: PROJECT_EVIDENCE
+    provenance_scope: "Heuristic mapping of inclusive-design mismatches to WCAG success criteria, including beyond-WCAG observations."
+    native_summary:
+      total_examples: 279
+      direct_wcag_matches: 190
+      beyond_wcag: 89
+    caution: "Traceability entries are heuristic mappings in this repository and are not themselves authoritative WCAG interpretations."
+
+  - id: ITL_WEBSITE_EXCLUSIONS
+    title: "ITL_AI-Inclusive-Design-Sprints_website_exclusions.html"
+    path: "ITL_AI-Inclusive-Design-Sprints_website_exclusions.html"
+    source_class: PROJECT_EVIDENCE
+    provenance_scope: "Website-pattern mismatch examples across perceivable, operable, and understandable categories."
+
+  - id: ITL_WEBSITE_SOLVE
+    title: "ITL_AI-Inclusive-Design-Sprints_website_solve.html"
+    path: "ITL_AI-Inclusive-Design-Sprints_website_solve.html"
+    source_class: PROJECT_EVIDENCE
+    provenance_scope: "Shared-limitation examples spanning permanent, temporary, and situational contexts."
+
+  - id: ITL_WEBSITE_INTERRELATED
+    title: "ITL_AI-Inclusive-Design-Sprints_website_solve_interrelated.html"
+    path: "ITL_AI-Inclusive-Design-Sprints_website_solve_interrelated.html"
+    source_class: PROJECT_EVIDENCE
+    provenance_scope: "Interrelated-needs examples across nine human-capability domains."
+    native_categories:
+      - COGNITIVE_AND_MEMORY
+      - SENSORY_AND_ENVIRONMENTAL
+      - MENTAL_HEALTH
+      - VISION_AND_READING
+      - MOTOR_AND_PHYSICAL_CONTROL
+      - HEARING_AND_AUDITORY
+      - SPEECH_AND_COMMUNICATION
+      - DEVELOPMENTAL_AND_LEARNING
+      - CHRONIC_ILLNESS_AND_FATIGUE
+
+  - id: ITL_IMPLEMENTATION_EXAMPLES
+    title: "inclusive-design-in-the-ITL.html"
+    path: "inclusive-design-in-the-ITL.html"
+    source_class: PROJECT_EVIDENCE
+    provenance_scope: "Concrete implementation examples including reduced-motion handling and visible focus styling."
