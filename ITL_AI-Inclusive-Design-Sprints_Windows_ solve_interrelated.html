@@ -1,0 +1,805 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spreadsheet Rows as Articles</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+	 <style>
+	 	body {font: 1rem/1.35 sans-serif; margin:2rem;}
+	 	article {border: 1px solid #ccc; border-radius: 5px; padding: 1rem; margin: 1rem 0;}
+		dl {display: grid; grid-template-columns: max-content 1fr; column-gap: 0.75rem; row-gap: 0.5rem; align-items: baseline;}
+	 	dt {font-weight: bold;}
+	 	dt::after {content: ":"; font-weight: bold; margin-right: 0.25rem;}
+	 	dd {margin: 0; display:inline;}
+  	</style>
+</head>
+<body>
+<!-- Scope: OS Mismatch entries describe desktop operating system interactions (Windows 11 unless otherwise noted). Rows involving touch, pen, or convertible hardware say so in the mismatch text. -->
+<main>
+  <article role="group" class="row" data-row-index="1">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">ADHD &rarr; Anxiety &rarr; Traumatic Brain Injury</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three struggle to make sound decisions under a countdown: ADHD pulls attention away before the prompt registers, anxiety turns the timer itself into the threat, and TBI slows the processing needed to weigh the options in time.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">A toast appears mid-task asking whether to restart for updates now or tonight. The user is deep in something else, glances at it, and intends to come back to it once the current thought is finished.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Unanswered restart prompts treat silence as consent: if the toast times out without a choice, the system converts the non-answer into a scheduled restart. A decision with real consequences — open work, running processes — is made on the user's behalf precisely because they needed more time than the toast allowed.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="2">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">ADHD &rarr; Autism &rarr; Obsessive-Compulsive Disorder</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Each is disproportionately damaged by interruption: ADHD loses the entire task thread when focus breaks, autistic users pay a heavy re-entry cost when a flow state is shattered, and OCD users may be pulled into checking loops by the intrusion itself.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is typing steadily in a document — mid-sentence, mid-thought — when a background process finishes and the system needs to tell them about it.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">A focus-stealing system dialog pops over the active window and immediately captures the keyboard, so in-flight keystrokes land on its buttons instead of the document. The user can accidentally accept or dismiss a dialog they never read, and even when no harm is done, the forcible context switch costs far more than the dialog was worth.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="3">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">ADHD &rarr; Dyslexia &rarr; Non-native Speakers</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">None of the three reliably notices small anomalies in their own typed output as it happens: ADHD users type ahead of their attention, dyslexic users already expect text to look unstable, and non-native speakers may attribute strange output to their own language uncertainty rather than the machine.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is typing quickly with multiple keyboard layouts installed — common for multilingual households and workplaces — and their hand brushes a modifier combination without noticing.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">A stray shortcut silently switches the active keyboard layout mid-sentence. There is no announcement, no visual pulse, nothing at the point of typing — just characters that stop matching keys. Each of these users burns time doubting themselves before doubting the system, and the fix requires knowing that layouts, and a switching shortcut, exist at all.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="4">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">ADHD &rarr; Traumatic Brain Injury &rarr; Mild Cognitive Impairment</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three depend on the system confirming what just happened, because their own memory of recent actions is unreliable: ADHD users act faster than they encode, and TBI and MCI both degrade the short-term record of what was just done.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">Something feels wrong after a file operation, so the user reflexively presses undo on the desktop — possibly more than once — without being certain what the last few actions even were.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">File moves, renames, and deletes are silently undone with no confirmation of what changed: no toast, no summary, no list. Files teleport back to previous locations while the user watches nothing happen. For someone who cannot reconstruct the action history from memory, undo becomes a lever that rearranges their file system in the dark.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="5">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Aging Memory Decline &rarr; Mild Cognitive Impairment &rarr; Dementia</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three rely on recognition over recall: they can pick a familiar command out of a complete list, but cannot reliably remember that an unseen second list exists, or what was in it. A menu that hides options is, functionally, a menu that deletes them.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user right-clicks a file to do something they have done for years — perhaps print it, compress it, or open it with a specific program — expecting the full set of choices they learned.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Common actions hide behind a second-level “show more options” menu. The first menu looks complete, so users with degraded recall have no cue that a familiar command still exists one level deeper; the learned procedure simply appears to have vanished. The design assumes users will remember the extra step every time, which is precisely what this group cannot do.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="6">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">ALS &rarr; Locked-in Syndrome &rarr; Brainstem Stroke</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Motor &amp; Physical Control</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three may rely on gaze as their only input channel, and their dwell accuracy is not uniform: large targets can be selected quickly, while small or clustered targets need longer confirmation times to avoid errors. A single timing rule cannot fit both.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is typing and steering the OS entirely with eye tracking — writing, selecting controls, confirming dialogs — across targets that range from large buttons to tiny toggles.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Dwell time is one global value, not adjustable per key or per control size. Set it fast and small targets misfire constantly; set it slow and every large, unambiguous button costs seconds it shouldn't. The user is forced to tune their only input method to the worst-case target and pay that tax on every interaction.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="7">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">ALS &rarr; Spinal Cord Injury &rarr; Muscular Dystrophy</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Motor &amp; Physical Control</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three navigate sequentially with a keyboard, switch, or similar single-stream input, where every extra step has a real physical cost. Anything reachable only by pointer, or only within a time window, is effectively out of reach.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">An actionable notification arrives — a reply button, a snooze, a confirmation — while the user is working in another window with keyboard-driven navigation.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Toast actions can't be reached by keyboard while the toast is on screen; acting on it requires letting it expire and taking a detour into the notification center, re-finding the item, and navigating to its buttons. Pointer users get one click; sequential-input users get a multi-step errand for the same outcome.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="8">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Alzheimer’s Disease &rarr; Dementia &rarr; Mild Cognitive Impairment</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three can hold onto one learned procedure per task, but cannot maintain two parallel models of the same task or judge which one applies. Duplicate paths that behave differently don't read as flexibility — they read as the system contradicting itself.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user needs to adjust sound settings — perhaps to change an output device or fix volume — and follows whichever path they learned first, possibly years ago.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Modern Settings and a legacy control panel expose overlapping sound options with different names, layouts, and capabilities, and some adjustments live in only one of the two. A user who cannot hold both models finds settings that appear and disappear depending on which door they entered through, which reads as their own memory failing rather than the system's split.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="9">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Anxiety &rarr; Health Anxiety &rarr; Obsessive-Compulsive Disorder</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Mental Health</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three overweight threat-coded language: anxious users experience alarm wording as evidence of real danger, health anxiety generalizes it into catastrophe, and OCD can attach compulsive checking rituals to any signal styled as a warning.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">A routine, scheduled security scan finishes with nothing meaningful found — the most common outcome — and the system reports the result.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Security notices apply alarm-toned wording to low-stakes items with no calm-language option. Routine outcomes arrive dressed in the same urgency as genuine threats, so the user cannot calibrate: every notice demands the full anxiety response. There is no setting to ask the OS to speak plainly and proportionately about risk.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="10">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Anxiety &rarr; Health Anxiety &rarr; Obsessive-Compulsive Disorder</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Mental Health</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Unresolved, unspecified problems are uniquely corrosive for all three: ambiguity gives anxiety a blank canvas, health anxiety fills it with worst cases, and OCD converts “something is wrong somewhere” into repeated checking that never resolves.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user signs in to start their day and is greeted by a system banner asserting that their account needs attention — with no indication of what, why, or how urgent.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">The persistent “your account needs attention” banner names neither the problem nor the stakes. It cannot be resolved from where it appears and often persists after the user has investigated, so it functions as a standing, unfalsifiable accusation. For this group it is not a nudge; it is a slow drip of dread attached to the act of signing in.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="11">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Anxiety &rarr; Obsessive-Compulsive Disorder &rarr; Obsessive-Compulsive Personality Disorder</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Mental Health</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three experience irreversible-seeming choices about data as high-threat events: anxiety freezes, OCD demands certainty the dialog cannot provide, and OCPD users may abandon the task entirely rather than choose imperfectly.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">Cloud file sync detects that a document changed in two places and interrupts the user with a conflict to resolve — often for a file they care about, which is exactly why it was edited twice.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">The high-stakes “replace or keep both?” dialog offers no preview, no diff, and no indication of which version contains what. The user must gamble their own work on a guess. “Keep both” looks safe but manufactures duplicate files that seed the next round of conflicts — the escape hatch quietly makes the problem worse.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="12">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Anxiety &rarr; Obsessive-Compulsive Disorder &rarr; PTSD</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Mental Health</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Repeated alarms wear differently on these three: anxiety re-experiences the full threat response each time, OCD may build rituals around the recurring warning, and PTSD's startle and hypervigilance systems treat every red re-appearance as a fresh alarm rather than a reminder.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The disk gradually fills — a slow, non-urgent condition that will still be true in an hour — and the system begins alerting about it while the user is trying to work.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Red low-storage alerts recur with no snooze or quiet-period control. The user can act now or be re-alarmed on the system's schedule; there is no way to say “I know — give me until tonight.” A background condition that needed one calm notification instead becomes a recurring stressor styled as an emergency.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="13">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Anxiety &rarr; PTSD &rarr; Depression</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Mental Health</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Ambiguous failure states are costly for all three: anxiety fills the silence with escalating scenarios, PTSD reads loss of control over the machine as threat, and depression converts an unexplained stall into confirmation that things simply fail and nothing can be done.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The system crashes mid-session — work possibly unsaved — and the user can do nothing but sit and watch the recovery screen.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">The crash screen shows a progress percentage that visibly stalls, with no time estimate, no explanation of what is happening, and no reassurance about whether data survived. The user cannot tell a working machine from a dead one. Every stalled minute is spent deciding whether to force a power-off — a decision the screen gives them zero information to make.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="14">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Aphasia &rarr; Traumatic Brain Injury &rarr; Dementia</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Speech &amp; Communication</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three are slow to detect and repair errors in real time: aphasia delays the word-finding needed to issue a correction, and TBI and dementia slow the recognition that the machine did the wrong thing at all.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user gives the voice assistant a routine command; it hears something adjacent and acts on its interpretation immediately.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">The wrong action executes instantly, with no confirmation step for consequential commands and no quick, reliable “undo that” available by voice. By the time this user has recognized the error and assembled the words to correct it, the moment — and sometimes the recoverable state — has passed. The interface assumes error repair is instant and verbal, which is exactly what this group cannot supply.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="15">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Arthritis &rarr; Essential Tremor &rarr; Multiple Sclerosis</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Motor &amp; Physical Control</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Sustained, steady dragging is among the most demanding pointer operations for all three: arthritis makes the held click painful, tremor makes the path unstable, and MS fatigue makes a long press-move-release sequence fail partway through.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user wants their most-used apps in a sensible order on the taskbar — a one-time setup task that should be trivial — or needs to restore order after something shifted.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Drag is the only way to rearrange pinned taskbar items: no context-menu “move left/right,” no keyboard reordering, no arrangement dialog. A failed drag can also drop the icon somewhere unintended, turning a cosmetic preference into repeated physical effort with a penalty for every miss.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="16">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Auditory Processing Disorder &rarr; ADHD &rarr; Aging Adults</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Hearing &amp; Auditory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">None of the three can reliably identify a sound's source when alerts overlap or arrive out of context: APD struggles to segment similar sounds, ADHD struggles to bind the sound to the event that caused it, and age-related hearing changes blur short tones together.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">Several apps and system events alert within moments of each other during a busy stretch — a message, a download finishing, a device change — and the user needs to know which one matters.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Default toasts share one sound, so every event is acoustically identical; the distinct per-event sounds the platform actually supports exist only in a buried legacy panel that most users never learn exists. The audio channel carries “something happened” but never “what happened,” forcing a visual hunt after every chime.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="17">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Auditory Processing Disorder &rarr; Hard of Hearing &rarr; ADHD</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Hearing &amp; Auditory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three need persistent visual confirmation of state rather than a momentary cue: APD and hard-of-hearing users can't verify by ear that a change took effect, and ADHD users lose transient feedback the instant attention shifts.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">During a call or recording, the user mutes the microphone — an action where being wrong in either direction is costly — and needs ongoing certainty about which state they're in.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Mute state is shown only by a subtle icon change with no persistent, glanceable indicator. The user must repeatedly re-find a small glyph and re-interpret it to confirm a state they set seconds ago. The cost of the missing indicator is asymmetric: speaking while hot, or being silently muted through your own meeting.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="18">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Autism &rarr; ADHD &rarr; Fetal Alcohol Spectrum Disorder</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Developmental &amp; Learning</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three depend on consistent, predictable procedures: autistic users build precise scripts for consequential actions, ADHD users need the pattern to carry them when attention doesn't, and FASD affects the generalization needed to adapt a procedure that keeps changing shape.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user removes an app they no longer want — a maintenance task they'll perform many times over the life of the machine, each time with a different app.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Uninstall flows differ per app: some remove instantly from the Start menu, some launch their own third-party wizards with unfamiliar screens, some redirect to a settings page, and the warnings and outcomes differ each time. A procedure this group should be able to master once instead demands fresh judgment on every use — which is when mistakes like removing the wrong component happen.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="19">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Autism &rarr; Sensory Processing Disorder &rarr; Hyperacusis</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Sensory &amp; Environmental</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three curate their sound environment deliberately, and unexpected loud audio is not merely unpleasant: for hyperacusis it is physically painful, and for autistic and SPD users it can be dysregulating well beyond the moment of the sound itself.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user plugs in headphones — an act of sensory self-protection — placing the audio hardware directly against their ears before any sound has played.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Each output device keeps its own remembered volume, so a newly connected device plays the connect chime at an unknown, possibly painful level — and it plays through the very headphones just sealed against the ears. The user's most careful sensory precaution becomes the delivery mechanism for the spike, and there is no preview or safe-default ramp for first connection.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="20">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness &rarr; Low Vision &rarr; Optic Neuritis</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three need progress conveyed non-visually or at high contrast: blind users need it spoken, low-vision users can't resolve a thin progress ring, and optic neuritis can blur or dim exactly the kind of faint circular indicator update screens favor.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">An OS update is installing — a long, tense window where interrupting the machine can genuinely damage it, and knowing “still working” versus “finished” versus “stuck” is everything.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Update progress is shown only as a visual percentage ring, with no spoken announcements and no screen-reader-accessible progress during the critical phases. The people least able to see the ring are left guessing at the machine's state during the one operation where a wrong guess — powering off a mid-update PC — has the worst consequences.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="21">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness &rarr; Retinitis Pigmentosa &rarr; Optic Neuritis</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three rely on a screen reader for some or all interaction, and a screen reader can only speak the names developers provide: where a label is missing, the interface doesn't degrade — it goes silent.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user checks the system tray to assess background state: what's running, what's syncing, whether the VPN is up, what that new icon is.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Third-party tray icons routinely ship unlabeled and are announced only as “button,” and the OS neither enforces accessible names nor substitutes anything useful when they're absent. The tray becomes a row of interchangeable mysteries where the only way to identify an icon is to activate it and see what happens — turning inspection into a gamble.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="22">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness &rarr; Severe Low Vision &rarr; Optic Atrophy</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three receive alerts by ear rather than eye, and spoken information is inherently transient: if the announcement is missed, misheard, or interrupted, there is no lingering visual to glance back at.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">A toast notification arrives while the user is mid-task — perhaps while their screen reader is already speaking something else, or while their attention is on another sound source.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Toast content is announced once; replaying it means abandoning the current task, opening the notification center, and navigating the list to re-find the item. Sighted users get a free second look at a banner that lingers on screen — screen reader users pay a full context switch for the same second chance.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="23">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Brain Fog &rarr; Fibromyalgia Fog &rarr; Post-COVID Cognitive Impairment</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three produce unpredictable gaps in attention and recall: information that arrived during a fog window may simply not have been encoded, so the ability to revisit recent alerts later isn't a convenience — it's the primary way notifications get read at all.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user steps away, rests, or pushes through a low-clarity stretch, and comes back later intending to review what they missed. Sometimes the machine restarted in between — an update, a crash, a battery.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Notification history is wiped on every restart. The record this group depends on is durable only as long as the session, and the events most likely to be forgotten — the ones from a foggy stretch before an unexpected restart — are exactly the ones the system discards. What was designed as a review surface fails precisely when review is needed most.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="24">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Cerebral Palsy &rarr; Dyspraxia &rarr; Essential Tremor</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Motor &amp; Physical Control</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Rapid, precisely timed repeated clicks are hard for all three: CP and dyspraxia affect the motor sequencing of two quick identical actions, and tremor adds spatial noise, so the second click lands late, early, or slightly displaced.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user tries to open a file by double-clicking — the single most common file operation — and their natural interval falls just outside the system's expectation.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Double-click speed is adjustable, but the setting is buried, and the OS makes no in-context offer after repeated failed double-clicks — the exact signal that the current threshold doesn't fit this user. The system watches the same recognizable failure pattern happen daily and never once volunteers the remedy it already ships.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="25">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Cerebral Palsy &rarr; Muscular Dystrophy &rarr; Essential Tremor</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Motor &amp; Physical Control</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three have reduced touch precision — through spasticity, weakness, or tremor — so their reliable touch target is substantially larger than a fingertip-sized control designed around a mouse pointer.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user works in tablet mode, holding or propping the device, managing windows by touch: closing finished apps, minimizing others.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Window close and minimize buttons stay mouse-sized even when the system knows it is in touch posture. The smallest, highest-consequence targets on the window frame — where a miss can close the wrong thing or hit the neighbor button — get no touch adaptation, in a mode whose entire premise is that a finger replaced the pointer.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="26">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Chemotherapy Recovery &rarr; Cancer Fatigue &rarr; Anemia</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Chronic Illness &amp; Fatigue</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three live inside strict, unpredictable energy budgets where staying at or near the machine for an extended stretch may genuinely not be possible on a given day — rest is not optional or schedulable.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">A system backup runs — the safety net this user particularly needs, given that hospital stays and bad weeks make their data continuity precarious.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Backup requires the machine to stay awake to completion, with no resume-across-sleep support: if the device sleeps mid-run, progress is abandoned rather than suspended. Protecting one's data quietly becomes an endurance requirement, and the users least able to sit through a long run are the ones most likely to end up with no recent backup at all.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="27">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Deaf Speakers &rarr; Dysarthria &rarr; Non-native Speakers</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Speech &amp; Communication</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three speak in ways that diverge from the voices speech models were predominantly trained on — deaf speakers' prosody, dysarthric articulation, accented phonology — and the divergence is stable: it will not train itself away with effort.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user tries voice typing, often precisely because typing is slow or inaccessible for them, and speaks as clearly as they are able.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">System speech models reject or garble atypical voices, and the failure is a dead end: no fallback is suggested, no adaptation offered, no alternative path surfaced. The error experience implicitly locates the fault in the user's speech rather than the model's training data, and the people who most need hands-free input get the least usable version of it.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="28">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Deaf &rarr; Hard of Hearing &rarr; Auditory Neuropathy</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Hearing &amp; Auditory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three miss or cannot trust brief audio cues: deaf users don't receive them, hard-of-hearing users may catch only some, and auditory neuropathy can make a short beep present but unintelligible as a signal.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user accidentally toggles Caps Lock — a one-keystroke state change with no on-screen consequence until text starts coming out wrong, or a password mysteriously fails.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Toggle-key feedback is a beep with no built-in on-screen indicator: the accessibility affordance for a silent state change is itself audio-only. The very feature meant to announce mode changes assumes the one channel this group doesn't have, so the state change lands silently and surfaces later as inexplicable errors.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="29">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Deaf &rarr; Hard of Hearing &rarr; Non-native Speakers</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Hearing &amp; Auditory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three depend on captions to receive spoken video content: deaf and hard-of-hearing users as their primary channel, non-native speakers as the scaffold that makes fast or idiomatic narration comprehensible.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user watches the OS's own built-in tips and onboarding videos — the material the platform itself produced to teach people how to use it.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">The onboarding and help videos ship without captions. The platform's first-party instructional content is inaccessible to the very audiences most likely to need explicit instruction, and the omission is entirely within the OS vendor's control — this is their studio, their footage, their pipeline.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="30">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Deaf &rarr; Hard of Hearing &rarr; Nonverbal Autism</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Speech &amp; Communication</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three participate in real-time calls through text rather than voice: deaf and hard-of-hearing users because they don't use speech on calls, nonverbal autistic users because speech is unavailable or unreliable on demand.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user joins a voice call through the OS-level call experience — a meeting, a family call — and needs a way to contribute in real time, not just to receive.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">The call overlay offers no typed-text-to-speech channel: there is no way to type a sentence and have it spoken into the call. Reception may be solved by captions, but expression is not — these users can listen or read their way through a call they have no supported way to speak in, making participation one-directional by design.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="31">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Deaf &rarr; Hard of Hearing &rarr; Single-sided Deafness</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Hearing &amp; Auditory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three miss environmental sounds outside the computer — doorbells, alarms, a kettle, a shout from another room — either entirely or from particular directions, especially while wearing focus-supporting headphones.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The doorbell rings during focused work. The device on the desk has a microphone, idle, inches away, hearing everything.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">The OS offers no sound-recognition notifications for environmental audio: no option for the machine to flash a banner when it hears a doorbell, alarm, or appliance chime. The hardware and the notification pipeline both exist; the platform simply never connects them — leaving a safety-relevant awareness gap that phones have already shown is solvable.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="32">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Deaf &rarr; Hard of Hearing &rarr; Unilateral Deafness</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Hearing &amp; Auditory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three need device events confirmed visually: deaf users receive no chime at all, hard-of-hearing users may miss short soft tones, and unilateral deafness makes a brief chime easy to lose depending on speaker placement and which side the sound arrives from.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user plugs in a USB drive to copy files — or unplugs one — and needs to know whether the system actually registered the device before acting on that assumption.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Connect and disconnect events are signaled only by system chimes: no banner, no visible confirmation appears unless the user goes looking in File Explorer. For this group the machine's answer to “did that work?” is delivered on a channel they don’t receive, so they discover failed connections downstream — a copy that never started, a drive unsafely yanked because its mounting was never confirmed either way.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="33">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Deaf &rarr; Late-deafened Adults &rarr; Cochlear Implant</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Hearing &amp; Auditory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three read captions constantly and have tuned them deliberately — size, font, contrast, background — because caption legibility is not cosmetic for them; it is the difference between following content and losing it.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user configures large, high-contrast captions in the system's caption settings, reasonably expecting that choice to follow them everywhere captions appear.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">The system caption style doesn't propagate to every OS surface that shows captions: some surfaces honor it, others render their own styling. The user's carefully tuned settings apply only sometimes, so every new context is a coin flip between their legible format and someone else's defaults — and there is no way to know which until the captions are already rolling.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="34">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dementia &rarr; Alzheimer’s Disease &rarr; Brain Fog</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">For all three, the familiar desktop is functional scaffolding, not decoration: known icons in known places substitute for recall that is no longer dependable. Unexplained novelty doesn't read as new features — it reads as evidence that something is wrong, possibly with themselves.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">A feature update completes overnight, and the user sits down to the machine they have carefully learned.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">The update adds unfamiliar preinstalled apps and pins without consent: new icons the user never chose, in spaces they use for orientation. For a user who navigates by “what has always been there,” unrequested additions are indistinguishable from their own memory failing — or from someone having tampered with the machine — and either interpretation is frightening.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="35">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dementia &rarr; Intellectual Disability &rarr; Aging Memory Decline</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three search using plain, local intent — they type what they want the machine to do — and lack the fluency to recognize and discount commercially-motivated result ordering. Whatever appears first is, to them, the answer.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user searches for a settings page by describing it in their own words, exactly as search invites them to do.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">System search ranks web suggestions above local matches, burying the setting the user actually typed beneath links to the internet. The least confident users click the top result, land in a browser, and are now further from the setting than when they started — penalized specifically for trusting the search box on their own computer to search their own computer.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="36">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Depression &rarr; ADHD &rarr; Burnout</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Mental Health</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three carry a distorted relationship to accumulated obligation: depression reads a backlog as proof of failure, ADHD experiences it as an undifferentiated wall too large to enter, and burnout has no reserves left to triage it. Volume itself is the injury.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user unlocks the PC to start the day — the single moment where momentum is most fragile and most necessary.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">A stacked notification pile and badge counts greet every sign-in, presenting hours or days of accumulation in one undifferentiated heap with no gentle digest, no summarization, and no “show me only what matters” first view. The machine's opening statement each morning is an itemized list of everything the user hasn't dealt with — which for this group can end the work session before it begins.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="37">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Depression &rarr; Anxiety &rarr; Burnout</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Mental Health</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three need the device to be a low-friction, trustworthy tool: depression has limited activation energy to spend on gauntlets, anxiety reads pressure tactics as threat, and burnout experiences every unrequested demand as one more claim on an empty account.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user logs in to work — a deliberate act of mustering effort — and the machine inserts its own agenda before theirs.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Full-screen upgrade promotions interrupt sign-in, with decline links styled to be small, gray, and easy to miss while acceptance is large and bright. The user must locate and win a small adversarial interaction with their own computer before being allowed to start their day, converting the operating system from tool into obstacle at the exact moment of lowest reserve.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="38">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Down Syndrome &rarr; Intellectual Disability &rarr; Global Developmental Delay</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Developmental &amp; Learning</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three read best at plain-language levels — short sentences, common words, concrete meaning — and are fully capable of acting on information presented that way. Jargon doesn't slow them down; it locks them out.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">An update notification arrives describing what is about to change on their machine, and the user tries to understand whether it matters to them and what they should do.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Release notes and prompts are written in technical jargon — build numbers, feature codenames, protocol acronyms — with no plain-language layer beneath. The information exists but is encoded in a register these users cannot penetrate, so their practical choices reduce to clicking blindly or asking someone else, both of which erode the independence the computer was supposed to support.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="39">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dysarthria &rarr; Cerebral Palsy &rarr; Stroke</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Speech &amp; Communication</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three speak with atypical but internally consistent articulation: their pronunciation differs from the model's expectations in stable, learnable ways. A system that could adapt to their voice would work; one that expects them to adapt to it cannot.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user issues a voice command — often because motor limitations make voice their most viable input — and the system fails to understand, again.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Voice access misrecognizes repeatedly and offers no personal speech training: no enrollment, no adaptation, no way to teach the system this speaker's consistent patterns. Every failure is discarded rather than learned from, so the error rate on day three hundred equals day one. Consistency — the very thing that makes these voices learnable — is wasted.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="40">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dysarthria &rarr; Deaf Speakers &rarr; Stroke</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Speech &amp; Communication</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">For all three, any speech recognition that does work was earned: hours of repetition, correction, and adjustment on both sides. That investment is a genuine accessibility asset — and it is expensive to rebuild.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user signs in on a second device — a new laptop, a work machine, a replacement after a failure — expecting their tools to come with their account.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">The personal speech profile doesn't sync; training starts from zero on each device. Settings, preferences, and files roam with the account, but the single most laboriously earned accessibility asset does not. The cost of hardware change is priced in hours of re-training that typical-speech users never pay — a recurring tax on simply owning more than one device.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="41">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyslexia &rarr; Aphasia &rarr; Low Literacy</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three can extract meaning from short, plain sentences but are defeated by dense technical text: dyslexia by the decoding load, aphasia by disrupted language processing, low literacy by vocabulary and structure. The information's format, not its content, is the barrier.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">A crash dialog appears at the worst moment — something just broke — and the user needs to know one thing: what do I do now?</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Error messages lead with hex codes and stack details, with no plain-language summary anywhere on the surface. The most useful possible sentence — “your files are fine; restart the app” — is exactly what's missing, while the prominent content is addressed to a developer who isn't present. The users least equipped to decode the message are handed the least decodable message the system produces.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="42">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyslexia &rarr; Intellectual Disability &rarr; Global Developmental Delay</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Developmental &amp; Learning</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three navigate by concrete, stable places rather than abstract hierarchies: “where I put it” is a location, singular. Multiple names for overlapping places don't add flexibility — they multiply the ways to lose a file.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user saves a document and must choose where it goes, facing the navigation tree the OS presents.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">The save tree shows This PC, Desktop, Documents, and cloud folders as overlapping, partially duplicate paths — the same real place reachable under different names, and similarly named places that are not the same. A user who thinks in concrete locations can save a file “to Documents” and genuinely be unable to find it again, because which Documents was never a question they were equipped to notice.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="43">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyslexia &rarr; Low Literacy &rarr; Mild Cognitive Impairment</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three lean on complete, explicit information to distinguish similar items, because inferring hidden differences from subtle cues — icon variations, ordering — demands exactly the fluency or working memory they lack.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">Two files share a display name in the same folder — a document and its PDF export, or an installer and the file it produced — and the user must pick the right one.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Hidden file extensions make different files appear identical: the one visible difference between them is the part the OS conceals by default. The disambiguating cue that remains — a small icon difference — is the least readable one. This default is also a long-standing security hazard (“invoice.pdf.exe”), making it a rare mismatch that harms comprehension and safety at once.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="44">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyspraxia &rarr; Autism &rarr; ADHD</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Developmental &amp; Learning</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three learn physical interactions best through safe, repeatable practice: dyspraxia needs repetition to build the motor pattern, autistic users prefer rehearsal before performance, and ADHD benefits from an environment where errors are free and feedback immediate.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user wants to learn the gestures and shortcuts everyone says make the OS faster — swipes, snaps, chords — having only ever half-glimpsed them.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Shortcuts and gestures have no discoverable practice or tutorial mode: no sandbox, no guided rehearsal, no way to try a gesture without triggering its real effect on real windows. The only classroom is live production, where a mislearned swipe rearranges actual work — so the users who most need rehearsal rationally stop experimenting, and the efficiency layer of the OS stays closed to them.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="45">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Essential Tremor &rarr; Arthritis &rarr; Aging Dexterity</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Motor &amp; Physical Control</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three struggle to hold a pointer motionless in a small zone: tremor moves it involuntarily, arthritis makes sustained stillness effortful, and aging dexterity widens natural drift. Hover — pointing without clicking — is their least reliable gesture.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user hovers over a taskbar icon to preview its open windows and pick the right one — a comparison task that inherently takes a moment.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Taskbar previews collapse on brief pointer departure, with no dwell tolerance and no way to pin them open. The preview demands exactly the sustained, precise hover this group cannot produce, and punishes each lapse by dismissing the very thing being studied — turning a glanceable UI into a timed steadiness test.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="46">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Glaucoma &rarr; Cataracts &rarr; Presbyopia</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three need enlargement to read detail: glaucoma reduces usable field, cataracts scatter and dim, presbyopia blurs near text. Fixed-size small content is exactly the format they cannot adapt to.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user prints something and checks the print preview to verify layout, margins, and legibility before spending paper and ink.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">The print dialog's preview is a small fixed pane with no zoom, rendering the page at a scale where the very details being verified — text size, clipping, layout — cannot be assessed by anyone with reduced acuity. The check exists to prevent wasted prints; at this size, these users must print to discover what the preview was supposed to tell them.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="47">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Glaucoma &rarr; Tunnel Vision &rarr; Hemianopia</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three see only part of the screen at once: glaucoma and tunnel vision constrict the field toward center, and hemianopia removes an entire half. Content outside the functional field doesn't look small or faint — it does not exist.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">A notification arrives while the user's attention — and their usable field — is on their work near the center or opposite side of the display.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">System notifications appear only in one fixed screen corner, with no option to reposition them or add a central/full-field cue. For a full-field user this is a sensible convention; for this group it quietly sorts alerts into visible and invisible based on which corner their condition spared. They aren't ignoring notifications — the notifications are being delivered outside their vision.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="48">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Global Developmental Delay &rarr; Intellectual Disability &rarr; Learning Disability</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Developmental &amp; Learning</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three can follow concrete, actionable steps but cannot generate a troubleshooting strategy from nothing: “figure out what's wrong” is the one instruction that doesn't work. A named next step is the difference between recovery and abandonment.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">Something fails during setup — a network hiccup, a sign-in error — at the very start of the user's relationship with the machine.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">“Something went wrong, try again” loops without ever naming a plain next step: no what, no why, no alternate path. Retrying reproduces the failure; the message offers nothing else. For users who need explicit steps, this is a dead end dressed as guidance, and it teaches them — on day one — that when the machine breaks, they cannot fix it.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="49">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Glossectomy &rarr; Laryngectomy &rarr; Oral Cancer Recovery</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Speech &amp; Communication</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three have partial or no speech output — from surgical removal of the tongue or larynx, or during recovery — while their hearing, literacy, and problem-solving are fully intact. Text is not their fallback channel; it is their channel.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The built-in troubleshooter fails to fix the problem and the user needs to escalate to a human for support.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">The support flow escalates to a voice call as the default path, with text options buried beneath it. The system funnels a user with no speech toward the one channel they categorically cannot use, making them dig for the chat path — if they find it at all — while the prominent button offers help they physically cannot accept.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="50">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Hard of Hearing &rarr; Cochlear Implant &rarr; Asymmetrical Hearing</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Hearing &amp; Auditory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">For all three, audio settings are calibration, not preference: mono mixing, channel balance, and levels are tuned to their specific hearing so that speech and alerts remain intelligible. The configuration is load-bearing.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">A feature update installs overnight — routine maintenance the user didn't initiate and wasn't warned would touch their audio.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Mono audio and balance settings silently reset to defaults after updating. The user discovers it as sudden incomprehensibility — sound gone wrong in ways they may not immediately attribute to the update — and must re-derive and re-apply their calibration. Maintenance that is invisible to typical-hearing users costs this group their access, without notice, on the platform's schedule.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="51">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Hard of Hearing &rarr; Unilateral Deafness &rarr; Age-related Hearing Loss</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Hearing &amp; Auditory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three depend on alert audio arriving where they can actually hear it — the correct room, the correct side, the correct device — because their margin for missed or misplaced sound is already thin.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user connects a TV or speaker in another room for media, while continuing to work at the PC and expecting to hear its alerts.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Audio auto-switches wholesale to the newly connected device, sending system alerts to a room where the user isn't, with no per-category routing to keep notifications local while media goes remote. The convenience default silently relocates the sounds this group most needs, and the first sign anything changed is the alert they never heard.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="52">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Health Anxiety &rarr; Anxiety &rarr; Obsessive-Compulsive Disorder</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Mental Health</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three catastrophize device warnings when severity is unspecified: health anxiety generalizes its bodily pattern to the machine's “health,” anxiety fills missing information with worst cases, and OCD can turn an unresolved warning into a recurring checking ritual. Ambiguity is the fuel; a warning without a scale invites the maximum interpretation.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The laptop's battery ages normally — the expected, gradual chemistry of every battery ever made — and at some threshold the system decides to mention it while the user is doing something else entirely.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Battery service warnings give no severity, no timeline, and no consequence of waiting: not whether this means “replace within a year” or “shut down now,” not what happens if ignored, not whether data is at risk. The user is handed a dread-shaped blank to fill in themselves. For this group the missing information is the harm — an engineering footnote is experienced as an unbounded emergency, and there is nothing in the warning to argue otherwise.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="53">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Hyperacusis &rarr; Sensory Processing Disorder &rarr; Migraine</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Sensory &amp; Environmental</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">For all three, sudden loudness is physically consequential, not merely startling: hyperacusis experiences ordinary volumes as pain, SPD systems flood and dysregulate on sharp transients, and audio spikes are a recognized migraine trigger. They can tolerate a predictable loudness ceiling; what they cannot tolerate is variance.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">Different system events fire over the course of a session — a notification here, an error there, a device chime — each carrying its own inherent loudness, all playing at whatever the current volume happens to be.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">There is no loudness normalization across system sounds: the OS makes no effort to equalize perceived volume across its own event sounds, so some land soft and others spike well above the session's average. The user cannot set a true ceiling — the master volume scales everything proportionally, preserving the spikes. Each loud outlier is a small physical injury, and the defensive response is to mute the machine entirely, sacrificing the alerts they actually wanted.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="54">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Intellectual Disability &rarr; Autism &rarr; Global Developmental Delay</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Developmental &amp; Learning</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three parse concrete labels far more reliably than abstract symbols: a pictogram's intended metaphor often depends on cultural or technical background knowledge they may not share. Text plus icon is redundancy that works; icon alone is a riddle. And hover — a hidden, motor-dependent gesture — is a poor delivery mechanism for the answer key.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user explores the system tray, trying to understand what the small pictures represent: which one is sound, which is network, which is the thing that keeps popping up.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Abstract glyph icons rely on hover tooltips as their only labels — the name of each control exists but is hidden behind a gesture the user must already know, executed precisely, one icon at a time, and the label vanishes the moment the pointer moves. There is no persistent labeled view of the tray. Users who need labels most must extract them through the least discoverable interaction the OS has, or navigate by trial-and-error clicks on controls whose purpose they cannot see.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="55">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Intellectual Disability &rarr; Down Syndrome &rarr; Fetal Alcohol Spectrum Disorder</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Developmental &amp; Learning</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three find inventing novel, arbitrary strings — required symbols, capitals, minimum lengths — genuinely difficult, and remembering an invented string later is harder still. This is a working-memory and abstraction task disguised as a security formality, and it gates everything behind it.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">It's account creation during first setup: the machine cannot be used until a password satisfying the rules exists, and the user — perhaps setting up their first own computer, an act of real independence — faces the requirements screen.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Complex password rules arrive with no guidance, no examples, no passphrase suggestion, and no password manager offered — just rejection messages as attempts fail one rule at a time. The flow silently assumes a skill set it never checks for. What a supported flow could make achievable becomes the wall where independence stalls, and the common workaround — someone else sets the password — means the user's first lesson is that their own account isn't really theirs.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="56">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Low Contrast Sensitivity &rarr; Cataracts &rarr; Colorblindness</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three struggle to perceive subtle chromatic state differences: low contrast sensitivity flattens near-neighbor shades, cataracts scatter light and wash tints out, and colorblindness can erase the specific hue distinction chosen. A state signaled by a gentle tint shift is, for this group, a state signaled by nothing.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user multi-selects files for a consequential batch action — a move, a delete, an upload — and needs to verify, before committing, exactly which items are in the selection.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">The selection highlight follows the accent color, and there is no control to raise its contrast when the chosen accent renders it too pale. Selection state — the difference between “this file gets deleted” and “this one stays” — is carried entirely by a tint the user may not perceive, with the strength of that only cue determined by an aesthetic preference set months earlier. Verification before a destructive act is exactly where ambiguity is least affordable.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="57">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Low Vision &rarr; Presbyopia &rarr; Cataracts</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three depend on display scaling as a primary accommodation: it is often the single setting that makes the machine usable at all. When scaling breaks somewhere, they don't experience a cosmetic glitch — they lose access to that surface, because reading it at native size was never an option.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user sets display scaling to 175% — a routine, supported accommodation — and goes about using the machine, which sooner or later routes them into one of the OS's older corners: a driver dialog, an advanced properties sheet.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Legacy first-party dialogs still render blurry at high display scaling — upscaled bitmaps rather than crisply redrawn text — and the per-app compatibility fix that exists is buried in properties dialogs and never offered in context. The accommodation works beautifully until it suddenly doesn't, with no warning about which surfaces will degrade, and the remedy assumes the user already knows an obscure setting exists for a problem the OS never acknowledges having.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="58">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Lupus &rarr; Multiple Sclerosis &rarr; Rheumatoid Arthritis</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Chronic Illness &amp; Fatigue</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three live with flare patterns: stretches of workable capacity punctuated by days when pain, fatigue, or cognitive fog collapse what is possible. On a flare day the need isn't a specific accommodation — it is a general reduction of everything the machine demands, all at once, reversibly.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">Symptoms flare mid-week. The user still needs the computer for essentials, but has no capacity for its ambient demands: update prompts, notification triage, sync hiccups, decisions of any kind.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">There is no single toggle to pause updates, notifications, and sync together — no “low-capacity mode” that quiets the machine's entire demand surface in one action and restores it in one action later. The user must instead visit several settings areas and correctly configure each, then remember to reverse each, precisely on the days when multi-step configuration is what they cannot do. The OS has focus modes for busy people but nothing for depleted ones.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="59">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Macular Degeneration &rarr; Diabetic Retinopathy &rarr; Stargardt Disease</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three lose central visual detail — the exact region of the retina used to fixate on a small object like a pointer. Locating the cursor requires the very foveal acuity their conditions remove, so a small, low-contrast pointer at rest is functionally invisible until it moves, and sometimes even then.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">Attention shifts — from keyboard to screen, from one monitor to another, from a document back to the desktop — and the user must reacquire the pointer before doing anything else. This happens dozens of times an hour.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">The default cursor is small and low-contrast, and in the moment of losing it nothing routes the user to the pointer settings that exist: no locate gesture is offered, no suggestion appears after visible hunting behavior, no path from the problem to its shipped remedy. Larger, high-contrast, even colored pointers are all sitting in accessibility settings — the OS has solved this problem and simply never mentions it at the moment the problem occurs.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="60">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Macular Degeneration &rarr; Low Vision &rarr; Amblyopia</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three struggle to detect thin, briefly flashing objects: degraded central detail, reduced overall acuity, and weaker-eye suppression each defeat a one-pixel line that appears and disappears twice a second. The text caret is the smallest interactive landmark in the entire interface, and they must find it constantly.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user clicks into a file name to edit it and needs to know precisely where the insertion point landed before typing — is it at the end, before the extension, mid-word?</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">The text caret is a one-pixel blink by default, and the text cursor indicator feature that exists — thickness, color, halo — is never surfaced in context: there is no escalation, no hint, nothing linking the daily hunt for the caret to the setting that ends it. The user types a test character just to see where they are, then deletes it, on every rename, every field, every form — a workaround so habitual they may no longer notice it is one.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="61">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Migraine &rarr; Vestibular Disorder &rarr; Photosensitive Epilepsy</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Sensory &amp; Environmental</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">For all three, sustained repetitive motion on screen is physiologically active: rotating animations are a documented migraine and vertigo trigger, vestibular systems respond to the visual motion as if the body were moving, and rhythmic flicker sits adjacent to photosensitive risk. These users often turn off animations system-wide as a protective measure — and reasonably expect that to mean all animations.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The system runs a long operation — an install, a scan, a transfer of unknown duration — and displays its progress indicator, which the user cannot avoid monitoring because they need to know when the operation ends.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Indeterminate spinners keep looping even with animation effects turned off: the reduce-motion setting silences transitions and window effects but exempts the one animation users are required to stare at, and there is no static or text-based progress alternative. The user's explicit, protective, system-level request — no motion — is honored everywhere except the surface they must watch continuously, potentially for minutes at a time.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="62">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Mild Cognitive Impairment &rarr; Brain Fog &rarr; Chemotherapy Cognitive Impairment</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three have compressed working memory: holding one item while acquiring another is unreliable, so copy-paste — the canonical hold-one-thing operation — fails in a characteristic way: copy A, get interrupted or copy B, and A is gone from both the clipboard and the mind that meant to paste it.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user gathers several pieces of information in a row — an address, a confirmation number, a sentence from an email — copying each with every intention of pasting them somewhere before moving on.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Clipboard history ships off by default, so the first lost copy is the moment users learn it existed: the single-item clipboard silently discards each previous item, and the feature that would have kept them — a history one shortcut away — announces itself only after the loss, if the user happens to press the right key. The remedy for this group's most predictable failure is present on every machine and enabled on almost none of theirs.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="63">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Multiple Sclerosis &rarr; Myasthenia Gravis &rarr; Chronic Fatigue Syndrome</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Motor &amp; Physical Control</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three move and initiate slowly, especially from rest: MS slows conduction, myasthenia weakens with each repeated effort, and CFS penalizes every unnecessary exertion. A sequence that must be completed briskly is a sequence designed to make them start over.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The laptop wakes from sleep — the user pressed a key or opened the lid — and they begin the physical process of positioning to enter credentials, which for them takes longer than it takes most people.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">The lock screen display sleeps again before slow credential entry can begin, and the whole wake ritual restarts: wake it, watch it dim, wake it again, race the timeout. The interval between wake and re-sleep is tuned to typical reaction speed with no grace period that adapts to a user who is clearly, repeatedly attempting to sign in. Each cycle costs this group real physical effort, and the machine spends it carelessly.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="64">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Myalgic Encephalomyelitis &rarr; Chronic Fatigue Syndrome &rarr; Post-Viral Fatigue</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Chronic Illness &amp; Fatigue</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three budget energy in small, non-renewable daily allotments, and the first usable minutes at the machine are often the best minutes they will have. Post-exertional crash means effort spent on the wrong thing isn't merely wasted — it is borrowed against tomorrow.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">It's the first boot after a major update. The user sat down with a plan — one email, one document, one task sized to today's capacity — and the machine has its own agenda first.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Post-update setup screens interpose before the desktop, spending the user's first energy on OS questions: privacy re-confirmations, feature promotions, account nudges — each demanding reading, judgment, and decisions before the user's actual task is reachable. For most people this is friction; for this group it can consume the day's entire productive window, meaning the update's true cost was not the install time but the task that never got done.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="65">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Nonverbal Autism &rarr; Rett Syndrome &rarr; Cerebral Palsy</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Speech &amp; Communication</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three may be unable to produce a spoken wake word — reliably, on demand, or at all — while being fully capable of intentional communication through devices, switches, or synthesized speech. Their “voice” is real but machine-generated, and any system that insists on a biological voiceprint excludes them by definition.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user tries to wake the voice assistant hands-free — the exact scenario where assistants are most valuable to someone with limited motor control — using the communication tools they actually have.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">The wake word cannot be remapped to a tone, a switch-triggered sound, or an AAC-generated utterance: activation is bound to live human speech matching expected patterns. The gate to the hands-free assistant is a spoken password these users cannot say, and there is no alternative key — so the technology most suited to their situation is locked specifically against their mode of communication.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="66">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Obsessive-Compulsive Disorder &rarr; Anxiety &rarr; Obsessive-Compulsive Personality Disorder</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Mental Health</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three need destructive actions to behave identically every time: OCD builds checking rituals around any uncertainty about what an action did, anxiety treats inconsistency as evidence that something silent and bad may have happened, and OCPD cannot close a task whose outcome wasn't confirmed. Predictability is the accommodation.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user deletes files — sometimes to the recycle bin, sometimes from an external drive, sometimes with shift held, sometimes inside a cloud-synced folder — performing what feels to them like one single action: delete.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Confirmation behavior is inconsistent: sometimes the system asks, sometimes it deletes silently, and the difference depends on context the user didn't choose and may not perceive — drive type, folder location, held modifiers. Each silent deletion plants the question “did it also ask me last time? did I confirm something I shouldn't have?” For this group that question doesn't fade; it becomes re-checking the recycle bin, the folder, the cloud trash — a ritual the inconsistency itself created.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="67">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Parkinson’s Disease &rarr; Essential Tremor &rarr; Cerebral Palsy</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Motor &amp; Physical Control</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three produce noisy pointer trajectories: the cursor arrives near a target with ongoing involuntary movement, so their achievable precision is a region, not a point. Targets whose true boundaries are invisible are doubly hostile — they can't aim at what they can't see, so they aim at the visual cue instead, which shrinks their effective target to its smallest representation.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user resizes a window by its edge — grab, drag, release — a basic operation performed constantly across every workflow.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">The resize zone is invisible: the actual grabbable region extends past the visible edge, but users aim at the one-pixel border cue because that's all the interface shows. A target that is genuinely forgiving in hit-testing presents itself as needle-thin, so this group over-aims, misses, grabs the wrong window, or triggers a move instead of a resize — paying the precision cost of a one-pixel target that never actually existed.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="68">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Parkinson’s Disease &rarr; Essential Tremor &rarr; Dyspraxia</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Motor &amp; Physical Control</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three click slowly and deliberately as a strategy: spacing out clicks is precisely how they achieve accuracy despite tremor or sequencing difficulty. Their most careful, most adaptive clicking pattern is the one that falls just outside the system's double-click window.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user clicks a file, pauses — steadying, verifying, aiming — and clicks again to open it. The interval between clicks is their accommodation, not their error.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">A slow double-click is interpreted as click-then-click: select, then rename. The file name flashes into an editable state the user may not notice, and their next keystrokes — or an accidental key graze — silently corrupt the file's name. The failure mode is invisible at the moment it happens and surfaces later as files whose names have mysteriously changed, an error the user often attributes to themselves. The interaction punishes exactly the careful timing this group adopted to avoid errors.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="69">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Partially Sighted &rarr; Hemianopia &rarr; Tunnel Vision</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three work within a limited effective view of the display — reduced acuity, a missing half-field, a narrowed cone — so they survey the screen serially, region by region. Content placed outside the display they can see isn't hard to find; it is unfindable, because there is no visual cue that it exists.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user docks to a projector or external display — or undocks from one — and the system's memory of monitor arrangements does its work. Then they launch something, or a dialog opens, and nothing appears.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">System dialogs open on a disconnected monitor, positioned in coordinates that no longer map to any physical screen. The dialog exists, has focus, and may be blocking other actions — invisibly. A fully sighted user struggles with this classic failure; a user who cannot even survey their real displays quickly has almost no path to diagnosing that the machine is waiting for input on a screen that isn't there.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="70">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Photophobia &rarr; Migraine &rarr; Albinism</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">For all three, bright surfaces are physically aversive: photophobia experiences light as pain, brightness spikes are a canonical migraine trigger, and albinism involves both light sensitivity and glare susceptibility. Dark theme is their protective baseline — chosen deliberately, relied on continuously.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user, working in dark theme in a dim environment tuned to their tolerance, opens a context menu or picker somewhere in the OS's older regions.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Some system context menus and pickers still render in bright light theme regardless of the system-wide dark setting: small, sudden white surfaces erupting into a deliberately darkened environment. Each one is a localized glare spike delivered without warning, in unpredictable locations, by the OS's own inconsistency. The user did everything right — the accommodation exists and is enabled — and the platform honors it only mostly, which for this group means the protection fails at random intervals all day.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="71">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Photophobia &rarr; Migraine &rarr; Post-Concussion Syndrome</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three are harmed by full-screen luminance transients: photophobia experiences the flash as pain, migraine brains can be triggered into an attack by a single bright burst, and post-concussion light sensitivity makes sudden white fields disorienting or nauseating. It isn't sustained brightness that does the damage — it's the step change.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">A dark-theme user launches an installer or consent flow — a routine bit of software maintenance performed in an environment they've carefully dimmed.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Legacy installer and consent dialogs flash full-white, ignoring system dark mode entirely: the screen jumps from near-black to maximum luminance in a single frame, sometimes repeatedly as the wizard advances. Each launch is a small ambush with a physiological cost, and the user cannot predict which software will do it. Their protective configuration is honored right up until the moment of impact.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="72">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Photophobia &rarr; Migraine &rarr; Post-Concussion Syndrome</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Sensory &amp; Environmental</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">The same triad's luminance sensitivity applies with even higher stakes to HDR: peak HDR brightness on modern panels is several times SDR maximum — a step change larger than anything else the OS can display. For light-sensitive users this is the brightest thing their screen is physically capable of doing, delivered as a preview convenience.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user previews an HDR video file — perhaps unaware it is HDR, perhaps just checking what a clip contains — in an environment and at a brightness level tuned to their tolerance.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">HDR previews jump to peak brightness with no in-context dimming control: the preview surface offers no tone-down, no warning that HDR content is about to render, and no confirm-before-full-brightness option. The jump from a dim desktop to peak HDR is the largest luminance transient the machine can produce, and the OS attaches it to one of the most casual actions in the interface — glancing at a file.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="73">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Presbyopia &rarr; Low Vision &rarr; Macular Degeneration</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three cannot resolve micro-text: presbyopia blurs small near detail, low vision lacks the acuity outright, and macular degeneration removes the central detail vision that reading tiny numerals requires. Text below a legibility floor isn't harder for them — it's absent.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user glances at the taskbar or app icons to triage: are there unread messages, how many, where? This glanceability is the entire value of a badge.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Notification badges are tiny superscript numerals with no scaling option: they don't grow with display scaling or text-size settings that enlarge everything else. The one UI element whose entire purpose is at-a-glance reading is exempt from the accommodations that make everything else glanceable, so this group must open each app to learn what the badge would have told them — the badge's job, outsourced back to the user.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="74">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">PTSD &rarr; Anxiety &rarr; Panic Disorder</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Mental Health</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three have sensitized startle responses: a sudden loud sound doesn't merely surprise — it can trigger a flashback response, a fear spike, or a full panic cascade, each with a recovery cost measured in minutes to hours, not seconds.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">A system error occurs while the user is working with volume set for music or a call — a level entirely reasonable for the audio they chose, and much louder than they'd choose for an alarm.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">The critical-stop sound blasts at the current system volume with no quiet-alerts mode: error sounds have no independent ceiling, no ramp, and no option to make severity visual instead of loud. The OS effectively borrows the user's media volume to shout at them without warning. For this group, one unbuffered error sound can end the productive day — a cost wildly out of proportion to the dialog it announced.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="75">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Quadriplegia &rarr; ALS &rarr; Locked-in Syndrome</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Motor &amp; Physical Control</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three enter text through scanning, switches, or gaze — methods where each character costs seconds of deliberate effort. Word prediction isn't convenience for them; it is the difference between text entry being viable and being exhausting. Long, exact, unassisted strings are their single most expensive interaction.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user enters a password by scanning — selecting characters one at a time from an on-screen keyboard — for a string that is deliberately long, complex, and unforgiving of error.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">The on-screen keyboard disables prediction in secure fields — a defensible security choice — but offers no assisted alternative: no accessible autofill handoff, no biometric or companion-device path surfaced in context, nothing to offset the assistance it just removed. Security policy and accessibility need collide, and the OS resolves the collision entirely at this user's expense: the hardest possible text entry, assigned to the users for whom every character is a labor.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="76">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Quadriplegia &rarr; Locked-in Syndrome &rarr; Brainstem Stroke</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Motor &amp; Physical Control</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three select by gaze dwell, where accuracy degrades sharply as targets shrink and cluster: the eye's natural jitter means adjacent targets bleed into each other, and an error isn't a fumble — it is a completed, committed selection of the wrong thing.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The power dialog appears, and the user must choose among options whose consequences differ enormously: shut down versus restart versus sleep — one of which will end their session and, depending on their setup, their ability to summon help until someone else intervenes.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Shutdown and restart buttons sit too close together for gaze dwell accuracy, with no spacing option, no confirmation step scaled to the stakes, and no undo once the choice lands. The interface packs its most consequential, least reversible commands into the tight cluster where gaze input is least reliable — so the users for whom an accidental shutdown is most serious are the ones most likely to trigger one.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="77">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Selective Mutism &rarr; Social Anxiety &rarr; Nonverbal Autism</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Speech &amp; Communication</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three cannot produce speech on demand: selective mutism makes speaking situationally impossible regardless of intent, social anxiety can make performative speech to a machine acutely distressing, and nonverbal autistic users may not use speech at all. “Just say it” is precisely the instruction that fails.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is configuring hands-free features — quite possibly setting them up for the situations where speaking is hard — and the setup flow reaches its verification step.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">The setup flow requires a spoken confirmation to proceed: a voice sample, a spoken phrase, an audible “yes” — with no typed, clicked, or switch-based equivalent offered at that step. The gate to the accessibility feature is itself inaccessible to part of its audience, and the flow's silent assumption — that everyone configuring voice features can comfortably speak right now — filters out exactly the users with the most nuanced relationship to speech.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="78">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Sensory Processing Disorder &rarr; Autism &rarr; ADHD</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Sensory &amp; Environmental</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three are taxed by ambient motion: SPD systems must actively process every moving element in view, autistic users spend real effort filtering visual noise to reach the signal, and ADHD attention is involuntarily captured by movement. A screen where things move is a screen that never stops making demands.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">It's a fresh install — first sign-in on a new or reset machine — the moment the OS presents its defaults and, implicitly, its assumptions about what people want.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">First sign-in lands with lock-screen motion, animated widgets, and interface effects all on, and setup includes no sensory step: dozens of choices about accounts and telemetry, none about motion, sound, or stimulation level. The user must first endure the maximal sensory configuration, then hunt down each animation source individually across scattered settings. Calm is achievable — but only as an expert task, never as an offered starting point.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="79">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Sensory Processing Disorder &rarr; Autism &rarr; Migraine</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Sensory &amp; Environmental</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three pay a cost for visual noise behind text: SPD and autistic users must actively suppress the background to read the foreground, and shimmering, semi-visible movement is a classic migraine aggravator. Reading through interference is possible for them — but it converts every menu into work.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user reads menus, panels, and popovers throughout an ordinary session — surfaces they consult hundreds of times a day, each one layered over whatever happens to be behind it.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Translucent blur effects layer moving content behind every system surface: windows shift, videos play, and their ghosts swim behind the very text being read. The aesthetic is system-wide, applied to surfaces whose only job is legibility. Transparency can be disabled — but as one more setting to discover, not a question ever asked — and until it is found, the user reads all day through a fog the OS added on purpose.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="80">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Social Anxiety &rarr; Autism &rarr; Selective Mutism</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Mental Health</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three can find camera-based interaction aversive in ways that run deeper than preference: being watched — even by a device — can be acutely uncomfortable, face enrollment requires sustained self-presentation to a lens, and declining a pushed default requires exactly the assertiveness these users may find hardest to deploy against an insistent interface.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user sets up sign-in on a new device: the OS presents authentication options, with its own ordering and emphasis reflecting what it wants them to choose.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Setup pushes face-recognition enrollment as the default path — preselected, visually dominant, benefits-forward — while alternatives sit behind smaller links. Declining means finding and choosing the quiet option against the flow's momentum, and the pattern may repeat in later nudges. Users for whom the camera is the problem must repeatedly perform a small act of refusal the interface is designed to discourage, taxing them for a boundary that should have been one neutral question.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="81">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Stargardt Disease &rarr; Macular Degeneration &rarr; Diabetic Retinopathy</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three navigate by spatial memory as a load-bearing strategy: with central detail vision degraded, reading each icon's label is slow or impossible, so “the third icon down on the left is my email” replaces visual identification. Position is their labeling system.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">Display resolution or monitor setup changes — a projector connects, a dock disconnects, a driver updates — and the desktop grid the user memorized meets a new coordinate space.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">A resolution or monitor change scrambles desktop icon positions, and the spatial layout the user built their access around is destroyed without warning or an offered restore. Sighted users are annoyed and re-sort visually in seconds; this group must painstakingly re-identify each icon by slow partial reading, then rebuild and re-memorize a new arrangement — hours of accessibility infrastructure, deleted by a routine display event.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="82">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Stutter &rarr; Aphasia &rarr; Dysarthria</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Speech &amp; Communication</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three speak with irregular timing as a matter of course: stuttering produces blocks and pauses within words, aphasia inserts word-finding gaps mid-sentence, and dysarthria slows articulation throughout. Pauses are not the end of their speech — they are part of it.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user dictates a document, working through their thoughts at their natural cadence, which includes silences that a typical-speech model would read as completion.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">System dictation stops listening after brief pauses: the timeout is tuned to fluent speech, so mid-thought silence is treated as “done” and the microphone closes. The user resumes speaking into a dead session, loses the sentence, and must notice the failure, reactivate dictation, and reconstruct their place — again and again. The tool most valuable to people who struggle with typing is calibrated to reject the speech patterns of people who struggle with speaking.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="83">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Traumatic Brain Injury &rarr; ADHD &rarr; Dementia</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three struggle with invisible state boundaries: understanding that “my stuff is still open somewhere I can't see it” requires holding a model of hidden sessions that TBI, ADHD, and dementia each undermine differently. If the consequences of a choice aren't stated at the moment of choosing, they effectively don't exist.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">A family shares one PC. The user is done for now, someone else needs the machine, and they face the account menu's options for stepping away.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">“Switch user” and “sign out” sit side by side with their radically different consequences unexplained: one preserves the session invisibly, the other closes everything — and unsaved work is lost by whoever guesses wrong, sometimes discovered only when the first user returns hours later to find their documents gone. The menu treats a destructive choice and a safe one as interchangeable labels, on the shared machines where the least technical family members are most likely to be the ones choosing.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="84">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Vestibular Disorder &rarr; Motion Sensitivity &rarr; Migraine</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Sensory &amp; Environmental</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">For all three, full-field visual motion is read by the brain as self-motion: the vestibular system reports stillness while the eyes report the world sliding sideways, and that conflict produces genuine vertigo, nausea, or migraine onset — a physiological event, not a preference violation.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user switches virtual desktops — a core organizational feature they may rely on heavily for exactly the focus and simplification their condition rewards.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">The full-screen slide animation plays with reduce-motion off by default: the entire visual field sweeps sideways on every switch, the single most vestibularly provocative motion pattern the OS ships, enabled out of the box. The setting that would calm it exists but is opt-out rather than opt-in, so every affected user must experience the trigger first, correctly attribute their symptoms to it, and then locate the fix — a diagnostic journey the default forced on them.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="85">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Vestibular Disorder &rarr; Motion Sensitivity &rarr; Vestibular Migraine</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Sensory &amp; Environmental</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three have peripheral vision that is exquisitely motion-sensitive — the periphery is where the visual system watches for the world moving — so motion entering from a screen edge lands on exactly the retinal region their conditions have made hair-triggered.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">Notifications arrive during work: each one enters from the display's edge, in the periphery of a user whose gaze is fixed on their task.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Banners slide in from the screen edge with no fade-only or static option: the delivery animation is peripheral lateral motion, repeated with every notification, unpredictable in timing. Each arrival tugs the vestibular system sideways. The information could arrive by simple appearance — same banner, same content, no travel — but the OS offers no way to keep notifications while declining their journey.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="86">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Vestibular Disorder &rarr; Ménière’s Disease &rarr; Post-Concussion Syndrome</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Sensory &amp; Environmental</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three experience zoom and scale motion as depth motion: elements that grow and shrink read to the brain as looming toward or receding from the viewer, a depth illusion that vestibular systems, Ménière's episodes, and concussed motion processing each convert into swimming disorientation or nausea.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user opens and minimizes apps — the highest-frequency window operations there are, performed hundreds of times a day.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">System-wide window zoom animations play on every open and minimize with no granular toggle: motion settings are all-or-nothing, so declining the zoom means losing every animation cue everywhere, including ones that aid comprehension. The user must choose between hundreds of daily doses of the specific motion pattern that sickens them or a fully static environment stripped of the transitions that don't — the OS never asks which motions, only whether motion.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="87">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Vestibular Disorder &rarr; Post-Concussion Syndrome &rarr; Motion Sensitivity</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Sensory &amp; Environmental</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three are destabilized by sudden unexpected visual events: an abrupt full-screen change forces a re-orientation their motion processing performs badly, and unpredictability compounds it — motion that can't be braced for hits harder than motion that can.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user snaps a window to one side of the screen — a deliberate, small, contained action with an expected, contained result.</dd>
+      <dt data-label="OS Mismatch" role="listitem">OS Mismatch</dt><dd role="listitem">Snap assist erupts into a full grid of animated thumbnails without warning: the deliberately small action detonates an unrequested full-screen response — multiple moving elements appearing at once in the space just vacated. The user asked to place one window; the system answered with a surprise wall of motion. The feature is genuinely useful and defensibly default — but it ships with no calm variant: no static grid, no delay, no way to keep the help while declining the eruption.</dd>
+    </dl>
+  </article>
+</main>
+</body>
+</html>
