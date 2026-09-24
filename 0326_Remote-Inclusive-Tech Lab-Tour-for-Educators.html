@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>Session 1: Remote Inclusive Tech Lab Tour for Educators — Inclusive Technology in Practice</title>
+<style>
+:root {
+  --fg: #1f2328;
+  --fg-muted: #1a1e23;
+  --canvas: #ffffff;
+  --canvas-subtle: #f6f8fa;
+  --border: #d0d7de;
+  --accent: #0550ae;
+  --accent-hover: #033d8b;
+  --btn-bg: #f6f8fa;
+  --btn-hover: #eaeef2;
+  --radius: 6px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg: #e6edf3;
+    --fg-muted: #c9d1d9;
+    --canvas: #0d1117;
+    --canvas-subtle: #161b22;
+    --border: #30363d;
+    --accent: #79c0ff;
+    --accent-hover: #a5d6ff;
+    --btn-bg: #21262d;
+    --btn-hover: #30363d;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 24px 16px 64px;
+  background: var(--canvas);
+  color: var(--fg);
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+
+/* Global focus indicator (WCAG 2.4.12/13 AAA) */
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+:focus:not(:focus-visible) { outline: none; }
+
+main, footer {
+  max-width: 1012px;
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--fg);
+}
+h1 {
+  font-size: 2rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.4em;
+  margin-top: 0;
+}
+h2 {
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.3em;
+}
+h3 { font-size: 1.125rem; margin: 0.75em 0 0; }
+
+p { margin: 0.75em 0; }
+ul { padding-left: 1.5em; margin: 0.5em 0; }
+li { margin: 0.35em 0; }
+
+a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+a:hover { color: var(--accent-hover); }
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: var(--canvas-subtle);
+  padding: 0.2em 0.4em;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+footer {
+  margin-top: 2em;
+  padding-top: 1em;
+  padding-right: 170px;
+  border-top: 1px solid var(--border);
+}
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2em;  
+}
+
+
+/* Disclosure button — wraps H3 text */
+h3 button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--btn-bg);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-family: var(--font);
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.1s ease, border-color 0.1s ease;
+}
+h3 button:hover {
+  background: var(--btn-hover);
+  border-color: var(--accent);
+}
+h3 button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Chevron indicator */
+.disclosure-icon {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+  margin-right: 2px;
+}
+h3 button[aria-expanded="true"] .disclosure-icon {
+  transform: rotate(135deg);
+}
+
+/* Collapsible content region */
+[role="region"] {
+  padding: 14px 16px 16px;
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 var(--radius) var(--radius);
+  background: var(--canvas);
+}
+[role="region"] > *:first-child { margin-top: 0; }
+[role="region"] > *:last-child { margin-bottom: 0; }
+
+/* Table */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.9375rem;
+  overflow-x: auto;
+  display: block;
+}
+thead { position: sticky; top: 0; }
+th, td {
+  padding: 8px 13px;
+  border: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+th {
+  background: var(--canvas-subtle);
+  font-weight: 600;
+}
+tr:nth-child(2n) td { background: var(--canvas-subtle); }
+td a { word-break: break-all; }
+
+/* Video embed */
+.video-wrapper {
+  margin: 1.5em 0;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #000;
+}
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+figcaption {
+  font-size: 0.875rem;
+  color: var(--fg-muted);
+  margin-top: 0.4em;
+}
+</style>
+</head>
+<body>
+<main id="main-content">
+<h1>Session 1: Remote Inclusive Tech Lab Tour for Educators — Inclusive Technology in Practice</h1>
+<p><strong>Date:</strong> Friday, March 27, 2026 | 11:00 AM–12:15 PM</p>
+<h2>Summary</h2>
+<p>This session was a live, remote tour of Microsoft's Inclusive Tech Lab — a hands-on demonstration of hardware, software, and inclusive design philosophy tailored to an audience of educators and therapists working with students with disabilities. Bryce Johnson led the tour, covering adaptive input devices, low-vision tools, tactile adaptations, and emerging software features. The session was interactive, with active participation in the chat log by attendees who contributed guesses, questions, reactions, and resource sharing. Key themes included the cost of assistive technology, the social model of disability, stigma in AT adoption, and the value of cross-community collaboration between technologists and clinicians.</p>
+<figure aria-label="Session recording video">
+<div class="video-wrapper">
+<iframe
+  src="https://www.youtube-nocookie.com/embed/he-iKbvC-K4"
+  title="Session 1: Remote Inclusive Tech Lab Tour for Educators — Inclusive Technology in Practice"
+  loading="lazy"
+  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen></iframe>
+</div>
+<figcaption>Session 1 recording — Remote Inclusive Tech Lab Tour for Educators</figcaption>
+</figure>
+<h2   >Thematic Breakdown</h2>
+
+<h3><button type="button" aria-expanded="false" aria-controls="section-1-content" id="section-1-btn">1: The Inclusive Design Methodology<span aria-hidden="true" class="disclosure-icon"></span></button></h3>
+<div id="section-1-content" role="region" aria-labelledby="section-1-btn" hidden>
+<p><strong>Talking Points:</strong></p>
+<ul>
+<li>Microsoft's inclusive design framework rests on three principles: <strong>Recognize Exclusion → Learn from Diversity → Solve for One, Extend to Many.</strong></li>
+<li>The Xbox Adaptive Controller was the founding artifact of the Inclusive Tech Lab — created because the standard controller assumed two hands, fine motor control, and endurance.</li>
+<li>The lab began as an "empathy lab" for Xbox employees and evolved into a campus hub where the disability community co-designs Microsoft products.</li>
+<li><strong>"Nothing about us without us"</strong> is a core operating principle of the lab.</li>
+<li>"Solve for one, extend to many" was reframed not just as designing for non-disabled users, but as finding <strong>shared functional needs across disability communities</strong> (e.g., designing for muscular dystrophy benefits gamers with precision needs).</li>
+</ul>
+<p><strong>Relevance to Therapists &amp; Educators:</strong> This framework directly mirrors person-centered practice in therapy and IEP development. The principle of designing <em>with</em> rather than <em>for</em> the disability community validates co-design and student voice in AT selection.</p>
+</div>
+
+<h3><button type="button" aria-expanded="false" aria-controls="section-2-content" id="section-2-btn">2: Adaptive Input Devices — A Hardware Tour<span aria-hidden="true" class="disclosure-icon"></span></button></h3>
+<div id="section-2-content" role="region" aria-labelledby="section-2-btn" hidden>
+<p><strong>Talking Points:</strong></p>
+<ul>
+<li><strong>Quadjoy Mouth Mouse</strong> — operated via lips, blow to click, suck to right-click.</li>
+<li><strong>n-ABLER Pro (Enabler Pro)</strong> — high gross-motor mouse with built-in tremor filtering, designed primarily for users with cerebral palsy. Attendee Renee Crawford asked for the product name in chat; Bourilack P shared the link.</li>
+<li><strong>QHA Head-Mounted Mouse</strong> — head tracking mouse; switch port in dongle for mouth-based clicking. Cost: ~$1,500. This sparked the cost discussion (see Theme 3).</li>
+<li><strong>Carpal tunnel mouse</strong> and <strong>rollerball mouse</strong> also demonstrated.</li>
+<li><strong>Microsoft Adaptive Accessories</strong> — a lightweight 44g wireless mouse (up to 6,000 DPI), a switch hub, and a wireless button. Key innovation: 3D-printed "tails" that modify grip, block the scroll wheel, and add friction dimples for precision — designed by the lead designer whose daughter has cerebral palsy.</li>
+<li><strong>Xbox Adaptive Joystick</strong> ($30) — remappable buttons and can function as a mouse; school network compatibility issues noted (requires Xbox.com domain access for configuration).</li>
+<li><strong>Logitech Adaptive Gaming Kit</strong> ($100, 10 switches + mounting) — highlighted as an affordable switch option for schools.</li>
+</ul>
+<p><strong>Chat Interactions:</strong></p>
+<ul>
+<li>Attendees guessed "elbow" and "2000" for the cost of the head mouse; Theren Hayes and Andrea Mano guessed "elbow" for the chin button body part; Connolly, Amy correctly answered "chin."</li>
+<li>Connolly, Amy asked about the bold keyboard — confirmed commercially available (Surface Pro Flex Keyboard).</li>
+</ul>
+</div>
+
+<h3><button type="button" aria-expanded="false" aria-controls="section-3-content" id="section-3-btn">3: Cost, Access &amp; the Economics of Assistive Technology<span aria-hidden="true" class="disclosure-icon"></span></button></h3>
+<div id="section-3-content" role="region" aria-labelledby="section-3-btn" hidden>
+<p><strong>Talking Points:</strong></p>
+<ul>
+<li>The $1,500 head mouse prompted an honest, community-facing discussion: <strong>"The only thing worse than it being $1,500 is if it didn't exist at all."</strong></li>
+<li>Microsoft's privileged position: AT work is not required to be profitable, which enables investment that small AT companies cannot make.</li>
+<li>Small market size = low profit margins for AT companies, acknowledged by attendee Connolly, Amy in chat.</li>
+<li>High prices carry an expectation of high support — therapists consistently ask: <em>"Where's my training material? Where's my 1-800 number?"</em></li>
+<li>Tech culture ("move fast and break things") is fundamentally incompatible with medical/clinical rigor — Bryce acknowledged this tension directly and committed to respecting it while still challenging it.</li>
+<li>Affordable alternatives were highlighted: Logitech Pebble mouse ($20), Logitech Adaptive Gaming Kit ($100), Xbox Adaptive Joystick ($30).</li>
+</ul>
+<p><strong>Relevance to Therapists &amp; Educators:</strong> This theme directly addresses practitioner frustrations with AT procurement and support. It opens a dialogue about shared responsibility between tech companies, clinicians, and school systems.</p>
+</div>
+
+<h3><button type="button" aria-expanded="false" aria-controls="section-4-content" id="section-4-btn">4: Software Tools — Switch Scanning, Macros &amp; Power Toys<span aria-hidden="true" class="disclosure-icon"></span></button></h3>
+<div id="section-4-content" role="region" aria-labelledby="section-4-btn" hidden>
+<p><strong>Talking Points:</strong></p>
+<ul>
+<li><strong>Microsoft PowerToys</strong> — currently incubating switch scanning in Windows via the "Mouse Pointer Crosshairs / Gliding Cursor" feature (shortcut: <code>Windows + Alt + .</code>). Produces a scan line that crosses, slows, and clicks — enabling single-switch scanning behavior.</li>
+<li>This is explicitly framed as an <strong>incubation</strong> — not a finished product — to gather real-world input before deeper investment.</li>
+<li>Bryce noted the challenge of translating iOS-style switch scanning directly to Windows: <em>"I want to make sure things are true to Windows."</em></li>
+<li><strong>Microsoft Accessory Center</strong> — configures the switch hub and adaptive mouse with macros, mouse cursor circular scanning, and programmable button sequences.</li>
+<li><strong>Macro demonstration:</strong> A single button press sequenced through typing, Control-A, Control-X, Control-N, and paste — reducing "eye gaze spoons" for users who rely on gaze-based AAC editors.</li>
+<li>Connolly, Amy clarified in chat whether Power Toys was OS-level or an app (it is a downloadable app).</li>
+</ul>
+<p><strong>Relevance to Therapists &amp; Educators:</strong> Switch scanning in Windows is a highly requested feature in school and clinical settings. The macro acceleration concept maps directly to reducing fatigue and cognitive load for AAC users.</p>
+</div>
+
+<h3><button type="button" aria-expanded="false" aria-controls="section-5-content" id="section-5-btn">5: Low Vision, Posture &amp; Tactile Design<span aria-hidden="true" class="disclosure-icon"></span></button></h3>
+<div id="section-5-content" role="region" aria-labelledby="section-5-btn" hidden>
+<p><strong>Talking Points:</strong></p>
+<ul>
+<li>Challenged the assumption that magnifiers/screen readers are always the right solution — sometimes <strong>large font + high contrast + monitor height</strong> is sufficient.</li>
+<li>Encouraged natural postures: <em>"If you want to stick your face close to the screen, we should design forms that allow you to do that."</em></li>
+<li><strong>Surface Pro Flex Keyboard (Bold)</strong> — same physical keyboard as standard, only the paint/print changed. Larger, high-contrast key labels. No lowercase option currently, which attendees flagged.</li>
+<li><strong>Lowercase keyboards ("pedagogy keyboards")</strong> — Kirsten Ellis and Alexander Liddell noted the importance of lowercase for phonics with young children. Misty Currey noted Chromebooks have lowercase keys. Bryce acknowledged this as an area to reinvestigate.</li>
+<li><strong>Kensington Elevated Stand for Surface</strong> — slides into the kickstand slot, portable, improves posture and screen height.</li>
+<li><strong>Surface Adaptive Kit</strong> — aftermarket tactile adaptations: colored and translucent bump stickers for keyboard navigation, cable/port markers (tactile + color-coded), laptop pole/lanyard pole for users who can't open thin laptops with fingertips.</li>
+<li><strong>Windows 365 Link</strong> — tactile port indicators on the back to differentiate USB-A from HDMI by touch.</li>
+</ul>
+</div>
+
+<h3><button type="button" aria-expanded="false" aria-controls="section-6-content" id="section-6-btn">6: AI &amp; Copilot for Accessibility<span aria-hidden="true" class="disclosure-icon"></span></button></h3>
+<div id="section-6-content" role="region" aria-labelledby="section-6-btn" hidden>
+<p><strong>Talking Points:</strong></p>
+<ul>
+<li>Live demonstration: Bryce uploaded "Washington Crossing the Delaware" into Copilot and prompted: <em>"Create a version of this painting as a simple black and white line drawing for someone who has limited vision."</em></li>
+<li>Copilot generated a simplified, high-contrast line drawing in session — framed as a practical tool for educators supporting <strong>blind students and students with CVI (Cortical Visual Impairment)</strong>.</li>
+<li>Alexander Liddell — an ATP with a caseload of 300 blind students in Stockton, England — introduced this technique and shared his LinkedIn post demonstrating it.</li>
+<li>Alexander Liddell also suggested combining Copilot-generated line drawings with <strong>Swell Touch Paper</strong> (Zychem/Humanware) to create <strong>fully tactile embossed images</strong> — a significant cross-tool accessibility workflow. Bryce noted this as a new insight to explore further.</li>
+</ul>
+<p><strong>Relevance to Therapists &amp; Educators:</strong> This is a high-value, low-barrier technique for TVIs and educators supporting students with visual impairments. The Copilot + Swell Paper workflow could be immediately actionable.</p>
+</div>
+
+<h3><button type="button" aria-expanded="false" aria-controls="section-7-content" id="section-7-btn">7: Stigma in Assistive Technology<span aria-hidden="true" class="disclosure-icon"></span></button></h3>
+<div id="section-7-content" role="region" aria-labelledby="section-7-btn" hidden>
+<p><strong>Talking Points:</strong></p>
+<ul>
+<li>Glasses are the canonical example of a fully destigmatized AT — most people don't consider them "assistive technology."</li>
+<li>Hearing aids have the highest AT abandonment rate — removing hearing aids from AT abandonment statistics drops the overall percentage by double digits.</li>
+<li><strong>IEP stigma scenario:</strong> Students reject more powerful computers (allowed by IEP) because they want the same Chromebook their peers use.</li>
+<li>The bold keyboard was deliberately designed to <em>not look like an accessibility product</em> — avoiding the "old man type cover" effect.</li>
+<li>Design philosophy: <strong>stigma is a real design problem</strong>, not a superficial one. Addressing it is legitimate and important.</li>
+</ul>
+<p><strong>Relevance to Therapists &amp; Educators:</strong> This theme resonates strongly with AT abandonment challenges practitioners face. It validates the clinical and educational practice of considering social acceptability and peer perception in AT recommendations.</p>
+</div>
+
+<h3><button type="button" aria-expanded="false" aria-controls="section-8-content" id="section-8-btn">8: 3D Printing, Fidgets &amp; Emerging Prototypes<span aria-hidden="true" class="disclosure-icon"></span></button></h3>
+<div id="section-8-content" role="region" aria-labelledby="section-8-btn" hidden>
+<p><strong>Talking Points:</strong></p>
+<ul>
+<li>Adaptive mouse "fidget tails" — silicone prototype tails that double as fidgets; noted that students sometimes preferred the fidget function over the mouse function.</li>
+<li>Free 3D printable files available for all adaptive mouse tails, surface pen mounts, etc.</li>
+<li><strong>WATAP (Washington Assistive Technology Act Program)</strong> at UW Campus — mentioned by Andrea Mano and confirmed by Bryce; Brennen from WATAP was present and has shown 3D-printed items at Roots2Wings conferences.</li>
+<li><strong>UW Clinical Additive Manufacturing Program</strong> — being built out, aiming to be a premier 3D printing service (SLS, metal printing, silicone) for the region.</li>
+<li><strong>Roots2Wings</strong> — community organization for neurodiverse families; quarterly events, Bellevue chapter. Link shared in chat by Kristin Leslie.</li>
+</ul>
+</div>
+
+<h3><button type="button" aria-expanded="false" aria-controls="section-9-content" id="section-9-btn">9: School/Network Barriers to AT Deployment<span aria-hidden="true" class="disclosure-icon"></span></button></h3>
+<div id="section-9-content" role="region" aria-labelledby="section-9-btn" hidden>
+<p><strong>Talking Points:</strong></p>
+<ul>
+<li>Xbox Adaptive Joystick requires connecting to Xbox.com domains for its configuration utility — school networks block this.</li>
+<li>Potential workaround: pre-program the device off-network, then bring it in (unverified but plausible).</li>
+<li>Microsoft Adaptive Accessories addressed this proactively by supporting <strong>3 hard-coded profiles</strong> stored on the device itself — no network dependency.</li>
+<li><strong>Admin rights</strong> flagged as a general barrier by Theren Hayes in chat.</li>
+</ul>
+<p><strong>Relevance to Therapists &amp; Educators:</strong> Network and IT policy barriers are a persistent, underacknowledged obstacle in school AT implementation. This theme validates practitioner frustration and offers a concrete workaround strategy.</p>
+</div>
+
+<h3><button type="button" aria-expanded="false" aria-controls="section-10-content" id="section-10-btn">10: Resources<span aria-hidden="true" class="disclosure-icon"></span></button></h3>
+<div id="section-10-content" role="region" aria-labelledby="section-10-btn" hidden>
+<table>
+<thead>
+<tr>
+<th scope="col">Resource Name</th>
+<th scope="col">URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Microsoft Inclusive Design</td>
+<td><a href="https://inclusive.microsoft.design/">https://inclusive.microsoft.design/</a></td>
+</tr>
+<tr>
+<td>n-ABLER Pro Joystick (Pretorian)</td>
+<td><a href="https://www.pretorianuk.com/n-abler-pro-joystick/">https://www.pretorianuk.com/n-abler-pro-joystick/</a></td>
+</tr>
+<tr>
+<td>Adaptive Accessories Help &amp; Learning</td>
+<td><a href="https://support.microsoft.com/en-us/adaptiveaccessories">https://support.microsoft.com/en-us/adaptiveaccessories</a></td>
+</tr>
+<tr>
+<td>Surface for Business Accessories</td>
+<td><a href="https://www.microsoft.com/en-us/surface/business/accessories">https://www.microsoft.com/en-us/surface/business/accessories</a></td>
+</tr>
+<tr>
+<td>3D-Printable Designs for Adaptive Accessories &amp; Surface Pen</td>
+<td><a href="https://support.microsoft.com/en-US/surface/accessories/3d-printable-designs-for-microsoft-adaptive-accessories-surface-pen-and-microsoft-pens">https://support.microsoft.com/en-US/surface/accessories/3d-printable-designs-for-microsoft-adaptive-accessories-surface-pen-and-microsoft-pens</a></td>
+</tr>
+<tr>
+<td>Logitech G Adaptive Gaming Kit</td>
+<td><a href="https://www.logitechg.com/en-ca/shop/p/adaptive-gaming-kit-accessories">https://www.logitechg.com/en-ca/shop/p/adaptive-gaming-kit-accessories</a></td>
+</tr>
+<tr>
+<td>Microsoft Accessory Center Download</td>
+<td><a href="https://support.microsoft.com/en-US/surface/accessories/microsoft-accessory-center-download">https://support.microsoft.com/en-US/surface/accessories/microsoft-accessory-center-download</a></td>
+</tr>
+<tr>
+<td>Microsoft PowerToys</td>
+<td><a href="https://learn.microsoft.com/en-us/windows/powertoys/">https://learn.microsoft.com/en-us/windows/powertoys/</a></td>
+</tr>
+<tr>
+<td>Quha Zono</td>
+<td><a href="https://www.quha.com/products/quha-zono/">https://www.quha.com/products/quha-zono/</a></td>
+</tr>
+<tr>
+<td>Kensington Elevated Stand for Surface</td>
+<td><a href="https://www.kensington.com/p/products/ergonomic-desk-accessories/laptop-risers-monitor-stands/elevated-stand-for-surface/">https://www.kensington.com/p/products/ergonomic-desk-accessories/laptop-risers-monitor-stands/elevated-stand-for-surface/</a></td>
+</tr>
+<tr>
+<td>Surface Pro Flex Keyboard (Bold / Standard)</td>
+<td><a href="https://www.microsoft.com/en-us/d/surface-pro-flex-keyboard/91xw9xj8bm7l">https://www.microsoft.com/en-us/d/surface-pro-flex-keyboard/91xw9xj8bm7l</a></td>
+</tr>
+<tr>
+<td>Devices + Accessories + Augmentations (PDF)</td>
+<td><a href="https://inclusive.microsoft.design/tools-and-activities/DevicesAccessoriesandAugmentations.pdf">https://inclusive.microsoft.design/tools-and-activities/DevicesAccessoriesandAugmentations.pdf</a></td>
+</tr>
+<tr>
+<td>Surface Adaptive Kit Guide</td>
+<td><a href="https://support.microsoft.com/en-US/surface/accessories/surface-adaptive-kit-guide">https://support.microsoft.com/en-US/surface/accessories/surface-adaptive-kit-guide</a></td>
+</tr>
+<tr>
+<td>Windows 365 Link</td>
+<td><a href="https://www.microsoft.com/en-us/windows-365/link">https://www.microsoft.com/en-us/windows-365/link</a></td>
+</tr>
+<tr>
+<td>Humanware A4 Swell Touch Paper</td>
+<td><a href="https://store.humanware.com/heu/a4-swell-touch-paper-100-sheets.html">https://store.humanware.com/heu/a4-swell-touch-paper-100-sheets.html</a></td>
+</tr>
+<tr>
+<td>Zychem Tactile Graphics Solutions</td>
+<td><a href="https://zychemltd.com/">https://zychemltd.com/</a></td>
+</tr>
+<tr>
+<td>Xbox Adaptive Joystick</td>
+<td><a href="https://www.xbox.com/en-US/accessories/controllers/xbox-adaptive-joystick">https://www.xbox.com/en-US/accessories/controllers/xbox-adaptive-joystick</a></td>
+</tr>
+<tr>
+<td>Xbox Adaptive Joystick — Support / FAQ</td>
+<td><a href="https://support.xbox.com/en-US/help/account-profile/accessibility/xbox-adaptive-joystick">https://support.xbox.com/en-US/help/account-profile/accessibility/xbox-adaptive-joystick</a></td>
+</tr>
+<tr>
+<td>Alexander Liddell LinkedIn Post</td>
+<td><a href="https://www.linkedin.com/posts/alexander-liddell-bsc-hons-24361068_accessibility-inclusiveeducation-aiineducation-activity-7440313672062775298-x_QU">https://www.linkedin.com/posts/alexander-liddell-bsc-hons-24361068_accessibility-inclusiveeducation-aiineducation-activity-7440313672062775298-x_QU</a></td>
+</tr>
+<tr>
+<td>Roots2Wings Family Group</td>
+<td><a href="https://roots2wingsfg.com/">https://roots2wingsfg.com/</a></td>
+</tr>
+<tr>
+<td>Clock Hours Registration (CWU / PDEnroller)</td>
+<td><a href="https://www.pdenroller.org/cwu/catalog/203393">https://www.pdenroller.org/cwu/catalog/203393</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3><button type="button" aria-expanded="false" aria-controls="section-11-content" id="section-11-btn">11: Notable Audience Interactions<span aria-hidden="true" class="disclosure-icon"></span></button></h3>
+<div id="section-11-content" role="region" aria-labelledby="section-11-btn" hidden>
+<ul>
+<li><strong>Theren Hayes</strong> — affirmed hearing audio; noted "Admin rights" as a school barrier; confirmed "large font" as a low-vision need.</li>
+<li><strong>Connolly, Amy</strong> — highly engaged; asked about the bold keyboard, Power Toys vs. OS settings, stand details, and confirmed "chin" for the chin button; noted Apple's comparable pricing.</li>
+<li><strong>Alexander Liddell</strong> — ATP, Stockton England; introduced Copilot + Swell Paper tactile workflow; shared LinkedIn post.</li>
+<li><strong>Kirsten Ellis</strong> — flagged the need for lowercase keyboard versions.</li>
+<li><strong>Misty Currey</strong> — noted Chromebooks already have lowercase keys.</li>
+<li><strong>Christopher Williams</strong> — flagged Xbox server/network blocking for school AT deployment.</li>
+<li><strong>Kristin Leslie</strong> — shared clock hours registration link and Roots2Wings link.</li>
+<li><strong>Andrea Mano</strong> — identified WATAP's Brennen and his 3D printing work at Roots2Wings.</li>
+</ul>
+</div>
+
+</main>
+<footer>
+  <ul>
+    <li><strong>Session 1: Remote Inclusive Tech Lab Tour for Educators — Inclusive Technology in Practice</strong></li>
+    <li><a href="https://inclusivetechlab.github.io/web/0326_AAC-as-Student-Voice-Communication-Identity-and-Belonging.html">Session 2: AAC as Student Voice: Communication, Identity, and Belonging in Schools</a></li>
+    <li><a href="https://inclusivetechlab.github.io/web/0326_Built-In-Accessibility-as-Instructional-Infrastructure-Literacy.html">Session 3: Built In Accessibility as Instructional Infrastructure Literacy, Security, and Scalable Support Across Schools</a></li>
+    <li><a href="https://inclusivetechlab.github.io/web/0326_ATIA-Recap-Informal-Conversation-Reflections-Takeaways.html">Session 4: ATIA Recap & Informal Conversation – Reflections, Takeaways, and What Stuck With Us</a></li>
+  </ul>
+    
+<svg width="140px" height="50px" viewBox="0 0 91571 32821" version="1.1" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;" id="ITLlogo" aria-labelledby="ITLTitle" role="img"><title id="ITLTitle">Inclusive Tech Lab</title>
+<g><rect x="39.023" y="240.752" width="1685.99" height="14390.7" style="fill:#fff;"/>
+<path d="M16893.6,14631.5l-2047.21,0l-7426.13,-11470.4c-174.028,-267.518 -324.566,-568.577 -451.563,-903.213l-60.226,0c53.472,307.831 80.295,966.859 80.295,1976.98l-0.034,10396.6l-1685.96,0l0.053,-14390.7l2187.71,0l7205.35,11289.8l582.031,963.386l40.139,0c-66.944,-414.74 -100.364,-1120.5 -100.364,-2117.45l0.034,-10135.7l1675.9,0l-0.034,14390.7Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M30255.8,14039.5c-1057.14,561.98 -2378.34,842.935 -3963.93,842.935c-1331.42,0 -2512.28,-297.604 -3542.47,-893.126c-1030.37,-595.417 -1824.88,-1440.09 -2383.39,-2533.94c-558.698,-1093.86 -837.969,-2343.27 -837.952,-3748.2c0,-1465.16 311.094,-2788.11 933.299,-3968.96c622.188,-1180.73 1495.26,-2098.98 2619.22,-2754.71c1123.94,-655.591 2384.97,-983.455 3783.32,-983.455c1358.07,0 2488.75,197.413 3391.93,592.101l0,1786.29c-1030.33,-575.296 -2167.62,-863.056 -3412,-863.056c-1083.8,-0.018 -2047.21,250.885 -2890.18,752.639c-842.987,501.771 -1496.98,1217.73 -1961.89,2147.55c-465.087,930.001 -697.483,1993.75 -697.483,3191.24c-0.018,1137.47 217.326,2144.29 652.292,3020.66c434.827,876.511 1050.26,1550.44 1846.51,2022.12c796.077,471.65 1706.01,707.5 2729.59,707.5c1445.11,0 2689.5,-321.128 3733.15,-963.368l-0.018,1645.78Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M40457,14631.6l-7466.29,-0.018l0.035,-14390.7l1685.97,0l-0.034,12865.3l5780.32,0.017l0,1525.38Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M52705.2,8811.11c-0.017,4047.7 -1823.14,6071.38 -5469.26,6071.36c-3492.31,-0.017 -5238.46,-1946.88 -5238.44,-5840.58l0.017,-8801l1685.94,0.018l-0.017,8700.63c0,2943.82 1247.66,4415.58 3743.18,4415.58c2394.98,0.017 3592.64,-1425.02 3592.66,-4275.06l0.017,-8841.14l1685.92,0.017l-0.018,8570.16Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M63438.2,10998.9c0,1210.95 -428.229,2161.04 -1284.52,2850.02c-856.476,689.15 -2020.57,1033.63 -3492.33,1033.61c-535.296,0 -1139.01,-88.733 -1811.34,-265.92c-672.379,-177.188 -1149.08,-362.848 -1430.05,-556.963l0,-1997.05c408.004,368.021 944.88,675.834 1610.68,923.282c665.625,247.57 1286.1,371.303 1861.55,371.303c1846.5,0.017 2769.74,-719.098 2769.74,-2157.59c0,-602.136 -197.413,-1118.94 -592.066,-1550.49c-394.827,-431.494 -1204.24,-998.508 -2428.56,-1700.97c-1184.15,-668.907 -2013.79,-1304.62 -2488.74,-1906.72c-475.122,-602.136 -712.5,-1334.69 -712.483,-2197.74c0,-1137.29 424.757,-2062.26 1274.48,-2774.78c849.532,-712.501 1946.84,-1068.75 3291.58,-1068.75c1291.09,0.017 2234.45,170.625 2829.95,511.806l0,1886.67c-749.341,-588.664 -1722.78,-883.143 -2920.3,-883.143c-796.216,0 -1446.79,199.132 -1951.84,597.101c-505.227,398.143 -757.692,924.966 -757.692,1580.56c0,475.122 75.26,856.476 225.799,1144.05c150.538,287.726 404.705,572.014 762.691,853.021c357.813,280.955 961.668,659.029 1811.37,1133.96c1271.01,709.236 2160.87,1378.32 2669.39,2007.09c508.351,628.941 762.691,1351.48 762.674,2167.66" style="fill:#fff;fill-rule:nonzero;"/><rect x="66102.8" y="240.981" width="1685.99" height="14390.7" style="fill:#fff;"/>
+<path d="M82054.2,241.048l-5318.77,14390.7l-1846.5,0l-5228.39,-14390.7l1876.62,0l3984.01,11410.2c133.75,401.406 230.782,826.355 291.007,1274.48l40.139,0c33.403,-327.726 143.785,-759.254 331.181,-1294.55l4064.33,-11390.1l1806.37,0Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M91552.8,14631.8l-7626.88,-0.035l0.034,-14390.7l7295.7,0.017l-0.018,1525.38l-5609.71,-0.017l-0.017,4786.84l5198.3,0.017l0,1525.38l-5198.3,-0.017l-0.018,5027.69l5940.91,0.017l0,1525.38Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M6532.99,20236.5l-0.035,12333.4l-2408.46,0l0.017,-12333.4l-4124.52,-0.017l0,-2057.24l10667.6,0.035l-0.018,2057.22l-4134.57,0Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M12959.5,32570l0.034,-14390.7l7787.4,0.018l0,2057.24l-5399,-0.017l-0.017,4054.29l5017.66,0.017l0,2047.21l-5017.66,-0.018l-0.018,4174.69l5730.16,0.018l0,2057.24l-8118.57,-0.017Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M33766.5,31957.8c-488.421,267.656 -1102.31,478.403 -1841.48,632.223c-739.324,153.819 -1490.23,230.781 -2252.92,230.781c-1391.63,0 -2612.64,-296.042 -3662.9,-888.126c-1050.42,-592.084 -1853.23,-1431.62 -2408.47,-2518.87c-555.4,-1087.12 -832.917,-2336.51 -832.9,-3748.2c0,-1491.82 321.111,-2829.99 963.386,-4014.15c642.258,-1184.15 1540.42,-2098.93 2694.5,-2744.64c1154.05,-645.573 2433.58,-968.403 3838.51,-968.403c602.101,0 1227.61,50.173 1876.6,150.538c648.837,100.347 1190.75,247.587 1625.71,441.563l0,2428.54c-1023.61,-602.101 -2167.64,-903.177 -3432.09,-903.177c-983.456,-0.018 -1861.55,224.219 -2634.27,672.361c-772.709,448.282 -1369.81,1085.52 -1791.32,1911.72c-421.476,826.337 -632.24,1788 -632.24,2885.14c0,1592.35 434.809,2853.47 1304.6,3783.34c869.636,929.983 2030.42,1394.93 3482.26,1394.95c1411.53,0 2645.89,-337.778 3703.04,-1013.58l-0.017,2267.99Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M45792.7,32570l0.017,-6231.93l-6723.67,-0.018l-0.018,6231.93l-2388.4,-0.017l0.017,-14390.7l2388.42,0l-0.017,6051.31l6723.67,0.034l0.018,-6051.31l2398.44,0l-0.035,14390.7l-2398.44,0Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M56979.7,32570l0.052,-14390.7l2388.39,0l-0.034,12333.4l5629.85,0.018l-0.018,2057.24l-8018.24,-0.017Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M73010.1,20337l-60.191,0c-46.91,401.407 -117.153,746.06 -210.747,1033.63l-1966.95,5549.54l4415.54,0.017l-1976.93,-5549.55c-66.979,-173.889 -133.924,-518.368 -200.729,-1033.63m4174.69,12233.1l-1314.65,-3632.78l-5760.25,-0.017l-1254.44,3632.78l-2609.17,-0.017l5449.21,-14390.7l2649.34,0.017l5469.21,14390.7l-2629.24,-0.017Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M89040.3,28315.3c0,-688.976 -247.57,-1227.61 -742.605,-1615.68c-495.174,-387.935 -1234.32,-582.05 -2217.8,-582.05l-1806.36,0l-0.018,4475.72l2017.09,0.017c856.286,0 1528.68,-205.694 2017.14,-617.136c488.282,-411.458 732.553,-964.983 732.553,-1660.87m-682.379,-6372.45c0,-568.542 -212.448,-1008.52 -637.24,-1319.64c-424.914,-311.094 -1055.43,-466.632 -1891.67,-466.632l-1555.45,0l-0.017,3984.01l1535.4,0c809.41,0 1436.62,-188.941 1881.63,-566.98c444.844,-377.882 667.344,-921.528 667.344,-1630.77m3211.29,6432.68c0,1257.87 -463.351,2271.43 -1389.9,3040.7c-926.702,769.445 -2122.47,1154.06 -3587.64,1154.06l-4706.55,-0.017l0.034,-14390.7l4546.01,0.018c1378.13,0 2465.23,297.76 3261.46,893.143c796.077,595.556 1194.2,1401.65 1194.2,2418.54c0,776.164 -237.552,1465.16 -712.518,2067.24c-475.104,602.136 -1100.57,1023.61 -1876.6,1264.46l0,40.139c1023.6,133.924 1824.69,511.824 2403.46,1134.01c578.594,622.17 868.056,1414.98 868.039,2378.37" style="fill:#fff;fill-rule:nonzero;"/>
+</g></svg>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  document.querySelectorAll('h3 button[aria-controls]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      document.getElementById(btn.getAttribute('aria-controls')).hidden = expanded;
+    });
+  });
+}());
+</script>
+</body>
+</html>

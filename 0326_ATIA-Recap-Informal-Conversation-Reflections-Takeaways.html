@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>Session 4: ATIA Recap &amp; Informal Conversation – Reflections, Takeaways, and What Stuck With Us</title>
+<style>
+:root {
+  --fg: #1f2328;
+  --fg-muted: #1a1e23;
+  --canvas: #ffffff;
+  --canvas-subtle: #f6f8fa;
+  --border: #d0d7de;
+  --accent: #0550ae;
+  --accent-hover: #033d8b;
+  --btn-bg: #f6f8fa;
+  --btn-hover: #eaeef2;
+  --radius: 6px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg: #e6edf3;
+    --fg-muted: #c9d1d9;
+    --canvas: #0d1117;
+    --canvas-subtle: #161b22;
+    --border: #30363d;
+    --accent: #79c0ff;
+    --accent-hover: #a5d6ff;
+    --btn-bg: #21262d;
+    --btn-hover: #30363d;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 24px 16px 64px;
+  background: var(--canvas);
+  color: var(--fg);
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Global focus indicator (WCAG 2.4.12/13 AAA) */
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+:focus:not(:focus-visible) { outline: none; }
+
+main, footer {
+  max-width: 1012px;
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--fg);
+}
+h1 {
+  font-size: 2rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.4em;
+  margin-top: 0;
+}
+h2 {
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.3em;
+}
+h3 { font-size: 1.125rem; margin: 0.75em 0 0; }
+
+p { margin: 0.75em 0; }
+ul { padding-left: 1.5em; margin: 0.5em 0; }
+li { margin: 0.35em 0; }
+
+a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+a:hover { color: var(--accent-hover); }
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: var(--canvas-subtle);
+  padding: 0.2em 0.4em;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+blockquote {
+  margin: 0.75em 0;
+  padding: 0 1em;
+  border-left: 4px solid var(--border);
+  color: var(--fg-muted);
+}
+blockquote p { margin: 0.5em 0; }
+
+footer {
+  margin-top: 2em;
+  padding-top: 1em;
+  padding-right: 170px;
+  border-top: 1px solid var(--border);
+}
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2em;  
+}
+
+/* Disclosure button — wraps H3 text */
+h3 button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--btn-bg);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-family: var(--font);
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.1s ease, border-color 0.1s ease;
+}
+h3 button:hover {
+  background: var(--btn-hover);
+  border-color: var(--accent);
+}
+h3 button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Chevron indicator */
+.disclosure-icon {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+  margin-right: 2px;
+}
+h3 button[aria-expanded="true"] .disclosure-icon {
+  transform: rotate(135deg);
+}
+
+/* Collapsible content region */
+[role="region"] {
+  padding: 14px 16px 16px;
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 var(--radius) var(--radius);
+  background: var(--canvas);
+}
+[role="region"] > *:first-child { margin-top: 0; }
+[role="region"] > *:last-child { margin-bottom: 0; }
+
+/* Table */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.9375rem;
+  overflow-x: auto;
+  display: block;
+}
+thead { position: sticky; top: 0; }
+th, td {
+  padding: 8px 13px;
+  border: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+th {
+  background: var(--canvas-subtle);
+  font-weight: 600;
+}
+tr:nth-child(2n) td { background: var(--canvas-subtle); }
+td a { word-break: break-all; }
+
+/* Video embed */
+.video-wrapper {
+  margin: 1.5em 0;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #000;
+}
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+figcaption {
+  font-size: 0.875rem;
+  color: var(--fg-muted);
+  margin-top: 0.4em;
+}
+</style>
+</head>
+<body>
+<main id="main-content">
+<h1>Session 4: ATIA Recap &amp; Informal Conversation – Reflections, Takeaways, and What Stuck With Us</h1>
+<p><strong>Date:</strong> Friday, March 27, 2026 | 3:30–5:15 PM</p>
+<h2>Summary</h2>
+<p>This informal, conversational session brought together AT specialists, SLPs, OTs, educators, researchers, and Microsoft staff to share personal reflections from ATIA 2026, discuss the state of AI in education and AT, explore conference culture, and surface ideas around transition, regional collaboration, and community building. The tone was candid, collegial, and wide-ranging.</p>
+<figure aria-label="Session recording video">
+<div class="video-wrapper">
+<iframe
+  src="https://www.youtube-nocookie.com/embed/sDrqEIHMikA"
+  title="Session 4: ATIA Recap &amp; Informal Conversation – Reflections, Takeaways, and What Stuck With Us"
+  loading="lazy"
+  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen></iframe>
+</div>
+<figcaption>Session 4 recording — ATIA Recap &amp; Informal Conversation – Reflections, Takeaways, and What Stuck With Us</figcaption>
+</figure>
+<h2>Thematic Breakdown</h2>
+
+<h3><button type="button" aria-expanded="false" aria-controls="section-1-content" id="section-1-btn">1: ATIA Conference Reflections<span aria-hidden="true" class="disclosure-icon"></span></button></h3>
+<div id="section-1-content" role="region" aria-labelledby="section-1-btn" hidden>
+<ul>
+<li><strong>Amy Connolly</strong> couldn't attend in person (sick both this year and last) but engaged deeply with the virtual experience, downloading handouts and watching recordings. She highlighted a session by <strong>Glenna Wright Gallo from Everway</strong> on AT policy and systems durability — how to make AT access consistent across transitions — as a standout, freely available recording.</li>
+<li><strong>Bryce</strong> reflected on the contrast between educator-led sessions (packed, discussion-based, informal) versus the pressure on Microsoft to be a "pitch" presence. He noted Apple's model of turning their sponsor room into a demo/help center inspired Microsoft and Amazon to follow suit. He expressed a preference for being "just Bryce" rather than "Microsoft" at these events.</li>
+<li><strong>Lesley Rytel</strong> and <strong>Jasmine Pielemeier</strong> attended but paid out of pocket (thousands of dollars), underscoring funding barriers for school district staff.</li>
+<li>ATIA is moving to <strong>Las Vegas in 2029</strong>, with the group noting the irony of Vegas in January alongside CES (Consumer Electronics Show).</li>
+</ul>
+</div>
+
+<h3><button type="button" aria-expanded="false" aria-controls="section-2-content" id="section-2-btn">2: Adult Learning &amp; Presentation Style<span aria-hidden="true" class="disclosure-icon"></span></button></h3>
+<div id="section-2-content" role="region" aria-labelledby="section-2-btn" hidden>
+<ul>
+<li>Discussion surfaced around how <strong>educators prefer participatory, discussion-based learning</strong> over passive "sit and get" formats — attention spans of 5–10 minutes were cited. Amy connected this to a session on <strong>MTSS (Multi-Tiered Support Systems) and AT</strong> from Mesa, Arizona, which modeled problem-solving with teachers rather than talking at them.</li>
+<li>Bryce noted the tension: informal discussion works for educators, but attendees often expect Microsoft to deliver authoritative information. Leslie reframed this as "teach me, not sell me."</li>
+</ul>
+</div>
+
+<h3><button type="button" aria-expanded="false" aria-controls="section-3-content" id="section-3-btn">3: AI in Education &amp; AT — Excitement and Trepidation<span aria-hidden="true" class="disclosure-icon"></span></button></h3>
+<div id="section-3-content" role="region" aria-labelledby="section-3-btn" hidden>
+<ul>
+<li>The group described the AI sentiment at ATIA as a <strong>microcosm of the broader conversation</strong>: excitement tempered by IT/privacy restrictions and slow district adoption.</li>
+<li><strong>Linda Hicks-Green</strong> shared that she participates in a <strong>monthly AI roundtable</strong> (hosted via PD Enroller) as the only AT person in a consortium of districts and ESDs. She highlighted <strong>Peninsula School District (Gig Harbor)</strong> as an early AI adopter with strong framing around expectations. She shared links to the roundtable in chat.</li>
+<li><strong>Elyse Reynolds</strong> noted a <strong>return to pen/paper tasks</strong> in some schools due to fears of cheating and distraction. Amy raised concerns about how accessibility settings would be preserved with fewer or shared devices.</li>
+<li><strong>Alexander Liddell</strong> is building <strong>AI agents for blind/low vision users</strong> for resource modifications, with guardrails and privacy policies (e.g., auto-redacting reports before processing).</li>
+<li>A researcher (<strong>Brennen</strong>, UW Create Lab / UW Employment Program) shared work on a <strong>free 3D-printable AAC task bracelet</strong> (inspired by Q Charm), developed at a Husky Adapt hackathon at Bellevue Library Makerspace, designed for job coaches supporting clients with cognitive disabilities.</li>
+<li>Concern was raised about a client with a cognitive disability who became emotionally dependent on a free AI chatbot in an unhealthy way. <strong>Jazette Johnson, PhD</strong> (jazettej@uw.edu) was recommended as a resource for AI literacy workshops tailored to people with cognitive disabilities and older adults with dementia.</li>
+<li>Bryce shared that his manager <strong>Dave Dame</strong> now navigates his computer entirely through AI agents (having transitioned from Dragon/Voice Access), with dramatically increased output — though the group noted occasional "uncanny valley" AI-written emails.</li>
+</ul>
+</div>
+
+<h3><button type="button" aria-expanded="false" aria-controls="section-4-content" id="section-4-btn">4: Transition: The K–12 to Post-Secondary Gap<span aria-hidden="true" class="disclosure-icon"></span></button></h3>
+<div id="section-4-content" role="region" aria-labelledby="section-4-btn" hidden>
+<ul>
+<li><strong>Andrea Mano</strong> gave a compelling overview of the <strong>school-to-college/employment transition cliff</strong>: students lose AT devices (especially AAC, which is medically funded), lose institutional support, and face a fragmented funding landscape (DVR, DSB, ABLE accounts). Her program (UW) works with 15–20 students/year (juniors through post-graduation) and provides Windows laptops.</li>
+<li>The group discussed <strong>SETC</strong> hosting a transition-focused event (previously done with DVR speakers), and <strong>WISE</strong> (adult supported employment technical assistance) as a partner to bridge the gap between K–12 and adult services.</li>
+<li><strong>Microsoft Ability Summit</strong> (May 19–20, 2026) was identified as a potential future venue for transition-focused conversation, though too late for this year. Bryce invited attendees to visit the Inclusive Tech Lab presence there.</li>
+<li>Bryce also mentioned the <strong>King County Transition Fair with WATAP</strong> as another upcoming event.</li>
+</ul>
+</div>
+
+<h3><button type="button" aria-expanded="false" aria-controls="section-5-content" id="section-5-btn">5: Regional Collaboration &amp; Conference Access<span aria-hidden="true" class="disclosure-icon"></span></button></h3>
+<div id="section-5-content" role="region" aria-labelledby="section-5-btn" hidden>
+<ul>
+<li>The group brainstormed a "tech lab crawl" — a party bus visiting Microsoft Inclusive Tech Lab, Amazon's new accessibility lab (near The Sphere), and potentially Apple and Google — as a low-cost local alternative to flying to Florida.</li>
+<li>An ATIA <strong>watch party at the Microsoft Inclusive Tech Lab</strong> was proposed as a way to bring access to school district staff who can't afford to attend in person.</li>
+<li><strong>Kirsten Ellis</strong> (joining from Australia at 5am) spoke to the geographic isolation felt by practitioners outside the US — she values these sessions as a way to "eavesdrop" on the field and noted she once demonstrated <strong>TapeBlock</strong> (accessible circuit making) at the Microsoft Inclusive Tech Lab/UW Create Lab. She shared TapeBlock.com in chat.</li>
+<li><strong>NCCE (Northwest Council for Computer Education)</strong> was flagged by Lesley as a local conference (usually Seattle) that reaches IT and librarians but lacks AT/SLP/OT perspective — a gap worth filling.</li>
+<li><strong>CAST</strong> monthly roundtables and their <strong>Mighty Networks</strong> community (including an AT &amp; AI group) were mentioned as accessible ongoing resources with an international perspective.</li>
+</ul>
+</div>
+
+<h3><button type="button" aria-expanded="false" aria-controls="section-6-content" id="section-6-btn">6: Resources<span aria-hidden="true" class="disclosure-icon"></span></button></h3>
+<div id="section-6-content" role="region" aria-labelledby="section-6-btn" hidden>
+<table>
+<thead>
+<tr>
+<th scope="col">Resource</th>
+<th scope="col">URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WISE – Promoting Equitable Employment</td>
+<td><a href="https://gowise.org/">https://gowise.org/</a></td>
+</tr>
+<tr>
+<td>Everway Funding Strategies Playbook</td>
+<td><a href="https://www.everway.com/guides/funding-strategies-playbook/">https://www.everway.com/guides/funding-strategies-playbook/</a></td>
+</tr>
+<tr>
+<td>AI Roundtable (PD Enroller / ESD112)</td>
+<td><a href="https://www.pdenroller.org/esd112/catalog/186916">https://www.pdenroller.org/esd112/catalog/186916</a></td>
+</tr>
+<tr>
+<td>TapeBlock (accessible circuit making)</td>
+<td><a href="https://www.TapeBlock.com">https://www.TapeBlock.com</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3><button type="button" aria-expanded="false" aria-controls="section-7-content" id="section-7-btn">7: Action Items &amp; Follow-Ups<span aria-hidden="true" class="disclosure-icon"></span></button></h3>
+<div id="section-7-content" role="region" aria-labelledby="section-7-btn" hidden>
+<table>
+<thead>
+<tr>
+<th scope="col">Item</th>
+<th scope="col">Owner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Share AI monthly roundtable Zoom link in chat</td>
+<td>Linda Hicks-Green</td>
+</tr>
+<tr>
+<td>Follow up with CAST about monthly roundtables</td>
+<td>Bryce Johnson</td>
+</tr>
+<tr>
+<td>Explore SETC transition-focused event (revive DVR speaker format)</td>
+<td>Amy Connolly / SETC group</td>
+</tr>
+<tr>
+<td>Connect with Kristin Leslie about transition topics within IPTN</td>
+<td>Amy Connolly → Andrea Mano</td>
+</tr>
+<tr>
+<td>Attend Microsoft Ability Summit (May 19–20) and connect with organizers about transition programming</td>
+<td>Group</td>
+</tr>
+<tr>
+<td>Explore WISE / SETC joint transition event</td>
+<td>Bryce Johnson / Andrea Mano</td>
+</tr>
+<tr>
+<td>Reach out to Jazette Johnson (<a href="mailto:jazettej@uw.edu">jazettej@uw.edu</a>) re: AI literacy resources</td>
+<td>Brennen / Group</td>
+</tr>
+<tr>
+<td>Investigate "tech lab crawl" / party bus concept with Amazon, Microsoft, others</td>
+<td>Bryce Johnson</td>
+</tr>
+<tr>
+<td>Follow up on Bellevue Library Makerspace TapeBlock event</td>
+<td>Bryce Johnson / Kirsten Ellis</td>
+</tr>
+<tr>
+<td>Look up Alex Liddell for BETT conference presentation (next year)</td>
+<td>Bryce Johnson</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</main>
+<footer>
+  <ul>
+    <li><a href="https://inclusivetechlab.github.io/web/0326_Remote-Inclusive-Tech Lab-Tour-for-Educators.html">Session 1: Remote Inclusive Tech Lab Tour for Educators — Inclusive Technology in Practice</a></li>
+    <li><a href="https://inclusivetechlab.github.io/web/0326_AAC-as-Student-Voice-Communication-Identity-and-Belonging.html">Session 2: AAC as Student Voice: Communication, Identity, and Belonging in Schools</a></li>
+    <li><a href="https://inclusivetechlab.github.io/web/0326_Built-In-Accessibility-as-Instructional-Infrastructure-Literacy.html">Session 3: Built In Accessibility as Instructional Infrastructure Literacy, Security, and Scalable Support Across Schools</a></li>
+    <li><strong>Session 4: ATIA Recap & Informal Conversation – Reflections, Takeaways, and What Stuck With Us</strong></li>
+  </ul>
+    
+<svg width="140px" height="50px" viewBox="0 0 91571 32821" version="1.1" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;" id="ITLlogo" aria-labelledby="ITLTitle" role="img"><title id="ITLTitle">Inclusive Tech Lab</title>
+<g><rect x="39.023" y="240.752" width="1685.99" height="14390.7" style="fill:#fff;"/>
+<path d="M16893.6,14631.5l-2047.21,0l-7426.13,-11470.4c-174.028,-267.518 -324.566,-568.577 -451.563,-903.213l-60.226,0c53.472,307.831 80.295,966.859 80.295,1976.98l-0.034,10396.6l-1685.96,0l0.053,-14390.7l2187.71,0l7205.35,11289.8l582.031,963.386l40.139,0c-66.944,-414.74 -100.364,-1120.5 -100.364,-2117.45l0.034,-10135.7l1675.9,0l-0.034,14390.7Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M30255.8,14039.5c-1057.14,561.98 -2378.34,842.935 -3963.93,842.935c-1331.42,0 -2512.28,-297.604 -3542.47,-893.126c-1030.37,-595.417 -1824.88,-1440.09 -2383.39,-2533.94c-558.698,-1093.86 -837.969,-2343.27 -837.952,-3748.2c0,-1465.16 311.094,-2788.11 933.299,-3968.96c622.188,-1180.73 1495.26,-2098.98 2619.22,-2754.71c1123.94,-655.591 2384.97,-983.455 3783.32,-983.455c1358.07,0 2488.75,197.413 3391.93,592.101l0,1786.29c-1030.33,-575.296 -2167.62,-863.056 -3412,-863.056c-1083.8,-0.018 -2047.21,250.885 -2890.18,752.639c-842.987,501.771 -1496.98,1217.73 -1961.89,2147.55c-465.087,930.001 -697.483,1993.75 -697.483,3191.24c-0.018,1137.47 217.326,2144.29 652.292,3020.66c434.827,876.511 1050.26,1550.44 1846.51,2022.12c796.077,471.65 1706.01,707.5 2729.59,707.5c1445.11,0 2689.5,-321.128 3733.15,-963.368l-0.018,1645.78Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M40457,14631.6l-7466.29,-0.018l0.035,-14390.7l1685.97,0l-0.034,12865.3l5780.32,0.017l0,1525.38Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M52705.2,8811.11c-0.017,4047.7 -1823.14,6071.38 -5469.26,6071.36c-3492.31,-0.017 -5238.46,-1946.88 -5238.44,-5840.58l0.017,-8801l1685.94,0.018l-0.017,8700.63c0,2943.82 1247.66,4415.58 3743.18,4415.58c2394.98,0.017 3592.64,-1425.02 3592.66,-4275.06l0.017,-8841.14l1685.92,0.017l-0.018,8570.16Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M63438.2,10998.9c0,1210.95 -428.229,2161.04 -1284.52,2850.02c-856.476,689.15 -2020.57,1033.63 -3492.33,1033.61c-535.296,0 -1139.01,-88.733 -1811.34,-265.92c-672.379,-177.188 -1149.08,-362.848 -1430.05,-556.963l0,-1997.05c408.004,368.021 944.88,675.834 1610.68,923.282c665.625,247.57 1286.1,371.303 1861.55,371.303c1846.5,0.017 2769.74,-719.098 2769.74,-2157.59c0,-602.136 -197.413,-1118.94 -592.066,-1550.49c-394.827,-431.494 -1204.24,-998.508 -2428.56,-1700.97c-1184.15,-668.907 -2013.79,-1304.62 -2488.74,-1906.72c-475.122,-602.136 -712.5,-1334.69 -712.483,-2197.74c0,-1137.29 424.757,-2062.26 1274.48,-2774.78c849.532,-712.501 1946.84,-1068.75 3291.58,-1068.75c1291.09,0.017 2234.45,170.625 2829.95,511.806l0,1886.67c-749.341,-588.664 -1722.78,-883.143 -2920.3,-883.143c-796.216,0 -1446.79,199.132 -1951.84,597.101c-505.227,398.143 -757.692,924.966 -757.692,1580.56c0,475.122 75.26,856.476 225.799,1144.05c150.538,287.726 404.705,572.014 762.691,853.021c357.813,280.955 961.668,659.029 1811.37,1133.96c1271.01,709.236 2160.87,1378.32 2669.39,2007.09c508.351,628.941 762.691,1351.48 762.674,2167.66" style="fill:#fff;fill-rule:nonzero;"/><rect x="66102.8" y="240.981" width="1685.99" height="14390.7" style="fill:#fff;"/>
+<path d="M82054.2,241.048l-5318.77,14390.7l-1846.5,0l-5228.39,-14390.7l1876.62,0l3984.01,11410.2c133.75,401.406 230.782,826.355 291.007,1274.48l40.139,0c33.403,-327.726 143.785,-759.254 331.181,-1294.55l4064.33,-11390.1l1806.37,0Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M91552.8,14631.8l-7626.88,-0.035l0.034,-14390.7l7295.7,0.017l-0.018,1525.38l-5609.71,-0.017l-0.017,4786.84l5198.3,0.017l0,1525.38l-5198.3,-0.017l-0.018,5027.69l5940.91,0.017l0,1525.38Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M6532.99,20236.5l-0.035,12333.4l-2408.46,0l0.017,-12333.4l-4124.52,-0.017l0,-2057.24l10667.6,0.035l-0.018,2057.22l-4134.57,0Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M12959.5,32570l0.034,-14390.7l7787.4,0.018l0,2057.24l-5399,-0.017l-0.017,4054.29l5017.66,0.017l0,2047.21l-5017.66,-0.018l-0.018,4174.69l5730.16,0.018l0,2057.24l-8118.57,-0.017Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M33766.5,31957.8c-488.421,267.656 -1102.31,478.403 -1841.48,632.223c-739.324,153.819 -1490.23,230.781 -2252.92,230.781c-1391.63,0 -2612.64,-296.042 -3662.9,-888.126c-1050.42,-592.084 -1853.23,-1431.62 -2408.47,-2518.87c-555.4,-1087.12 -832.917,-2336.51 -832.9,-3748.2c0,-1491.82 321.111,-2829.99 963.386,-4014.15c642.258,-1184.15 1540.42,-2098.93 2694.5,-2744.64c1154.05,-645.573 2433.58,-968.403 3838.51,-968.403c602.101,0 1227.61,50.173 1876.6,150.538c648.837,100.347 1190.75,247.587 1625.71,441.563l0,2428.54c-1023.61,-602.101 -2167.64,-903.177 -3432.09,-903.177c-983.456,-0.018 -1861.55,224.219 -2634.27,672.361c-772.709,448.282 -1369.81,1085.52 -1791.32,1911.72c-421.476,826.337 -632.24,1788 -632.24,2885.14c0,1592.35 434.809,2853.47 1304.6,3783.34c869.636,929.983 2030.42,1394.93 3482.26,1394.95c1411.53,0 2645.89,-337.778 3703.04,-1013.58l-0.017,2267.99Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M45792.7,32570l0.017,-6231.93l-6723.67,-0.018l-0.018,6231.93l-2388.4,-0.017l0.017,-14390.7l2388.42,0l-0.017,6051.31l6723.67,0.034l0.018,-6051.31l2398.44,0l-0.035,14390.7l-2398.44,0Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M56979.7,32570l0.052,-14390.7l2388.39,0l-0.034,12333.4l5629.85,0.018l-0.018,2057.24l-8018.24,-0.017Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M73010.1,20337l-60.191,0c-46.91,401.407 -117.153,746.06 -210.747,1033.63l-1966.95,5549.54l4415.54,0.017l-1976.93,-5549.55c-66.979,-173.889 -133.924,-518.368 -200.729,-1033.63m4174.69,12233.1l-1314.65,-3632.78l-5760.25,-0.017l-1254.44,3632.78l-2609.17,-0.017l5449.21,-14390.7l2649.34,0.017l5469.21,14390.7l-2629.24,-0.017Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M89040.3,28315.3c0,-688.976 -247.57,-1227.61 -742.605,-1615.68c-495.174,-387.935 -1234.32,-582.05 -2217.8,-582.05l-1806.36,0l-0.018,4475.72l2017.09,0.017c856.286,0 1528.68,-205.694 2017.14,-617.136c488.282,-411.458 732.553,-964.983 732.553,-1660.87m-682.379,-6372.45c0,-568.542 -212.448,-1008.52 -637.24,-1319.64c-424.914,-311.094 -1055.43,-466.632 -1891.67,-466.632l-1555.45,0l-0.017,3984.01l1535.4,0c809.41,0 1436.62,-188.941 1881.63,-566.98c444.844,-377.882 667.344,-921.528 667.344,-1630.77m3211.29,6432.68c0,1257.87 -463.351,2271.43 -1389.9,3040.7c-926.702,769.445 -2122.47,1154.06 -3587.64,1154.06l-4706.55,-0.017l0.034,-14390.7l4546.01,0.018c1378.13,0 2465.23,297.76 3261.46,893.143c796.077,595.556 1194.2,1401.65 1194.2,2418.54c0,776.164 -237.552,1465.16 -712.518,2067.24c-475.104,602.136 -1100.57,1023.61 -1876.6,1264.46l0,40.139c1023.6,133.924 1824.69,511.824 2403.46,1134.01c578.594,622.17 868.056,1414.98 868.039,2378.37" style="fill:#fff;fill-rule:nonzero;"/>
+</g></svg>
+</footer>
+<script>
+(function () {
+  'use strict';
+  document.querySelectorAll('h3 button[aria-controls]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      document.getElementById(btn.getAttribute('aria-controls')).hidden = expanded;
+    });
+  });
+}());
+</script>
+</body>
+</html>
