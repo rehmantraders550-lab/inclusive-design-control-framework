@@ -31,6 +31,8 @@ This branch is the derived-work layer for the mirrored InclusiveTechLab source a
 - `FLUENT_ACCORDION_COMPONENT_CONTRACT.yaml` — source-native accordion state, semantic, sizing, and motion contract extracted from the supplied Fluent UI React snapshot.
 - `FLUENT_ACCORDION_ORVIA_MAPPING.md` — ORVIA mapping for disclosure behavior, semantic hierarchy, navigation-pattern fit, component sizing, and collapse motion.
 
+- `ORVIA_UMBRELLA_INTAKE_LOG_2026-09-24.md` — preservation log covering all current ORVIA research streams before later restructuring.
+
 ## Critical provenance rule
 
 A source-native number, an implementation example, a WCAG criterion, an architecture pattern, a design-system rule, a platform token, a visual example, an ORVIA synthesis, and an ORVIA orchestration score are different evidence types. They must never be silently merged.
