@@ -24,10 +24,12 @@ This branch is the derived-work layer for the mirrored InclusiveTechLab source a
 - `DEVTOOLS_ARCHITECTURE_MAP.yaml` — machine-readable diagnostic architecture map.
 - `MATERIAL_DENSITY_SOURCE_RECORD.yaml` — source-native Material 2 density rules, quantitative values, applicability and relationship candidates.
 - `MATERIAL_DENSITY_MAPPING.md` — human-readable mapping from Material's density model to ORVIA `VISUAL_DENSITY`.
+- `MATERIAL_COMPONENTS_ANDROID_IMPLEMENTATION_RECORD.yaml` — Material 3 Android implementation tokens for motion, shape, elevation, state feedback, touch targets, component size classes, and focus examples.
+- `MATERIAL_COMPONENTS_ANDROID_ORVIA_MAPPING.md` — mapping from Material Components Android implementation tokens to ORVIA resolver layers.
 
 ## Critical provenance rule
 
-A source-native number, an implementation example, a WCAG criterion, an architecture pattern, a design-system rule, and an ORVIA orchestration score are different evidence types. They must never be silently merged.
+A source-native number, an implementation example, a WCAG criterion, an architecture pattern, a design-system rule, a platform token, and an ORVIA orchestration score are different evidence types. They must never be silently merged.
 
 ## Current first-pass scope
 
@@ -53,7 +55,12 @@ This pass focuses on:
 - grid/component density coupling;
 - touch-target density constraints;
 - typographic line-height density;
-- context-dependent density applicability.
+- context-dependent density applicability;
+- motion duration/easing/spring token resolution;
+- shape/corner token resolution;
+- elevation/depth token resolution;
+- interaction-state feedback tokens;
+- coordinated component-size classes.
 
 ## Next validation stages
 
@@ -64,6 +71,8 @@ The current records are intentionally conservative. Next passes should:
 - compare legacy Material 2 density guidance against current Material guidance;
 - implement measurement adapters before inventing additional dials;
 - build a composite evidence model for `VISUAL_DENSITY`;
+- build token resolvers for motion, shape, surface depth, and state feedback;
+- test whether `MOTION_SCHEME`, `MOTION_SPEED_CLASS`, and `COMPONENT_SIZE_CLASS` remain independently useful across non-Material systems;
 - connect normalized evidence to token/component/responsive resolvers;
 - test implementation consequences;
 - identify dependency/collision rules;

@@ -120,3 +120,30 @@ sources:
       - "A current Material Design density specification supersedes this legacy guidance"
       - "ORVIA visual-density measurement model changes"
       - "Accessibility target-size rules are promoted to hard guardrails"
+
+  - id: MATERIAL_COMPONENTS_ANDROID_MASTER_2026_09_24
+    title: "Material Components for Android"
+    canonical_url: "https://github.com/material-components/material-components-android"
+    source_class: IMPLEMENTATION_LIBRARY
+    provenance_scope: "First-party Android implementation evidence for Material 3 system tokens and component contracts, including motion durations/easings/springs, shape scale, elevation scale, interaction-state opacity, minimum touch target, component size coupling, and focus-ring implementation examples."
+    upstream_branch: master
+    upstream_commit: "60ff09436d5d477a4b9d02940f31eb01e1250620"
+    token_version_observed: "34.0.0"
+    evidence_files:
+      - "lib/java/com/google/android/material/motion/res/values/tokens.xml"
+      - "lib/java/com/google/android/material/elevation/res/values/tokens.xml"
+      - "lib/java/com/google/android/material/shape/res/values/tokens.xml"
+      - "lib/java/com/google/android/material/resources/res/values/tokens.xml"
+      - "lib/java/com/google/android/material/resources/res/values/dimens.xml"
+      - "lib/java/com/google/android/material/button/res/values/tokens.xml"
+      - "lib/java/com/google/android/material/checkbox/res/values/styles.xml"
+      - "lib/java/com/google/android/material/radiobutton/res/values/styles.xml"
+      - "lib/java/com/google/android/material/focus/FocusRingDrawable.java"
+    authority_note: "This repository is first-party implementation evidence. Generated Android token values are strong evidence for Material's Android implementation but must not be treated as universal web, iOS, accessibility, or ORVIA thresholds without cross-platform validation."
+    implementation_caution:
+      - "API-specific Android resource overrides can intentionally differ from base token values to compensate for platform rendering behavior such as RippleDrawable alpha."
+      - "Component tokens describe coordinated systems; isolated numeric copying can break the intended relationships."
+    revalidation_trigger:
+      - "Upstream Material Components token set changes"
+      - "Generated token version changes"
+      - "ORVIA motion, shape, surface-depth, or state-feedback resolver changes"
