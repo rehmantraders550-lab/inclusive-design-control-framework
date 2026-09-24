@@ -104,3 +104,19 @@ sources:
       - "Upstream DevTools architecture materially changes"
       - "A cited source file is moved, replaced, or its behavior changes"
       - "ORVIA diagnostic schema is revised"
+
+  - id: MATERIAL_M2_APPLYING_DENSITY_2026_09_24
+    title: "Material Design 2 — Applying density"
+    canonical_url: "https://m2.material.io/design/layout/applying-density.html#components"
+    source_class: OFFICIAL_DESIGN_SYSTEM
+    provenance_scope: "Material 2 guidance for component-density scale, component/grid coupling, spacing behavior, accessibility touch targets, typography density, and density applicability."
+    version_scope: "Material Design 2 (legacy generation)"
+    retrieval_note: "The canonical page is JavaScript-rendered. Source-native claims were recovered from indexed copies of the page and cross-checked against Google's Material Design / Google Design density documentation."
+    corroborating_sources:
+      - "https://medium.com/google-design/using-material-density-on-the-web-59d85f1918f0"
+      - "https://m2.material.io/design/components/text-fields.html"
+    authority_note: "Treat as first-party Material 2 design-system guidance, not as a universal UI law and not automatically as current Material 3 guidance. Accessibility thresholds require independent normative cross-check before ORVIA hard-guardrail promotion."
+    revalidation_trigger:
+      - "A current Material Design density specification supersedes this legacy guidance"
+      - "ORVIA visual-density measurement model changes"
+      - "Accessibility target-size rules are promoted to hard guardrails"
