@@ -1,0 +1,1760 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solve for One, Extend to many examples for Games</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+<style>
+body {font: 1rem/1.1 sans-serif; margin:2rem;}
+article {border: 1px solid #ccc; border-radius: 5px; padding: 1rem; margin: 1rem 0;}
+dl {display: grid; grid-template-columns: max-content 1fr; column-gap: 0.5rem; row-gap: 0.5rem; align-items: baseline;}
+dt {font-weight: bold;}
+dt::after {content: ":"; font-weight: bold; margin-right: 0.25rem;}
+dd {margin: 0; display:inline;}
+</style>
+</head>
+<body>
+<main>
+<!-- Deduped by quality-first rule at threshold 0.83 -->
+<article role="group" class="row" data-row-index="2">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Profound hearing loss → Ear fullness from a cold → TV muted to avoid waking roommates</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Audio-only cues like off-screen warnings, enemy tells, and system alerts are missed when hearing is reduced or sound is off. Captions, visualizers, and haptic signals provide parity.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Stealth objectives fail because whispered NPC callouts and footsteps are inaudible at night.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Ambient noises aren’t captioned; no directional visualizer for threats; controller rumble doesn’t signal critical states like low health or reload.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="3">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Hemianopia (loss of left visual field) → Temporary eye patch → HUD cropped by ultrawide screen edges</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Edge-anchored HUD elements are easily missed when a portion of the field of view is absent or occluded. Repositionable, scalable HUD keeps essentials in view.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Health and ammo live at the far left where the player cannot reliably see them during combat.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">HUD position is fixed; minimap and meters cannot be moved or scaled; no center-weighted layout exists.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="4">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Color vision deficiency (protanopia) → Blue-light filter tint → Outdoor handheld glare</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Hue-only encodings for teams, status, or loot tiers fail when hues merge or displays are tinted. Redundant shapes, labels, and contrast controls preserve meaning.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Team outlines and capture zones look identical in sunlight; the player can’t tell friend from foe.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Affiliation uses color only; no labels, patterns, or outline styles; HUD contrast cannot be increased independently.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="5">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Nyctalopia (night blindness) → Dilated pupils → Dark dungeon on a dim TV</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Low-luminance scenes erase UI and environment detail for many players. High-contrast modes, brightness caps, and UI outlines maintain visibility.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Objective text and path markers vanish in dark caverns and the player gets lost repeatedly.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No high-contrast theme or text outline; brightness slider affects scene but not HUD; navigation markers lack alternative representations.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="6">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Photosensitive epilepsy → Post-migraine light sensitivity → VFX bursts during night session</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Rapid flashes and high-contrast strobe effects can be dangerous or intolerable. Players need intensity sliders, flash filters, and actionable warnings.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A boss fight floods the screen with whiteout damage flashes that immediately trigger discomfort.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No photosensitivity filter; VFX intensity can’t be reduced; reduced-motion preferences are ignored.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="7">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Vestibular disorder (motion sensitivity) → Inner-ear infection → Forced head-bob and motion blur</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Camera sway, blur, and narrow FOV induce nausea. Comfort controls (disable shake/blur, widen FOV) are essential for broad access.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Sprinting and turning cause dizziness; the player can’t continue without easing motion effects.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Head-bob and blur can’t be disabled; FOV is fixed; no comfort preset exists.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="8">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Fine-motor impairment → Finger sprain → Playing a precision platformer on a moving train</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Imprecise input from dexterity limits or motion causes errors. Larger targets, input buffering, and coyote time reduce failure for everyone.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">The player misses tiny jump windows and keeps tapping adjacent UI controls by mistake.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Pixel-perfect jumps are required; no coyote time or input buffering; small, crowded buttons without an enlarged-UI mode.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="9">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">One-handed play (amputation) → Temporary cast → Holding groceries while gaming</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Two-hand chords and simultaneous inputs become impossible. One-hand layouts, full remapping, and toggle-instead-of-hold enable play.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A mobile MOBA demands drag-aim plus face-button taps that can’t be done with one hand.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Controls aren’t remappable; abilities require multi-touch chords; no one-hand or swipe-to-cast mode exists.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="11">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">RSI (repetitive strain) → Post-work wrist fatigue → Rhythm game standing on transit</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">High-frequency taps, long holds, and rotary inputs cause pain and failure. Reduced-input modes and toggle-for-hold lower effort broadly.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A dense chart demands rapid tapping that’s unsustainable while balancing in a bus aisle.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No auto/assist timing; no toggle for sustained notes; success depends on high CPM.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="12">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyspraxia (motor planning) → Cold numb fingertips → Small virtual joystick on phone</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Precise drags and complex gestures increase mistakes when dexterity drops. Tap-confirm flows, bigger hit targets, and undo mitigate errors.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">The player keeps mis-dragging units in a tactics title and can’t reliably end turns.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Drag-to-move is mandatory; no tap-then-confirm; targets are small and crowded; undo is limited.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="16">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyslexia (slow decoding) → Concussion recovery → Ornate fantasy codex while multitasking</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Decorative fonts and long paragraphs slow comprehension when attention or cognition is limited. Readable fonts, narration, and TL;DR summaries broaden access.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Key boss clue is buried in pages of flourish text while the player chats with friends.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No high-readability font; no narration; codex entries lack headings and summaries.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="18">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">ADHD (inattention) → Sleep debt → Streaming while playing</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Hidden objectives and unclear progress cause loops in distractible contexts. Always-visible trackers and breadcrumbing maintain orientation.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">The player loses track of steps while reading chat and replays content unintentionally.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Objective tracker is buried two menus deep; progress meters are hidden; HUD lacks persistent next-step indicators.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="21">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Central auditory processing disorder (CAPD) → Ear congestion → Noisy café session</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Parsing speech in noise is challenging even with normal hearing. Accurate captions, speaker labels, and visual dialogue choice markers support comprehension.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Cinematic exposition is unintelligible under café noise; plot details are missed.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Subtitles lack speaker labels and non-speech cues; dialogue choices rely on audio hints only.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="22">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Prosopagnosia (face blindness) → Low-detail mode enabled → Matching armor silhouettes</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Relying on faces or subtle silhouettes makes team/role identification unreliable. Persistent nameplates, role icons, and outline styles are needed.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">In raids, teammates look similar after reducing graphics detail for performance.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Nameplates fade at distance; no role icons or persistent markers; outline styles don’t vary by team.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="25">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Monocular vision → Eye patch → Glare obscuring HUD edges</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Reduced field of view and depth make edge-placed UI and parallax minimaps difficult to read. Repositionable HUD elements improve access.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Important ammo counts and minimap sit at far corners that are hard to see under lamp glare.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">HUD elements cannot be repositioned or scaled; minimap uses low-contrast tiny icons. No center-weighted alternate layout exists.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="26">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Fine-motor impairment → Finger sprain → Playing on a small touchscreen</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Tiny hit targets and precise gestures cause frequent mis-inputs. Larger targets and gesture alternatives are required.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">In a mobile tactics game, the player keeps selecting the wrong unit or tile due to small touch targets.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No large-UI mode or confirm-move toggle exists; drag gestures are mandatory. Mis-taps are costly and irreversible.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="27">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Hard-of-hearing → Ear congestion → Console muted for late-night gaming</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Audio-only status (e.g., reload clicks, low-health beeps) is missed when sound is low or off. Visual and haptic redundancies convey state reliably.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">During a survival run, the player doesn’t notice low-health warnings without audio and dies unexpectedly.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No on-screen low-health indicators or controller rumble cues exist; reload and stamina are conveyed by sound only.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="28">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Limited reach mobility → Shoulder pain → Playing with TV mounted high</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">UI controls placed at screen extremes and requiring long cursor travel are hard to access. Centralized menus and radial selectors reduce strain.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Navigating inventory requires moving a cursor to distant corners repeatedly, worsening pain.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Menus use distant tab bars and edge-anchored buttons with no quick-jump or radial menu. There is no option to reduce cursor travel.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="29">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Anxiety (time pressure sensitivity) → Rushed schedule → Spotty online connection</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Strict timers, no-pause encounters, and unclear checkpointing increase stress and failure under pressure. Flexible timing and clear recovery paths help.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A player with intermittent internet faces a timed puzzle that fails on disconnect and restarts far back.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No accessibility timer options, no checkpoint on reconnect, and no pause in solo play. Failure wipes significant progress.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="30">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness (screen reader) → Broken glasses → Playing narrative game in the dark</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Non-visual play relies on narrated menus, labeled controls, and audio beacons. Without them, progression halts for many players.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A player attempts to navigate menus and choose dialog options with the TV off to avoid waking others.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Menus are unlabeled for TTS; focus order is illogical; interactable objects lack audio beacons. There is no narration setting for UI or choices.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="31">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness → Cataract recovery → Playing handheld in bright sunlight</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Players cannot rely on visual cues when vision is absent, temporarily blurred, or washed out by glare. Non-visual feedback and strong semantic UI structure are essential to perceive objectives and status.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">On a train at noon, a player tries to progress a story quest on a handheld. Sunlight floods the screen, making HUD elements and quest markers unreadable.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Critical information (objective arrows, enemy tells) is conveyed only visually with low contrast overlays. There is no narration for UI, no scalable HUD, and no robust vibration/audio cues for objectives.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="32">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Profound hearing loss → Ear infection → Dorm with loud roommates</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Audio-only cues like footsteps, dialogue, or timing prompts are inaccessible when hearing is absent, impaired, or masked by noise. Players need captions, visualizers, and haptics as equivalents.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">During a stealth mission, a player cannot hear enemy patrols or whispered hints because of ambient dorm noise.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No subtitles or sound visualization options exist; footstep directionality is audio-only. Tutorial hints are spoken without text, causing repeated mission failure.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="33">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Color vision deficiency → Eye dilation after exam → TV with oversaturated/washed colors</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Color-only indicators for status, team affiliation, or item rarity fail when hues are indistinguishable or screens are miscalibrated. Redundant symbols and labels are required.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">In a team shooter, the player mistakes allies for enemies and cannot parse loot tiers when the living room TV washes out reds and greens.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Enemy outlines and loot rarity use hue alone with low contrast and no patterns or text labels. The game lacks colorblind presets and contrast sliders.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="34">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Low vision (screen magnifier) → Dry-eye flare → Couch far from the TV</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Small, fixed UI text and icons become unreadable at distance or under temporary visual strain. Scalable HUD and text-to-speech are necessary.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">From across the room, a player can’t read inventory descriptions or skill tooltips and misses key mechanics.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">HUD text size is fixed; there is no UI scale slider or narration for menus/tooltips. The font is thin with low contrast on complex backgrounds.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="35">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Tremor (Parkinson’s) → Post-exercise hand fatigue → Commuter playing on a bumpy bus</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Imprecise input leads to missed taps and misfires when tremor, fatigue, or motion is present. Larger targets, input buffers, and generous aim assist reduce failure.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A player attempts a timed quick-time event on a mobile action game while the bus lurches, repeatedly failing the narrow input window.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Buttons are tiny and clustered; QTE timing windows are unforgiving with no accessibility padding. There is no toggle for hold-to-complete or auto-assist for QTEs.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="36">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">One-handed play (amputation) → Sprained thumb → Holding a sleeping baby</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Two-handed chords, simultaneous presses, and distant controls are infeasible. Schemes must support single-hand operation and remapping.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Late at night, a parent tries to clear a puzzle dungeon while holding a baby; reaching shoulder buttons and stick-plus-button combos is impossible.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Controls are not remappable; critical actions require simultaneous bumper+face-button input. No one-hand controller layout or toggle-instead-of-hold option is provided.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="37">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Quadriplegia (no standard controller) → Arm in sling → Broken right joystick</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">When typical pointing or analog control is unavailable, alternative inputs (switch, eye, single-stick) and complete remapping are required.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A player attempts to navigate menus and aim with only one functioning stick after a hardware failure.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Menus require analog navigation and hold-to-confirm; no full remap or single-stick camera/aim mode exists. Switch control and on-screen cursor are unsupported.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="38">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">RSI (repetitive strain injury) → Sore wrists after work → Playing standing on a crowded train</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">High-effort, repetitive button mashing and long holds cause pain and failure. Alternatives such as toggles, turbo/auto actions, and reduced input frequency are needed.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">During an action boss fight, a player can’t sustain repeated mash prompts while balancing on a train.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Mechanics demand rapid-fire button mashing and constant hold-to-aim. There are no toggles, no auto-advance for text, and no reduced-input mode.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="39">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Speech impairment → Sore throat → Quiet household after bedtime</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Voice chat or voice commands cannot be depended on when speech is impaired, painful, or socially inappropriate. Text and ping alternatives are essential.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">In a co-op raid, the player needs to call out mechanics but cannot speak without waking family.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Team communication is voice-only; no quick-ping wheel or robust text chat exists. Command macros and context pings are absent.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="40">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Vestibular disorder (motion sensitivity) → Inner-ear infection → Playing with strong camera shake</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Camera shake, motion blur, and aggressive FOV shifts induce nausea and disorientation. Players need motion reduction controls.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">During firefights, heavy shake and head-bob cause dizziness and force frequent breaks.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Camera shake and motion blur cannot be disabled; FOV is fixed narrow. The game ignores system reduced-motion settings.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="41">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Photosensitive epilepsy → Migraine with aura → Night session with flashing VFX</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Rapid strobing, high-contrast flashes, and full-screen whiteouts are dangerous or intolerable. Players need safety filters and VFX intensity sliders.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A player attempts a dungeon full of flashing traps and screen-wide explosions, leading to immediate discomfort.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No photo sensitivity warning or filter exists; VFX intensity cannot be reduced. Damage effects include rapid high-contrast flicker.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="42">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyslexia → Concussion recovery → Multitasking while reading dense lore and quest logs</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Long, unstructured text and ornate fonts slow comprehension when decoding is difficult or attention is split. Readable fonts, summaries, and narration help.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A player juggling messages tries to parse a multi-page quest log with decorative type and no headings.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Lore and quest text is delivered as long paragraphs in script fonts; there is no TTS, summary TL;DR, or high-readability font option.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="43">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Cognitive disability (short-term memory) → Sleep deprivation → Long crafting chains</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Multi-step tasks are hard to track and resume across sessions. Clear goals, checklists, and pin-to-HUD reduce memory load.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Returning after a break, the player forgets which materials remain for a quest chain and wanders aimlessly.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">There is no quest pinning, no step checklist, and progress resets feedback is unclear. Journal lacks concise summaries.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="44">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Autism (sensitivity to sensory overload) → Post-migraine sensitivity → Noisy living room</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Overly busy HUDs, pop-ups, and animated UI reduce focus and cause overwhelm. Players need quiet modes and notification control.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">During a strategy match, flashing pop-ups and animated reward banners constantly overlap crucial information.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">HUD is cluttered with persistent animated elements and cannot be simplified. Notification filters and quiet mode are absent.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="45">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Tremor (Parkinson’s) → Post-exercise hand fatigue → Playing on a lurching bus</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Imprecise input from tremor, fatigue, or motion causes accidental presses and missed timing windows. Games should offer larger targets, input buffering, aim assistance, and forgiving QTEs.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A timed QTE requires rapid alternating taps; the bus jolts and the player fails repeatedly despite reacting in time.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Buttons are tiny and clustered; QTE has no accessibility padding or hold-to-complete option. Mistaps cause immediate failure without confirm.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="46">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">One-handed play (amputation) → Thumb sprain → Holding a sleeping baby</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Two-handed chords and simultaneous inputs are infeasible when one hand is limited. Full remapping, one-hand modes, and toggle-instead-of-hold enable play.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A parent tries to finish a dungeon while cradling a baby; reaching shoulder buttons plus face buttons is impossible.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Critical actions require bumper+face combos; there is no one-hand layout or toggle for actions normally requiring holds.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="47">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Quadriplegia (no standard controller) → Arm in sling → Right stick broken</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">When analog aiming or pointing is unavailable, alternative inputs and complete remapping are required. Single-stick camera, switch/eye input, or on-screen cursor can unlock access.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">With a failed right stick, the player cannot aim the camera or select targets to progress a story mission.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Camera is bound to the right stick exclusively; menus require analog navigation. No single-stick mode or switch access exists.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="48">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">RSI (repetitive strain injury) → Sore wrists after work → Standing on a crowded train</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">High-effort mashing and long holds cause pain and failure when stamina or posture is limited. Reduced-input modes and toggle options lower effort for everyone.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A boss fight demands rapid button mashing to escape grabs; the player can’t maintain the pace while balancing.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No toggle-for-hold or auto-advance exists; the escape mechanic requires high CPM. Accessibility settings lack reduced input frequency.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="49">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Speech impairment → Laryngitis → Quiet house after bedtime</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Voice chat/commands cannot be assumed; social or physical contexts may prevent speaking. Text chat, ping wheels, and command macros provide parity.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">In co-op, the player needs to mark targets and call interrupts without waking family.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Team communication is voice-only; there is no quick-ping wheel or text chat. Contextual markers are absent.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="50">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Vestibular disorder (motion sensitivity) → Inner-ear infection → Aggressive camera shake</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Large motion, head-bob, and rapid FOV shifts can induce nausea for many players. Motion reduction controls and FOV sliders are necessary.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Explosions trigger full-screen shake that forces breaks and headaches mid-mission.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Camera shake and blur cannot be disabled; FOV is fixed narrow. System reduced-motion setting is ignored.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="51">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Photosensitive epilepsy → Migraine with aura → Night play with flashing VFX</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Rapid strobing and high-contrast flashes pose health risks or severe discomfort. Players need intensity sliders, filters, and warnings.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A dungeon uses screen-wide whiteouts and rapid flicker traps that cause immediate symptoms.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No photosensitivity mode or VFX limiter exists; damage effects include high-frequency flicker. Warning is absent or non-actionable.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="52">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyslexia → Concussion recovery → Reading ornate lore on a second screen</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Unstructured, dense text and decorative fonts slow decoding when attention or cognition is limited. Readable fonts, summaries, and TTS improve comprehension.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">The player skims multi-page codex entries while chatting with friends and misses key quest clues.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Lore is long script paragraphs without headings; there is no TL;DR, high-readability font, or narration option.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="53">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Cognitive disability (short-term memory) → Sleep deprivation → Multi-step crafting chains</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Tasks spanning many steps across sessions are hard to track. Checklists, quest pinning, and on-HUD reminders reduce memory load.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Returning after a week, the player forgets which sub-ingredients are missing for an upgrade.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No pin-to-HUD or step checklist exists; journal lacks concise summaries. Progress feedback is unclear after partial completion.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="54">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Autism (sensitivity to sensory overload) → Post-migraine sensitivity → TV with bright ads nearby</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Busy HUDs, flashing UI, and pop-ups fragment attention and overwhelm. Quiet modes and notification controls support focused play.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">During a tactics match, animated reward pop-ups overlap the map while nearby screens flash advertisements.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">HUD cannot be simplified; notification filters are missing; pop-ups animate persistently without a quiet mode.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="55">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Monocular vision → Eye patch after surgery → Glare obscuring HUD corners</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Reduced field of view makes edge-placed UI and tiny minimaps hard to read. Repositionable, scalable HUD elements mitigate loss at the edges.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Ammo and quest tracker live in far corners partially hidden by lamp glare; the player misses critical info.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">HUD cannot be moved or scaled; minimap icons are tiny and low-contrast. No center-weighted layout exists.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="56">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Fine-motor impairment → Finger sprain → Small touchscreen phone</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Tiny targets and precision gestures cause mis-inputs when dexterity is limited. Large-UI modes and confirm-before-move reduce errors.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">In a mobile tactics game, taps select the wrong tile and misplace units repeatedly.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No large-UI toggle or confirm move exists; drag gestures are required. Undo is limited or unavailable.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="57">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Hard-of-hearing → Congested ears → Console muted for late-night session</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Audio-only status like low-health beeps or reload clicks goes unnoticed when sound is reduced. Visual and haptic redundancies convey state.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">The player dies to chip damage because low-health warnings are inaudible at minimal volume.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No on-screen low-health indicators or rumble cues; stamina/reload are sound-only. HUD lacks configurable alerts.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="58">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Limited reach mobility → Shoulder pain → TV mounted high above fireplace</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Menus requiring long cursor travel to distant corners exacerbate pain and fatigue. Centralized menus and radial selectors minimize reach.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Inventory management forces repeated edge-to-edge cursor movement, increasing discomfort.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Edge-anchored buttons dominate navigation; no quick-jump, radial menu, or grid snapping exists to reduce travel.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="59">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Anxiety (timer stress) → Rushed schedule → Spotty internet during cloud save</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Strict timers and unclear recovery paths increase stress and failure when time or connectivity is limited. Flexible timing and resilient checkpointing help.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A timed puzzle fails on disconnect and reloads far back, erasing hard-won progress.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No accessibility timer options, no offline grace or reconnect checkpoint. Solo play cannot be paused.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="60">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">ADHD (inattention) → Sleep deprivation → Multitasking while streaming</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Distractible contexts magnify the impact of hidden steps and unclear progression. Clear goals, progress meters, and reduced UI clutter keep players oriented.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">While streaming and chatting, the player loses track of quest steps and repeats tasks.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Quest progress is hidden behind multiple menus; the HUD is cluttered and lacks an always-visible objective tracker.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="61">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">PTSD (startle response) → High stress after exams → Playing horror game late at night</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Sudden loud audio spikes and surprise full-screen flashes can be harmful or intolerable. Safety toggles for jump-scare intensity and audio peaks are needed.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A scripted jump-scare uses extreme volume and whiteout flash, causing the player to abandon the session.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No content intensity controls, dynamic range limiter, or brightness clamp for scares. Warnings are generic and non-configurable.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="62">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Tourette syndrome (involuntary tics) → Temporary muscle spasm → Playing on turbulent flight</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Unpredictable inputs and sudden motion cause accidental actions. Sticky targeting, input grace windows, and easy undo prevent costly errors.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">During a platforming section, a tic or turbulence triggers an unintended jump off a ledge.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No input buffering or cancel-to-safe state exists; platforms require pixel-perfect jumps. Assist options are absent.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="63">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Aphakia (light sensitivity) → Pupil dilation → Harsh HDR highlights on TV</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Excessive luminance and contrast can cause pain or loss of detail for many players. Brightness caps and HDR tone-mapping sliders let users tailor visibility safely.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">In HDR mode, spell effects bloom into painful white patches that mask UI and enemies.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">HDR highlights cannot be limited; brightness slider adjusts only average picture level. No accessibility preset for high-sensitivity vision.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="64">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness → Corneal abrasion recovery → Playing narrative game with screen off to save battery</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">When vision is unavailable, temporarily reduced, or situationally constrained, players cannot rely on visual UI or on-screen prompts. Structured narration, labeled elements, and robust audio cues are necessary for perceiving goals and status.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">On a long flight, a player turns the handheld screen off to conserve power and still wants to progress through dialogue and simple choices.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Menus and choices lack screen-reader labels; focus order is illogical; interactable objects have no audio beacons. There is no UI narration toggle or descriptive audio for key events.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="65">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Profound hearing loss → Temporary tinnitus → Roommates blasting music</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Audio-only information such as dialogue, enemy footsteps, or timing cues is inaccessible when hearing is absent, temporarily impaired, or masked by noise. Equivalent captions, visualizers, and haptics communicate the same information.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">During a stealth section, the player cannot hear patrols or whispered hints because apartment noise overwhelms the TV audio.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No subtitles for ambient dialogue, no footstep visualizer, and haptics do not indicate directionality. Tutorial tips are voice-only.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="66">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Color vision deficiency (tritanopia) → Eye drops blurring color perception → Blue light filter tinting display</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Hue-only indicators for team, rarity, or status fail when color perception is limited or altered by filters. Redundant shapes, text labels, and contrast controls communicate state reliably.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">In a hero shooter, the player mistakes team auras and cannot parse ability cooldowns because blues and greens merge under the filter.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Team colors and cooldown rings differ by hue alone; there are no colorblind presets, patterns, or outline styles. Contrast slider is missing.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="68">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Tourette syndrome (involuntary tics) → Turbulent flight → Accidental inputs during platforming</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Unpredictable inputs and sudden motion cause costly errors. Confirm-to-commit, input grace windows, and generous undo protect progress for everyone.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A tic or bump triggers an unintended roll off a ledge during a timed section.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No confirm-to-commit on dangerous moves; no input buffering/coyote time; assist options are absent.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="71">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness → Eye patch after minor surgery → Playing audio-only with screen off at night</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">When sight is unavailable, temporarily blocked, or purposely off to avoid light, players cannot rely on on-screen prompts. Menus, HUD, and interactions must be narratable with labeled controls and consistent focus.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A player turns the TV off to avoid waking a partner and still wants to progress a narrative chapter by listening and selecting choices.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">UI elements lack screen-reader names and the focus order jumps unpredictably. Choice prompts have no spoken labels and there are no audio beacons for interactables.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="72">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Severe hearing loss → Ear infection → Gaming in a noisy café</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Audio-only cues like footsteps, reloads, and objective callouts are inaccessible when hearing is reduced or masked by ambient noise. Redundant visual/haptic feedback provides parity.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">During a stealth section, espresso machines drown out enemy tells and the player cannot hear NPC warnings.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No subtitles for combat barks; no footstep visualizer or direction indicator; controller haptics do not signal key states. Players miss threats and fail objectives.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="73">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Color blindness (protanomaly) → Eye dilation → HDR TV with oversaturated reds</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Hue-only encoding for team, loot rarity, or health states fails when colors are indistinguishable or displays exaggerate tones. Patterns, labels, and contrast tuning are necessary.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">In a multiplayer arena, allies and enemies look similar and health bars are hard to read on an aggressively tuned HDR display.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Affiliation and health use hue only; there are no colorblind presets, outline patterns, or text labels. Contrast slider is missing.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="74">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Low vision (high magnification) → Dry eyes from allergies → Sitting far from wall-mounted TV</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Small, thin fonts and fixed-size UI become unreadable at distance or under irritation. Players need scalable HUD text, readable typefaces, and narration.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">From across the room, a player can’t read tooltips, crafting descriptions, or skill trees without leaving the couch.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">HUD text scale is locked; the font is low-contrast; there is no menu narration or tooltip voiceover. Critical info is missed.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="75">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Photosensitive epilepsy → Migraine with aura → Late-night session with flashing VFX</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Rapid flashes, full-screen whiteouts, and high-frequency strobe effects can be dangerous or intolerable. VFX intensity controls and filters are vital.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A boss arena uses alternating white/black flashes and screen-wide hit effects that trigger immediate discomfort.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No photosensitivity mode, intensity slider, or ability to disable flash-heavy effects. The game ignores system reduced-motion preferences.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="76">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Vestibular disorder (motion sensitivity) → Inner-ear infection → Aggressive camera bob and sway</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Head-bob, motion blur, and narrow FOV induce nausea and disorientation across many contexts. Players need control to reduce or remove motion and widen FOV.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Exploring corridors causes dizziness because the camera sways and blurs heavily during sprint.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Camera shake and blur cannot be disabled; FOV is fixed narrow; sprint adds forced head-bob. No comfort options exist.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="77">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Monocular vision → One eye dilated → Lamp glare masking HUD edge</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Reduced field of view makes edge-placed UI and tiny minimaps hard to parse, especially when glare masks corners. HUD repositioning and scale are needed.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Ammo and quest tracker sit in the far corners partially hidden by a floor lamp, causing avoidable deaths.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">HUD cannot be moved or scaled; minimap icons are tiny with low contrast. No centered or bottom-clustered layout is available.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="78">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Tremor (Parkinson’s) → Muscle fatigue after gym → Playing on a bumpy bus</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Imprecise input from tremor, fatigue, or motion causes missed presses and misfires. Larger targets, buffered inputs, and forgiving QTE windows minimize failure.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A mobile action game uses rapid taps and swipes during boss phases that the player can’t reliably perform while commuting.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Buttons are small and clustered; QTEs have tight timings; no hold-to-complete, no aim assist expansion, and no input grace period are offered.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="79">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">One-handed play (amputation) → Thumb sprain → Holding a dog leash</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Two-handed chords and shoulder+face combos become impossible when one hand is occupied or injured. Full remapping and one-hand layouts are essential.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">While walking the dog, the player can’t reach shoulder buttons or press stick-click + face-button combos.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Controls are not remappable; critical actions require simultaneous inputs; no toggle-instead-of-hold options exist.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="80">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Quadriplegia (no standard controller) → Arm in sling → Right stick failure mid-mission</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">When analog camera or pointing is unavailable, alternative modes like single-stick camera, switch control, or eye tracking are needed. Menus must be fully keyboard/assist navigable.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A player’s right stick dies during a story boss and they cannot rotate the camera to progress.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Camera is bound exclusively to right stick; menus require analog hover; there is no on-screen cursor, switch access, or single-stick mode.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="81">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">RSI (repetitive strain) → Sore wrists after typing → Standing in a train aisle</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">High-effort mash prompts, long holds, and frequent repetitive actions cause pain and failure. Reduced-input modes and toggles lower effort for everyone.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A QTE escape sequence demands frantic button mashing while the player is balancing without a handrail.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No toggle-for-hold or auto-complete assist; mash frequency is required for success; text advance lacks auto mode.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="82">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyspraxia (motor planning) → Finger strain → Playing on a small phone</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Complex gesture sequences and precise drags increase mistakes. Simple tap alternatives, confirmation steps, and larger hit areas reduce errors.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">In a mobile tactics game, the player frequently mis-drags units to the wrong tile.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Drag is mandatory for moves; no tap-to-select then confirm; targets are small; undo is limited.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="83">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Speech impairment → Hoarse voice from illness → Quiet shared apartment at night</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Voice chat and voice commands cannot be assumed; social and physical contexts often preclude speaking. Text chat, ping wheels, and macros provide parity.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">In a raid, the player must call interrupts and locations without disturbing roommates.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Communication is voice-only; there is no text chat, ping wheel, or context markers. Strategy fails for non-speaking players.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="84">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Muscular dystrophy (fatigue) → Jetlag after travel → End-of-day dungeon run</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Long sessions and time-pressured sequences exhaust players with limited stamina. Resumable checkpoints and low-effort modes are crucial.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Late at night, the player wants to pause or save mid-dungeon but the game offers only long segments without checkpoints.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No mid-mission save or pause in solo; failure resets far back; accessibility stamina settings are absent.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="85">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Cognitive disability (short-term memory) → New-parent sleep deprivation → Returning after long breaks</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Multi-step goals are easy to lose track of across sessions. Clear next steps, pins, and concise summaries reduce memory burden.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">After a week, the player forgets which materials remain for a quest chain and wastes time retracing.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No quest pinning, no on-HUD checklist, and journals lack TL;DR summaries. Progress feedback is unclear.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="86">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyslexia (slow decoding) → Concussion recovery → Reading ornate quest logs while multitasking</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Decorative fonts and long blocks of text slow comprehension when cognition or attention is constrained. Readable fonts, summaries, and TTS increase access.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">While chatting with friends, the player misses key directions buried in long lore paragraphs.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Quest text uses script fonts and dense paragraphs; no narration or TL;DR is available; high-readability font option is absent.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="87">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Autism (sensitivity to sensory overload) → Post-migraine sensitivity → Noisy living room</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Busy HUDs, constant pop-ups, and animated rewards overwhelm attention and block decision-making. Quiet modes and notification controls support focus.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">During a strategy match, animated banners overlap the map and loot pop-ups interrupt actions.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">HUD cannot be simplified; pop-ups cannot be suppressed; notification filters are missing. Players lose focus and quit.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="88">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">ADHD (inattention) → Sleep deprivation → Streaming while playing</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Hidden objectives and unclear progress cause repeated loops for distractible players. Always-visible goals and guidance keep orientation.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">While streaming and reading chat, the player repeats tasks because the objective tracker is hidden in a sub-menu.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No persistent HUD objective; breadcrumbing is weak; progress meters are buried. Players get lost and disengage.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="90">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">PTSD (startle response) → Exam stress → Playing horror game late at night</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Sudden extreme audio peaks and whiteout flashes are harmful for many players. Intensity controls and content filters enable safer play.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A scripted scare blasts peak volume and full-screen flash, causing the player to abandon the game.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No jump-scare intensity toggle, no dynamic range limiter, and no brightness clamp. Warnings are generic and non-configurable.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="91">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Tourette syndrome (involuntary tics) → Muscle spasm → Turbulent flight</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Unpredictable inputs and sudden motion trigger accidental actions. Input grace, sticky targeting, and generous undo prevent costly errors.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Platforming sequences require precise jumps during turbulence; accidental inputs cause falls.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No input buffering or confirm-to-commit; jumps demand pixel precision; assist options are absent.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="93">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Color blindness (deuteranopia) → Blue light filter altering hues → Outdoor handheld glare</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Data and status encoded only by hue become unreadable under filtered or washed-out conditions. Labels, patterns, and contrast controls preserve meaning.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">On a handheld in sunlight, ability cooldowns and team colors blur together under the bluish tint.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Icons differ only by hue and low contrast; no labels or patterns; colorblind presets are missing.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="94">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyscalculia → Post-anesthesia fog → Complex economy with stacked multipliers</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Heavy numeric reasoning and hidden modifiers increase errors across many contexts. Clear math breakdowns and previews reduce confusion.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">During crafting and trading, the player cannot infer final totals because multipliers stack silently.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Totals update without labels; fee tooltips are hover-only; no preview of final cost or DPS result. Players make irreversible mistakes.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="96">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness (screen reader) → Cracked TV panel → Playing with visual area obstructed</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">When some or all visual area is unusable, structured audio and TTS must convey layout, focus, and context. Spatial beacons help locate interactables.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A cracked screen hides the left third of the image; the player still needs to navigate menus and interact with objects.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No UI narration; focus order is inconsistent; objects lack spatial audio beacons. Progress stalls when the visible region is compromised.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="97">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Arthritis (hand pain) → Cold hands → Wearing gloves while playing outdoors</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Small buttons and tight spacing cause pain and misses when dexterity is reduced. Larger hit areas and adjustable sensitivity help everyone.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A player at a tailgate uses a handheld but repeatedly misses tiny pause/settings buttons.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Buttons are tiny near corners; there’s no large-UI mode or remap to easily reachable areas. Haptics and audio provide no confirmation of success.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="98">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Central scotoma (central vision loss) → Smudge on screen center → Crosshair-centric HUD</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Center-clustered information is missed when central vision is blocked or the display is obstructed. Flexible HUD placement and offset crosshairs reduce loss.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Dialog choices and reload prompts appear in the exact area occluded by a screen blemish.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Crosshair and prompts are fixed to center; no option to offset or mirror HUD elements; radial alternatives are absent.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="98">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Central scotoma (central vision loss) → Smudge on screen center → Crosshair-centric HUD</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Center-clustered information is missed when central vision is blocked or the display is obstructed. Flexible HUD placement and offset crosshairs reduce loss.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Dialog choices and reload prompts appear in the exact area occluded by a screen blemish.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Crosshair and prompts are fixed to center; no option to offset or mirror HUD elements; radial alternatives are absent.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="99">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Color vision deficiency (deuteranopia) → Sun glare on handheld → Team colors washed out</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Hue-only encodings fail in glare or when hues are indistinguishable. Labels, patterns, and high contrast outlines are needed.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Outdoors in sunlight, enemy/ally outlines merge; capture zones look identical.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Affiliation uses red/green only; no labels, shapes, or pattern fills; contrast slider doesn’t affect HUD outlines.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="100">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Apraxia of speech (motor planning) → Dental surgery recovery → Voice-only spellcasting verbs</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Speech mechanics become unreliable or impossible when articulation is impaired. Button, pointer, or text alternatives ensure access to core systems.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A puzzle boss requires spoken verbs to move platforms; the player can’t produce consistent speech.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No non-speech input for verbs; timing assumes fluent speech; captions exist but can’t drive mechanics.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="101">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness → Fogged glasses from mask → Split-screen co-op on a dim TV at night</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">When vision is absent, temporarily obscured, or the display is dim, players cannot rely on small on-screen text or UI-only prompts. Structured narration and strong non-visual cues are needed to perceive objectives and status.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Two friends play split-screen late at night; the UI in each quadrant is tiny and one player’s glasses keep fogging, making menus and quest markers unreadable.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Menu items lack screen-reader labels and there’s no HUD narration. Text scales with screen size only; no per-player UI scaling or audio beacons for interactables exist.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="102">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Severe hearing loss → Swimmer’s ear → Playing with TV muted while a baby sleeps</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Audio-only dialogue, alerts, and enemy tells are inaccessible when hearing is reduced or sound must be off. Redundant captions, visualizers, and haptics are necessary.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">During a story mission, the player can’t turn on audio yet needs to follow whispered directions and cinematic cues.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Cinematics have no captions by default, ambient barks aren’t subtitled, and controller haptics don’t signal quest updates. Key plot beats are missed.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="103">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Low vision (high magnification) → Dry contacts → Handheld text at arm’s length</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Small fixed-size UI becomes unreadable at distance or under temporary visual strain. Players need scalable HUD text, readable fonts, and menu narration.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">On a commute, the player holds a handheld farther away to rest irritated eyes and can’t read inventory descriptions.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">HUD text size is fixed and thin on busy backgrounds; there is no UI scale slider or tooltip narration. Important item details are inaccessible.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="104">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Color blindness (deuteranopia) → Night shift blue-light filter → Miscalibrated TV colors</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Hue-only indicators for team, health, or loot tiers fail when colors merge or shift. Redundant shapes, labels, and contrast controls preserve meaning.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">In a PvP match, ally and enemy outlines blend and loot tiers look identical through a blue-light filter.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Affiliation and rarity rely on color alone; there are no patterns, icons, or text labels. Contrast and colorblind presets are missing.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="105">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Photosensitive epilepsy → Migraine with aura → Weather lightning flashes at night</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">High-contrast flashes and rapid strobing can be unsafe or intolerable. Players need intensity sliders, filters, and warnings tied to effects.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A storm level uses screen-wide lightning whiteouts and flickering traps that immediately trigger discomfort.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No photosensitivity mode or VFX intensity slider exists; lightning brightness can’t be clamped. Reduced-motion settings are ignored.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="106">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Vestibular disorder (motion sensitivity) → Inner-ear infection → Fast camera spin on default</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Aggressive head-bob, motion blur, and rapid FOV changes induce nausea for many players. Comfort controls are essential.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">In combat, camera shake and narrow FOV during sprint cause dizziness, forcing frequent breaks.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Camera shake cannot be disabled, FOV is fixed narrow, and sprint forces head-bob. No ‘comfort camera’ profile is available.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="107">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Monocular vision → One eye patched → Sun glare obscuring HUD corners</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Reduced field of view makes edge-placed UI hard to read, especially under glare. Repositionable and scalable HUD elements mitigate loss at edges.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Ammo and cooldown indicators live in tiny corner widgets partially hidden by window glare.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">HUD cannot be moved or scaled; icons are low-contrast and tiny. No centered HUD layout exists.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="109">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">One-handed play (amputation) → Thumb sprain → Holding a coffee on the go</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Two-handed chords and multi-button combos are infeasible. Schemes must support single-hand layouts, remapping, and toggle-instead-of-hold.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A mobile MOBA requires simultaneous drag-aim and face-button taps the player can’t achieve with one hand.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Controls aren’t remappable; abilities require multi-touch chords; no one-hand or swipe-to-cast mode exists.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="110">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Quadriplegia (no standard controller) → Arm in sling → Right stick broken mid-mission</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">When analog aiming is unavailable, alternative inputs and full remapping are required. Menus must be fully operable without a stick.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">The player’s camera stick fails during a boss, preventing rotation and target selection.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Camera is bound to the right stick only; there is no single-stick camera mode, switch access, or on-screen cursor. Menus require analog hover.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="112">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyspraxia (motor planning) → Finger strain → Small touchscreen gestures</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Complex gesture sequences and precise drags increase mistakes. Simple tap-confirm flows and bigger hit targets reduce errors.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">In a tactics game, the player mis-drags units and cannot reliably finish turns.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Drag-to-move is mandatory; tap-then-confirm is unavailable; undo is limited. Targets are small and packed.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="114">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Muscular dystrophy (fatigue) → Jetlag → Long dungeon without checkpoints</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Extended, non-pausable segments exclude players with limited stamina or time. Resumable checkpoints and pause in solo play are critical.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Late at night, the player can’t finish a lengthy dungeon in one sitting and loses progress on exit.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No mid-mission save; solo cannot be paused; failure resets far back. Accessibility stamina settings are absent.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="122">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Hard-of-hearing → Congested ears → Console at low volume</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Audio-only state like low-health beeps or reload clicks goes unnoticed at low volume. Visual and haptic redundancies convey state reliably.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">The player dies unexpectedly because low-health warnings are inaudible at night settings.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No on-screen low-health indicator or rumble cues; reload/stamina feedback is sound-only.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="124">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyscalculia → Post-anesthesia fog → DPS and economy math in skill trees</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Heavy numeric reasoning and hidden modifiers lead to mistakes. Clear previews and labeled deltas improve understanding.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Upgrading skills changes multiple stats but the player cannot tell net effects before committing.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No pre/post comparison or delta labels; tooltips hide math behind hover; respec is costly and limited.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="125">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Low vision (contrast sensitivity) → Eye strain → Foggy in-game environments</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Low-contrast HUD and text become illegible in foggy scenes or glare. Players need contrast controls and outlines for critical info.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">In a stealth level with fog, the detection meter and objective text blend into the background.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">HUD contrast is fixed and thin; no outline or drop-shadow for text; contrast slider only affects brightness, not UI elements.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="126">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">ADHD (inattention) → Multitasking while streaming → Hidden objective tracker</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Distractible contexts magnify the impact of hidden steps and unclear progress. Always-visible goals and breadcrumbing keep orientation.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Chat pulls attention; the player repeats tasks because the tracker is tucked away in a submenu.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No persistent HUD objective; breadcrumbing is weak; progress meters are hidden behind multiple clicks.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="128">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">PTSD (startle response) → Exam stress → Extreme jump-scare audio spikes</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Sudden high-volume peaks and whiteout flashes are harmful or intolerable for many players. Intensity controls and dynamic range limits enable safer play.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A scripted scare uses peak-volume shock and a full-screen flash, forcing a stop.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No scare intensity slider; no dynamic range limiter; brightness clamps are unavailable and warnings are generic.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="129">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Prosopagnosia (face blindness) → Fog-of-war visual obfuscation → Similar armor silhouettes</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Relying on facial/visual identity cues alone disadvantages players who cannot distinguish faces or silhouettes in low detail. Nameplates, outline colors, and iconography must be redundant.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">In a raid, teammates wear matching armor; the player can’t quickly identify roles.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Ally indicators depend on subtle armor differences; nameplates fade at distance; no role icons or persistent markers.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="130">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Hearing aid sensitivity to treble → Ear canal irritation → Playing at very low volume</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Peaky highs and compressed mixes can be uncomfortable or inaudible at safe volumes. Per-band EQ, loudness normalization, and per-channel sliders provide comfort and clarity.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">UI pings and crystal SFX are piercing even at minimum volume; important cues get muted entirely.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No EQ or ‘night mode’; SFX/UI share one slider; captions omit key non-speech cues like ‘low ammo’ or ‘shield broken’.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="131">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness → Photophobia after migraine → Playing near a bright window with screen reflections</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">When sight is absent, temporarily light-sensitive, or washed out by reflections, players cannot depend on visual UI or map markers alone. Structured narration, clear audio cues, and strong contrast are required to perceive objectives and state.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">At noon, sunlight bounces off the TV while a player tries to follow quest markers and read HUD meters during an open-world mission.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Objective arrows and health are visual-only with low contrast overlays. There is no UI narration, no audio beacons for mission targets, and the HUD cannot be switched to a high-contrast preset.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="132">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Severe hearing loss → Wearing earplugs for focus → LAN party with loud background noise</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Audio-only cues like footsteps, reload clicks, or objective callouts are inaccessible when hearing is reduced or masked by noise. Redundant captions, visualizers, and haptics provide parity.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">In a competitive shooter, crowd chatter and music drown subtle enemy tells and objective updates.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Combat barks lack subtitles; no footstep/shot direction visualizer exists; controller rumble does not communicate low ammo or objective state.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="133">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Achromatopsia (little/no color perception) → Tinted safety glasses → Outdoor handheld glare</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Hue-only encoding for teams, item rarity, or status becomes unreadable when color perception is limited or the display is tinted. Redundant shapes, labels, and contrast controls keep meaning intact.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">During a handheld match in sunlight, team outlines and loot tiers look identical through the tinted lens.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Affiliation and rarity rely on hue alone; there are no icon patterns, text labels, or colorblind presets. Contrast and outline thickness cannot be adjusted.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="134">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Nystagmus (unstable gaze) → Eye strain from long day → Projector with small, shaky text</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Small, thin UI and tight line spacing are hard to track when eye movement or fatigue reduces stability. Players need scalable text, generous spacing, and narration of menus/tooltips.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">At a game night using a projector, inventory descriptions shimmer and become unreadable from the couch.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">UI text is fixed and thin on detailed backgrounds; no scale slider or menu narration exists; tooltips time out too quickly to be read.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="135">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Spasticity (variable muscle control) → Cold-induced stiffness → Playing in gloves outdoors</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Long holds and precise chords are unreliable when fine control is reduced. Toggle-instead-of-hold and single-button alternatives reduce strain and errors.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A charge attack requires holding a trigger while steering with the stick; cold hands make sustained holds inconsistent.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Critical actions require long holds and multi-button combos; no toggle-to-charge or remap to simpler inputs is available.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="136">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Upper-limb difference (one hand) → Tendonitis flare-up → Holding a subway pole while gaming</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Two-handed chords and shoulder+face combos are infeasible when one hand is occupied or injured. One-hand layouts, remapping, and gyro/tap alternatives unlock play.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A platformer expects bumper+face inputs and stick-clicks at the same time, which the player cannot execute with one hand.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Controls are not remappable; no one-hand preset exists; gyro aiming and tap-to-confirm are unavailable for key actions.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="137">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Quadriplegia (sip-and-puff or switch input) → Neck brace after injury → Controller battery dies mid-session</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">When standard controllers are unusable, games must support alternative inputs and complete remapping. Menus should be fully navigable with switches and on-screen cursors.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">During a story mission, the controller shuts off and the player needs to continue using a single-switch setup.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Menus require analog hover and hold-to-confirm; no switch scanning mode or on-screen cursor exists; remapping is partial and excludes core actions.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="138">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Carpal tunnel syndrome → Post-work wrist fatigue → Mobile rhythm game while standing</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">High-frequency taps and rapid alternation cause pain and failures when stamina or posture is limited. Reduced-input modes and forgiving timing windows lower effort for everyone.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A difficult song demands dense tap patterns that the player cannot sustain while balancing on transit.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No ‘auto’/assist timing option, no lower CPM mode, and misses immediately fail the track. Hold-to-sustain is required without a toggle.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="139">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Speech impairment → Sore throat from illness → Mask reduces recognition on public transit</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Voice commands cannot be assumed in many contexts; speech may be physically difficult or socially inappropriate. Text menus and ping/shortcut wheels must provide equivalence.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A puzzle game uses voice commands to manipulate objects, but the player is masked and speaking softly on a train.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Core mechanics are voice-only with no text input or button-based alternatives; calibration requires shouting into the mic.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="140">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Photosensitivity → Temporary headache → OLED panel with harsh white flashes</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Rapid flashes, full-screen whiteouts, and high-contrast strobes can be dangerous or intolerable. Players need VFX intensity controls and flash-safe modes.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Boss attacks trigger screen-filling white flashes that immediately worsen a headache.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No photosensitivity filter or intensity slider exists; damage effects use rapid, full-screen whiteouts; reduced-motion settings are ignored.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="141">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Vestibular disorder (motion sensitivity) → Mild vertigo → Drone camera with heavy sway</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Camera bob, motion blur, and forced sway induce nausea and disorientation across many scenarios. Motion reduction and FOV controls are essential.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A drone mini-game adds aggressive sway and blur during turns, making the player dizzy within minutes.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Camera sway cannot be disabled; FOV is fixed narrow; motion blur is always on. No ‘comfort camera’ preset exists.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="142">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Monocular vision → Eye patched after infection → Split-screen UI anchored to far corners</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Reduced field of view makes edge-placed UI and tiny minimaps difficult to parse. Repositionable HUD and center-weighted layouts improve access.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">In couch co-op, critical ammo and quest info sits at the extreme corners of each quadrant and is hard to see.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">HUD cannot be moved or scaled; there is no center-cluster option; minimap icons are tiny with low contrast.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="143">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Hyperacusis (sound sensitivity) → Ear infection → Late-night play with thin apartment walls</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Sudden loud peaks and sharp high-frequency sounds can be painful or socially unacceptable. Dynamic range limits and per-channel volume sliders are necessary.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Explosions and UI pings are piercing even at low volume, waking neighbors and causing discomfort.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No dynamic range/‘night mode’; no separate sliders for UI, music, and SFX; sudden peaks cannot be tamed without muting everything.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="144">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Processing speed disability → Post-concussion brain fog → Timed dialogue choices</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Short timers and rapid choice presentation disadvantage players when processing speed is reduced temporarily or permanently. Extendable timers and pause on choices help all.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Story prompts time out in three seconds while the player reads slowly after an injury.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No ‘extend timers’ option; choices cannot be paused; text auto-advances without a ‘slow/auto’ setting or summary recap.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="145">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Autism (need for consistency) → Jetlag fatigue → Inconsistent button locations across screens</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Frequent layout changes and moving targets increase cognitive load and errors. Consistent patterns and stable control placement support orientation.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Confirm and back swap sides between menus, causing the tired player to select unintended actions.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Controls shift position per screen; labels change wording inconsistently; there’s no ‘simplified UI’ mode to lock layout.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="146">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">ADHD (inattention) → Sleep debt → Hidden objectives during live stream multitasking</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Distractible contexts amplify the impact of hidden steps and unclear progress. Always-visible trackers and breadcrumbing maintain orientation.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">While streaming and reading chat, the player loses track of multi-step objectives and repeats tasks.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Objective tracker is buried two menus deep; no pin-to-HUD exists; quest progress lacks clear meters and next-step prompts.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="147">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dysgraphia (writing difficulty) → Bandaged finger → Clan application requiring typed essays</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Text entry heavy flows disadvantage players when writing is difficult or impossible. Structured choices, voice-to-text, and templates provide alternatives.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">To join a guild, the player must type long open-ended responses on a controller keyboard.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Form requires paragraphs of prose only; no multiple-choice or short prompts; voice-to-text is the sole alternative with no keyboard fallback.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="148">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Prospective memory impairment → Jetlag → Complex combo tutorials without recap</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Remembering multi-step sequences across sessions is difficult when memory is impaired or attention is divided. Persistent checklists and replayable tutorials reduce burden.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Returning after a week, the player forgets the combo chain needed to progress the story fight.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Tutorial cannot be replayed; move list lacks step-by-step practice and pin-to-HUD; the game assumes perfect recall.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="149">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Pattern-sensitive epilepsy → Temporary eyestrain → Menu backgrounds with moiré/striped flicker</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Certain repetitive patterns and moiré effects can trigger symptoms or discomfort. Players need pattern-safe themes and the ability to disable animated or high-frequency textures.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A striped animated menu background shimmers on the living-room TV and causes immediate discomfort.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No ‘static background’ or pattern-safe theme exists; animation cannot be disabled; brightness and contrast settings do not affect the offending background.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="150">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Social anxiety → Stressful day at work → Voice-only team onboarding</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Not all players can or want to speak in group settings. Text-based onboarding and non-verbal comms are required for equitable participation.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A co-op game forces a voice interview to enter matchmaking tiers, which the player wants to avoid.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Onboarding and calibration are voice-only with no text alternative; there is no chat-based or solo calibration path.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="151">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyscalculia (number processing) → Post-anesthesia fog → Gacha odds and multi-currency store</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Opaque probabilities and stacked currencies cause mistakes when numeric reasoning is difficult or attention is thin. Clear odds, single-currency views, and labeled totals help.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">The player cannot tell value between bundles because exchange rates and bonuses are split across tabs.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Probabilities are buried; exchange math requires mental conversion; cart lacks a clear total in a single currency with savings called out.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="152">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Apraxia of speech (motor planning) → Dental surgery → Voice-command puzzle mechanics</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Speech control becomes unreliable or impossible when articulation is difficult. Button, pointer, or text alternatives ensure access to core mechanics.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A puzzle level demands spoken verbs to move platforms; the player cannot articulate clearly post-procedure.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">There is no non-speech input for puzzle verbs; timing windows assume fluent speech; captions exist but cannot drive mechanics.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="154">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Snow blindness/low contrast sensitivity → Dry eyes → White-on-white HUD in winter biome</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Low-contrast HUD elements vanish against bright environments for many players. Contrast controls, outlines, and alternate color themes preserve visibility.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">In a snowstorm level, objective text and detection meters blend into the background.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">HUD has fixed colors and no outline or shadow; contrast slider adjusts brightness only, not UI theme; there is no high-contrast HUD preset.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="156">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Executive function challenges → Busy household interruptions → Long quests without autosave</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Unclear next steps and lack of resumability make it hard to re-enter a task after breaks. Autosave on step completion and concise recaps support continuation.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">The player gets pulled away multiple times and returns unsure where to resume a multi-phase raid prep.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No autosave per step; the pause screen lacks a recap; the journal buries next actions under flavor text without a ‘Resume here’ shortcut.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="158">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Cognitive disability (short-term memory) → Sleep deprivation → Multi-quest juggling</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Tracking multi-step goals across sessions is hard when memory is reduced. Checklists, HUD pins, and concise summaries reduce cognitive load.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">On return, the player forgets which three sub-steps remain across overlapping quests.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No pin-to-HUD; journals lack TL;DR; progress meters are buried two menus deep with unclear next-step prompts.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="159">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyslexia (slow decoding) → Concussion recovery → Ornate lore font on high-fantasy UI</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Decorative fonts and long blocks of text slow comprehension under strain. Readable fonts, narration, and TL;DR summaries broaden access.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A boss hints via a multi-page codex in script font; key clues are missed.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No high-readability font; no narration; codex entries are dense paragraphs without headings or summaries.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="160">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Autism (sensitivity to overload) → Post-migraine sensitivity → Reward pop-ups and animated banners</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Constant animation, HUD clutter, and pop-ups fragment attention and reduce decision quality. Quiet modes and notification filters support focus.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">During base management, layered pop-ups and confetti cover essential counters.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">HUD cannot be simplified; pop-ups can’t be suppressed; no ‘focus’ mode to dampen animation or badges.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="161">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness → Dilated pupils after eye exam → Playing with screen dimmed to minimum</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">When visual perception is absent, temporarily reduced, or intentionally minimized, players cannot depend on on-screen prompts alone. Structured narration, labeled UI, and spatial audio cues are essential for perceiving goals and state.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A player lowers brightness to avoid light after an exam but still wants to navigate menus and follow quest objectives.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Menus lack screen-reader labels; focus order jumps unpredictably; there are no audio beacons for interactables and no narration toggle for HUD/menus.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="162">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Severe hearing loss → Ear infection → Playing with TV muted while others sleep</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Audio-only dialogue, alerts, and enemy tells are inaccessible when hearing is absent, temporarily impaired, or sound must be off. Redundant captions, visualizers, and haptics must convey equivalent information.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">During a story mission, whispered NPC directions and stealth alerts are inaudible with the TV muted at night.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Ambient barks and off-screen prompts are not captioned; no footstep/shot visualizer exists; controller haptics don’t signal critical states like low health.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="163">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Achromatopsia (little/no color perception) → Tinted anti-glare filter → Sunlight washout on handheld</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Hue-only encoding for teams, status, or item rarity fails when color perception is limited or displays are filtered. Patterns, labels, and contrast controls preserve meaning for all players.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">In a hero shooter, team outlines and rarity glows blend under a blue/gray tint outdoors.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Affiliation and loot tiers rely entirely on hue with low contrast; no icon/pattern alternatives or colorblind presets exist; outline thickness cannot be adjusted.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="164">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Low vision (high magnification) → Dry-eye episode → Couch far from the TV</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Small, thin fonts and fixed-size UI collapse at distance or under temporary visual strain. Players need scalable HUD text, readable typefaces, and menu narration for tooltips and inventory.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">From across the room, the player struggles to read crafting descriptions and skill trees.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">HUD text scales with resolution only; the typeface is low-contrast on busy backgrounds; there is no narration for menus or tooltips.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="165">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Monocular vision → Eye patch after abrasion → Lamp glare hiding HUD corners</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Reduced field of view makes edge-anchored UI and tiny minimaps hard to parse, especially when glare masks corners. Repositionable, scalable HUD elements improve access.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Ammo and cooldowns live in tiny corner widgets partially obscured by a desk lamp.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">HUD elements cannot be moved or scaled; minimap icons are tiny with low contrast; there is no center-weighted HUD option.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="166">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Photosensitive epilepsy → Migraine with aura → Night play with high-contrast flashes</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Rapid strobing, screen-wide whiteouts, and high-frequency flashes can be dangerous or intolerable. Players need VFX intensity sliders, filters, and warnings.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A boss uses alternating black/white flashes and damage whiteouts that trigger symptoms immediately.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No photosensitivity mode or VFX limiter exists; reduced-motion preferences are ignored; brightness clamps are unavailable.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="167">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Vestibular disorder (motion sensitivity) → Inner-ear infection → Aggressive head-bob and motion blur</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Camera shake, head-bob, narrow FOV, and heavy blur induce nausea and disorientation for many players. Motion reduction and FOV controls are necessary.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Running and turning cause dizziness within minutes due to forced head-bob and blur.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Camera effects cannot be disabled; FOV is fixed narrow; no ‘comfort camera’ preset or reduced-motion mode exists.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="168">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Tremor (Parkinson’s) → Post-exercise hand fatigue → Playing a precision platformer on a bus</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Imprecise input due to tremor, fatigue, or motion causes missed presses and falls. Larger targets, input grace (coyote time), and assist options reduce failure.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">On a bumpy commute, the player repeatedly misses tight jump windows and small pause buttons.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Pixel-perfect jumps are mandatory; there is no input buffering/coyote time; UI targets are small and crowded; assist toggles are absent.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="169">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Hemiparesis (one-sided weakness) → Temporary wrist sprain → Holding a coffee while commuting</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Two-handed chords, simultaneous inputs, and distant controls are infeasible when one hand is limited or occupied. One-hand layouts and full remapping are essential.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A mobile MOBA requires drag-aim plus face-button taps the player cannot execute with one hand.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Controls aren’t remappable; abilities require multi-touch chords; no one-hand or swipe-to-cast mode exists.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="170">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Quadriplegia (switch/eye input) → Arm in sling → Right stick failure mid-mission</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">When analog aiming is unavailable, alternative inputs and complete remapping are required. Menus must be fully operable with switches and on-screen cursors.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">The camera stick dies during a boss; the player must continue with a single-switch layout.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Camera is bound to right stick only; menus require hover and hold-to-confirm; no switch scanning mode or on-screen cursor exists.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="171">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">RSI (repetitive strain) → Sore wrists after work → Standing in transit while playing</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">High-effort button-mashing and long holds cause pain and failure when stamina or posture is limited. Reduced-input modes and toggle-instead-of-hold lower effort.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">An escape QTE demands frantic presses the player cannot sustain while balancing on a train.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No toggle-for-hold or auto-complete assist; mash frequency dictates success; text advance lacks auto mode.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="176">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyslexia (slow decoding) → Concussion recovery → Ornate codex while multitasking</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Decorative fonts and long blocks of text slow comprehension when attention or cognition is limited. Readable fonts, summaries, and TTS improve access broadly.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">While chatting with friends, the player misses critical map clues buried in script paragraphs.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Lore appears as dense script with no headings or narration; no high-readability font or TL;DR exists.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="177">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Autism (sensitivity to sensory overload) → Post-migraine sensitivity → Living room with flashing ads</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Cluttered HUDs, pop-ups, and constant animation fragment attention and reduce decision-making. Quiet modes and notification control support focus.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">During a tactics match, animated rewards overlap the map and pop-ups interrupt inputs repeatedly.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">HUD cannot be simplified; notifications can’t be filtered; pop-ups persistently animate. No ‘focus’ or ‘quiet’ mode exists.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="179">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Anxiety (timer stress) → Rushed schedule → Unstable connection during solo play</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Strict timers and unclear recovery paths heighten stress and amplify small setbacks. Flexible timing and reconnect checkpoints reduce harm.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A timed puzzle fails on disconnect and restarts minutes of progress with no grace period.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No accessibility timer; solo cannot be paused; reconnect lacks a checkpoint. Small network blips cause large setbacks.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="185">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Central scotoma (central vision loss) → Cracked protector at screen center → HUD clustered in the middle</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Center-clustered information is missed when central vision is blocked or the display is obstructed. Flexible HUD placement and radial alternatives reduce loss.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Crosshair and dialog choices appear where the display is cracked, making them unreadable.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Crosshair and key readouts are fixed to center; there’s no option to offset elements or expand to a radial UI.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="187">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Aphasia (word-finding difficulty) → Jetlag brain fog → Controller text entry for search</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Language recall and precise text entry suffer when cognition is strained. Predictive search, recent entries, and non-text shortcuts lower the barrier for everyone.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Renaming loadouts and searching stores with an on-screen keyboard is slow and error-prone after travel.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No predictive suggestions or recent searches; voice is the only shortcut without keyboard fallback; error messages are long and unhelpful.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="189">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">RSI (repetitive strain) → Tendonitis flare → Fishing mini-game with rapid stick spins</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">High-frequency mashing and rotary inputs cause pain and failure under strain. Reduced-input modes and toggle-instead-of-hold are necessary.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">The mini-game demands fast circular rotations and button mashing for minutes at a time.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No reduced-effort mode; hold-to-reel toggle is absent; success depends on high CPM and strong grip.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="190">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyspraxia (motor planning) → Numb fingers from cold → Small virtual D-pad on phone</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Complex gestures and tiny targets increase errors when dexterity drops. Tap-confirm flows, bigger targets, and generous undo mitigate mis-inputs.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A mobile platformer requires precise virtual D-pad presses and swipes the player can’t execute reliably.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No large-UI toggle; drag is mandatory; confirm-before-commit and undo are missing for costly actions.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="191">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness → Ointment-blurred vision after eye exam → Playing narrative chapter with room lights off</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">When vision is absent, temporarily blurred, or the display is intentionally dark, players cannot rely on on-screen prompts alone. Labeled UI, screen-reader narration, and spatial audio beacons must communicate goals and state.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A player wants to continue the story in bed with the screen nearly off to avoid waking a partner.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Menus and choices lack programmatic names and focus order; interactables have no audio beacons; there is no UI narration toggle for dialogue or inventory.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="192">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Profound hearing loss → Earwax blockage → Playing with TV muted while family sleeps</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Audio-only cues—enemy footsteps, off-screen warnings, timing prompts—are inaccessible when hearing is absent, impaired, or sound must be off. Equal access requires captions, visualizers, and haptic signals.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">In a stealth mission, whispered NPC lines and patrol cues are inaudible at night.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Ambient barks and off-screen events aren’t captioned; no footstep/shot direction visualizer exists; controller haptics don’t signal low health or objective updates.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="193">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Color vision deficiency (tritanopia) → Blue-light filter tint → Underwater level with heavy blue grading</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Hue-only signals for team, rarity, or status fail when blue/yellow contrasts collapse or filters shift color. Redundant shapes, labels, and contrast controls preserve meaning.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">In a co-op dive, ally outlines and item tiers blur into similar blues.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Affiliation and loot tiers rely solely on hue; there are no patterns, text labels, or colorblind presets; outline thickness and contrast can’t be adjusted.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="194">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Low vision (contrast sensitivity) → Dry contacts → Split-screen couch co-op on a dim TV</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Thin fonts and low-contrast HUDs become unreadable at distance or under irritation. Players need scalable text, high-contrast UI themes, and narration for menus/tooltips.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Two players share the TV; UI in each quadrant is small and fades into dark scenes.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">HUD text scale is fixed; no high-contrast theme or tooltip narration exists; important meters sit on visually busy backgrounds.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="195">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Monocular vision → Scratched lens → Ultrawide HUD elements anchored to extreme corners</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Reduced field of view makes edge-anchored HUD and tiny minimaps hard to parse, especially when glare obscures corners. HUD re-positioning and scaling are needed.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Ammo, cooldowns, and minimap live in tiny corner widgets partially hidden by lamp glare.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">HUD elements can’t be moved or scaled; no center-weighted layout exists; icons are low-contrast and tiny.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="196">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Photosensitive epilepsy → Migraine with aura → Screen-wide achievement flashes during night play</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">High-contrast flashing and rapid flicker can be dangerous or intolerable. Players need VFX intensity sliders, flash filters, and actionable warnings.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">An achievement causes a whiteout flash over gameplay, disrupting vision and comfort.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">No photosensitivity mode or VFX limiter exists; overlays use rapid white strobe; system reduced-motion is ignored.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="197">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Vestibular disorder (motion sensitivity) → Motion sickness from car travel → Forced motion blur and head-bob</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Camera bob, heavy blur, and narrow FOV induce nausea for many players. Comfort controls must reduce motion and widen FOV.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">During sprint and turns, the view sways and blurs, causing dizziness within minutes.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Camera effects can’t be disabled; FOV is fixed narrow; there is no comfort preset or reduced-motion mode.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="198">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Tremor (Parkinson’s) → Caffeine jitters → Playing on a vibrating table</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Imprecise input from tremor or surface vibration causes misfires and misses. Larger targets, aim assist, and buffered inputs reduce failure.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A mobile shooter requires precise taps and swipe-aim while the table rattles in a café.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Targets are tiny and clustered; aim assist is minimal; no hold-to-complete, input buffering, or larger-UI mode exists.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="199">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">One-handed play (amputation) → Bandaged thumb → Walking a dog while raiding</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Two-handed chords and simultaneous inputs are infeasible when one hand is limited or occupied. Full remapping, one-hand layouts, and toggle-instead-of-hold provide parity.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A real-time raid demands stick-plus-shoulder combos the player cannot reach one-handed.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Controls are not remappable; abilities require bumper+face combos; no one-hand preset or sticky targeting exists.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="200">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Speech impairment → Sore throat → Push-to-talk gated matchmaking</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Voice chat cannot be assumed; physical or social contexts may prevent speaking. Text chat, ping wheels, and onboarding without speech are critical.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A team shooter requires verbal comms to unlock ranked queues.</dd>
+<dt data-label="Game Mismatch" role="listitem">Game Mismatch</dt>
+<dd role="listitem">Onboarding and team comms are voice-only; no ping wheel or text chat; accessibility tags don’t surface non-voice preference.</dd>
+</dl>
+</article>
+</main>
+</body>
+</html>

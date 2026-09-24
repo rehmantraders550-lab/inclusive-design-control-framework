@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Examples of potential exclusions for Mobile applications - Inclusive Tech Lab</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+<style>
+body {font: 1rem/1.1 sans-serif; margin:2rem;}
+h2 {margin-top: 3rem;}
+h3 {font-size:1rem; margin-bottom:0rem;}
+ul {margin-top:0.3rem;}
+</style>
+</head>
+<body>
+<main>
+<h1>Examples of potential exclusions for Mobile applications - Inclusive Tech Lab</h1>
+<article aria-labelledby="anywhere-drag-to-scrub-media-h" id="anywhere-drag-to-scrub-media">
+<h2 data-principle="pattern" id="anywhere-drag-to-scrub-media-h">Anywhere drag to scrub media</h2>
+<p class="user-action" data-principle="user-action">User drags horizontally anywhere on the player surface to move the playhead.</p>
+<section aria-labelledby="anywhere-drag-to-scrub-media-perceivable-h" id="anywhere-drag-to-scrub-media-perceivable">
+<h3 id="anywhere-drag-to-scrub-media-perceivable-h">Perceivable</h3>
+<ul>
+<li data-principle="perceivable">The progress track uses a very thin line that blends into the video poster frame; people with low vision cannot distinguish the current position from the background.</li>
+<li data-principle="perceivable">Chapter markers are indicated by color alone without shapes or labels; people with color-vision differences cannot perceive segment boundaries.</li>
+<li data-principle="perceivable">Time bubble appears beneath the finger and is occluded; users can’t see the target timestamp.</li>
+</ul>
+</section>
+<section aria-labelledby="anywhere-drag-to-scrub-media-operable-h" id="anywhere-drag-to-scrub-media-operable">
+<h3 id="anywhere-drag-to-scrub-media-operable-h">Operable</h3>
+<ul>
+<li data-principle="operable">Fine scrubbing needs precise movement; no jump-back/forward buttons for coarse control.</li>
+<li data-principle="operable">Vertical drift cancels or jumps the seek; no 10-second step buttons for coarse control.</li>
+<li data-principle="operable">The player captures horizontal drags even when the user intended to scroll the page; people using touch exploration or screen magnification accidentally seek instead of navigating.</li>
+<li data-principle="operable">Small time steps require micro-movements; there is no way to nudge by a fixed amount using accessible buttons or keyboard focus.</li></ul>
+</section>
+<section aria-labelledby="anywhere-drag-to-scrub-media-understandable-h" id="anywhere-drag-to-scrub-media-understandable">
+<h3 id="anywhere-drag-to-scrub-media-understandable-h">Understandable</h3>
+<ul>
+<li data-principle="understandable">No explanation of drag zones; users don’t understand why taps sometimes seek and sometimes pause.</li>
+<li data-principle="understandable">Chapters and boundaries aren’t indicated; users don’t understand why the seek jumps segments.</li>
+<li data-principle="understandable">The player seeks on any drag but pauses on a tap; the lack of an initial tutorial causes confusion about when playback will stop or move.</li>
+<li data-principle="understandable">After seeking, the player resumes automatically without announcing the new time; users cannot confirm that the intended moment was selected.</li></ul>
+</section>
+</article>
+<article aria-labelledby="ar-plane-detection-and-placement-h" id="ar-plane-detection-and-placement">
+<h2 data-principle="pattern" id="ar-plane-detection-and-placement-h">Augmented Reality plane detection and placement</h2>
+<p class="user-action" data-principle="user-action">User moves device to detect a surface and place an object.</p>
+<section aria-labelledby="ar-plane-detection-and-placement-perceivable-h" id="ar-plane-detection-and-placement-perceivable">
+<h3 id="ar-plane-detection-and-placement-perceivable-h">Perceivable</h3>
+<ul>
+<li data-principle="perceivable">Subtle dot grids/lines on bright floors aren’t perceivable under glare.</li>
+<li data-principle="perceivable">Surface indicators are low contrast on glossy floors; placement cues are missed.</li>
+<li data-principle="perceivable">Plane visualization is only a subtle shimmer that disappears against patterned carpets; users cannot perceive where objects can be placed.</li>
+<li data-principle="perceivable">Ambient lighting changes cause tracking dots to flicker; the moment of successful plane detection is not clearly visible.</li></ul>
+</section>
+<section aria-labelledby="ar-plane-detection-and-placement-operable-h" id="ar-plane-detection-and-placement-operable">
+<h3 id="ar-plane-detection-and-placement-operable-h">Operable</h3>
+<ul>
+<li data-principle="operable">The camera requires continuous sweeping at shoulder height; there is no seated or tabletop scan mode for people with limited mobility.</li>
+<li data-principle="operable">Continuous motion scan is required; there’s no static tap-to-place option for limited mobility.</li>
+<li data-principle="operable">Device tilt beyond a narrow range causes detection to reset; users with tremor cannot maintain the required pose to complete placement.</li>
+</ul>
+</section>
+<section aria-labelledby="ar-plane-detection-and-placement-understandable-h" id="ar-plane-detection-and-placement-understandable">
+<h3 id="ar-plane-detection-and-placement-understandable-h">Understandable</h3>
+<ul>
+<li data-principle="understandable">Instructions use AR jargon (“detect a plane”); users don’t understand the task.</li>
+<li data-principle="understandable">Copy references planes anchors and meshes; users don’t understand Augmented Reality terminology.</li>
+<li data-principle="understandable">The application does not explain how to “scan” in plain language (for example, “slowly move the camera side to side across the floor”); users cannot form a correct mental model of the task.</li>
+<li data-principle="understandable">Placement snapping jumps the object to a different surface without explanation; users misinterpret whether they placed the object on the floor or a wall.</li></ul>
+</section>
+</article>
+<article aria-labelledby="bottom-sheet-drag-to-expandcollapse-h" id="bottom-sheet-drag-to-expandcollapse">
+<h2 data-principle="pattern" id="bottom-sheet-drag-to-expandcollapse-h">Bottom sheet drag to expand/collapse</h2>
+<p class="user-action" data-principle="user-action">User drags a handle to change a bottom sheet’s height.</p>
+<section aria-labelledby="bottom-sheet-drag-to-expandcollapse-perceivable-h" id="bottom-sheet-drag-to-expandcollapse-perceivable">
+<h3 id="bottom-sheet-drag-to-expandcollapse-perceivable-h">Perceivable</h3>
+<ul>
+<li data-principle="perceivable">Handle has low contrast and small size; hard to see against content.</li>
+<li data-principle="perceivable">Handle and scrim merge with underlying content; state changes are hard to see.</li>
+<li data-principle="perceivable">The handle icon lacks a label for screen readers; blind users do not hear that a “Drag to expand or collapse” control exists.</li>
+<li data-principle="perceivable">The scrim opacity change is subtle; users cannot perceive that content behind the sheet is inactive.</li></ul>
+</section>
+<section aria-labelledby="bottom-sheet-drag-to-expandcollapse-operable-h" id="bottom-sheet-drag-to-expandcollapse-operable">
+<h3 id="bottom-sheet-drag-to-expandcollapse-operable-h">Operable</h3>
+<ul>
+<li data-principle="operable">Drag-only interaction excludes keyboard/switch/voice; no tap-to-toggle control.</li>
+<li data-principle="operable">Sheet demands precise drag angles; tap or button alternatives are missing for switch and keyboard users.</li>
+<li data-principle="operable">The sheet ignores keyboard focus and cannot be expanded with arrow keys or a button; keyboard-only users are blocked.</li>
+<li data-principle="operable">The drag gesture conflicts with system back navigation on the left edge; users accidentally exit instead of resizing.</li></ul>
+</section>
+<section aria-labelledby="bottom-sheet-drag-to-expandcollapse-understandable-h" id="bottom-sheet-drag-to-expandcollapse-understandable">
+<h3 id="bottom-sheet-drag-to-expandcollapse-understandable-h">Understandable</h3>
+<ul>
+<li data-principle="understandable">Sheet states (peek/half/full) aren’t named; users can’t predict what each state contains.</li>
+<li data-principle="understandable">States have no labels like Peek Half Full; users can’t form a mental model of levels.</li>
+<li data-principle="understandable">Newly revealed actions appear outside the viewport with no auto-scroll; users do not realize more options exist after expansion.</li>
+<li data-principle="understandable">The sheet snaps to intermediate heights without naming them (for example, “Half”); users cannot predict where content will land after release.</li></ul>
+</section>
+</article>
+<article aria-labelledby="camera-qr-barcode-scanning-h" id="camera-qr-barcode-scanning">
+<h2 data-principle="pattern" id="camera-qr-barcode-scanning-h">Camera QR / barcode scanning</h2>
+<p class="user-action" data-principle="user-action">User points the camera at a code to scan.</p>
+<section aria-labelledby="camera-qr-barcode-scanning-perceivable-h" id="camera-qr-barcode-scanning-perceivable">
+<h3 id="camera-qr-barcode-scanning-perceivable-h">Perceivable</h3>
+<ul>
+<li data-principle="perceivable">Aim box and success feedback are too subtle; users can’t perceive alignment or success.</li>
+<li data-principle="perceivable">Ambient-success cues are subtle; scan confirmation isn’t visible in bright outdoor light.</li>
+<li data-principle="perceivable">The success chime is the only confirmation; people who are deaf or hard of hearing do not perceive that the code was read.</li>
+<li data-principle="perceivable">The alignment reticle is ultra-thin and disappears in bright outdoor glare; the framing target cannot be seen.</li></ul>
+</section>
+<section aria-labelledby="camera-qr-barcode-scanning-operable-h" id="camera-qr-barcode-scanning-operable">
+<h3 id="camera-qr-barcode-scanning-operable-h">Operable</h3>
+<ul>
+<li data-principle="operable">Requires steady hands and close focus; no manual input option present.</li>
+<li data-principle="operable">Auto-focus demands steady hands; no manual shutter or code entry alternative exists.</li>
+<li data-principle="operable">Continuous autofocus pumps the image; users with hand tremor cannot hold steady long enough to complete the scan.</li>
+<li data-principle="operable">Auto-capture fires immediately when a code enters the frame; there is no “manual shutter” to allow users time to stabilize.</li></ul>
+</section>
+<section aria-labelledby="camera-qr-barcode-scanning-understandable-h" id="camera-qr-barcode-scanning-understandable">
+<h3 id="camera-qr-barcode-scanning-understandable-h">Understandable</h3>
+<ul>
+<li data-principle="understandable">No instruction about distance/lighting; users don’t know how to improve recognition.</li>
+<li data-principle="understandable">No guidance on framing angle or distance; users don’t understand how to improve recognition.</li>
+<li data-principle="understandable">When scanning fails, the application merely says “Try again” without actionable guidance (for example, “move closer” or “increase lighting”).</li>
+<li data-principle="understandable">The application does not state which code types are supported (for example, Data Matrix versus quick-response code); users retry with incompatible codes.</li></ul>
+</section>
+</article>
+<article aria-labelledby="chat-composer-expand-with-keyboard-h" id="chat-composer-expand-with-keyboard">
+<h2 data-principle="pattern" id="chat-composer-expand-with-keyboard-h">Chat composer expand with keyboard</h2>
+<p class="user-action" data-principle="user-action">User taps the composer; it expands and shifts the thread as the keyboard appears.</p>
+<section aria-labelledby="chat-composer-expand-with-keyboard-perceivable-h" id="chat-composer-expand-with-keyboard-perceivable">
+<h3 id="chat-composer-expand-with-keyboard-perceivable-h">Perceivable</h3>
+<ul>
+<li data-principle="perceivable">Composer placeholder and controls get occluded by the keyboard; users can’t see what they type.</li>
+<li data-principle="perceivable">The latest message is covered by the keyboard; auto-scroll doesn’t keep the conversation tail visible.</li>
+<li data-principle="perceivable">When the keyboard appears, the input caret is scrolled off-screen; users cannot see where text is being entered.</li><li data-principle="perceivable">The send state is conveyed by color only (for example, disabled gray); users with color-vision differences cannot tell when sending is available.</li></ul>
+</section>
+<section aria-labelledby="chat-composer-expand-with-keyboard-operable-h" id="chat-composer-expand-with-keyboard-operable">
+<h3 id="chat-composer-expand-with-keyboard-operable-h">Operable</h3>
+<ul>
+<li data-principle="operable">Send/attach buttons move during expansion; users with motor limits miss them mid-motion.</li>
+<li data-principle="operable">Send/attach buttons move as suggestions appear; users with motor limits miss moving targets.</li>
+<li data-principle="operable">The composer steals focus each time a suggestion chip appears; switch users lose their place in the thread.</li><li data-principle="operable">The input loses focus on device rotation; users must re-activate the field to continue typing.</li></ul>
+</section>
+<section aria-labelledby="chat-composer-expand-with-keyboard-understandable-h" id="chat-composer-expand-with-keyboard-understandable">
+<h3 id="chat-composer-expand-with-keyboard-understandable-h">Understandable</h3>
+<ul>
+<li data-principle="understandable">No cues about attachment limits or enter-to-send; users misunderstand how to submit.</li>
+<li data-principle="understandable">Enter-to-send vs newline behavior is unstated; users can’t predict whether Return will send.</li>
+<li data-principle="understandable">The application silently switches between “Enter to send” and “Enter for newline” based on context; users accidentally send unfinished messages.</li><li data-principle="understandable">Attachment limits (file size or count) are not stated until after failure; users do not know why the action was rejected.</li></ul>
+</section>
+</article>
+<article aria-labelledby="contextual-keyboard-type-selection-h" id="contextual-keyboard-type-selection">
+<h2 data-principle="pattern" id="contextual-keyboard-type-selection-h">Contextual keyboard type selection</h2>
+<p class="user-action" data-principle="user-action">App switches the on-screen keyboard to match expected input (e.g., number/email).</p>
+<section aria-labelledby="contextual-keyboard-type-selection-perceivable-h" id="contextual-keyboard-type-selection-perceivable">
+<h3 id="contextual-keyboard-type-selection-perceivable-h">Perceivable</h3>
+<ul>
+<li data-principle="perceivable">Keyboard change is silent; users don’t perceive why keys moved or symbols vanished.</li>
+<li data-principle="perceivable">Numeric layout hides needed characters (e.g., + or .); users don’t perceive where to find them.</li>
+<li data-principle="perceivable">When switching to the numeric layout, the hint text remains “email”; the mismatch is not perceivable at a glance.</li><li data-principle="perceivable">Alternate characters (such as plus sign or period) are hidden behind long press without visual hint; users cannot discover essential keys.</li></ul>
+</section>
+<section aria-labelledby="contextual-keyboard-type-selection-operable-h" id="contextual-keyboard-type-selection-operable">
+<h3 id="contextual-keyboard-type-selection-operable-h">Operable</h3>
+<ul>
+<li data-principle="operable">No alternative input affordance when required key isn’t present; users can’t complete input.</li>
+<li data-principle="operable">Keyboard switch clears partial input or fights autocorrect; no paste/format assist is offered.</li>
+<li data-principle="operable">The keyboard switches layouts mid-entry and moves keys; users relying on motor memory repeatedly hit the wrong key.</li><li data-principle="operable">There is no hardware-keyboard path for users with physical keyboards; the application traps focus in the on-screen keyboard.</li></ul>
+</section>
+<section aria-labelledby="contextual-keyboard-type-selection-understandable-h" id="contextual-keyboard-type-selection-understandable">
+<h3 id="contextual-keyboard-type-selection-understandable-h">Understandable</h3>
+<ul>
+<li data-principle="understandable">No hint about accepted formats; users don’t understand why validation fails.</li>
+<li data-principle="understandable">Accepted formats (e.g., phone with country code) aren’t shown; users misread validation rules.</li>
+<li data-principle="understandable">The input accepts multiple formats but does not display an example; users guess at the required structure and get validation errors.</li><li data-principle="understandable">The application masks the input (for example, password) without a “show” option; users are unsure what they typed.</li></ul>
+</section>
+</article>
+<article aria-labelledby="document-capture-with-autoedge-detection-h" id="document-capture-with-autoedge-detection">
+<h2 data-principle="pattern" id="document-capture-with-autoedge-detection-h">Document capture with auto-edge detection</h2>
+<p class="user-action" data-principle="user-action">User photographs a document for upload.</p>
+<section aria-labelledby="document-capture-with-autoedge-detection-perceivable-h" id="document-capture-with-autoedge-detection-perceivable">
+<h3 id="document-capture-with-autoedge-detection-perceivable-h">Perceivable</h3>
+<ul>
+<li data-principle="perceivable">Capture buttons and guides are tiny; edges and corners aren’t visible enough.</li>
+<li data-principle="perceivable">Edge highlights are faint on white paper; corners aren’t perceivable.</li>
+<li data-principle="perceivable">The application uses only a faint corner glow to show detection; the document boundaries are not visible on white paper.</li><li data-principle="perceivable">The capture countdown is shown in a small overlay; users with low vision cannot perceive the timing cue.</li></ul>
+</section>
+<section aria-labelledby="document-capture-with-autoedge-detection-operable-h" id="document-capture-with-autoedge-detection-operable">
+<h3 id="document-capture-with-autoedge-detection-operable-h">Operable</h3>
+<ul>
+<li data-principle="operable">Requires two-handed hold and tap; no voice or hardware-key shutter alternative.</li>
+<li data-principle="operable">Two-handed hold plus tap is required; no voice shutter or volume-key control alternative.</li>
+<li data-principle="operable">The only shutter option is an on-screen button placed far from reach; there is no hardware volume-key shutter or voice command.</li><li data-principle="operable">Auto-crop requires holding the device parallel to the document; people with limited dexterity cannot achieve the necessary angle.</li></ul>
+</section>
+<section aria-labelledby="document-capture-with-autoedge-detection-understandable-h" id="document-capture-with-autoedge-detection-understandable">
+<h3 id="document-capture-with-autoedge-detection-understandable-h">Understandable</h3>
+<ul>
+<li data-principle="understandable">No step-by-step guidance (“fill frame; hold steady”); users can’t complete capture.</li>
+<li data-principle="understandable">No coaching overlays about glare perspective or background; users don’t know why capture fails.</li>
+<li data-principle="understandable">The application does not state whether to fill the frame or include margins; users repeatedly capture unusable images.</li><li data-principle="understandable">It is unclear how to retake or manually adjust corners after capture; users believe they are stuck with an incorrect crop.</li></ul>
+</section>
+</article>
+<article aria-labelledby="drag-handle-to-reorder-list-h" id="drag-handle-to-reorder-list">
+<h2 data-principle="pattern" id="drag-handle-to-reorder-list-h">Drag handle to reorder list</h2>
+<p class="user-action" data-principle="user-action">User drags a visible handle to reorder items in a list.</p>
+<section aria-labelledby="drag-handle-to-reorder-list-perceivable-h" id="drag-handle-to-reorder-list-perceivable">
+<h3 id="drag-handle-to-reorder-list-perceivable-h">Perceivable</h3>
+<ul>
+<li data-principle="perceivable">Handle icon is faint or too small; users can’t perceive reordering is possible.</li>
+<li data-principle="perceivable">Handle is obscured by a sticky header/shadow; users don’t notice the control on certain rows.</li>
+<li data-principle="perceivable">The “grab handle” is an unlabeled icon; screen readers do not announce that the row can be reordered.</li><li data-principle="perceivable">The live region does not announce the new position after drop; blind users cannot perceive the result.</li></ul>
+</section>
+<section aria-labelledby="drag-handle-to-reorder-list-operable-h" id="drag-handle-to-reorder-list-operable">
+<h3 id="drag-handle-to-reorder-list-operable-h">Operable</h3>
+<ul>
+<li data-principle="operable">Drag requires precise control and sustained pressure; no up/down buttons as an alternative.</li>
+<li data-principle="operable">List doesn’t auto-scroll while dragging; users can’t move items beyond the current viewport.</li>
+<li data-principle="operable">There is no keyboard path (for example, move up or move down); users who rely on keyboard or switch access cannot reorder.</li><li data-principle="operable">The list does not auto-scroll when dragging near edges; items cannot be moved beyond the current viewport.</li></ul>
+</section>
+<section aria-labelledby="drag-handle-to-reorder-list-understandable-h" id="drag-handle-to-reorder-list-understandable">
+<h3 id="drag-handle-to-reorder-list-understandable-h">Understandable</h3>
+<ul>
+<li data-principle="understandable">No preview of destination or numbering; users don’t understand resulting order.</li>
+<li data-principle="understandable">Numbers renormalize after drop without highlight; users can’t confirm the final order rules.</li>
+<li data-principle="understandable">The application does not indicate whether the new order will be saved automatically; users are unsure if a “Save” action is required.</li><li data-principle="understandable">Dragging across collapsed groups changes hierarchy without warning; users do not understand why items moved categories.</li></ul>
+</section>
+</article>
+<article aria-labelledby="drag-to-rate-or-react-slider-h" id="drag-to-rate-or-react-slider">
+<h2 data-principle="pattern" id="drag-to-rate-or-react-slider-h">Drag to rate or react slider</h2>
+<p class="user-action" data-principle="user-action">User drags a thumb on a slider to rate content or pick a reaction.</p>
+<section aria-labelledby="drag-to-rate-or-react-slider-perceivable-h" id="drag-to-rate-or-react-slider-perceivable">
+<h3 id="drag-to-rate-or-react-slider-perceivable-h">Perceivable</h3>
+<ul>
+<li data-principle="perceivable">Slider track color alone indicates selection; users can’t perceive exact value.</li>
+<li data-principle="perceivable">Value markers appear only after release; users can’t perceive interim values while dragging.</li>
+<li data-principle="perceivable">Only color intensity indicates value; there is no numeric label or tick marks to perceive the selected level.</li><li data-principle="perceivable">The reaction icons have minimal contrast and are very small; users cannot distinguish options.</li></ul>
+</section>
+<section aria-labelledby="drag-to-rate-or-react-slider-operable-h" id="drag-to-rate-or-react-slider-operable">
+<h3 id="drag-to-rate-or-react-slider-operable-h">Operable</h3>
+<ul>
+<li data-principle="operable">Small thumb and narrow track require fine motor control; no stepper or presets.</li>
+<li data-principle="operable">Precise placement is required to hit discrete values; no tap-to-select or stepper controls.</li>
+<li data-principle="operable">The slider snaps to tiny steps that are hard to target; there is no plus or minus control to adjust one unit at a time.</li><li data-principle="operable">The thumb requires a precise press to grab; screen-reader users cannot adjust the value with standard gestures.</li></ul>
+</section>
+<section aria-labelledby="drag-to-rate-or-react-slider-understandable-h" id="drag-to-rate-or-react-slider-understandable">
+<h3 id="drag-to-rate-or-react-slider-understandable-h">Understandable</h3>
+<ul>
+<li data-principle="understandable">Scale meaning (1–5; low–high) isn’t explained; users can’t interpret outcomes.</li>
+<li data-principle="understandable">Scale direction reverses in RTL without notice; users misinterpret low vs high.</li>
+<li data-principle="understandable">The scale meaning (for example, “1 is negative, 5 is positive”) is not explained; users misinterpret what higher values mean.</li><li data-principle="understandable">The application does not explain whether ratings are public or private; users hesitate to choose.</li></ul>
+</section>
+</article>
+<article aria-labelledby="floating-action-button-fab-morph-to-context-actions-h" id="floating-action-button-fab-morph-to-context-actions">
+<h2 data-principle="pattern" id="floating-action-button-fab-morph-to-context-actions-h">Floating Action Button (FAB) morph to context actions</h2>
+<p class="user-action" data-principle="user-action">User taps a FAB that expands or morphs into multiple actions.</p>
+<section aria-labelledby="floating-action-button-fab-morph-to-context-actions-perceivable-h" id="floating-action-button-fab-morph-to-context-actions-perceivable">
+<h3 id="floating-action-button-fab-morph-to-context-actions-perceivable-h">Perceivable</h3>
+<ul>
+<li data-principle="perceivable">Expansion animation is subtle and low contrast; users miss that new actions appeared.</li>
+<li data-principle="perceivable">Morph animation is subtle on bright backgrounds; newly revealed actions aren’t perceived.</li>
+<li data-principle="perceivable">The expanded actions do not receive focus or announcement; screen-reader users do not perceive that new items are available.</li><li data-principle="perceivable">The morph animation occurs under the user’s thumb and is occluded; users miss the reveal.</li></ul>
+</section>
+<section aria-labelledby="floating-action-button-fab-morph-to-context-actions-operable-h" id="floating-action-button-fab-morph-to-context-actions-operable">
+<h3 id="floating-action-button-fab-morph-to-context-actions-operable-h">Operable</h3>
+<ul>
+<li data-principle="operable">Small targets appear near the thumb edge; no alternative menu list for precise selection.</li>
+<li data-principle="operable">Expanded options require thumb stretch across the screen; no list alternative near reach.</li>
+<li data-principle="operable">Expanded buttons appear near screen corners with small hit areas; users with limited dexterity cannot trigger them.</li><li data-principle="operable">There is no way to open the same set of actions from a text-based menu; users relying on alternative input are blocked.</li></ul>
+</section>
+<section aria-labelledby="floating-action-button-fab-morph-to-context-actions-understandable-h" id="floating-action-button-fab-morph-to-context-actions-understandable">
+<h3 id="floating-action-button-fab-morph-to-context-actions-understandable-h">Understandable</h3>
+<ul>
+<li data-principle="understandable">Morphing from one icon to many isn’t explained; users don’t know what changed or why.</li>
+<li data-principle="understandable">Icon-only variants don’t map to tasks; users can’t infer which action to choose.</li>
+<li data-principle="understandable">The application does not explain why the button sometimes opens a single action and other times a menu; users cannot predict outcomes.</li><li data-principle="understandable">Icon-only actions have no labels or tooltips; users cannot confidently choose the correct option.</li></ul>
+</section>
+</article>
+<article aria-labelledby="freehand-drawing-canvas-with-pressure-h" id="freehand-drawing-canvas-with-pressure">
+<h2 data-principle="pattern" id="freehand-drawing-canvas-with-pressure-h">Freehand drawing canvas with pressure</h2>
+<p class="user-action" data-principle="user-action">User draws with finger/stylus; pressure/velocity affect stroke.</p>
+<section aria-labelledby="freehand-drawing-canvas-with-pressure-perceivable-h" id="freehand-drawing-canvas-with-pressure-perceivable">
+<h3 id="freehand-drawing-canvas-with-pressure-perceivable-h">Perceivable</h3>
+<ul>
+<li data-principle="perceivable">Cursor/brush preview is subtle; users can’t perceive active brush size or color.</li>
+<li data-principle="perceivable">Brush preview has low contrast against the canvas; users can’t perceive active tool or color.</li>
+<li data-principle="perceivable">The active tool state (for example, brush, eraser, or selection) is indicated only by a subtle color ring; users cannot perceive which tool is active.</li><li data-principle="perceivable">The grid or page background reduces contrast with the stroke color; users cannot see fine details at common zoom levels.</li></ul>
+</section>
+<section aria-labelledby="freehand-drawing-canvas-with-pressure-operable-h" id="freehand-drawing-canvas-with-pressure-operable">
+<h3 id="freehand-drawing-canvas-with-pressure-operable-h">Operable</h3>
+<ul>
+<li data-principle="operable">Palm rejection and small handles complicate control; no undo/redo buttons near thumb reach.</li>
+<li data-principle="operable">Two-finger pan conflicts with system gestures; no dedicated pan/zoom mode or on-screen toggles.</li>
+<li data-principle="operable">Two-finger pan conflicts with device-level gestures; users inadvertently switch applications while drawing.</li><li data-principle="operable">Small controls (for example, color pickers) are placed outside thumb reach; there is no alternative toolbar layout.</li></ul>
+</section>
+<section aria-labelledby="freehand-drawing-canvas-with-pressure-understandable-h" id="freehand-drawing-canvas-with-pressure-understandable">
+<h3 id="freehand-drawing-canvas-with-pressure-understandable-h">Understandable</h3>
+<ul>
+<li data-principle="understandable">Tool semantics (brush vs eraser vs smudge) aren’t introduced; users misapply tools.</li>
+<li data-principle="understandable">Layers are implicit; strokes appear ‘missing’ when drawn on hidden layers; users don’t understand why.</li>
+<li data-principle="understandable">The effect of pressure versus speed on stroke width is not explained; users cannot predict how marks will appear.</li><li data-principle="understandable">Layer order and visibility are not surfaced; users think strokes “disappear” without understanding that another layer is on top.</li></ul>
+</section>
+</article>
+<article aria-labelledby="haptic-feedback-cues-h" id="haptic-feedback-cues">
+<h2 data-principle="pattern" id="haptic-feedback-cues-h">Haptic feedback cues</h2>
+<p class="user-action" data-principle="user-action">User relies on vibration patterns to confirm actions.</p>
+<section aria-labelledby="haptic-feedback-cues-perceivable-h" id="haptic-feedback-cues-perceivable">
+<h3 id="haptic-feedback-cues-perceivable-h">Perceivable</h3>
+<ul>
+<li data-principle="perceivable">No visual/text equivalent for haptics; deaf-blind or muted-haptics users miss feedback.</li>
+<li data-principle="perceivable">Vibration patterns run during silent mode with no on-screen mirror; feedback is missed.</li>
+<li data-principle="perceivable">Vibration patterns have no on-screen mirrors (for example, text or icons); users who have haptics disabled miss critical confirmation.</li><li data-principle="perceivable">The device’s Do Not Disturb mode suppresses vibrations; the application does not provide a visual fallback.</li></ul>
+</section>
+<section aria-labelledby="haptic-feedback-cues-operable-h" id="haptic-feedback-cues-operable">
+<h3 id="haptic-feedback-cues-operable-h">Operable</h3>
+<ul>
+<li data-principle="operable">Haptics too strong or weak; no setting to disable or amplify feedback.</li>
+<li data-principle="operable">Haptics cannot be tuned or disabled in-app; users with hypersensitivity can’t operate comfortably.</li>
+<li data-principle="operable">There is no preference to reduce intensity or disable patterns in-app; users with tactile hypersensitivity cannot use the feature comfortably.</li><li data-principle="operable">Haptic events fire during long presses and interfere with dwell-based input; users release prematurely.</li></ul>
+</section>
+<section aria-labelledby="haptic-feedback-cues-understandable-h" id="haptic-feedback-cues-understandable">
+<h3 id="haptic-feedback-cues-understandable-h">Understandable</h3>
+<ul>
+<li data-principle="understandable">Meaning of patterns isn’t explained; users can’t learn success vs error vibrations.</li>
+<li data-principle="understandable">Meaning of patterns is undocumented; users can’t map a vibration to an outcome.</li>
+<li data-principle="understandable">The meaning of different patterns (success, warning, error) is undocumented; users cannot learn the vocabulary.</li><li data-principle="understandable">Haptic patterns differ across platforms without explanation; users cannot transfer knowledge between devices.</li></ul>
+</section>
+</article>
+<article aria-labelledby="inapp-mini-player-bar-h" id="inapp-mini-player-bar">
+<h2 data-principle="pattern" id="inapp-mini-player-bar-h">In-app mini player bar</h2>
+<p class="user-action" data-principle="user-action">User controls playback from a compact bar while browsing other screens.</p>
+<section aria-labelledby="inapp-mini-player-bar-perceivable-h" id="inapp-mini-player-bar-perceivable">
+<h3 id="inapp-mini-player-bar-perceivable-h">Perceivable</h3>
+<ul>
+<li data-principle="perceivable">Artwork and status are too small; users can’t perceive play/pause state.</li>
+<li data-principle="perceivable">Track name ellipsizes without marquee; status icons are tiny; users can’t perceive play vs pause.</li>
+<li data-principle="perceivable">The play state is shown only by a tiny icon; there is no text label (for example, “Playing” or “Paused”).</li><li data-principle="perceivable">The progress indicator is truncated when system navigation bars overlap; the position is not perceivable.</li></ul>
+</section>
+<section aria-labelledby="inapp-mini-player-bar-operable-h" id="inapp-mini-player-bar-operable">
+<h3 id="inapp-mini-player-bar-operable-h">Operable</h3>
+<ul>
+<li data-principle="operable">Tiny controls in the bar are hard to hit; no keyboard/voice shortcuts in-app.</li>
+<li data-principle="operable">Swipe-to-dismiss conflicts with back navigation; users close the player accidentally with no undo.</li>
+<li data-principle="operable">The bar captures swipe gestures and prevents list scrolling; users cannot navigate while audio plays.</li><li data-principle="operable">There are no keyboard shortcuts or voice commands to control playback; users without precise touch cannot operate.</li></ul>
+</section>
+<section aria-labelledby="inapp-mini-player-bar-understandable-h" id="inapp-mini-player-bar-understandable">
+<h3 id="inapp-mini-player-bar-understandable-h">Understandable</h3>
+<ul>
+<li data-principle="understandable">State sync between mini and full player isn’t explained; users don’t know where actions apply.</li>
+<li data-principle="understandable">Unclear whether controls affect a global queue or page-local media; users misinterpret scope.</li>
+<li data-principle="understandable">Tapping artwork sometimes opens details and sometimes toggles play; the behavior is inconsistent and unexplained.</li><li data-principle="understandable">Queue actions (for example, “Play next”) are hidden behind long press; the pathway is not taught.</li></ul>
+</section>
+</article>
+<article aria-labelledby="inline-chip-suggestions-for-search-h" id="inline-chip-suggestions-for-search">
+<h2 data-principle="pattern" id="inline-chip-suggestions-for-search-h">Inline chip suggestions for search</h2>
+<p class="user-action" data-principle="user-action">User types; chips appear and can be tapped to add filters or entities.</p>
+<section aria-labelledby="inline-chip-suggestions-for-search-perceivable-h" id="inline-chip-suggestions-for-search-perceivable">
+<h3 id="inline-chip-suggestions-for-search-perceivable-h">Perceivable</h3>
+<ul>
+<li data-principle="perceivable">Suggestion chips look like static tags; users don’t perceive they’re tappable.</li>
+<li data-principle="perceivable">Chips render below the fold as the keyboard covers them; users don’t perceive suggestions.</li>
+<li data-principle="perceivable">Chips collapse into an overflow without a visible indicator; suggested options appear to vanish.</li><li data-principle="perceivable">The focus highlight around chips is extremely faint; keyboard users cannot perceive which chip is selected.</li></ul>
+</section>
+<section aria-labelledby="inline-chip-suggestions-for-search-operable-h" id="inline-chip-suggestions-for-search-operable">
+<h3 id="inline-chip-suggestions-for-search-operable-h">Operable</h3>
+<ul>
+<li data-principle="operable">Chips are small and scrollable; hard to target without mis-taps; no keyboard navigation.</li>
+<li data-principle="operable">Chips dismiss on scroll and are small to target; no keyboard navigation or ‘select all’ path.</li>
+<li data-principle="operable">As the user types, chips shift position; people with motor impairments miss the moving target.</li><li data-principle="operable">Chips are not reachable by tab order; there is no arrow-key navigation or “add all” control.</li></ul>
+</section>
+<section aria-labelledby="inline-chip-suggestions-for-search-understandable-h" id="inline-chip-suggestions-for-search-understandable">
+<h3 id="inline-chip-suggestions-for-search-understandable-h">Understandable</h3>
+<ul>
+<li data-principle="understandable">Chip semantics (inclusive vs exclusive) aren’t explained; users misunderstand filtering.</li>
+<li data-principle="understandable">Semantics of chips vs free text aren’t explained; users can’t predict how results will be filtered.</li>
+<li data-principle="understandable">The meaning of a selected chip (filter versus query token) is not explained; results seem unpredictable.</li><li data-principle="understandable">Removing a chip changes results silently without announcing what was removed; users lose track of the filter state.</li></ul>
+</section>
+</article>
+<article aria-labelledby="live-ocr-field-scanning-cardid-h" id="live-ocr-field-scanning-cardid">
+<h2 data-principle="pattern" id="live-ocr-field-scanning-cardid-h">Live OCR field scanning (card/ID)</h2>
+<p class="user-action" data-principle="user-action">User points camera at a card while fields auto-populate via OCR.</p>
+<section aria-labelledby="live-ocr-field-scanning-cardid-perceivable-h" id="live-ocr-field-scanning-cardid-perceivable">
+<h3 id="live-ocr-field-scanning-cardid-perceivable-h">Perceivable</h3>
+<ul>
+<li data-principle="perceivable">Field highlights and capture status are subtle; users can’t perceive what was read.</li>
+<li data-principle="perceivable">Capture rectangle lacks edge highlights; users can’t perceive alignment or which fields were read.</li>
+<li data-principle="perceivable">The on-screen highlight does not indicate which field is being read; users cannot perceive which value just changed.</li><li data-principle="perceivable">The privacy status (local processing versus server processing) is not displayed; users cannot understand what is happening to their data.</li></ul>
+</section>
+<section aria-labelledby="live-ocr-field-scanning-cardid-operable-h" id="live-ocr-field-scanning-cardid-operable">
+<h3 id="live-ocr-field-scanning-cardid-operable-h">Operable</h3>
+<ul>
+<li data-principle="operable">Requires steady aim; no manual entry or photo-from-gallery alternative.</li>
+<li data-principle="operable">Minor shake resets capture repeatedly; no freeze-frame or manual shutter for stability.</li>
+<li data-principle="operable">The scan requires holding the card at a specific angle; there is no “import from photo” or manual entry fallback.</li><li data-principle="operable">The capture resets on minor motion; users cannot complete the task if they cannot maintain a steady hold.</li></ul>
+</section>
+<section aria-labelledby="live-ocr-field-scanning-cardid-understandable-h" id="live-ocr-field-scanning-cardid-understandable">
+<h3 id="live-ocr-field-scanning-cardid-understandable-h">Understandable</h3>
+<ul>
+<li data-principle="understandable">No privacy or error guidance; users don’t understand how to correct misreads.</li>
+<li data-principle="understandable">Field mapping isn’t previewed; users don’t know how to correct or accept extracted values.</li>
+<li data-principle="understandable">Errors such as “invalid character” are shown without context; users do not know which field to correct.</li><li data-principle="understandable">The application overwrites user-corrected text on the next scan without warning; users do not understand why edits are lost.</li></ul>
+</section>
+</article>
+<article aria-labelledby="long-press-haptic-touch-context-menu-h" id="long-press-haptic-touch-context-menu">
+<h2 data-principle="pattern" id="long-press-haptic-touch-context-menu-h">Long press (haptic touch) context menu</h2>
+<p class="user-action" data-principle="user-action">User presses and holds on an element to reveal a context menu.</p>
+<section aria-labelledby="long-press-haptic-touch-context-menu-perceivable-h" id="long-press-haptic-touch-context-menu-perceivable">
+<h3 id="long-press-haptic-touch-context-menu-perceivable-h">Perceivable</h3>
+<ul>
+<li data-principle="perceivable">No visual hint that long press is available; the affordance isn’t perceivable.</li>
+<li data-principle="perceivable">No visual feedback during the hold; users can’t perceive when the menu will appear.</li>
+<li data-principle="perceivable">There is no visual affordance that long press is supported; users cannot perceive that a menu is available.</li><li data-principle="perceivable">The progress ring for dwell is hidden by the user’s finger; the activation state is not visible.</li></ul>
+</section>
+<section aria-labelledby="long-press-haptic-touch-context-menu-operable-h" id="long-press-haptic-touch-context-menu-operable">
+<h3 id="long-press-haptic-touch-context-menu-operable-h">Operable</h3>
+<ul>
+<li data-principle="operable">Dwell time window is strict; users with tremor can’t trigger reliably and there’s no menu button.</li>
+<li data-principle="operable">Required press duration conflicts with system accessibility hold settings; activation fails inconsistently.</li>
+<li data-principle="operable">The required press duration is fixed and ignores system accessibility settings; users who need longer dwell cannot activate.</li><li data-principle="operable">The menu opens under the finger and requires a drag to reach items; users with limited dexterity cannot select reliably.</li></ul>
+</section>
+<section aria-labelledby="long-press-haptic-touch-context-menu-understandable-h" id="long-press-haptic-touch-context-menu-understandable">
+<h3 id="long-press-haptic-touch-context-menu-understandable-h">Understandable</h3>
+<ul>
+<li data-principle="understandable">Menu labels are terse or icon-only; users can’t infer consequences of actions.</li>
+<li data-principle="understandable">Menu inherits cryptic iconography; users can’t infer what each option does.</li>
+<li data-principle="understandable">The difference between a tap, long press, and press-and-hold to drag is not explained; users confuse the gestures.</li><li data-principle="understandable">Menu items use ambiguous labels (for example, “Share” versus “Send”); users cannot predict the result.</li></ul>
+</section>
+</article>
+<article aria-labelledby="map-longpress-to-drop-pin-h" id="map-longpress-to-drop-pin">
+<h2 data-principle="pattern" id="map-longpress-to-drop-pin-h">Map long-press to drop pin</h2>
+<p class="user-action" data-principle="user-action">User long-presses on the map to drop a pin and start a route.</p>
+<section aria-labelledby="map-longpress-to-drop-pin-perceivable-h" id="map-longpress-to-drop-pin-perceivable">
+<h3 id="map-longpress-to-drop-pin-perceivable-h">Perceivable</h3>
+<ul>
+<li data-principle="perceivable">Dropped pin confirmation is subtle; users don’t perceive the new selection.</li>
+<li data-principle="perceivable">User location dot overlaps the pin; in glare the new pin isn’t visible.</li>
+<li data-principle="perceivable">The pin animation is subtle and lacks a sound or announcement; users do not perceive that a pin was added.</li><li data-principle="perceivable">Map labels overlap the pin on high-density areas; the new point is hard to see.</li></ul>
+</section>
+<section aria-labelledby="map-longpress-to-drop-pin-operable-h" id="map-longpress-to-drop-pin-operable">
+<h3 id="map-longpress-to-drop-pin-operable-h">Operable</h3>
+<ul>
+<li data-principle="operable">Long-press conflicts with map pan/zoom; no Add pin button alternative.</li>
+<li data-principle="operable">Provider overlays intercept the long-press; no ‘Add pin’ button alternative is available.</li>
+<li data-principle="operable">Long press conflicts with two-finger pan used by screen readers; there is no “Add pin” button.</li><li data-principle="operable">The pin cannot be moved with arrow keys or a numeric input; precise placement is impossible without drag.</li></ul>
+</section>
+<section aria-labelledby="map-longpress-to-drop-pin-understandable-h" id="map-longpress-to-drop-pin-understandable">
+<h3 id="map-longpress-to-drop-pin-understandable-h">Understandable</h3>
+<ul>
+<li data-principle="understandable">No onboarding for long-press; users don’t understand how to begin route planning.</li>
+<li data-principle="understandable">Difference between ‘drop pin’, ‘save’, and ‘start route’ isn’t taught; users misapply actions.</li>
+<li data-principle="understandable">The application does not reveal whether the pin is saved, temporary, or shared; users do not know the state.</li><li data-principle="understandable">Starting a route from a pin changes transportation mode automatically; users do not understand why directions look different.</li></ul>
+</section>
+</article>
+<article aria-labelledby="nfc-tap-to-read-or-pay-h" id="nfc-tap-to-read-or-pay">
+<h2 data-principle="pattern" id="nfc-tap-to-read-or-pay-h">NFC tap to read or pay</h2>
+<p class="user-action" data-principle="user-action">User taps the device to a tag or terminal.</p>
+<section aria-labelledby="nfc-tap-to-read-or-pay-perceivable-h" id="nfc-tap-to-read-or-pay-perceivable">
+<h3 id="nfc-tap-to-read-or-pay-perceivable-h">Perceivable</h3>
+<ul>
+<li data-principle="perceivable">No on-screen instruction about where to tap; users can’t perceive target area.</li>
+<li data-principle="perceivable">Tap target zone isn’t shown on screen; users can’t perceive where to align the device.</li>
+<li data-principle="perceivable">The reader’s active area is not indicated on screen; users cannot see where to align the device.</li><li data-principle="perceivable">Confirmation is vibration-only; people with haptics disabled or reduced sensitivity miss the completion cue.</li></ul>
+</section>
+<section aria-labelledby="nfc-tap-to-read-or-pay-operable-h" id="nfc-tap-to-read-or-pay-operable">
+<h3 id="nfc-tap-to-read-or-pay-operable-h">Operable</h3>
+<ul>
+<li data-principle="operable">Requires exact alignment; no alternate entry method or manual code path.</li>
+<li data-principle="operable">Precise alignment and dwell are required; no manual code/path fallback exists.</li>
+<li data-principle="operable">The terminal requires a specific orientation; there is no manual code entry or barcode fallback.</li><li data-principle="operable">The interaction times out quickly; users who move slowly cannot complete the tap in time.</li></ul>
+</section>
+<section aria-labelledby="nfc-tap-to-read-or-pay-understandable-h" id="nfc-tap-to-read-or-pay-understandable">
+<h3 id="nfc-tap-to-read-or-pay-understandable-h">Understandable</h3>
+<ul>
+<li data-principle="understandable">Outcome and next steps aren’t explained; users don’t know what will happen.</li>
+<li data-principle="understandable">Outcome screens don’t state success vs pending; users can’t understand transaction state.</li>
+<li data-principle="understandable">The application does not state whether a transaction will auto-open or require confirmation; users are surprised by the next screen.</li><li data-principle="understandable">Error states (for example, “card declined”) use generic text without steps to recover; users do not know what to try next.</li></ul>
+</section>
+</article>
+<article aria-labelledby="pinchtozoom-product-media-h" id="pinchtozoom-product-media">
+<h2 data-principle="pattern" id="pinchtozoom-product-media-h">Pinch-to-zoom product media</h2>
+<p class="user-action" data-principle="user-action">User pinches an image to zoom and drags to pan; swipe down to dismiss.</p>
+<section aria-labelledby="pinchtozoom-product-media-perceivable-h" id="pinchtozoom-product-media-perceivable">
+<h3 id="pinchtozoom-product-media-perceivable-h">Perceivable</h3>
+<ul>
+<li data-principle="perceivable">Zoom level indicator is tiny; users can’t perceive current scale or boundaries.</li>
+<li data-principle="perceivable">Double-tap toggles zoom with no indicator; users can’t perceive current scale or limits.</li>
+<li data-principle="perceivable">The zoomed image lacks a focus ring or border; users cannot perceive whether the view is at one hundred percent or fully zoomed out.</li><li data-principle="perceivable">Panning indicators are absent; users cannot see that additional content exists off-screen.</li></ul>
+</section>
+<section aria-labelledby="pinchtozoom-product-media-operable-h" id="pinchtozoom-product-media-operable">
+<h3 id="pinchtozoom-product-media-operable-h">Operable</h3>
+<ul>
+<li data-principle="operable">Two-finger gestures require coordination; no plus/minus buttons for zooming.</li>
+<li data-principle="operable">Carousel intercepts pinch; zoom is disabled on some images with no plus/minus buttons.</li>
+<li data-principle="operable">The carousel intercepts the pinch gesture on some items; users cannot zoom consistently.</li><li data-principle="operable">There are no dedicated plus and minus controls; users who cannot perform two-finger gestures cannot operate the zoom.</li></ul>
+</section>
+<section aria-labelledby="pinchtozoom-product-media-understandable-h" id="pinchtozoom-product-media-understandable">
+<h3 id="pinchtozoom-product-media-understandable-h">Understandable</h3>
+<ul>
+<li data-principle="understandable">No hint that swipe-down dismisses; users don’t understand how to exit zoom.</li>
+<li data-principle="understandable">Dismiss vs zoom-out gestures vary by image; users don’t understand how to exit consistently.</li>
+<li data-principle="understandable">The application does not state how to exit zoom; users repeatedly attempt a back navigation that closes the page instead.</li><li data-principle="understandable">Double-tap toggles different zoom levels on different images; the rules are not explained.</li></ul>
+</section>
+</article>
+<article aria-labelledby="pressandhold-to-preview-peek-h" id="pressandhold-to-preview-peek">
+<h2 data-principle="pattern" id="pressandhold-to-preview-peek-h">Press-and-hold to preview (peek)</h2>
+<p class="user-action" data-principle="user-action">User holds on an item to open a lightweight preview; release or drag promotes to full.</p>
+<section aria-labelledby="pressandhold-to-preview-peek-perceivable-h" id="pressandhold-to-preview-peek-perceivable">
+<h3 id="pressandhold-to-preview-peek-perceivable-h">Perceivable</h3>
+<ul>
+<li data-principle="perceivable">Preview overlay is subtle and behind content; users don’t perceive it appeared.</li>
+<li data-principle="perceivable">Preview opens behind status/navigation chrome on small screens; users barely perceive it.</li>
+<li data-principle="perceivable">The preview card is translucent and blends into the background; users cannot see the boundaries.</li><li data-principle="perceivable">There is no sound or announcement when the preview opens; users do not perceive the state change.</li></ul>
+</section>
+<section aria-labelledby="pressandhold-to-preview-peek-operable-h" id="pressandhold-to-preview-peek-operable">
+<h3 id="pressandhold-to-preview-peek-operable-h">Operable</h3>
+<ul>
+<li data-principle="operable">Activation window conflicts with long-press settings; no explicit preview button exists.</li>
+<li data-principle="operable">Hold conflicts with vertical scroll; slight movement cancels the preview with no button fallback.</li>
+<li data-principle="operable">Small movements cancel the hold; there is no “Open preview” button for users who cannot maintain steady pressure.</li><li data-principle="operable">The preview traps focus and cannot be dismissed with the escape key or a close button; keyboard users are stuck.</li></ul>
+</section>
+<section aria-labelledby="pressandhold-to-preview-peek-understandable-h" id="pressandhold-to-preview-peek-understandable">
+<h3 id="pressandhold-to-preview-peek-understandable-h">Understandable</h3>
+<ul>
+<li data-principle="understandable">No hint that dragging promotes to full view; users don’t understand the two-stage model.</li>
+<li data-principle="understandable">No hint that dragging promotes to full view; users don’t understand the two-stage interaction.</li>
+<li data-principle="understandable">The rules for promoting to full view (for example, drag up) are not taught; users fail to open the item completely.</li><li data-principle="understandable">The preview shows limited information without an indication that more details exist; users think the item lacks content.</li></ul>
+</section>
+</article>
+<article aria-labelledby="pressandhold-to-record-audio-h" id="pressandhold-to-record-audio">
+<h2 data-principle="pattern" id="pressandhold-to-record-audio-h">Press-and-hold to record audio</h2>
+<p class="user-action" data-principle="user-action">User holds a microphone button to start recording and releases to stop.</p>
+<section aria-labelledby="pressandhold-to-record-audio-perceivable-h" id="pressandhold-to-record-audio-perceivable">
+<h3 id="pressandhold-to-record-audio-perceivable-h">Perceivable</h3>
+<ul>
+<li data-principle="perceivable">Only a subtle waveform indicates recording; users can’t perceive that capture started.</li>
+<li data-principle="perceivable">Recording state is indicated by color only with no timer; users can’t perceive that capture is active.</li>
+<li data-principle="perceivable">The recording state is indicated only by a color change; there is no timer or text like “Recording.”</li><li data-principle="perceivable">The waveform visualization appears only after several seconds; early capture is not perceivable.</li></ul>
+</section>
+<section aria-labelledby="pressandhold-to-record-audio-operable-h" id="pressandhold-to-record-audio-operable">
+<h3 id="pressandhold-to-record-audio-operable-h">Operable</h3>
+<ul>
+<li data-principle="operable">Hold-to-record demands sustained pressure; no tap-to-toggle option for limited strength.</li>
+<li data-principle="operable">Tiny hold target cancels recording when the finger slips; no slide-to-lock or tap-to-toggle option.</li>
+<li data-principle="operable">There is no “tap to lock” mode; users who cannot sustain pressure lose recordings when lifting a finger.</li><li data-principle="operable">The control is placed near the system gesture area; users accidentally exit instead of recording.</li></ul>
+</section>
+<section aria-labelledby="pressandhold-to-record-audio-understandable-h" id="pressandhold-to-record-audio-understandable">
+<h3 id="pressandhold-to-record-audio-understandable-h">Understandable</h3>
+<ul>
+<li data-principle="understandable">No guidance on max duration or cancel gestures; users can’t predict what will happen when released.</li>
+<li data-principle="understandable">Message auto-sends on release with no confirmation; users don’t understand when it’s committed.</li>
+<li data-principle="understandable">The application auto-sends recordings on release without a confirmation step; users are surprised by the outcome.</li><li data-principle="understandable">It is unclear how to cancel versus send (for example, slide left to cancel); users accidentally discard or send.</li></ul>
+</section>
+</article>
+<article aria-labelledby="pull-to-refresh-gesture-h" id="pull-to-refresh-gesture">
+<h2 data-principle="pattern" id="pull-to-refresh-gesture-h">Pull to refresh gesture</h2>
+<p class="user-action" data-principle="user-action">User pulls the list down past the header to request fresh content.</p>
+<section aria-labelledby="pull-to-refresh-gesture-perceivable-h" id="pull-to-refresh-gesture-perceivable">
+<h3 id="pull-to-refresh-gesture-perceivable-h">Perceivable</h3>
+<ul>
+<li data-principle="perceivable">Refresh affordance (spinner/arrow) is low contrast at the top; users don’t notice the pull cue.</li>
+<li data-principle="perceivable">Refresh hint sits under the notch/overscroll glow; at large text sizes the cue is off-screen.</li>
+<li data-principle="perceivable">The refresh spinner uses low contrast colors; users cannot perceive that a network request began.</li><li data-principle="perceivable">The “last updated” timestamp is very small; users cannot see whether content is fresh.</li></ul>
+</section>
+<section aria-labelledby="pull-to-refresh-gesture-operable-h" id="pull-to-refresh-gesture-operable">
+<h3 id="pull-to-refresh-gesture-operable-h">Operable</h3>
+<ul>
+<li data-principle="operable">Threshold requires long drag and steady hold; users with limited dexterity can’t trigger reliably.</li>
+<li data-principle="operable">Gesture only works when scrolled to absolute top; long lists and nested scroll views trap users below the threshold.</li>
+<li data-principle="operable">The gesture works only at the absolute top; nested scroll views prevent reaching the threshold.</li><li data-principle="operable">There is no alternative button to refresh; users relying on assistive technologies cannot perform the gesture.</li></ul>
+</section>
+<section aria-labelledby="pull-to-refresh-gesture-understandable-h" id="pull-to-refresh-gesture-understandable">
+<h3 id="pull-to-refresh-gesture-understandable-h">Understandable</h3>
+<ul>
+<li data-principle="understandable">No message about what will refresh or when; users don’t know why the list snapped back.</li>
+<li data-principle="understandable">No distinct feedback for ‘no new items’; users can’t tell whether anything changed after pulling.</li>
+<li data-principle="understandable">The application does not indicate that content is cached; users expect new items after every pull and are confused when nothing changes.</li><li data-principle="understandable">Error messages simply say “Failed to refresh”; users do not know whether to retry or check connectivity.</li></ul>
+</section>
+</article>
+<article aria-labelledby="scrollable-filter-chips-row-h" id="scrollable-filter-chips-row">
+<h2 data-principle="pattern" id="scrollable-filter-chips-row-h">Scrollable filter chips row</h2>
+<p class="user-action" data-principle="user-action">User scrolls a horizontal row of chips and taps to filter the feed.</p>
+<section aria-labelledby="scrollable-filter-chips-row-perceivable-h" id="scrollable-filter-chips-row-perceivable">
+<h3 id="scrollable-filter-chips-row-perceivable-h">Perceivable</h3>
+<ul>
+<li data-principle="perceivable">Chips truncate and look like static labels; users don’t perceive they’re interactive.</li>
+<li data-principle="perceivable">No overflow indicator; off-screen chips aren’t discoverable at a glance.</li>
+<li data-principle="perceivable">The selected state is indicated only by color; there is no checkmark or text such as “Selected.”</li><li data-principle="perceivable">Overflow chips are hidden without a visible cue (for example, gradient or arrows); users cannot perceive additional filters.</li></ul>
+</section>
+<section aria-labelledby="scrollable-filter-chips-row-operable-h" id="scrollable-filter-chips-row-operable">
+<h3 id="scrollable-filter-chips-row-operable-h">Operable</h3>
+<ul>
+<li data-principle="operable">Small chips near screen edges are hard to target; no list-view filter alternative.</li>
+<li data-principle="operable">Horizontal scroll steals vertical scroll focus; users can’t operate the list smoothly.</li>
+<li data-principle="operable">Chips near the device edges are difficult to tap; there is no list-based filter drawer.</li><li data-principle="operable">Horizontal scrolling consumes vertical swipes; users cannot scroll the feed smoothly.</li></ul>
+</section>
+<section aria-labelledby="scrollable-filter-chips-row-understandable-h" id="scrollable-filter-chips-row-understandable">
+<h3 id="scrollable-filter-chips-row-understandable-h">Understandable</h3>
+<ul>
+<li data-principle="understandable">Active/inactive semantics aren’t taught; users misread multi-select vs single-select behavior.</li>
+<li data-principle="understandable">Single-select vs multi-select isn’t communicated; users think toggling a chip preserves earlier filters.</li>
+<li data-principle="understandable">The chips represent categories, but the content feed uses different terminology; users cannot predict results.</li><li data-principle="understandable">Clearing all filters requires tapping each chip individually; users do not realize there is no “Clear all.”</li></ul>
+</section>
+</article>
+<article aria-labelledby="snackbar-undo-for-destructive-actions-h" id="snackbar-undo-for-destructive-actions">
+<h2 data-principle="pattern" id="snackbar-undo-for-destructive-actions-h">Snackbar undo for destructive actions</h2>
+<p class="user-action" data-principle="user-action">User sees a temporary bar with an Undo after deleting an item.</p>
+<section aria-labelledby="snackbar-undo-for-destructive-actions-perceivable-h" id="snackbar-undo-for-destructive-actions-perceivable">
+<h3 id="snackbar-undo-for-destructive-actions-perceivable-h">Perceivable</h3>
+<ul>
+<li data-principle="perceivable">Snackbar contrast is low over content; users don’t perceive the limited-time action.</li>
+<li data-principle="perceivable">Snackbar sits behind bottom navigation or the home indicator; users don’t see it in time.</li>
+<li data-principle="perceivable">The snackbar appears over the system home indicator; users cannot perceive the undo before it disappears.</li><li data-principle="perceivable">The timer is not shown; users do not know how long they have to act.</li></ul>
+</section>
+<section aria-labelledby="snackbar-undo-for-destructive-actions-operable-h" id="snackbar-undo-for-destructive-actions-operable">
+<h3 id="snackbar-undo-for-destructive-actions-operable-h">Operable</h3>
+<ul>
+<li data-principle="operable">Dismiss/undo targets are small and timeboxed; users can’t operate in time.</li>
+<li data-principle="operable">Timeout is short and cannot be extended; switch users cannot reach the target before it disappears.</li>
+<li data-principle="operable">The snackbar is not focusable; keyboard or switch users cannot reach the Undo control.</li><li data-principle="operable">The time-out cannot be paused; users who need more time cannot complete the action.</li></ul>
+</section>
+<section aria-labelledby="snackbar-undo-for-destructive-actions-understandable-h" id="snackbar-undo-for-destructive-actions-understandable">
+<h3 id="snackbar-undo-for-destructive-actions-understandable-h">Understandable</h3>
+<ul>
+<li data-principle="understandable">No copy about what will be undone; users don’t understand the scope of undo.</li>
+<li data-principle="understandable">‘Undo’ doesn’t specify scope (item vs batch); users don’t know what will be restored.</li>
+<li data-principle="understandable">The snackbar message uses vague wording (for example, “Item removed”) without naming the item; users are unsure what will be restored.</li><li data-principle="understandable">The undo affects multiple items after a batch action but the message says “1 item”; users misunderstand the scope.</li></ul>
+</section>
+</article>
+<article aria-labelledby="stacked-card-details-with-swipe-down-to-exit-h" id="stacked-card-details-with-swipe-down-to-exit">
+<h2 data-principle="pattern" id="stacked-card-details-with-swipe-down-to-exit-h">Stacked card details with swipe down to exit</h2>
+<p class="user-action" data-principle="user-action">User swipes a detail card upward to view; down to dismiss back to the stack.</p>
+<section aria-labelledby="stacked-card-details-with-swipe-down-to-exit-perceivable-h" id="stacked-card-details-with-swipe-down-to-exit-perceivable">
+<h3 id="stacked-card-details-with-swipe-down-to-exit-perceivable-h">Perceivable</h3>
+<ul>
+<li data-principle="perceivable">Depth and shadow cues are faint; users don’t perceive which layer is active.</li>
+<li data-principle="perceivable">Dimmer and card elevation are too similar; users can’t perceive which layer is active.</li>
+<li data-principle="perceivable">The background dim and the active card have similar tones; the active layer is not easily visible.</li><li data-principle="perceivable">The close affordance appears only on hover-like states that do not exist on touch; users do not see how to exit.</li></ul>
+</section>
+<section aria-labelledby="stacked-card-details-with-swipe-down-to-exit-operable-h" id="stacked-card-details-with-swipe-down-to-exit-operable">
+<h3 id="stacked-card-details-with-swipe-down-to-exit-operable-h">Operable</h3>
+<ul>
+<li data-principle="operable">Vertical swipe threshold is strict; no close button for users who can’t gesture.</li>
+<li data-principle="operable">Swipe-down competes with system back/home areas; no explicit Close button is provided.</li>
+<li data-principle="operable">The swipe-to-close gesture conflicts with the system gesture area; users accidentally minimize the application.</li><li data-principle="operable">There is no close button or keyboard escape; users who cannot perform the gesture are stuck.</li></ul>
+</section>
+<section aria-labelledby="stacked-card-details-with-swipe-down-to-exit-understandable-h" id="stacked-card-details-with-swipe-down-to-exit-understandable">
+<h3 id="stacked-card-details-with-swipe-down-to-exit-understandable-h">Understandable</h3>
+<ul>
+<li data-principle="understandable">No explanation of stack behavior; users don’t understand how to return to the list.</li>
+<li data-principle="understandable">Return position in the list isn’t preserved; users don’t understand why they’re sent to the top.</li>
+<li data-principle="understandable">Returning to the stack resets the scroll position without notice; users lose their place.</li><li data-principle="understandable">The application does not explain whether dismissing saves changes; users fear losing edits.</li></ul>
+</section>
+</article>
+<article aria-labelledby="story-viewer-taptoadvance-h" id="story-viewer-taptoadvance">
+<h2 data-principle="pattern" id="story-viewer-taptoadvance-h">Story viewer tap-to-advance</h2>
+<p class="user-action" data-principle="user-action">User taps right to advance or left to go back through ephemeral cards.</p>
+<section aria-labelledby="story-viewer-taptoadvance-perceivable-h" id="story-viewer-taptoadvance-perceivable">
+<h3 id="story-viewer-taptoadvance-perceivable-h">Perceivable</h3>
+<ul>
+<li data-principle="perceivable">Progress bars are thin and fast; users can’t perceive how much time remains.</li>
+<li data-principle="perceivable">Tap areas overlap UI controls; users trigger reactions or links instead of advancing.</li>
+<li data-principle="perceivable">The progress bar is extremely thin and moves quickly; users cannot perceive remaining time to read.</li><li data-principle="perceivable">Tap targets overlap with small profile icons; users accidentally open profiles instead of advancing.</li></ul>
+</section>
+<section aria-labelledby="story-viewer-taptoadvance-operable-h" id="story-viewer-taptoadvance-operable">
+<h3 id="story-viewer-taptoadvance-operable-h">Operable</h3>
+<ul>
+<li data-principle="operable">Edge tap areas conflict with system gestures near notches; no on-screen arrows provided.</li>
+<li data-principle="operable">Auto-advance is rapid with no pause affordance; long-press to pause isn’t discoverable.</li>
+<li data-principle="operable">There is no pause control; users who need more time cannot stop auto-advance.</li><li data-principle="operable">The left/right tap regions are too small on compact devices; users miss the area.</li></ul>
+</section>
+<section aria-labelledby="story-viewer-taptoadvance-understandable-h" id="story-viewer-taptoadvance-understandable">
+<h3 id="story-viewer-taptoadvance-understandable-h">Understandable</h3>
+<ul>
+<li data-principle="understandable">No explanation of left vs right tap; users don’t understand how to go back vs forward.</li>
+<li data-principle="understandable">Story order appears random after ads or sponsored cards; users can’t follow a sequence.</li>
+<li data-principle="understandable">The meaning of the dots (number of cards remaining) is not explained; users do not know how long the story is.</li><li data-principle="understandable">Sponsored cards interrupt the sequence without announcing they are external; users lose the narrative.</li></ul>
+</section>
+</article>
+<article aria-labelledby="swipe-between-tabs-paged-view-h" id="swipe-between-tabs-paged-view">
+<h2 data-principle="pattern" id="swipe-between-tabs-paged-view-h">Swipe between tabs (paged view)</h2>
+<p class="user-action" data-principle="user-action">User swipes horizontally to change tabs.</p>
+<section aria-labelledby="swipe-between-tabs-paged-view-perceivable-h" id="swipe-between-tabs-paged-view-perceivable">
+<h3 id="swipe-between-tabs-paged-view-perceivable-h">Perceivable</h3>
+<ul>
+<li data-principle="perceivable">Tab indicators have low contrast; users can’t see which page is active.</li>
+<li data-principle="perceivable">Indicator line is hairline-thin; active tab isn’t perceivable at a glance.</li>
+<li data-principle="perceivable">The active tab indicator is hairline-thin and low contrast; users cannot perceive which tab is active.</li><li data-principle="perceivable">The tab label truncates without a tooltip or multi-line option; users cannot understand the section name.</li></ul>
+</section>
+<section aria-labelledby="swipe-between-tabs-paged-view-operable-h" id="swipe-between-tabs-paged-view-operable">
+<h3 id="swipe-between-tabs-paged-view-operable-h">Operable</h3>
+<ul>
+<li data-principle="operable">Swipe distance thresholds exclude users with limited dexterity; no arrow/button alternative.</li>
+<li data-principle="operable">Swipe requires long horizontal travel; no left/right button alternatives exist.</li>
+<li data-principle="operable">Swipe requires a long horizontal movement; there are no left and right arrow buttons as an alternative.</li><li data-principle="operable">Keyboard focus does not move with the page; users must tab through many items to reach content.</li></ul>
+</section>
+<section aria-labelledby="swipe-between-tabs-paged-view-understandable-h" id="swipe-between-tabs-paged-view-understandable">
+<h3 id="swipe-between-tabs-paged-view-understandable-h">Understandable</h3>
+<ul>
+<li data-principle="understandable">Label and content change simultaneously with no cue; users can’t learn the navigation model.</li>
+<li data-principle="understandable">Content and tabs change simultaneously; users can’t build a stable model of sections.</li>
+<li data-principle="understandable">The relationship between the tab label and the page content is not explained; users cannot build a stable model of sections.</li><li data-principle="understandable">The order of tabs changes dynamically based on usage; users cannot predict where to find a section.</li></ul>
+</section>
+</article>
+<article aria-labelledby="swipe-to-dismiss-list-item-h" id="swipe-to-dismiss-list-item">
+<h2 data-principle="pattern" id="swipe-to-dismiss-list-item-h">Swipe to dismiss list item</h2>
+<p class="user-action" data-principle="user-action">User swipes a list item left or right to archive or delete.</p>
+<section aria-labelledby="swipe-to-dismiss-list-item-perceivable-h" id="swipe-to-dismiss-list-item-perceivable">
+<h3 id="swipe-to-dismiss-list-item-perceivable-h">Perceivable</h3>
+<ul>
+<li data-principle="perceivable">Only color change indicates action; color-blind users may miss destructive intent.</li>
+<li data-principle="perceivable">Reveal affordance is a tiny icon that blends into the cell; users don’t notice dismiss is available.</li>
+<li data-principle="perceivable">The destructive action uses red only without an icon or text; users with color-vision differences may not notice the risk.</li><li data-principle="perceivable">The reveal icon is tiny and partly hidden by shadows; the available action is not visible.</li></ul>
+</section>
+<section aria-labelledby="swipe-to-dismiss-list-item-operable-h" id="swipe-to-dismiss-list-item-operable">
+<h3 id="swipe-to-dismiss-list-item-operable-h">Operable</h3>
+<ul>
+<li data-principle="operable">Precise swipe thresholds exclude users with limited dexterity; no button alternative provided.</li>
+<li data-principle="operable">Swipe direction flips with locale but thresholds don’t; users miss the action on mirrored layouts.</li>
+<li data-principle="operable">The swipe threshold is strict and varies across items; users with limited dexterity cannot perform it consistently.</li><li data-principle="operable">The direction flips in right-to-left languages but the affordance does not; users fail the gesture.</li></ul>
+</section>
+<section aria-labelledby="swipe-to-dismiss-list-item-understandable-h" id="swipe-to-dismiss-list-item-understandable">
+<h3 id="swipe-to-dismiss-list-item-understandable-h">Understandable</h3>
+<ul>
+<li data-principle="understandable">No confirmation or undo; users can’t learn whether the item was archived or deleted.</li>
+<li data-principle="understandable">Archive vs delete outcomes aren’t previewed; users can’t anticipate the consequence of the swipe.</li>
+<li data-principle="understandable">The application does not preview the action (for example, “Archive”) before release; users do not know what will happen.</li><li data-principle="understandable">There is no confirmation or undo; users mistakenly remove items and cannot recover.</li></ul>
+</section>
+</article>
+<article aria-labelledby="swipe-to-reveal-actions-row-h" id="swipe-to-reveal-actions-row">
+<h2 data-principle="pattern" id="swipe-to-reveal-actions-row-h">Swipe to reveal actions row</h2>
+<p class="user-action" data-principle="user-action">User swipes a list item to reveal multiple action buttons.</p>
+<section aria-labelledby="swipe-to-reveal-actions-row-perceivable-h" id="swipe-to-reveal-actions-row-perceivable">
+<h3 id="swipe-to-reveal-actions-row-perceivable-h">Perceivable</h3>
+<ul>
+<li data-principle="perceivable">Revealed buttons have low contrast on the cell; users don’t perceive which action is destructive.</li>
+<li data-principle="perceivable">Hidden actions are signaled with a faint gradient only; users don’t perceive additional options exist.</li>
+<li data-principle="perceivable">Hidden actions are hinted only by a faint gradient; users do not perceive additional options exist.</li><li data-principle="perceivable">The labels on revealed buttons are low contrast against the cell; users cannot read them quickly.</li></ul>
+</section>
+<section aria-labelledby="swipe-to-reveal-actions-row-operable-h" id="swipe-to-reveal-actions-row-operable">
+<h3 id="swipe-to-reveal-actions-row-operable-h">Operable</h3>
+<ul>
+<li data-principle="operable">Swipe distance is strict; users with tremor expose actions unintentionally or not at all.</li>
+<li data-principle="operable">Left-handed or RTL layouts keep actions on the far side; users can’t reach or trigger reliably.</li>
+<li data-principle="operable">Left-handed use places actions on the far side; users cannot reach buttons comfortably.</li><li data-principle="operable">The swipe distance is sensitive; users with tremor reveal actions unintentionally.</li></ul>
+</section>
+<section aria-labelledby="swipe-to-reveal-actions-row-understandable-h" id="swipe-to-reveal-actions-row-understandable">
+<h3 id="swipe-to-reveal-actions-row-understandable-h">Understandable</h3>
+<ul>
+<li data-principle="understandable">Icons lack text labels; users can’t infer what each action does before tapping.</li>
+<li data-principle="understandable">Abbreviated labels (e.g., ‘ARC’) aren’t explained; users can’t anticipate consequences.</li>
+<li data-principle="understandable">Icons are ambiguous without text (for example, a box could mean “save” or “archive”); users cannot choose confidently.</li><li data-principle="understandable">Abbreviations such as “ARC” or “DEL” are unexplained; users cannot anticipate consequences.</li></ul>
+</section>
+</article>
+<article aria-labelledby="tab-bar-reselection-to-scroll-to-top-h" id="tab-bar-reselection-to-scroll-to-top">
+<h2 data-principle="pattern" id="tab-bar-reselection-to-scroll-to-top-h">Tab bar reselection to scroll-to-top</h2>
+<p class="user-action" data-principle="user-action">User taps the already-selected tab to jump the list back to top.</p>
+<section aria-labelledby="tab-bar-reselection-to-scroll-to-top-perceivable-h" id="tab-bar-reselection-to-scroll-to-top-perceivable">
+<h3 id="tab-bar-reselection-to-scroll-to-top-perceivable-h">Perceivable</h3>
+<ul>
+<li data-principle="perceivable">No visual affordance that reselection does anything; users don’t perceive the shortcut.</li>
+<li data-principle="perceivable">No visual hint that a second tap triggers a jump; affordance is invisible.</li>
+<li data-principle="perceivable">There is no visible hint that a second tap performs an action; users cannot discover the shortcut.</li><li data-principle="perceivable">The animation is so fast that the jump is disorienting; users cannot perceive the transition.</li></ul>
+</section>
+<section aria-labelledby="tab-bar-reselection-to-scroll-to-top-operable-h" id="tab-bar-reselection-to-scroll-to-top-operable">
+<h3 id="tab-bar-reselection-to-scroll-to-top-operable-h">Operable</h3>
+<ul>
+<li data-principle="operable">Gesture requires precise double hit on the same tab; no explicit ‘scroll to top’ control.</li>
+<li data-principle="operable">Requires rapid reselection on a small target; no explicit ‘top’ control is provided.</li>
+<li data-principle="operable">Re-tapping a small icon requires precise targeting; there is no “scroll to top” button within reach.</li><li data-principle="operable">The gesture is not available to keyboard or switch users; the control is not focusable.</li></ul>
+</section>
+<section aria-labelledby="tab-bar-reselection-to-scroll-to-top-understandable-h" id="tab-bar-reselection-to-scroll-to-top-understandable">
+<h3 id="tab-bar-reselection-to-scroll-to-top-understandable-h">Understandable</h3>
+<ul>
+<li data-principle="understandable">Users don’t expect a second tap to scroll; behavior feels arbitrary.</li>
+<li data-principle="understandable">Jump lacks preview or confirmation; users don’t understand why the list moved.</li>
+<li data-principle="understandable">The behavior is not taught during onboarding; users do not expect a second tap to trigger a jump.</li><li data-principle="understandable">The application does not announce that the list has returned to the top; users are unsure what changed.</li></ul>
+</section>
+</article>
+<article aria-labelledby="twofinger-drag-to-multiselect-h" id="twofinger-drag-to-multiselect">
+<h2 data-principle="pattern" id="twofinger-drag-to-multiselect-h">Two-finger drag to multi-select</h2>
+<p class="user-action" data-principle="user-action">User drags two fingers down a list to select multiple items in one motion.</p>
+<section aria-labelledby="twofinger-drag-to-multiselect-perceivable-h" id="twofinger-drag-to-multiselect-perceivable">
+<h3 id="twofinger-drag-to-multiselect-perceivable-h">Perceivable</h3>
+<ul>
+<li data-principle="perceivable">Selection state uses color only; users with low vision can’t perceive which rows are selected.</li>
+<li data-principle="perceivable">Selection outline is subtle and conflicts with high-contrast themes; selected rows look identical to unselected ones.</li>
+<li data-principle="perceivable">The selection style (for example, highlight) is indistinguishable from focus; users cannot perceive what is selected versus focused.</li><li data-principle="perceivable">Selected count is not announced or shown prominently; users cannot confirm how many items are selected.</li></ul>
+</section>
+<section aria-labelledby="twofinger-drag-to-multiselect-operable-h" id="twofinger-drag-to-multiselect-operable">
+<h3 id="twofinger-drag-to-multiselect-operable-h">Operable</h3>
+<ul>
+<li data-principle="operable">Gesture requires multi-touch coordination; no checkbox/select-all alternative.</li>
+<li data-principle="operable">Screen reader intercepts the two-finger gesture; no toggle or checkbox mode is available.</li>
+<li data-principle="operable">The gesture conflicts with screen-reader two-finger scroll; there is no “Select mode” with checkboxes.</li><li data-principle="operable">There is no “Select all” or range selection tool; users must perform long manual gestures.</li></ul>
+</section>
+<section aria-labelledby="twofinger-drag-to-multiselect-understandable-h" id="twofinger-drag-to-multiselect-understandable">
+<h3 id="twofinger-drag-to-multiselect-understandable-h">Understandable</h3>
+<ul>
+<li data-principle="understandable">Mode of selection and available bulk actions aren’t introduced; users don’t know what’s possible.</li>
+<li data-principle="understandable">Bulk-action toolbar appears off-screen; users don’t realize what options selection enables.</li>
+<li data-principle="understandable">Bulk actions become available without explanation; users do not realize new commands are present.</li><li data-principle="understandable">The rules for extending or reducing a selection are not explained; users unintentionally deselect items.</li></ul>
+</section>
+</article>
+</main>
+</body>
+</html>
