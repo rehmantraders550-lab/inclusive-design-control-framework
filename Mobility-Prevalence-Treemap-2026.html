@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>US Mobility-Related Disability Prevalence and PC Access Barriers</title>
+<style>
+:root{
+  --bg-canvas:#0d1117;--bg-surface:#161b22;--bg-surface-hover:#21262d;--bg-overlay:#30363d;
+  --border-default:#30363d;--border-muted:#21262d;
+  --text-primary:#e6edf3;--text-secondary:#7d8590;--text-muted:#656d76;
+  --accent:#58a6ff;--accent-hover:#79c0ff;--accent-active:#1f6feb;
+  --success:#3fb950;--warning:#d29922;--danger:#f85149;--purple:#d2a8ff;
+  --shadow-sm:0 1px 3px rgba(0,0,0,.35);--shadow-md:0 8px 24px rgba(0,0,0,.45);
+  --radius:6px;--transition:.15s ease;
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{color-scheme:dark;}
+body{
+  margin:0;background:var(--bg-canvas);color:var(--text-primary);
+  font-family:"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size:14px;line-height:1.5;
+}
+button,select,a{font:inherit;}
+a{color:var(--accent);text-decoration:none;}
+a:hover{text-decoration:underline;}
+button:focus-visible,select:focus-visible,a:focus-visible,[tabindex]:focus-visible{
+  outline:2px solid var(--accent);outline-offset:2px;
+}
+.container{width:min(1600px,100% - 32px);margin-inline:auto;padding-block:24px 32px;}
+.page-header{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:18px;}
+.page-header h1{font-size:clamp(1.5rem,3vw,2.25rem);font-weight:650;line-height:1.1;margin:0 0 8px;}
+.sub{color:var(--text-secondary);margin:0;}
+.card{background:var(--bg-surface);border:1px solid var(--border-default);border-radius:var(--radius);box-shadow:var(--shadow-sm);}
+.toolbar{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  min-height:58px;padding:10px 12px;border-bottom:1px solid var(--border-default);
+}
+.toolbar-group{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.toolbar-end{display:flex;align-items:center;gap:12px;margin-left:auto;}
+.highlight-control{
+  display:flex;align-items:center;gap:8px;padding-left:10px;border-left:1px solid var(--border-default);
+}
+.highlight-control label{display:flex;align-items:center;}
+.control{
+  min-height:36px;padding:7px 12px;border:1px solid var(--border-default);border-radius:var(--radius);
+  background:var(--bg-canvas);color:var(--text-primary);font-weight:600;cursor:pointer;
+  transition:background var(--transition),border-color var(--transition);
+}
+.control:hover{background:var(--bg-surface-hover);border-color:var(--text-secondary);}
+.control:disabled{cursor:not-allowed;opacity:.45;background:var(--bg-canvas);border-color:var(--border-default);}
+.control.icon{min-width:38px;padding-inline:10px;font-size:1.1rem;line-height:1;}
+label{color:var(--text-secondary);font-size:12px;font-weight:600;}
+select{margin-left:6px;min-height:36px;padding:6px 30px 6px 10px;border:1px solid var(--border-default);
+  border-radius:var(--radius);background:var(--bg-canvas);color:var(--text-primary);}
+.zoom-status{min-width:64px;color:var(--text-secondary);font-variant-numeric:tabular-nums;text-align:right;}
+.chart-card:fullscreen{
+  width:100%;height:100%;display:flex;flex-direction:column;border:0;border-radius:0;
+}
+.chart-card:fullscreen .viewport{height:auto;min-height:0;flex:1;}
+.fullscreen-error{
+  margin:0;padding:8px 12px;border-bottom:1px solid var(--danger);
+  background:rgba(248,81,73,.14);color:var(--text-primary);font-weight:600;
+}
+.fullscreen-error[hidden]{display:none;}
+.scope-note{margin:0;padding:9px 12px;border-bottom:1px solid var(--border-muted);border-left:3px solid var(--accent);
+  background:rgba(88,166,255,.08);color:var(--text-primary);font-size:13px;}
+.instructions{margin:0;padding:8px 12px;border-bottom:1px solid var(--border-muted);color:var(--text-secondary);font-size:12px;}
+.viewport{
+  position:relative;height:clamp(560px,calc(100svh - 245px),900px);min-height:420px;overflow:hidden;
+  background-color:var(--bg-canvas);
+  background-image:linear-gradient(var(--border-muted) 1px,transparent 1px),
+    linear-gradient(90deg,var(--border-muted) 1px,transparent 1px);
+  background-size:32px 32px;cursor:grab;touch-action:none;isolation:isolate;
+}
+.viewport.dragging{cursor:grabbing;}
+.world{position:absolute;left:0;top:0;width:2400px;height:1400px;transform-origin:0 0;will-change:transform;}
+.tile{
+  position:absolute;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;
+  min-width:1px;min-height:1px;margin:0;padding:clamp(8px,1.2vw,18px);overflow:hidden;text-align:left;
+  border:2px solid var(--tile-color);border-radius:0;color:var(--text-primary);
+  background:linear-gradient(145deg,var(--tile-fill-strong),var(--tile-fill));
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.035);cursor:pointer;
+  transition:filter var(--transition),box-shadow var(--transition),opacity var(--transition);
+}
+.tile:hover,.tile:focus-visible{
+  z-index:2;filter:brightness(1.2);box-shadow:inset 0 0 0 1px rgba(255,255,255,.2),0 0 0 2px var(--bg-canvas);
+}
+.tile.is-muted{opacity:.45;}
+.tile.is-highlighted,.tile.is-highlighted:hover,.tile.is-highlighted:focus-visible{
+  z-index:4;border-width:8px;
+}
+.tile-label{display:block;max-width:100%;font-size:var(--label-font,30px);font-weight:400;line-height:1.14;
+  overflow-wrap:anywhere;text-wrap:balance;text-shadow:0 1px 2px rgba(0,0,0,.8);}
+.tile-count{display:block;margin-top:7px;color:#fff;font-size:var(--count-font,24px);font-weight:700;
+  font-variant-numeric:tabular-nums;text-shadow:0 1px 2px rgba(0,0,0,.9);}
+.tile.compact{padding:9px;}
+.tile.compact .tile-label{line-height:1.08;}
+.tile.compact .tile-count{margin-top:3px;}
+.tile.micro{padding:5px;justify-content:center;}
+.tile.micro .tile-label{line-height:1.02;}
+.tile.micro .tile-count{margin-top:2px;}
+.popover{
+  position:absolute;z-index:10;width:min(390px,calc(100% - 24px));padding:16px 18px;
+  border:1px solid var(--border-default);border-radius:var(--radius);background:var(--bg-surface);
+  box-shadow:var(--shadow-md);max-height:calc(100% - 24px);overflow-y:auto;overflow-wrap:anywhere;
+  overscroll-behavior:contain;
+}
+.popover[hidden]{display:none;}
+.popover h2{font-size:1rem;line-height:1.25;margin:0 24px 2px 0;}
+.popover .value{margin:0 0 12px;color:var(--accent-hover);font-size:1.25rem;font-weight:750;font-variant-numeric:tabular-nums;}
+.popover h3{margin:10px 0 2px;color:var(--text-secondary);font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;}
+.popover p{margin:0;}
+.popover .no-source{color:var(--text-secondary);}
+.facet-list{
+  margin:2px 0 0;padding:0;list-style:none;counter-reset:facet;
+}
+.facet-list li{display:inline;counter-increment:facet;}
+.facet-list li::before{content:counter(facet) ". ";}
+.facet-list li:not(:last-child){margin-right:12px;}
+.popover-close{position:absolute;right:8px;top:8px;width:30px;height:30px;padding:0;border:0;border-radius:4px;
+  background:transparent;color:var(--text-secondary);font-size:1.2rem;cursor:pointer;}
+.popover-close:hover{background:var(--bg-surface-hover);color:var(--text-primary);}
+.data-card{margin-top:16px;padding:0;}
+.data-card>summary{padding:14px 18px;cursor:pointer;font-weight:650;}
+.table-wrap{max-height:420px;overflow:auto;border-top:1px solid var(--border-default);}
+table{width:100%;border-collapse:collapse;}
+th,td{padding:9px 12px;border-bottom:1px solid var(--border-muted);text-align:left;vertical-align:top;}
+thead th{position:sticky;top:0;z-index:1;background:var(--bg-surface);font-weight:650;}
+.table-condition{font-weight:400;}
+.table-condition-link{font-weight:400;}
+.external-link-icon{width:.85em;height:.85em;margin-left:4px;vertical-align:-.08em;}
+.table-population{display:block;margin-top:2px;font-weight:700;font-variant-numeric:tabular-nums;}
+.table-description-text{margin:0;}
+.table-facets{margin-top:8px;}
+.table-facets-label{font-weight:700;}
+.table-facet-list{display:inline;}
+tbody tr:hover{background:rgba(177,186,196,.06);}
+footer{padding:16px 2px 0;color:var(--text-secondary);font-size:12px;}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);
+  clip-path:inset(50%);white-space:nowrap;border:0;}
+@media (max-width:700px){
+  .container{width:min(100% - 16px,1600px);padding-top:14px;}
+  .page-header{align-items:flex-start;flex-direction:column;}
+  .viewport{height:68svh;}
+  .toolbar{align-items:flex-start;flex-direction:column;}
+  .highlight-control{padding-left:0;border-left:0;}
+  .toolbar-end{margin-left:0;}
+  .zoom-status{text-align:left;}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important;}
+}
+</style>
+</head>
+<body>
+<main class="container">
+  <header class="page-header">
+    <div>
+      <h1>US Mobility-Related Disability Prevalence and PC Access Barriers</h1>
+      <p class="sub">Explore 26 approved planning estimates. These conditions overlap, so the values must not be summed into a unique-person total.</p>
+    </div>
+  </header>
+
+  <section class="card chart-card" id="chart-card" aria-labelledby="chart-heading">
+    <h2 class="sr-only" id="chart-heading">Zoomable mobility condition prevalence treemap</h2>
+    <div class="toolbar" role="toolbar" aria-label="Treemap controls">
+      <div class="toolbar-group">
+        <button class="control icon" id="zoom-out" type="button" aria-label="Zoom out" title="Zoom out">&minus;</button>
+        <button class="control icon" id="zoom-in" type="button" aria-label="Zoom in" title="Zoom in">+</button>
+        <button class="control" id="fit-view" type="button">Fit to view</button>
+        <label for="area-scale">Area scale
+          <select id="area-scale">
+            <option value="linear">Proportional</option>
+            <option value="sqrt">Readable (square root)</option>
+          </select>
+        </label>
+        <div class="highlight-control" role="group" aria-label="Highlight">
+          <label for="primary-facet">Primary Limitation
+            <select id="primary-facet">
+              <option value="">All Limitations</option>
+            </select>
+          </label>
+          <button class="control" id="highlight-reset" type="button" disabled>Reset</button>
+        </div>
+      </div>
+      <div class="toolbar-end">
+        <button class="control" id="fullscreen-toggle" type="button" aria-pressed="false" hidden>Full Screen</button>
+        <div class="zoom-status" id="zoom-status" aria-live="polite">100%</div>
+      </div>
+    </div>
+    <span class="sr-only" id="fullscreen-status" aria-live="polite"></span>
+    <p class="fullscreen-error" id="fullscreen-error" role="alert" hidden></p>
+    <span class="sr-only" id="highlight-status" role="status" aria-live="polite"></span>
+    <p class="scope-note"><strong>Data scope:</strong> These estimates focus on populations for whom PC input mismatches in interaction create barriers.</p>
+    <p class="instructions" id="instructions">
+      Drag to pan; use the mouse wheel or controls to zoom. With keyboard focus in the chart, use arrow keys to pan, +/&minus; to zoom, and 0 to fit. Focus or hover a tile for limitations, caveat, reference, and ranked mobility facets. Press Enter to move into its links.
+    </p>
+    <div class="viewport" id="viewport" role="region" tabindex="0" aria-label="Mobility prevalence treemap" aria-describedby="instructions">
+      <div class="world" id="world" role="group" aria-label="Condition estimates"></div>
+      <aside class="popover" id="popover" role="region" aria-labelledby="popover-title" hidden>
+        <button class="popover-close" id="popover-close" type="button" aria-label="Close details">&times;</button>
+        <h2 id="popover-title"></h2>
+        <p class="value" id="popover-value"></p>
+        <h3>Limitations</h3>
+        <p id="popover-limitations"></p>
+        <h3>Caveat</h3>
+        <p id="popover-caveat"></p>
+        <h3>Reference</h3>
+        <a id="popover-link" target="_blank" rel="noopener noreferrer">Open source</a>
+        <p class="no-source" id="popover-no-source">No reference URL was provided.</p>
+        <h3>Understanding Function / Mobility</h3>
+        <ol class="facet-list" id="popover-facets"></ol>
+      </aside>
+    </div>
+  </section>
+
+  <details class="card data-card">
+    <summary>View the chart data as a table</summary>
+    <div class="table-wrap" tabindex="0" role="region" aria-label="Mobility prevalence data table">
+      <table>
+        <caption class="sr-only">Mobility condition prevalence estimates, PC-use descriptions, and ranked mobility facets</caption>
+        <thead><tr><th scope="col">Condition</th><th scope="col">Description</th></tr></thead>
+        <tbody id="data-body"></tbody>
+      </table>
+    </div>
+  </details>
+
+  <footer>
+    Source: <code>export_mobility_prevalence_chart_Final.csv</code>. Generated 2026-07-17. Proportional area is the default for literal count comparison. Readable square-root area keeps smaller estimates visible in a fixed, non-zooming view.
+  </footer>
+</main>
+
+<script id="source-csv-data" type="application/json">{"sourceFile":"export_mobility_prevalence_chart_Final.csv","columns":["condition","approved_count","caveat","source_url","mobility_facet_1_most_relevant","mobility_facet_2","mobility_facet_3","mobility_facet_4","pc_use_functional_limitations"],"rows":[{"condition":"Arthritis with activity limitation","approved_count":"24800000","caveat":"Functional proxy; not hand- or device-specific.","source_url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC13077793/","mobility_facet_1_most_relevant":"Fine motor skills","mobility_facet_2":"Endurance","mobility_facet_3":"Grasp","mobility_facet_4":"Speed","pc_use_functional_limitations":"Hand pain, stiffness, and limited joint motion may slow typing and clicking, weaken mouse or stylus grip, and shorten sustained input."},{"condition":"Developmental coordination disorder (dyspraxia)","approved_count":"6800000","caveat":"Modeled rather than observed; approximates difficulty with at least one PC, phone, or controller task.","source_url":"https://www.frontiersin.org/journals/pediatrics/articles/10.3389/fped.2024.1387406/full","mobility_facet_1_most_relevant":"Coordination","mobility_facet_2":"Fine motor skills","mobility_facet_3":"Speed","mobility_facet_4":"Posture","pc_use_functional_limitations":"Motor coordination and dexterity differences may reduce key and pointer accuracy, slow multi-step input, and make sustained PC interaction more effortful."},{"condition":"Epicondylitis","approved_count":"5340000","caveat":"Active prevalence is used as a device-impact proxy; no direct national limitation fraction exists.","source_url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC4517446/","mobility_facet_1_most_relevant":"Endurance","mobility_facet_2":"Grasp","mobility_facet_3":"Fine motor skills","mobility_facet_4":"Speed","pc_use_functional_limitations":"Elbow and forearm pain triggered by gripping and repetition may limit mouse control, typing duration, and handling of peripherals."},{"condition":"Current carpal tunnel syndrome among U.S. workers","approved_count":"3890000","caveat":"Excludes nonworkers.","source_url":"https://wwwn.cdc.gov/Niosh-whc/chart/ohs-cts/illness","mobility_facet_1_most_relevant":"Fine motor skills","mobility_facet_2":"Endurance","mobility_facet_3":"Speed","mobility_facet_4":"Grasp","pc_use_functional_limitations":"Hand numbness, tingling, pain, or weakness may reduce finger precision, typing endurance, and the ability to grip or click a mouse."},{"condition":"Stroke survivors with lasting motor impairment","approved_count":"3120000","caveat":"Cross-study proxy; not direct national device-use surveillance.","source_url":"https://www.cdc.gov/nchs/fastats/stroke.htm","mobility_facet_1_most_relevant":"Fine motor skills","mobility_facet_2":"Muscle tone","mobility_facet_3":"Speed","mobility_facet_4":"Grasp","pc_use_functional_limitations":"Weakness, spasticity, or reduced isolated finger movement may limit typing, pointer control, grip, and input speed; effects vary by stroke."},{"condition":"De Quervain tenosynovitis","approved_count":"2405000","caveat":"Uses a non-U.S. prevalence proxy and assumes active disease represents device impact.","source_url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC11027984/","mobility_facet_1_most_relevant":"Endurance","mobility_facet_2":"Grasp","mobility_facet_3":"Fine motor skills","mobility_facet_4":"Speed","pc_use_functional_limitations":"Thumb-side wrist pain during gripping and repetitive motion may limit mouse use, typing, touch gestures, and prolonged device handling."},{"condition":"Diagnosed essential tremor","approved_count":"1100000","caveat":"Excludes undiagnosed and many mild cases.","source_url":"https://tremorjournal.org/articles/10.5334/tohm.1060","mobility_facet_1_most_relevant":"Control (voluntary vs. involuntary movement)","mobility_facet_2":"Fine motor skills","mobility_facet_3":"Grasp","mobility_facet_4":"Endurance","pc_use_functional_limitations":"Action tremor may cause cursor drift, unintended clicks or keystrokes, and difficulty holding a mouse or stylus steadily."},{"condition":"Parkinson disease","approved_count":"1100000","caveat":"Interpolated planning value anchored to 2020 measurement and 2030 projection.","source_url":"https://www.parkinson.org/understanding-parkinsons/statistics","mobility_facet_1_most_relevant":"Control (voluntary vs. involuntary movement)","mobility_facet_2":"Speed","mobility_facet_3":"Fine motor skills","mobility_facet_4":"Muscle tone","pc_use_functional_limitations":"Slowness, tremor, rigidity, and reduced finger movement may affect typing speed, pointer accuracy, clicking, and sustained device control."},{"condition":"Cerebral palsy","approved_count":"1000000","caveat":"No national adult surveillance count exists.","source_url":"https://publications.aap.org/pediatricsopenscience/article/2/2/1/207858/Prevalence-of-Cerebral-Palsy-Among-Children-Aged-4","mobility_facet_1_most_relevant":"Fine motor skills","mobility_facet_2":"Coordination","mobility_facet_3":"Muscle tone","mobility_facet_4":"Speed","pc_use_functional_limitations":"Differences in muscle tone, coordination, and voluntary movement may affect typing, pointing, touch accuracy, and access to standard input devices."},{"condition":"Traumatic brain injury with lasting motor impairment","approved_count":"900000","caveat":"Both the 5.3M base count and upper-limb fraction have age and representativeness limitations.","source_url":"https://stacks.cdc.gov/view/cdc/11642","mobility_facet_1_most_relevant":"Coordination","mobility_facet_2":"Fine motor skills","mobility_facet_3":"Speed","mobility_facet_4":"Muscle tone","pc_use_functional_limitations":"Lasting weakness, incoordination, slowed movement, or spasticity may reduce typing and pointer accuracy, speed, and control."},{"condition":"Fibromyalgia with device-use limitation","approved_count":"790000","caveat":"Fine-motor study included 20 women and the group difference was not statistically significant.","source_url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC5304994/","mobility_facet_1_most_relevant":"Endurance","mobility_facet_2":"Speed","mobility_facet_3":"Posture","mobility_facet_4":"Fine motor skills","pc_use_functional_limitations":"Pain, fatigue, and sensitivity may shorten keyboard or mouse sessions, slow input, and make maintaining a workstation posture difficult."},{"condition":"Upper-limb loss or limb difference","approved_count":"570000","caveat":"Procedure share is not resident prevalence; birth prevalence is extrapolated across living cohorts.","source_url":"https://amputee-coalition.org/wp-content/uploads/Prevalence-of-Limb-Loss-and-Limb-Difference-in-the-United-States_Implications-for-Public-Policy.pdf","mobility_facet_1_most_relevant":"Grasp","mobility_facet_2":"Fine motor skills","mobility_facet_3":"Speed","mobility_facet_4":"Coordination","pc_use_functional_limitations":"Differences in reach, grasp, or available fingers may limit conventional two-handed typing, key combinations, mouse use, and peripheral handling."},{"condition":"Multiple sclerosis with hand-function impairment","approved_count":"548000","caveat":"Functional multiplier is not from nationally representative U.S. surveillance.","source_url":"https://www.msard-journal.com/article/S2211-0348(22)00428-X/fulltext","mobility_facet_1_most_relevant":"Fine motor skills","mobility_facet_2":"Endurance","mobility_facet_3":"Coordination","mobility_facet_4":"Muscle tone","pc_use_functional_limitations":"Hand weakness, tremor, incoordination, spasticity, or fatigue may reduce typing and pointer accuracy, speed, and endurance."},{"condition":"Diagnosed wrist ganglion cyst","approved_count":"427000","caveat":"Outpatient claims prevalence is extrapolated nationally; device limitation was not measured.","source_url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC9112726/","mobility_facet_1_most_relevant":"Endurance","mobility_facet_2":"Grasp","mobility_facet_3":"Speed","mobility_facet_4":"Fine motor skills","pc_use_functional_limitations":"Wrist pain, restricted motion, or grip weakness may limit sustained mouse use, typing speed, clicking, dragging, and fine input."},{"condition":"Traumatic spinal cord injury","approved_count":"308620","caveat":"Contains the tetraplegia row as a nested subset; do not add them.","source_url":"","mobility_facet_1_most_relevant":"Fine motor skills","mobility_facet_2":"Grasp","mobility_facet_3":"Posture","mobility_facet_4":"Muscle tone","pc_use_functional_limitations":"Depending on injury level, weakness, paralysis, sensory loss, spasticity, or reduced trunk control may limit standard keyboard, mouse, and device positioning."},{"condition":"Ehlers-Danlos syndromes, Hypermobility spectrum disorder","approved_count":"200000","caveat":"Umbrella covers all 13 EDS types; do not add subtype estimates or HSD as unique people.","source_url":"https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2024.1365712/full","mobility_facet_1_most_relevant":"Endurance","mobility_facet_2":"Muscle tone","mobility_facet_3":"Fine motor skills","mobility_facet_4":"Posture","pc_use_functional_limitations":"Joint instability, pain, fatigue, or reduced proprioception may affect grip, precise finger input, sustained typing, and workstation posture."},{"condition":"Most Muscular dystrophies","approved_count":"108860","caveat":"The top types of MD. ","source_url":"","mobility_facet_1_most_relevant":"Endurance","mobility_facet_2":"Grasp","mobility_facet_3":"Fine motor skills","mobility_facet_4":"Muscle tone","pc_use_functional_limitations":"Progressive weakness and fatigue may reduce grip, finger control, typing endurance, and the ability to maintain arms or posture for PC use."},{"condition":"Spina bifida","approved_count":"92551","caveat":"Excludes uninsured residents and spina bifida occulta.","source_url":"https://www.cdc.gov/spina-bifida/data/index.html","mobility_facet_1_most_relevant":"Fine motor skills","mobility_facet_2":"Posture","mobility_facet_3":"Coordination","mobility_facet_4":"Speed","pc_use_functional_limitations":"Depending on lesion level and associated effects, reduced dexterity, coordination, or trunk stability may affect typing, pointing, speed, and workstation positioning."},{"condition":"Myasthenia gravis","approved_count":"82715","caveat":"Excludes pediatric cases and depends on claims identification.","source_url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC10907989/","mobility_facet_1_most_relevant":"Endurance","mobility_facet_2":"Speed","mobility_facet_3":"Fine motor skills","mobility_facet_4":"Posture","pc_use_functional_limitations":"Fatigable weakness may progressively reduce typing, clicking, pointer control, and upright posture during a PC session, often improving after rest."},{"condition":"Primary dystonia","approved_count":"55205","caveat":"User-selected legacy estimate; not upper-limb-specific and may overstate device-relevant cases.","source_url":"","mobility_facet_1_most_relevant":"Control (voluntary vs. involuntary movement)","mobility_facet_2":"Muscle tone","mobility_facet_3":"Fine motor skills","mobility_facet_4":"Coordination","pc_use_functional_limitations":"Involuntary muscle contractions or abnormal postures may disrupt task-specific hand control, causing unwanted key presses, clicks, or cursor movement."},{"condition":"Myotonic dystrophy","approved_count":"54000","caveat":"Genetic ascertainment may include mild, late-onset, or not-yet-functionally limiting disease.","source_url":"https://pubmed.ncbi.nlm.nih.gov/33472919/","mobility_facet_1_most_relevant":"Grasp","mobility_facet_2":"Fine motor skills","mobility_facet_3":"Control (voluntary vs. involuntary movement)","mobility_facet_4":"Speed","pc_use_functional_limitations":"Weakness and delayed muscle relaxation may make gripping and releasing a mouse, repeated typing, clicking, and rapid input difficult."},{"condition":"Manifest Huntington disease","approved_count":"41000","caveat":"Excludes genetically at-risk people without manifest disease.","source_url":"https://www.ama-assn.org/public-health/population-health/what-doctors-want-patients-know-about-huntington-s-disease","mobility_facet_1_most_relevant":"Fine motor skills","mobility_facet_2":"Control (voluntary vs. involuntary movement)","mobility_facet_3":"Coordination","mobility_facet_4":"Grasp","pc_use_functional_limitations":"Chorea, slowed voluntary movement, and reduced coordination may cause unintended input and difficulty with precise typing, pointing, clicking, and device handling."},{"condition":"Amyotrophic lateral sclerosis","approved_count":"33000","caveat":"Registry states the estimate may be low as survival improves.","source_url":"https://www.cdc.gov/als/php/abstracts-publications-reports/prevalence-2022-2030.html","mobility_facet_1_most_relevant":"Fine motor skills","mobility_facet_2":"Endurance","mobility_facet_3":"Grasp","mobility_facet_4":"Posture","pc_use_functional_limitations":"Progressive weakness and fatigue may reduce finger movement, grip, typing and pointer control, and the ability to sustain a standard workstation posture."},{"condition":"Rett syndrome","approved_count":"10900","caveat":"Claims enrollment is not nationally representative.","source_url":"https://pubmed.ncbi.nlm.nih.gov/37016355/","mobility_facet_1_most_relevant":"Control (voluntary vs. involuntary movement)","mobility_facet_2":"Fine motor skills","mobility_facet_3":"Grasp","mobility_facet_4":"Posture","pc_use_functional_limitations":"Loss of purposeful hand use, repetitive hand movements, and motor impairment may make standard typing, pointing, grasping, and touch input inaccessible."},{"condition":"Spinal muscular atrophy","approved_count":"10000","caveat":"Organization estimate has limited method detail; changing treatment survival may increase prevalence.","source_url":"https://www.mda.org/sites/default/files/2026/02/SMA-Fact-Sheet.pdf","mobility_facet_1_most_relevant":"Endurance","mobility_facet_2":"Muscle tone","mobility_facet_3":"Posture","mobility_facet_4":"Fine motor skills","pc_use_functional_limitations":"Weakness, low muscle tone, and limited endurance may affect finger input, arm positioning, device reach, and sustained seated PC use."},{"condition":"Friedreich ataxia","approved_count":"6800","caveat":"No national surveillance count exists.","source_url":"https://rarediseases.org/rare-diseases/friedreichs-ataxia/","mobility_facet_1_most_relevant":"Fine motor skills","mobility_facet_2":"Coordination","mobility_facet_3":"Endurance","mobility_facet_4":"Control (voluntary vs. involuntary movement)","pc_use_functional_limitations":"Limb ataxia, tremor, weakness, and fatigue may reduce typing and pointer accuracy, movement control, speed, and sustained input."}]}</script>
+<script id="facet-options-data" type="application/json">["Fine motor skills","Endurance","Control (voluntary vs. involuntary movement)","Grasp","Coordination"]</script>
+<script id="chart-data" type="application/json">[{"condition":"Arthritis with activity limitation","count":24800000,"caveat":"Functional proxy; not hand- or device-specific.","sourceUrl":"https://pmc.ncbi.nlm.nih.gov/articles/PMC13077793/","limitations":"Hand pain, stiffness, and limited joint motion may slow typing and clicking, weaken mouse or stylus grip, and shorten sustained input.","facets":[{"label":"Fine motor skills","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-fine-motor-skills"},{"label":"Endurance","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-endurance"},{"label":"Grasp","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-grasp"},{"label":"Speed","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-speed"}]},{"condition":"Developmental coordination disorder (dyspraxia)","count":6800000,"caveat":"Modeled rather than observed; approximates difficulty with at least one PC, phone, or controller task.","sourceUrl":"https://www.frontiersin.org/journals/pediatrics/articles/10.3389/fped.2024.1387406/full","limitations":"Motor coordination and dexterity differences may reduce key and pointer accuracy, slow multi-step input, and make sustained PC interaction more effortful.","facets":[{"label":"Coordination","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-coordination"},{"label":"Fine motor skills","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-fine-motor-skills"},{"label":"Speed","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-speed"},{"label":"Posture","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-posture"}]},{"condition":"Epicondylitis","count":5340000,"caveat":"Active prevalence is used as a device-impact proxy; no direct national limitation fraction exists.","sourceUrl":"https://pmc.ncbi.nlm.nih.gov/articles/PMC4517446/","limitations":"Elbow and forearm pain triggered by gripping and repetition may limit mouse control, typing duration, and handling of peripherals.","facets":[{"label":"Endurance","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-endurance"},{"label":"Grasp","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-grasp"},{"label":"Fine motor skills","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-fine-motor-skills"},{"label":"Speed","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-speed"}]},{"condition":"Current carpal tunnel syndrome among U.S. workers","count":3890000,"caveat":"Excludes nonworkers.","sourceUrl":"https://wwwn.cdc.gov/Niosh-whc/chart/ohs-cts/illness","limitations":"Hand numbness, tingling, pain, or weakness may reduce finger precision, typing endurance, and the ability to grip or click a mouse.","facets":[{"label":"Fine motor skills","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-fine-motor-skills"},{"label":"Endurance","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-endurance"},{"label":"Speed","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-speed"},{"label":"Grasp","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-grasp"}]},{"condition":"Stroke survivors with lasting motor impairment","count":3120000,"caveat":"Cross-study proxy; not direct national device-use surveillance.","sourceUrl":"https://www.cdc.gov/nchs/fastats/stroke.htm","limitations":"Weakness, spasticity, or reduced isolated finger movement may limit typing, pointer control, grip, and input speed; effects vary by stroke.","facets":[{"label":"Fine motor skills","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-fine-motor-skills"},{"label":"Muscle tone","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-muscle-tone"},{"label":"Speed","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-speed"},{"label":"Grasp","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-grasp"}]},{"condition":"De Quervain tenosynovitis","count":2405000,"caveat":"Uses a non-U.S. prevalence proxy and assumes active disease represents device impact.","sourceUrl":"https://pmc.ncbi.nlm.nih.gov/articles/PMC11027984/","limitations":"Thumb-side wrist pain during gripping and repetitive motion may limit mouse use, typing, touch gestures, and prolonged device handling.","facets":[{"label":"Endurance","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-endurance"},{"label":"Grasp","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-grasp"},{"label":"Fine motor skills","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-fine-motor-skills"},{"label":"Speed","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-speed"}]},{"condition":"Diagnosed essential tremor","count":1100000,"caveat":"Excludes undiagnosed and many mild cases.","sourceUrl":"https://tremorjournal.org/articles/10.5334/tohm.1060","limitations":"Action tremor may cause cursor drift, unintended clicks or keystrokes, and difficulty holding a mouse or stylus steadily.","facets":[{"label":"Control (voluntary vs. involuntary movement)","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-control"},{"label":"Fine motor skills","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-fine-motor-skills"},{"label":"Grasp","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-grasp"},{"label":"Endurance","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-endurance"}]},{"condition":"Parkinson disease","count":1100000,"caveat":"Interpolated planning value anchored to 2020 measurement and 2030 projection.","sourceUrl":"https://www.parkinson.org/understanding-parkinsons/statistics","limitations":"Slowness, tremor, rigidity, and reduced finger movement may affect typing speed, pointer accuracy, clicking, and sustained device control.","facets":[{"label":"Control (voluntary vs. involuntary movement)","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-control"},{"label":"Speed","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-speed"},{"label":"Fine motor skills","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-fine-motor-skills"},{"label":"Muscle tone","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-muscle-tone"}]},{"condition":"Cerebral palsy","count":1000000,"caveat":"No national adult surveillance count exists.","sourceUrl":"https://publications.aap.org/pediatricsopenscience/article/2/2/1/207858/Prevalence-of-Cerebral-Palsy-Among-Children-Aged-4","limitations":"Differences in muscle tone, coordination, and voluntary movement may affect typing, pointing, touch accuracy, and access to standard input devices.","facets":[{"label":"Fine motor skills","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-fine-motor-skills"},{"label":"Coordination","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-coordination"},{"label":"Muscle tone","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-muscle-tone"},{"label":"Speed","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-speed"}]},{"condition":"Traumatic brain injury with lasting motor impairment","count":900000,"caveat":"Both the 5.3M base count and upper-limb fraction have age and representativeness limitations.","sourceUrl":"https://stacks.cdc.gov/view/cdc/11642","limitations":"Lasting weakness, incoordination, slowed movement, or spasticity may reduce typing and pointer accuracy, speed, and control.","facets":[{"label":"Coordination","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-coordination"},{"label":"Fine motor skills","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-fine-motor-skills"},{"label":"Speed","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-speed"},{"label":"Muscle tone","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-muscle-tone"}]},{"condition":"Fibromyalgia with device-use limitation","count":790000,"caveat":"Fine-motor study included 20 women and the group difference was not statistically significant.","sourceUrl":"https://pmc.ncbi.nlm.nih.gov/articles/PMC5304994/","limitations":"Pain, fatigue, and sensitivity may shorten keyboard or mouse sessions, slow input, and make maintaining a workstation posture difficult.","facets":[{"label":"Endurance","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-endurance"},{"label":"Speed","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-speed"},{"label":"Posture","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-posture"},{"label":"Fine motor skills","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-fine-motor-skills"}]},{"condition":"Upper-limb loss or limb difference","count":570000,"caveat":"Procedure share is not resident prevalence; birth prevalence is extrapolated across living cohorts.","sourceUrl":"https://amputee-coalition.org/wp-content/uploads/Prevalence-of-Limb-Loss-and-Limb-Difference-in-the-United-States_Implications-for-Public-Policy.pdf","limitations":"Differences in reach, grasp, or available fingers may limit conventional two-handed typing, key combinations, mouse use, and peripheral handling.","facets":[{"label":"Grasp","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-grasp"},{"label":"Fine motor skills","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-fine-motor-skills"},{"label":"Speed","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-speed"},{"label":"Coordination","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-coordination"}]},{"condition":"Multiple sclerosis with hand-function impairment","count":548000,"caveat":"Functional multiplier is not from nationally representative U.S. surveillance.","sourceUrl":"https://www.msard-journal.com/article/S2211-0348(22)00428-X/fulltext","limitations":"Hand weakness, tremor, incoordination, spasticity, or fatigue may reduce typing and pointer accuracy, speed, and endurance.","facets":[{"label":"Fine motor skills","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-fine-motor-skills"},{"label":"Endurance","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-endurance"},{"label":"Coordination","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-coordination"},{"label":"Muscle tone","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-muscle-tone"}]},{"condition":"Diagnosed wrist ganglion cyst","count":427000,"caveat":"Outpatient claims prevalence is extrapolated nationally; device limitation was not measured.","sourceUrl":"https://pmc.ncbi.nlm.nih.gov/articles/PMC9112726/","limitations":"Wrist pain, restricted motion, or grip weakness may limit sustained mouse use, typing speed, clicking, dragging, and fine input.","facets":[{"label":"Endurance","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-endurance"},{"label":"Grasp","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-grasp"},{"label":"Speed","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-speed"},{"label":"Fine motor skills","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-fine-motor-skills"}]},{"condition":"Traumatic spinal cord injury","count":308620,"caveat":"Contains the tetraplegia row as a nested subset; do not add them.","sourceUrl":"","limitations":"Depending on injury level, weakness, paralysis, sensory loss, spasticity, or reduced trunk control may limit standard keyboard, mouse, and device positioning.","facets":[{"label":"Fine motor skills","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-fine-motor-skills"},{"label":"Grasp","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-grasp"},{"label":"Posture","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-posture"},{"label":"Muscle tone","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-muscle-tone"}]},{"condition":"Ehlers-Danlos syndromes, Hypermobility spectrum disorder","count":200000,"caveat":"Umbrella covers all 13 EDS types; do not add subtype estimates or HSD as unique people.","sourceUrl":"https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2024.1365712/full","limitations":"Joint instability, pain, fatigue, or reduced proprioception may affect grip, precise finger input, sustained typing, and workstation posture.","facets":[{"label":"Endurance","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-endurance"},{"label":"Muscle tone","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-muscle-tone"},{"label":"Fine motor skills","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-fine-motor-skills"},{"label":"Posture","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-posture"}]},{"condition":"Most Muscular dystrophies","count":108860,"caveat":"The top types of MD.","sourceUrl":"","limitations":"Progressive weakness and fatigue may reduce grip, finger control, typing endurance, and the ability to maintain arms or posture for PC use.","facets":[{"label":"Endurance","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-endurance"},{"label":"Grasp","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-grasp"},{"label":"Fine motor skills","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-fine-motor-skills"},{"label":"Muscle tone","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-muscle-tone"}]},{"condition":"Spina bifida","count":92551,"caveat":"Excludes uninsured residents and spina bifida occulta.","sourceUrl":"https://www.cdc.gov/spina-bifida/data/index.html","limitations":"Depending on lesion level and associated effects, reduced dexterity, coordination, or trunk stability may affect typing, pointing, speed, and workstation positioning.","facets":[{"label":"Fine motor skills","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-fine-motor-skills"},{"label":"Posture","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-posture"},{"label":"Coordination","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-coordination"},{"label":"Speed","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-speed"}]},{"condition":"Myasthenia gravis","count":82715,"caveat":"Excludes pediatric cases and depends on claims identification.","sourceUrl":"https://pmc.ncbi.nlm.nih.gov/articles/PMC10907989/","limitations":"Fatigable weakness may progressively reduce typing, clicking, pointer control, and upright posture during a PC session, often improving after rest.","facets":[{"label":"Endurance","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-endurance"},{"label":"Speed","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-speed"},{"label":"Fine motor skills","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-fine-motor-skills"},{"label":"Posture","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-posture"}]},{"condition":"Primary dystonia","count":55205,"caveat":"User-selected legacy estimate; not upper-limb-specific and may overstate device-relevant cases.","sourceUrl":"","limitations":"Involuntary muscle contractions or abnormal postures may disrupt task-specific hand control, causing unwanted key presses, clicks, or cursor movement.","facets":[{"label":"Control (voluntary vs. involuntary movement)","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-control"},{"label":"Muscle tone","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-muscle-tone"},{"label":"Fine motor skills","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-fine-motor-skills"},{"label":"Coordination","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-coordination"}]},{"condition":"Myotonic dystrophy","count":54000,"caveat":"Genetic ascertainment may include mild, late-onset, or not-yet-functionally limiting disease.","sourceUrl":"https://pubmed.ncbi.nlm.nih.gov/33472919/","limitations":"Weakness and delayed muscle relaxation may make gripping and releasing a mouse, repeated typing, clicking, and rapid input difficult.","facets":[{"label":"Grasp","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-grasp"},{"label":"Fine motor skills","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-fine-motor-skills"},{"label":"Control (voluntary vs. involuntary movement)","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-control"},{"label":"Speed","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-speed"}]},{"condition":"Manifest Huntington disease","count":41000,"caveat":"Excludes genetically at-risk people without manifest disease.","sourceUrl":"https://www.ama-assn.org/public-health/population-health/what-doctors-want-patients-know-about-huntington-s-disease","limitations":"Chorea, slowed voluntary movement, and reduced coordination may cause unintended input and difficulty with precise typing, pointing, clicking, and device handling.","facets":[{"label":"Fine motor skills","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-fine-motor-skills"},{"label":"Control (voluntary vs. involuntary movement)","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-control"},{"label":"Coordination","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-coordination"},{"label":"Grasp","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-grasp"}]},{"condition":"Amyotrophic lateral sclerosis","count":33000,"caveat":"Registry states the estimate may be low as survival improves.","sourceUrl":"https://www.cdc.gov/als/php/abstracts-publications-reports/prevalence-2022-2030.html","limitations":"Progressive weakness and fatigue may reduce finger movement, grip, typing and pointer control, and the ability to sustain a standard workstation posture.","facets":[{"label":"Fine motor skills","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-fine-motor-skills"},{"label":"Endurance","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-endurance"},{"label":"Grasp","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-grasp"},{"label":"Posture","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-posture"}]},{"condition":"Rett syndrome","count":10900,"caveat":"Claims enrollment is not nationally representative.","sourceUrl":"https://pubmed.ncbi.nlm.nih.gov/37016355/","limitations":"Loss of purposeful hand use, repetitive hand movements, and motor impairment may make standard typing, pointing, grasping, and touch input inaccessible.","facets":[{"label":"Control (voluntary vs. involuntary movement)","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-control"},{"label":"Fine motor skills","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-fine-motor-skills"},{"label":"Grasp","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-grasp"},{"label":"Posture","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-posture"}]},{"condition":"Spinal muscular atrophy","count":10000,"caveat":"Organization estimate has limited method detail; changing treatment survival may increase prevalence.","sourceUrl":"https://www.mda.org/sites/default/files/2026/02/SMA-Fact-Sheet.pdf","limitations":"Weakness, low muscle tone, and limited endurance may affect finger input, arm positioning, device reach, and sustained seated PC use.","facets":[{"label":"Endurance","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-endurance"},{"label":"Muscle tone","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-muscle-tone"},{"label":"Posture","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-posture"},{"label":"Fine motor skills","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-fine-motor-skills"}]},{"condition":"Friedreich ataxia","count":6800,"caveat":"No national surveillance count exists.","sourceUrl":"https://rarediseases.org/rare-diseases/friedreichs-ataxia/","limitations":"Limb ataxia, tremor, weakness, and fatigue may reduce typing and pointer accuracy, movement control, speed, and sustained input.","facets":[{"label":"Fine motor skills","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-fine-motor-skills"},{"label":"Coordination","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-coordination"},{"label":"Endurance","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-endurance"},{"label":"Control (voluntary vs. involuntary movement)","url":"https://learn.microsoft.com/en-us/surface/inclusive-tech-lab/mobility-control"}]}]</script>
+<script>
+(() => {
+  "use strict";
+
+  const data = JSON.parse(document.getElementById("chart-data").textContent);
+  const facetOptions = JSON.parse(document.getElementById("facet-options-data").textContent);
+  const chartCard = document.getElementById("chart-card");
+  const viewport = document.getElementById("viewport");
+  const world = document.getElementById("world");
+  const popover = document.getElementById("popover");
+  const popoverTitle = document.getElementById("popover-title");
+  const popoverValue = document.getElementById("popover-value");
+  const popoverLimitations = document.getElementById("popover-limitations");
+  const popoverCaveat = document.getElementById("popover-caveat");
+  const popoverLink = document.getElementById("popover-link");
+  const popoverNoSource = document.getElementById("popover-no-source");
+  const popoverFacets = document.getElementById("popover-facets");
+  const instructions = document.getElementById("instructions");
+  const zoomStatus = document.getElementById("zoom-status");
+  const fullscreenButton = document.getElementById("fullscreen-toggle");
+  const fullscreenStatus = document.getElementById("fullscreen-status");
+  const fullscreenError = document.getElementById("fullscreen-error");
+  const primaryFacetSelect = document.getElementById("primary-facet");
+  const highlightResetButton = document.getElementById("highlight-reset");
+  const highlightStatus = document.getElementById("highlight-status");
+  const zoomInButton = document.getElementById("zoom-in");
+  const zoomOutButton = document.getElementById("zoom-out");
+  const scaleSelect = document.getElementById("area-scale");
+  const numberFormat = new Intl.NumberFormat("en-US");
+  const worldSize = {width: 2400, height: 1400};
+  const palette = ["#58a6ff","#3fb950","#d29922","#d2a8ff","#f85149","#79c0ff","#56d364","#e3b341","#bc8cff","#ff7b72"];
+  const state = {x: 0, y: 0, scale: 1, primaryFacet: ""};
+  const limits = {min: .15, max: 5};
+  let activeTile = null;
+  let showTimer = null;
+  let hideTimer = null;
+  let pointerPosition = {x: 0, y: 0};
+  let suppressPopoverOnFocus = false;
+  let drag = null;
+
+  const desktopFullscreenAvailable =
+    document.fullscreenEnabled &&
+    typeof chartCard.requestFullscreen === "function" &&
+    window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  fullscreenButton.hidden = !desktopFullscreenAvailable;
+  facetOptions.forEach((facet) => primaryFacetSelect.add(new Option(facet, facet)));
+
+  function rgba(hex, alpha) {
+    const value = Number.parseInt(hex.slice(1), 16);
+    return `rgba(${value >> 16},${(value >> 8) & 255},${value & 255},${alpha})`;
+  }
+
+  function layoutTreemap(items) {
+    const nodes = items.map((item) => ({
+      ...item,
+      weight: scaleSelect.value === "linear" ? item.count : Math.sqrt(item.count)
+    }));
+    const rectangles = [];
+
+    function partition(group, x, y, width, height) {
+      if (group.length === 1) {
+        rectangles.push({...group[0], x, y, width, height});
+        return;
+      }
+      const total = group.reduce((sum, item) => sum + item.weight, 0);
+      let running = 0;
+      let splitAt = 1;
+      let bestDistance = Number.POSITIVE_INFINITY;
+      for (let index = 1; index < group.length; index += 1) {
+        running += group[index - 1].weight;
+        const distance = Math.abs(total / 2 - running);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          splitAt = index;
+        }
+      }
+      const first = group.slice(0, splitAt);
+      const second = group.slice(splitAt);
+      const firstWeight = first.reduce((sum, item) => sum + item.weight, 0);
+      const ratio = firstWeight / total;
+      if (width >= height) {
+        const firstWidth = width * ratio;
+        partition(first, x, y, firstWidth, height);
+        partition(second, x + firstWidth, y, width - firstWidth, height);
+      } else {
+        const firstHeight = height * ratio;
+        partition(first, x, y, width, firstHeight);
+        partition(second, x, y + firstHeight, width, height - firstHeight);
+      }
+    }
+
+    partition(nodes, 0, 0, worldSize.width, worldSize.height);
+    return rectangles;
+  }
+
+  function renderTreemap() {
+    world.replaceChildren();
+    const gap = 0;
+    layoutTreemap(data).forEach((item, index) => {
+      const tile = document.createElement("button");
+      const width = Math.max(1, item.width - gap);
+      const height = Math.max(1, item.height - gap);
+      const color = palette[index % palette.length];
+      tile.type = "button";
+      tile.className = "tile";
+      if (width < 220 || height < 105) tile.classList.add("compact");
+      if (width < 125 || height < 62) tile.classList.add("micro");
+      tile.style.left = `${item.x + gap / 2}px`;
+      tile.style.top = `${item.y + gap / 2}px`;
+      tile.style.width = `${width}px`;
+      tile.style.height = `${height}px`;
+      tile.dataset.worldWidth = String(width);
+      tile.dataset.worldHeight = String(height);
+      tile.dataset.primaryFacet = item.facets[0].label;
+      tile.style.setProperty("--tile-color", color);
+      tile.style.setProperty("--tile-fill", rgba(color, .17));
+      tile.style.setProperty("--tile-fill-strong", rgba(color, .42));
+      const tileLabel = `${item.condition}, ${numberFormat.format(item.count)} people`;
+      tile.dataset.baseAriaLabel = tileLabel;
+      tile.setAttribute("aria-label", tileLabel);
+      tile.setAttribute("aria-controls", "popover");
+      tile.setAttribute("aria-expanded", "false");
+
+      const label = document.createElement("span");
+      label.className = "tile-label";
+      label.textContent = item.condition;
+      const count = document.createElement("span");
+      count.className = "tile-count";
+      count.textContent = numberFormat.format(item.count);
+      const description = document.createElement("span");
+      description.className = "sr-only";
+      description.id = `tile-description-${index}`;
+      description.textContent =
+        `Limitations: ${item.limitations} Caveat: ${item.caveat} ` +
+        `${item.sourceUrl ? `Reference: ${item.sourceUrl}, opens in a new tab. ` : "No reference URL was provided. "}` +
+        `Understanding Function, Mobility, ranked most to least relevant: ` +
+        `${item.facets.map((facet, rank) => `${rank + 1}, ${facet.label}`).join("; ")}. ` +
+        "Press Enter to move into the popover links.";
+      tile.setAttribute("aria-describedby", description.id);
+      tile.append(label, count, description);
+
+      tile.addEventListener("pointerenter", (event) => {
+        schedulePopover(item, event, tile);
+      });
+      tile.addEventListener("pointermove", (event) => {
+        pointerPosition = {x: event.clientX, y: event.clientY};
+        if (activeTile === tile && document.activeElement !== tile) {
+          positionPopover(event.clientX, event.clientY);
+        }
+      });
+      tile.addEventListener("pointerleave", () => {
+        cancelPendingPopover();
+        scheduleHide();
+      });
+      tile.addEventListener("focus", () => {
+        if (suppressPopoverOnFocus) {
+          suppressPopoverOnFocus = false;
+          return;
+        }
+        cancelPendingPopover();
+        const rect = tile.getBoundingClientRect();
+        ensureVisible(rect);
+        showPopover(item, 0, 0, tile, true);
+      });
+      tile.addEventListener("blur", scheduleHide);
+      tile.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          if (popover.hidden || activeTile !== tile) {
+            showPopover(item, 0, 0, tile, true);
+          }
+          const firstLink = item.sourceUrl ? popoverLink : popoverFacets.querySelector("a");
+          firstLink?.focus();
+        }
+      });
+      world.append(tile);
+    });
+    applyHighlightSelection(false);
+  }
+
+  function applyHighlightSelection(announce = true) {
+    const selectedFacet = state.primaryFacet;
+    let matchCount = 0;
+    world.querySelectorAll(".tile").forEach((tile) => {
+      const isMatch = Boolean(selectedFacet) && tile.dataset.primaryFacet === selectedFacet;
+      if (isMatch) matchCount += 1;
+      tile.classList.toggle("is-highlighted", isMatch);
+      tile.classList.toggle("is-muted", Boolean(selectedFacet) && !isMatch);
+      const visualState = selectedFacet
+        ? isMatch ? ", highlighted" : ", muted"
+        : "";
+      tile.setAttribute("aria-label", `${tile.dataset.baseAriaLabel}${visualState}`);
+    });
+    highlightResetButton.disabled = !selectedFacet;
+    if (!announce) return;
+    highlightStatus.textContent = selectedFacet
+      ? `${matchCount} ${matchCount === 1 ? "condition has" : "conditions have"} ${selectedFacet} as the primary limitation.`
+      : `Highlight cleared. All ${data.length} conditions are shown.`;
+  }
+
+  function renderTable() {
+    const body = document.getElementById("data-body");
+    data.forEach((item) => {
+      const row = document.createElement("tr");
+      const condition = document.createElement("th");
+      const description = document.createElement("td");
+      condition.scope = "row";
+      condition.className = "table-condition";
+      if (item.sourceUrl) {
+        const sourceLink = document.createElement("a");
+        sourceLink.className = "table-condition-link";
+        sourceLink.href = item.sourceUrl;
+        sourceLink.target = "_blank";
+        sourceLink.rel = "noopener noreferrer";
+        sourceLink.setAttribute(
+          "aria-label",
+          `${item.condition}, opens in a new window`
+        );
+        sourceLink.append(item.condition, createExternalLinkIcon());
+        condition.append(sourceLink);
+      } else {
+        condition.append(item.condition);
+      }
+
+      const population = document.createElement("span");
+      population.className = "table-population";
+      population.textContent = `Pop: ${numberFormat.format(item.count)}`;
+      condition.append(population);
+
+      const descriptionText = document.createElement("p");
+      descriptionText.className = "table-description-text";
+      descriptionText.textContent = item.limitations;
+      const facets = document.createElement("div");
+      facets.className = "table-facets";
+      const facetsLabel = document.createElement("span");
+      facetsLabel.className = "table-facets-label";
+      facetsLabel.textContent = "Understanding Function / Mobility: ";
+      const facetList = document.createElement("ol");
+      facetList.className = "facet-list table-facet-list";
+      item.facets.forEach((facet, rank) => {
+        const listItem = document.createElement("li");
+        const link = document.createElement("a");
+        link.href = facet.url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = facet.label;
+        link.setAttribute(
+          "aria-label",
+          `${facet.label}, rank ${rank + 1}, opens in a new window`
+        );
+        listItem.append(link);
+        facetList.append(listItem);
+      });
+      facets.append(facetsLabel, facetList);
+      description.append(descriptionText, facets);
+      row.append(condition, description);
+      body.append(row);
+    });
+  }
+
+  function createExternalLinkIcon() {
+    const namespace = "http://www.w3.org/2000/svg";
+    const icon = document.createElementNS(namespace, "svg");
+    icon.classList.add("external-link-icon");
+    icon.setAttribute("viewBox", "0 0 16 16");
+    icon.setAttribute("aria-hidden", "true");
+    icon.setAttribute("focusable", "false");
+    const path = document.createElementNS(namespace, "path");
+    path.setAttribute("d", "M6 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-3M9 2h5v5M14 2 7 9");
+    path.setAttribute("fill", "none");
+    path.setAttribute("stroke", "currentColor");
+    path.setAttribute("stroke-linecap", "round");
+    path.setAttribute("stroke-linejoin", "round");
+    path.setAttribute("stroke-width", "1.5");
+    icon.append(path);
+    return icon;
+  }
+
+  function showPopover(item, clientX, clientY, tile, focusAnchored = false) {
+    cancelPendingPopover();
+    window.clearTimeout(hideTimer);
+    if (activeTile && activeTile !== tile) activeTile.setAttribute("aria-expanded", "false");
+    activeTile = tile;
+    activeTile.setAttribute("aria-expanded", "true");
+    popoverTitle.textContent = item.condition;
+    popoverValue.textContent = `${numberFormat.format(item.count)} people`;
+    popoverLimitations.textContent = item.limitations;
+    popoverCaveat.textContent = item.caveat;
+    popoverFacets.replaceChildren(
+      ...item.facets.map((facet, rank) => {
+        const listItem = document.createElement("li");
+        const link = document.createElement("a");
+        link.href = facet.url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = facet.label;
+        link.setAttribute(
+          "aria-label",
+          `${facet.label}, rank ${rank + 1}, opens in a new tab`
+        );
+        listItem.append(link);
+        return listItem;
+      })
+    );
+    popoverLink.hidden = !item.sourceUrl;
+    popoverNoSource.hidden = Boolean(item.sourceUrl);
+    if (item.sourceUrl) {
+      popoverLink.href = item.sourceUrl;
+      popoverLink.textContent = item.sourceUrl;
+      popoverLink.setAttribute("aria-label", `Open reference for ${item.condition} in a new tab`);
+    }
+    else {
+      popoverLink.removeAttribute("href");
+      popoverLink.removeAttribute("aria-label");
+    }
+    popover.hidden = false;
+    if (focusAnchored) positionPopoverForTile(tile);
+    else positionPopover(clientX, clientY);
+  }
+
+  function schedulePopover(item, event, tile) {
+    cancelPendingPopover();
+    window.clearTimeout(hideTimer);
+    if (activeTile && activeTile !== tile) hidePopover();
+    pointerPosition = {x: event.clientX, y: event.clientY};
+    showTimer = window.setTimeout(() => {
+      showPopover(item, pointerPosition.x, pointerPosition.y, tile);
+    }, 500);
+  }
+
+  function cancelPendingPopover() {
+    window.clearTimeout(showTimer);
+    showTimer = null;
+  }
+
+  function positionPopover(clientX, clientY) {
+    if (popover.hidden) return;
+    const viewportRect = viewport.getBoundingClientRect();
+    const popoverRect = popover.getBoundingClientRect();
+    const padding = 12;
+    let left = clientX - viewportRect.left + 18;
+    let top = clientY - viewportRect.top + 18;
+    const maxLeft = Math.max(padding, viewport.clientWidth - popoverRect.width - padding);
+    const maxTop = Math.max(padding, viewport.clientHeight - popoverRect.height - padding);
+    left = Math.min(Math.max(padding, left), maxLeft);
+    top = Math.min(Math.max(padding, top), maxTop);
+    popover.style.left = `${left}px`;
+    popover.style.top = `${top}px`;
+  }
+
+  function positionPopoverForTile(tile) {
+    const viewportRect = viewport.getBoundingClientRect();
+    const tileRect = tile.getBoundingClientRect();
+    const popoverRect = popover.getBoundingClientRect();
+    const padding = 12;
+    let left = tileRect.right - viewportRect.left + padding;
+    if (left + popoverRect.width > viewport.clientWidth - padding) {
+      left = tileRect.left - viewportRect.left - popoverRect.width - padding;
+    }
+    const maxLeft = Math.max(padding, viewport.clientWidth - popoverRect.width - padding);
+    const maxTop = Math.max(padding, viewport.clientHeight - popoverRect.height - padding);
+    left = Math.min(Math.max(padding, left), maxLeft);
+    const top = Math.min(
+      Math.max(padding, tileRect.top - viewportRect.top),
+      maxTop
+    );
+    popover.style.left = `${left}px`;
+    popover.style.top = `${top}px`;
+  }
+
+  function scheduleHide() {
+    window.clearTimeout(hideTimer);
+    hideTimer = window.setTimeout(() => {
+      const focused = document.activeElement;
+      if (!popover.matches(":hover") && !popover.contains(focused) && focused !== activeTile) hidePopover();
+    }, 100);
+  }
+
+  function hidePopover() {
+    cancelPendingPopover();
+    window.clearTimeout(hideTimer);
+    popover.hidden = true;
+    if (activeTile) activeTile.setAttribute("aria-expanded", "false");
+    activeTile = null;
+  }
+
+  function dismissPopoverAndRestoreFocus() {
+    const returnTarget = activeTile;
+    hidePopover();
+    if (!returnTarget?.isConnected) {
+      viewport.focus({preventScroll: true});
+      return;
+    }
+    if (document.activeElement !== returnTarget) {
+      suppressPopoverOnFocus = true;
+      returnTarget.focus({preventScroll: true});
+      window.queueMicrotask(() => {
+        suppressPopoverOnFocus = false;
+      });
+      if (document.activeElement !== returnTarget) {
+        suppressPopoverOnFocus = false;
+        viewport.focus({preventScroll: true});
+      }
+    }
+  }
+
+  function constrain() {
+    const visible = 70;
+    const scaledWidth = worldSize.width * state.scale;
+    const scaledHeight = worldSize.height * state.scale;
+    state.x = Math.min(viewport.clientWidth - visible, Math.max(visible - scaledWidth, state.x));
+    state.y = Math.min(viewport.clientHeight - visible, Math.max(visible - scaledHeight, state.y));
+  }
+
+  function applyTransform() {
+    constrain();
+    world.style.transform = `translate(${state.x}px,${state.y}px) scale(${state.scale})`;
+    updateTileTypography();
+    const status = isZoomLocked() ? "Fixed view" : `${Math.round(state.scale * 100)}%`;
+    if (zoomStatus.textContent !== status) zoomStatus.textContent = status;
+  }
+
+  function updateTileTypography() {
+    world.querySelectorAll(".tile").forEach((tile) => {
+      const screenWidth = Number(tile.dataset.worldWidth) * state.scale;
+      const screenHeight = Number(tile.dataset.worldHeight) * state.scale;
+      let labelPixels = 15;
+      let countPixels = 14;
+      if (screenWidth < 170 || screenHeight < 95) {
+        labelPixels = 12;
+        countPixels = 11;
+      }
+      if (screenWidth < 90 || screenHeight < 52) {
+        labelPixels = 10;
+        countPixels = 9;
+      }
+      tile.style.setProperty("--label-font", `${labelPixels / state.scale}px`);
+      tile.style.setProperty("--count-font", `${countPixels / state.scale}px`);
+    });
+  }
+
+  function isZoomLocked() {
+    return scaleSelect.value === "sqrt";
+  }
+
+  function updateInteractionMode() {
+    const locked = isZoomLocked();
+    zoomInButton.disabled = locked;
+    zoomOutButton.disabled = locked;
+    instructions.textContent = locked
+      ? "Readable view is fitted and zoom is locked. Drag to pan. Focus or hover a tile for limitations, caveat, reference, and ranked mobility facets. Press Enter to move into its links."
+      : "Drag to pan; use the mouse wheel or controls to zoom. With keyboard focus in the chart, use arrow keys to pan, +/\u2212 to zoom, and 0 to fit. Focus or hover a tile for limitations, caveat, reference, and ranked mobility facets. Press Enter to move into its links.";
+    viewport.setAttribute(
+      "aria-label",
+      locked ? "Mobility prevalence treemap, readable fixed view" : "Mobility prevalence treemap, proportional zoomable view"
+    );
+  }
+
+  function fitView() {
+    const padding = 20;
+    state.scale = Math.min(
+      (viewport.clientWidth - padding * 2) / worldSize.width,
+      (viewport.clientHeight - padding * 2) / worldSize.height
+    );
+    state.scale = Math.min(limits.max, Math.max(limits.min, state.scale));
+    state.x = (viewport.clientWidth - worldSize.width * state.scale) / 2;
+    state.y = (viewport.clientHeight - worldSize.height * state.scale) / 2;
+    applyTransform();
+  }
+
+  async function toggleFullscreen() {
+    clearFullscreenError();
+    try {
+      if (document.fullscreenElement === chartCard) {
+        await document.exitFullscreen();
+      } else {
+        await chartCard.requestFullscreen();
+      }
+    } catch (error) {
+      fullscreenStatus.textContent = "Full screen could not be opened.";
+      showFullscreenError();
+      console.error("Unable to change full screen mode.", error);
+    }
+  }
+
+  function showFullscreenError() {
+    fullscreenError.textContent =
+      "Full screen could not be opened. Try again or use your browser's full-screen command.";
+    fullscreenError.hidden = false;
+    fullscreenButton.setAttribute("aria-describedby", "fullscreen-error");
+  }
+
+  function clearFullscreenError() {
+    fullscreenError.hidden = true;
+    fullscreenError.textContent = "";
+    fullscreenButton.removeAttribute("aria-describedby");
+  }
+
+  function zoomAt(factor, clientX, clientY) {
+    if (isZoomLocked()) return;
+    const rect = viewport.getBoundingClientRect();
+    const pointX = clientX - rect.left;
+    const pointY = clientY - rect.top;
+    const nextScale = Math.min(limits.max, Math.max(limits.min, state.scale * factor));
+    const worldX = (pointX - state.x) / state.scale;
+    const worldY = (pointY - state.y) / state.scale;
+    state.x = pointX - worldX * nextScale;
+    state.y = pointY - worldY * nextScale;
+    state.scale = nextScale;
+    applyTransform();
+  }
+
+  function zoomFromCenter(factor) {
+    const rect = viewport.getBoundingClientRect();
+    zoomAt(factor, rect.left + rect.width / 2, rect.top + rect.height / 2);
+  }
+
+  function ensureVisible(tileRect) {
+    const viewportRect = viewport.getBoundingClientRect();
+    const margin = 24;
+    if (tileRect.left < viewportRect.left + margin) state.x += viewportRect.left + margin - tileRect.left;
+    if (tileRect.right > viewportRect.right - margin) state.x -= tileRect.right - viewportRect.right + margin;
+    if (tileRect.top < viewportRect.top + margin) state.y += viewportRect.top + margin - tileRect.top;
+    if (tileRect.bottom > viewportRect.bottom - margin) state.y -= tileRect.bottom - viewportRect.bottom + margin;
+    applyTransform();
+  }
+
+  zoomInButton.addEventListener("click", () => zoomFromCenter(1.25));
+  zoomOutButton.addEventListener("click", () => zoomFromCenter(.8));
+  primaryFacetSelect.addEventListener("change", () => {
+    state.primaryFacet = primaryFacetSelect.value;
+    applyHighlightSelection();
+  });
+  highlightResetButton.addEventListener("click", () => {
+    primaryFacetSelect.value = "";
+    state.primaryFacet = "";
+    applyHighlightSelection();
+  });
+  fullscreenButton.addEventListener("click", toggleFullscreen);
+  document.addEventListener("fullscreenerror", showFullscreenError);
+  document.addEventListener("fullscreenchange", () => {
+    const isFullscreen = document.fullscreenElement === chartCard;
+    if (isFullscreen) clearFullscreenError();
+    fullscreenButton.textContent = isFullscreen ? "Exit Full Screen" : "Full Screen";
+    fullscreenButton.setAttribute("aria-pressed", String(isFullscreen));
+    fullscreenStatus.textContent = isFullscreen
+      ? "Chart opened in full screen. Press Escape to exit."
+      : "Chart exited full screen.";
+    hidePopover();
+    window.requestAnimationFrame(fitView);
+  });
+  document.getElementById("fit-view").addEventListener("click", fitView);
+  document.getElementById("popover-close").addEventListener("click", () => {
+    dismissPopoverAndRestoreFocus();
+  });
+  scaleSelect.addEventListener("change", () => {
+    hidePopover();
+    renderTreemap();
+    updateInteractionMode();
+    fitView();
+  });
+  popover.addEventListener("pointerenter", () => window.clearTimeout(hideTimer));
+  popover.addEventListener("pointerleave", scheduleHide);
+  popover.addEventListener("focusout", scheduleHide);
+
+  viewport.addEventListener("wheel", (event) => {
+    if (isZoomLocked()) return;
+    event.preventDefault();
+    zoomAt(Math.exp(-event.deltaY * .0015), event.clientX, event.clientY);
+  }, {passive: false});
+
+  viewport.addEventListener("pointerdown", (event) => {
+    if (event.button !== 0 || event.target.closest(".popover")) return;
+    drag = {pointerId: event.pointerId, clientX: event.clientX, clientY: event.clientY, x: state.x, y: state.y};
+    viewport.setPointerCapture(event.pointerId);
+    viewport.classList.add("dragging");
+  });
+  viewport.addEventListener("pointermove", (event) => {
+    if (!drag || event.pointerId !== drag.pointerId) return;
+    state.x = drag.x + event.clientX - drag.clientX;
+    state.y = drag.y + event.clientY - drag.clientY;
+    applyTransform();
+  });
+  function endDrag(event) {
+    if (!drag || event.pointerId !== drag.pointerId) return;
+    drag = null;
+    viewport.classList.remove("dragging");
+    if (viewport.hasPointerCapture(event.pointerId)) viewport.releasePointerCapture(event.pointerId);
+  }
+  viewport.addEventListener("pointerup", endDrag);
+  viewport.addEventListener("pointercancel", endDrag);
+
+  viewport.addEventListener("keydown", (event) => {
+    const step = event.shiftKey ? 140 : 60;
+    if (event.key === "ArrowLeft") state.x += step;
+    else if (event.key === "ArrowRight") state.x -= step;
+    else if (event.key === "ArrowUp") state.y += step;
+    else if (event.key === "ArrowDown") state.y -= step;
+    else if ((event.key === "+" || event.key === "=") && !isZoomLocked()) zoomFromCenter(1.25);
+    else if (event.key === "-" && !isZoomLocked()) zoomFromCenter(.8);
+    else if (event.key === "0" || event.key === "Home") fitView();
+    else if (event.key === "Escape") {
+      const moveFocus = popover.contains(document.activeElement);
+      if (moveFocus) dismissPopoverAndRestoreFocus();
+      else hidePopover();
+      return;
+    } else return;
+    event.preventDefault();
+    applyTransform();
+  });
+
+  window.addEventListener("resize", () => {
+    if (isZoomLocked()) fitView();
+    else applyTransform();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !popover.hidden) {
+      const moveFocus = popover.contains(document.activeElement);
+      if (moveFocus) dismissPopoverAndRestoreFocus();
+      else hidePopover();
+    }
+  });
+
+  renderTreemap();
+  renderTable();
+  updateInteractionMode();
+  fitView();
+})();
+</script>
+</body>
+</html>
