@@ -186,3 +186,24 @@ sources:
       - "The source file changes materially"
       - "Design-context/variable access becomes available for a deeper pass"
       - "ORVIA illustration-state taxonomy changes"
+
+  - id: FLUENT_REACT_ACCORDION_SNAPSHOT_2026_09_24
+    title: "Fluent UI React Accordion documentation snapshot"
+    source_class: USER_PROVIDED_COMPONENT_DOCUMENTATION
+    supplied_filename: "Pasted markdown(20260924-184253).md"
+    sha256: "f13df6eda0c2bcd116ce1472b7efbe83c58c457dfacf58c295e25c765e160646"
+    provenance_scope: "Accordion component contract, disclosure state models, heading semantics, header size categories, icon placement, disabled state, controlled/uncontrolled state, multiple-open behavior, and collapse-motion customization."
+    package_identifiers_observed:
+      - "@fluentui/react-components"
+      - "@fluentui/react-icons"
+    version_scope: "Not supplied in the source snapshot"
+    authority_note: "Treat as source-native component documentation for the supplied snapshot. Do not infer the exact Fluent UI release, repository commit, token values, or current upstream behavior unless separately verified."
+    important_native_guidance:
+      - "Arrow keyboard navigation is deprecated/not recommended for accordions; the source suggests Tree when arrow navigation is a hard requirement."
+      - "Accordion headers should use an appropriate heading element according to the cited WAI-ARIA guidance."
+      - "AccordionPanel exposes collapseMotion for duration, easing, opacity animation, and custom rendering."
+    revalidation_trigger:
+      - "The source snapshot is replaced by a versioned upstream document"
+      - "The upstream Accordion API changes"
+      - "ORVIA disclosure-pattern or semantic-structure controls are revised"
+

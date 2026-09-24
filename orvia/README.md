@@ -28,6 +28,8 @@ This branch is the derived-work layer for the mirrored InclusiveTechLab source a
 - `MATERIAL_COMPONENTS_ANDROID_ORVIA_MAPPING.md` — mapping from Material Components Android implementation tokens to ORVIA resolver layers.
 - `FIGMA_EMPTY_STATE_ILLUSTRATION_RECORD.yaml` — partial Figma-derived empty-state semantic and composition extraction.
 - `FIGMA_EMPTY_STATE_ORVIA_MAPPING.md` — ORVIA mapping for empty-state semantic families, metaphor modes, narrative complexity, and measurable illustration evidence.
+- `FLUENT_ACCORDION_COMPONENT_CONTRACT.yaml` — source-native accordion state, semantic, sizing, and motion contract extracted from the supplied Fluent UI React snapshot.
+- `FLUENT_ACCORDION_ORVIA_MAPPING.md` — ORVIA mapping for disclosure behavior, semantic hierarchy, navigation-pattern fit, component sizing, and collapse motion.
 
 ## Critical provenance rule
 
@@ -66,7 +68,12 @@ This pass focuses on:
 - empty-state semantic families;
 - illustration metaphor mode;
 - illustration backdrop mode;
-- illustration narrative complexity.
+- illustration narrative complexity;
+- disclosure concurrency and collapsibility;
+- semantic heading structure for disclosure components;
+- navigation-pattern fit (accordion vs tree-style arrow navigation);
+- accordion header size classes;
+- collapse-motion configuration.
 
 ## Next validation stages
 
@@ -80,6 +87,8 @@ The current records are intentionally conservative. Next passes should:
 - build token resolvers for motion, shape, surface depth, and state feedback;
 - test whether `MOTION_SCHEME`, `MOTION_SPEED_CLASS`, and `COMPONENT_SIZE_CLASS` remain independently useful across non-Material systems;
 - validate empty-state semantic/composition candidates against additional first-party design systems;
+- verify the supplied Fluent UI Accordion snapshot against a versioned upstream source before treating any component behavior as current;
+- test whether disclosure concurrency, semantic heading integrity, and component-size categories generalize across additional component systems;
 - connect normalized evidence to token/component/responsive resolvers;
 - test implementation consequences;
 - identify dependency/collision rules;
