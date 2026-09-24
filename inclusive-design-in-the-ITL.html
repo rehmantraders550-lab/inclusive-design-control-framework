@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>Our Inclusive Design Practice in the Inclusive Tech Lab</title>
+<style>
+:root {
+  --fg: #e6edf3;
+  --fg-muted: #c9d1d9;
+  --canvas: #0d1117;
+  --canvas-subtle: #161b22;
+  --border: #30363d;
+  --accent: #79c0ff;
+  --accent-hover: #a5d6ff;
+  --btn-bg: #21262d;
+  --btn-hover: #30363d;
+  --radius: 6px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 48px 16px 550px;
+  color: var(--fg);
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: var(--canvas);
+  background-image: url('-ITLnight.jpg');
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 100% auto;
+}
+@media (max-width: 680px) {
+  body {
+    padding-bottom: 200px;
+  }
+}
+
+/* Global focus indicator (WCAG 2.4.12/13 AAA) */
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+main, footer {
+  max-width: 1012px;
+  margin: 0 auto;
+}
+main {
+  padding: 0 2em 0.5em;
+  background: var(--canvas);
+  border-radius: var(--radius);
+}
+
+h1, h2, h3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--fg);
+}
+h1 {
+  font-size: 2rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.4em;
+  margin-top: 0;
+}
+h2 {
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.3em;
+}
+h2:has(button.disclosure) {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+h3 { font-size: 1.125rem; margin: 0.75em 0 0; }
+
+p { margin: 0.75em 0; }
+ul { padding-left: 1.5em; margin: 0.5em 0; }
+li { margin: 0.35em 0; }
+
+a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+a:hover { color: var(--accent-hover); }
+
+header {
+  max-width: 1012px;
+  margin: 0 auto 2.5em;
+  display: flex;
+  justify-content: flex-end;
+}
+#ITLlogo {
+  margin-right: 2em;
+}
+
+footer {
+  margin-top: 2em;
+  padding-top: 1em;
+  border-top: 0;
+}
+
+/* Video embed */
+.video-wrapper {
+  margin: 1.5em 0;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  overflow: hidden;
+  background: #000;
+}
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+figcaption {
+  font-size: 0.875rem;
+  color: var(--fg-muted);
+  margin-top: 0.4em;
+}
+
+/* Two-column responsive grid */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5em;
+  margin: 1.5em 0;
+  align-items: start;
+}
+@media (max-width: 680px) {
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+.two-col .card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1em;
+  background: var(--canvas-subtle);
+}
+.two-col .card figure { margin: 0; }
+.two-col .card:nth-child(2),
+.two-col .card.video-sized { aspect-ratio: 16 / 9; overflow: hidden; }
+.two-col .card figcaption,
+[role="region"] figcaption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.two-col .card:has(.video-wrapper) { padding: 0; }
+.two-col .card .video-wrapper { margin-top: 0; margin-bottom: 0; }
+.two-col .card.image-card {
+  padding: 0;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+.two-col .card.image-card.no-bottom-border {
+  border-bottom: 0;
+}
+.two-col .card.image-card p {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--canvas);
+  padding: 0.65em 1em;
+  margin: 0;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Disclosure button */
+h2 button.disclosure {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--btn-bg);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-family: var(--font);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.1s ease, border-color 0.1s ease;
+}
+h2 button.disclosure:hover {
+  background: var(--btn-hover);
+  border-color: var(--accent);
+}
+h2 button.disclosure:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Chevron indicator */
+.disclosure-icon {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+  margin-right: 2px;
+}
+h2 button.disclosure[aria-expanded="true"] .disclosure-icon {
+  transform: rotate(135deg);
+}
+
+/* Collapsible content region */
+[role="region"] {
+  padding: 14px 16px 16px;
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 var(--radius) var(--radius);
+  background: var(--canvas);
+}
+[role="region"] > *:first-child { margin-top: 0; }
+[role="region"] > *:last-child { margin-bottom: 0; }
+
+/* Emphasis lead paragraph */
+.lead {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+
+
+/* Inclusive Design cards */
+.btn-start {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  gap: 0.25em;
+  padding: 8px 18px 8px 9px;
+  background-color: rgb(34, 91, 98);
+  color: #fff;
+  border: 1px solid rgb(34, 91, 98);
+  border-radius: var(--radius);
+  font-family: var(--font);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.1s ease, border-color 0.1s ease;
+}
+.btn-start:hover,
+.btn-start:focus-visible {
+  background: #000;
+  border-color: #000;
+  color: #fff;
+}
+
+.btn-start + .btn-start {
+  margin-left: 1em;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+/* Inclusive Design cards */
+.card.id-card {
+  padding: 2.5em;
+  background-image: url('-idbak.jpg');
+  background-size: cover;
+  background-position: center;
+  background-color: #eee;
+  color: rgb(34, 91, 98);
+  line-height: 1.2em;
+}
+.id-card h3 {
+  margin-top: 1em;
+  font-size: 150%;
+  color: #000;
+}
+.id-card a {
+  color: #000;
+}
+.id-card .btn-start {
+  color: #fff;
+}
+.id-card p {
+  margin-top: 0.5em;
+}
+
+@media (max-width: 680px) {
+  .card.id-card {
+    padding: 1.1em;
+  }
+  .id-card h3 {
+    margin-top: 1.2em;
+    font-size: 120%;
+  }
+  #mthr p:last-child {
+    display: none;
+  }
+  .id-card h3 + p {
+    display: none;
+  }
+}
+
+
+</style>
+</head>
+<body>
+<header>
+<svg width="140px" height="50px" viewBox="0 0 91571 32821" version="1.1" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;" id="ITLlogo" aria-labelledby="ITLTitle" role="img"><title id="ITLTitle">Inclusive Tech Lab</title>
+<g><rect x="39.023" y="240.752" width="1685.99" height="14390.7" style="fill:#fff;"/><path d="M16893.6,14631.5l-2047.21,0l-7426.13,-11470.4c-174.028,-267.518 -324.566,-568.577 -451.563,-903.213l-60.226,0c53.472,307.831 80.295,966.859 80.295,1976.98l-0.034,10396.6l-1685.96,0l0.053,-14390.7l2187.71,0l7205.35,11289.8l582.031,963.386l40.139,0c-66.944,-414.74 -100.364,-1120.5 -100.364,-2117.45l0.034,-10135.7l1675.9,0l-0.034,14390.7Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M30255.8,14039.5c-1057.14,561.98 -2378.34,842.935 -3963.93,842.935c-1331.42,0 -2512.28,-297.604 -3542.47,-893.126c-1030.37,-595.417 -1824.88,-1440.09 -2383.39,-2533.94c-558.698,-1093.86 -837.969,-2343.27 -837.952,-3748.2c0,-1465.16 311.094,-2788.11 933.299,-3968.96c622.188,-1180.73 1495.26,-2098.98 2619.22,-2754.71c1123.94,-655.591 2384.97,-983.455 3783.32,-983.455c1358.07,0 2488.75,197.413 3391.93,592.101l0,1786.29c-1030.33,-575.296 -2167.62,-863.056 -3412,-863.056c-1083.8,-0.018 -2047.21,250.885 -2890.18,752.639c-842.987,501.771 -1496.98,1217.73 -1961.89,2147.55c-465.087,930.001 -697.483,1993.75 -697.483,3191.24c-0.018,1137.47 217.326,2144.29 652.292,3020.66c434.827,876.511 1050.26,1550.44 1846.51,2022.12c796.077,471.65 1706.01,707.5 2729.59,707.5c1445.11,0 2689.5,-321.128 3733.15,-963.368l-0.018,1645.78Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M40457,14631.6l-7466.29,-0.018l0.035,-14390.7l1685.97,0l-0.034,12865.3l5780.32,0.017l0,1525.38Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M52705.2,8811.11c-0.017,4047.7 -1823.14,6071.38 -5469.26,6071.36c-3492.31,-0.017 -5238.46,-1946.88 -5238.44,-5840.58l0.017,-8801l1685.94,0.018l-0.017,8700.63c0,2943.82 1247.66,4415.58 3743.18,4415.58c2394.98,0.017 3592.64,-1425.02 3592.66,-4275.06l0.017,-8841.14l1685.92,0.017l-0.018,8570.16Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M63438.2,10998.9c0,1210.95 -428.229,2161.04 -1284.52,2850.02c-856.476,689.15 -2020.57,1033.63 -3492.33,1033.61c-535.296,0 -1139.01,-88.733 -1811.34,-265.92c-672.379,-177.188 -1149.08,-362.848 -1430.05,-556.963l0,-1997.05c408.004,368.021 944.88,675.834 1610.68,923.282c665.625,247.57 1286.1,371.303 1861.55,371.303c1846.5,0.017 2769.74,-719.098 2769.74,-2157.59c0,-602.136 -197.413,-1118.94 -592.066,-1550.49c-394.827,-431.494 -1204.24,-998.508 -2428.56,-1700.97c-1184.15,-668.907 -2013.79,-1304.62 -2488.74,-1906.72c-475.122,-602.136 -712.5,-1334.69 -712.483,-2197.74c0,-1137.29 424.757,-2062.26 1274.48,-2774.78c849.532,-712.501 1946.84,-1068.75 3291.58,-1068.75c1291.09,0.017 2234.45,170.625 2829.95,511.806l0,1886.67c-749.341,-588.664 -1722.78,-883.143 -2920.3,-883.143c-796.216,0 -1446.79,199.132 -1951.84,597.101c-505.227,398.143 -757.692,924.966 -757.692,1580.56c0,475.122 75.26,856.476 225.799,1144.05c150.538,287.726 404.705,572.014 762.691,853.021c357.813,280.955 961.668,659.029 1811.37,1133.96c1271.01,709.236 2160.87,1378.32 2669.39,2007.09c508.351,628.941 762.691,1351.48 762.674,2167.66" style="fill:#fff;fill-rule:nonzero;"/><rect x="66102.8" y="240.981" width="1685.99" height="14390.7" style="fill:#fff;"/>
+<path d="M82054.2,241.048l-5318.77,14390.7l-1846.5,0l-5228.39,-14390.7l1876.62,0l3984.01,11410.2c133.75,401.406 230.782,826.355 291.007,1274.48l40.139,0c33.403,-327.726 143.785,-759.254 331.181,-1294.55l4064.33,-11390.1l1806.37,0Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M91552.8,14631.8l-7626.88,-0.035l0.034,-14390.7l7295.7,0.017l-0.018,1525.38l-5609.71,-0.017l-0.017,4786.84l5198.3,0.017l0,1525.38l-5198.3,-0.017l-0.018,5027.69l5940.91,0.017l0,1525.38Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M6532.99,20236.5l-0.035,12333.4l-2408.46,0l0.017,-12333.4l-4124.52,-0.017l0,-2057.24l10667.6,0.035l-0.018,2057.22l-4134.57,0Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M12959.5,32570l0.034,-14390.7l7787.4,0.018l0,2057.24l-5399,-0.017l-0.017,4054.29l5017.66,0.017l0,2047.21l-5017.66,-0.018l-0.018,4174.69l5730.16,0.018l0,2057.24l-8118.57,-0.017Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M33766.5,31957.8c-488.421,267.656 -1102.31,478.403 -1841.48,632.223c-739.324,153.819 -1490.23,230.781 -2252.92,230.781c-1391.63,0 -2612.64,-296.042 -3662.9,-888.126c-1050.42,-592.084 -1853.23,-1431.62 -2408.47,-2518.87c-555.4,-1087.12 -832.917,-2336.51 -832.9,-3748.2c0,-1491.82 321.111,-2829.99 963.386,-4014.15c642.258,-1184.15 1540.42,-2098.93 2694.5,-2744.64c1154.05,-645.573 2433.58,-968.403 3838.51,-968.403c602.101,0 1227.61,50.173 1876.6,150.538c648.837,100.347 1190.75,247.587 1625.71,441.563l0,2428.54c-1023.61,-602.101 -2167.64,-903.177 -3432.09,-903.177c-983.456,-0.018 -1861.55,224.219 -2634.27,672.361c-772.709,448.282 -1369.81,1085.52 -1791.32,1911.72c-421.476,826.337 -632.24,1788 -632.24,2885.14c0,1592.35 434.809,2853.47 1304.6,3783.34c869.636,929.983 2030.42,1394.93 3482.26,1394.95c1411.53,0 2645.89,-337.778 3703.04,-1013.58l-0.017,2267.99Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M45792.7,32570l0.017,-6231.93l-6723.67,-0.018l-0.018,6231.93l-2388.4,-0.017l0.017,-14390.7l2388.42,0l-0.017,6051.31l6723.67,0.034l0.018,-6051.31l2398.44,0l-0.035,14390.7l-2398.44,0Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M56979.7,32570l0.052,-14390.7l2388.39,0l-0.034,12333.4l5629.85,0.018l-0.018,2057.24l-8018.24,-0.017Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M73010.1,20337l-60.191,0c-46.91,401.407 -117.153,746.06 -210.747,1033.63l-1966.95,5549.54l4415.54,0.017l-1976.93,-5549.55c-66.979,-173.889 -133.924,-518.368 -200.729,-1033.63m4174.69,12233.1l-1314.65,-3632.78l-5760.25,-0.017l-1254.44,3632.78l-2609.17,-0.017l5449.21,-14390.7l2649.34,0.017l5469.21,14390.7l-2629.24,-0.017Z" style="fill:#fff;fill-rule:nonzero;"/>
+<path d="M89040.3,28315.3c0,-688.976 -247.57,-1227.61 -742.605,-1615.68c-495.174,-387.935 -1234.32,-582.05 -2217.8,-582.05l-1806.36,0l-0.018,4475.72l2017.09,0.017c856.286,0 1528.68,-205.694 2017.14,-617.136c488.282,-411.458 732.553,-964.983 732.553,-1660.87m-682.379,-6372.45c0,-568.542 -212.448,-1008.52 -637.24,-1319.64c-424.914,-311.094 -1055.43,-466.632 -1891.67,-466.632l-1555.45,0l-0.017,3984.01l1535.4,0c809.41,0 1436.62,-188.941 1881.63,-566.98c444.844,-377.882 667.344,-921.528 667.344,-1630.77m3211.29,6432.68c0,1257.87 -463.351,2271.43 -1389.9,3040.7c-926.702,769.445 -2122.47,1154.06 -3587.64,1154.06l-4706.55,-0.017l0.034,-14390.7l4546.01,0.018c1378.13,0 2465.23,297.76 3261.46,893.143c796.077,595.556 1194.2,1401.65 1194.2,2418.54c0,776.164 -237.552,1465.16 -712.518,2067.24c-475.104,602.136 -1100.57,1023.61 -1876.6,1264.46l0,40.139c1023.6,133.924 1824.69,511.824 2403.46,1134.01c578.594,622.17 868.056,1414.98 868.039,2378.37" style="fill:#fff;fill-rule:nonzero;"/>
+</g></svg>
+</header>
+<main id="main-content">
+
+<h1>Our Inclusive Design Practice in the Inclusive Tech Lab</h1>
+
+<p class="lead">Inclusive design in the Inclusive Tech Lab starts with a simple premise: disability is not a segment to analyze, it is a reality to engage with directly. We co-design with people with disabilities, not to validate ideas, but to shape them, because left to ourselves, our assumptions will always narrow who we build for. Inclusive design sprints bring design, engineering, and product teams into that proximity, grounding decisions in lived experience rather than abstraction. This is not a workshop or a checkpoint. It is how we build with people, not just for them.</p>
+
+<h2>Introduction to Microsoft Inclusive Design</h2>
+
+<p>Microsoft's inclusive design approach begins by recognizing exclusion, often shaped by our own biases, and treating it as a signal for better ideas. Grounded in "nothing about us without us," we design with disability communities to create solutions that extend to many.</p>
+
+<div class="two-col">
+  <div class="card">
+    <figure>
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/MVgBHB2YGHc"
+          title="Introduction to Microsoft Inclusive Design"
+          loading="lazy"
+          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <figcaption>Introduction to Microsoft Inclusive Design</figcaption>
+    </figure>
+  </div>
+  <div class="card id-card" id="mthr">
+    <h3><a href="https://inclusive.microsoft.design/">Microsoft Inclusive Design</a></h3>
+    <p><b>Design is a methodology that enables and draws on the full range of human diversity.</b></p>
+    <p><b><a href="https://inclusive.microsoft.design/articles/inclusive-101-guidebook" id="id101">Inclusive 101</a> &nbsp;|&nbsp; <a href="https://inclusive.microsoft.design/articles/inclusive-activity-cards" id="idac">Inclusive activity cards</a></b></p>
+    <p><small>&copy; Microsoft 2016 Licensed under Creative Commons Attribution NonCommercial-NoDerivatives (CC BY-NC-ND)</small></p>
+  </div>
+</div>
+
+
+<h2><button type="button" class="disclosure" aria-expanded="false" aria-controls="logistics-content" id="logistics-btn">Run a Sprint / Logistics<span aria-hidden="true" class="disclosure-icon"></span></button></h2>
+<div id="logistics-content" role="region" aria-labelledby="logistics-btn" hidden>
+
+<p><svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="vertical-align: text-bottom; margin-right: 2px;"><path d="M3 1h7.5L14 4.5V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1Zm7 1H3v12h10V5h-3V2ZM5 9h6v1H5V9Zm0 2h4v1H5v-1Zm0-4h3v1H5V7Z"/></svg><b> <a href="ITL-AI-Workshop-Handout.pdf" target="_blank" rel="noopener">Hosting a sprint one-pager<span class="sr-only"> (PDF, opens in new window)</span></a> </b>&thinsp;<svg aria-hidden="true" width="12" height="12" viewBox="0 0 16 16" fill="currentColor" style="vertical-align: text-bottom;"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5H4.5v8h8V8.75a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14H3.75A1.75 1.75 0 0 1 2 12.25V3.75C2 2.784 2.784 2 3.75 2Zm6.5 0h3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0V4.06L8.28 8.28a.75.75 0 0 1-1.06-1.06L11.44 3H10.25a.75.75 0 0 1 0-1Z"/></svg></p>
+
+<ul>
+  <li>Ideally this activity is done for 1-3 days, but activities can be done asynchronously if needed.</li>
+  <li>In-person 20-24 collaborators is ideal, with as many as you would like over Teams.
+    <ul>
+      <li>Participants should be invited a month before the sprint for the time commitment.</li>
+      <li>Participants can be designers, PMs, marketers, engineers, support or anyone involved in creating things that touch our customers.</li>
+    </ul>
+  </li>
+  <li>We invite 3-6 disabled advisors to work with our sprint participants.
+    <ul>
+      <li>Conversing with advisors is an activity that cannot be missed by participants.</li>
+      <li>They can be remote, but in person is better.</li>
+      <li>They can be colleagues, but external experts are preferred.</li>
+      <li>We provide our advisors with a gratuity for their time.</li>
+    </ul>
+  </li>
+  <li>Producing a wrap-up video is an excellent opportunity to share ideas with the broader team.</li>
+</ul>
+<!-- 
+<figure>
+  <div class="video-wrapper">
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/kG7Xn8hupf4"
+      title="Inclusive design sprint overview"
+      loading="lazy"
+      allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+  </div>
+  <figcaption>Inclusive design sprint overview</figcaption>
+</figure> -->
+
+</div>
+
+
+<h2>Recognize Exclusion</h2>
+
+<p><em>Recognize Exclusion</em> highlights where our designs unintentionally create barriers. By examining moments that demand extra effort, physical or cognitive, we can uncover and address the gaps that limit who our products truly serve.</p>
+
+<div class="two-col">
+  <div class="card">
+    <figure>
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/wcP3mKYnbzU"
+          title="Recognize Exclusion"
+          loading="lazy"
+          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <figcaption>Recognize Exclusion</figcaption>
+    </figure>
+  </div>
+  <div class="card id-card">
+    <h3>Recognize exclusion early—with AI</h3>
+    <p><b>Use the AI of your choice to identify barriers early—treat ideas as hypotheses and ground designs with disabled people.</b></p>
+    <p><a href="https://chatgpt.com/g/g-69e40a3dade88191a285dcff5ba7102e-inclusive-tech-lab-recognize-exclusion" target="_blank" rel="noopener" class="btn-start"><svg aria-hidden="true" width="1.8em" height="1.8em" viewBox="0 0 720 720" fill="currentColor" style="vertical-align: middle;"><path d="M303.64,294.51v-45.58c0-3.84,1.44-6.72,4.8-8.64l91.65-52.78c12.48-7.2,27.35-10.55,42.7-10.55,57.58,0,94.05,44.62,94.05,92.12,0,3.36,0,7.2-.48,11.04l-95-55.66c-5.76-3.36-11.52-3.36-17.27,0l-120.43,70.05ZM517.64,472.05v-108.92c0-6.72-2.88-11.52-8.64-14.88l-120.43-70.05,39.35-22.55c3.36-1.92,6.24-1.92,9.6,0l91.65,52.78c26.39,15.36,44.14,47.98,44.14,79.65,0,36.46-21.59,70.05-55.66,83.97h0ZM275.33,376.08l-39.35-23.03c-3.36-1.92-4.8-4.8-4.8-8.64v-105.56c0-51.34,39.35-90.21,92.61-90.21,20.15,0,38.86,6.72,54.7,18.71l-94.52,54.7c-5.76,3.36-8.64,8.15-8.64,14.87v139.15h0ZM360.02,425.02l-56.38-31.67v-67.17l56.38-31.67,56.38,31.67v67.17l-56.38,31.67ZM396.25,570.89c-20.15,0-38.86-6.72-54.7-18.71l94.52-54.7c5.76-3.36,8.64-8.15,8.64-14.88v-139.15l39.83,23.03c3.36,1.92,4.8,4.8,4.8,8.64v105.56c0,51.34-39.83,90.21-93.08,90.21h0ZM282.53,463.89l-91.65-52.78c-26.39-15.36-44.14-47.98-44.14-79.65,0-36.95,22.07-70.05,56.14-83.97v109.4c0,6.72,2.88,11.52,8.64,14.87l119.96,69.57-39.35,22.55c-3.36,1.92-6.24,1.92-9.6,0ZM277.25,542.58c-54.22,0-94.05-40.78-94.05-91.17,0-3.84.48-7.68.96-11.52l94.52,54.7c5.76,3.36,11.52,3.36,17.27,0l120.43-69.57v45.58c0,3.84-1.44,6.72-4.8,8.64l-91.65,52.78c-12.48,7.2-27.35,10.55-42.7,10.55h0ZM396.25,599.68c58.06,0,106.52-41.26,117.56-95.96,53.74-13.92,88.29-64.3,88.29-115.64,0-33.59-14.39-66.21-40.3-89.73,2.4-10.08,3.84-20.15,3.84-30.23,0-68.61-55.66-119.96-119.96-119.96-12.95,0-25.43,1.92-37.9,6.24-21.6-21.11-51.34-34.55-83.97-34.55-58.06,0-106.52,41.26-117.56,95.96-53.74,13.92-88.29,64.3-88.29,115.64,0,33.59,14.39,66.21,40.3,89.73-2.4,10.08-3.84,20.15-3.84,30.23,0,68.61,55.66,119.96,119.96,119.96,12.95,0,25.43-1.92,37.9-6.24,21.59,21.11,51.34,34.55,83.97,34.55Z"/></svg> Try GPT<span class="sr-only"> — Recognize Exclusion (opens in new window)</span></a> <a href="ITL_RecognizeExclusion.md" target="_blank" rel="noopener" class="btn-start"><svg aria-hidden="true" width="1.26em" height="1.26em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 1px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>&ensp;Markdown<span class="sr-only"> — Recognize Exclusion (opens in new window)</span></a></p>
+  </div>
+</div>
+
+<h2>Learn from Diversity</h2>
+
+<p><em>Learn from Diversity</em> recognizes that real insight comes from lived experience, not assumption. By working alongside disability communities, we uncover barriers, challenge bias, and shape solutions that reflect real needs.</p>
+
+<div class="two-col">
+  <div class="card">
+    <figure>
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/w35cEWUV3eQ"
+          title="Learn from Diversity"
+          loading="lazy"
+          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <figcaption>Learn from Diversity</figcaption>
+    </figure>
+  </div>
+  <div class="card" id="smes" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 0; overflow: hidden;">
+    <a href="https://www.youtube.com/watch?v=eva5b_Ov7uo" target="_blank" rel="noopener" style="line-height:0;"><img src="-SME1.jpg" alt="Victor's video on Youtube" style="width:100%; height:100%; object-fit:cover; display:block;"><span class="sr-only"> (opens in new window)</span></a>
+    <a href="https://www.youtube.com/watch?v=-nGaDdfLXNg" target="_blank" rel="noopener" style="line-height:0;"><img src="-SME2.jpg" alt="Antonie's video on Youtube" style="width:100%; height:100%; object-fit:cover; display:block;"><span class="sr-only"> (opens in new window)</span></a>
+    <a href="https://www.youtube.com/watch?v=Sl0iV7VyqN0" target="_blank" rel="noopener" style="line-height:0;"><img src="-SME3.jpg" alt="Haben's video on Youtube" style="width:100%; height:100%; object-fit:cover; display:block;"><span class="sr-only"> (opens in new window)</span></a>
+    <a href="https://www.youtube.com/watch?v=LxHRQod1d-4" target="_blank" rel="noopener" style="line-height:0;"><img src="-SME4.jpg" alt="Rosemarie's video on Youtube" style="width:100%; height:100%; object-fit:cover; display:block;"><span class="sr-only"> (opens in new window)</span></a>
+  </div>
+</div>
+
+<h2>Solve for One, Extend to Many</h2>
+
+<p><em>Solve for One, Extend to Many</em> recognizes that meaningful innovation starts with individuals, not averages. By solving for a specific need first, we create solutions that can scale and improve experiences for many.</p>
+
+<div class="two-col">
+  <div class="card">
+    <figure>
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/hdugBzVeB9Q"
+          title="Solve for One, Extend to Many"
+          loading="lazy"
+          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <figcaption>Solve for One, Extend to Many</figcaption>
+    </figure>
+  </div>
+  <div class="card id-card" style="padding-top:0.5em;">
+    <h3>Solve for one, extend to many—diverge with AI</h3>
+    <p><b>Start with one person's needs and design deeply so it extends. Use our persona spectrum to move from permanent to situational contexts, and interrelated needs to reveal shared patterns.</b></p>
+    <p><a href="https://chatgpt.com/g/g-69f54a50774081919d16a029e8dbf468-inclusive-tech-lab-solve-for-one-extend-to-many" target="_blank" rel="noopener" class="btn-start"><svg aria-hidden="true" width="1.8em" height="1.8em" viewBox="0 0 720 720" fill="currentColor" style="vertical-align: middle;"><path d="M303.64,294.51v-45.58c0-3.84,1.44-6.72,4.8-8.64l91.65-52.78c12.48-7.2,27.35-10.55,42.7-10.55,57.58,0,94.05,44.62,94.05,92.12,0,3.36,0,7.2-.48,11.04l-95-55.66c-5.76-3.36-11.52-3.36-17.27,0l-120.43,70.05ZM517.64,472.05v-108.92c0-6.72-2.88-11.52-8.64-14.88l-120.43-70.05,39.35-22.55c3.36-1.92,6.24-1.92,9.6,0l91.65,52.78c26.39,15.36,44.14,47.98,44.14,79.65,0,36.46-21.59,70.05-55.66,83.97h0ZM275.33,376.08l-39.35-23.03c-3.36-1.92-4.8-4.8-4.8-8.64v-105.56c0-51.34,39.35-90.21,92.61-90.21,20.15,0,38.86,6.72,54.7,18.71l-94.52,54.7c-5.76,3.36-8.64,8.15-8.64,14.87v139.15h0ZM360.02,425.02l-56.38-31.67v-67.17l56.38-31.67,56.38,31.67v67.17l-56.38,31.67ZM396.25,570.89c-20.15,0-38.86-6.72-54.7-18.71l94.52-54.7c5.76-3.36,8.64-8.15,8.64-14.88v-139.15l39.83,23.03c3.36,1.92,4.8,4.8,4.8,8.64v105.56c0,51.34-39.83,90.21-93.08,90.21h0ZM282.53,463.89l-91.65-52.78c-26.39-15.36-44.14-47.98-44.14-79.65,0-36.95,22.07-70.05,56.14-83.97v109.4c0,6.72,2.88,11.52,8.64,14.87l119.96,69.57-39.35,22.55c-3.36,1.92-6.24,1.92-9.6,0ZM277.25,542.58c-54.22,0-94.05-40.78-94.05-91.17,0-3.84.48-7.68.96-11.52l94.52,54.7c5.76,3.36,11.52,3.36,17.27,0l120.43-69.57v45.58c0,3.84-1.44,6.72-4.8,8.64l-91.65,52.78c-12.48,7.2-27.35,10.55-42.7,10.55h0ZM396.25,599.68c58.06,0,106.52-41.26,117.56-95.96,53.74-13.92,88.29-64.3,88.29-115.64,0-33.59-14.39-66.21-40.3-89.73,2.4-10.08,3.84-20.15,3.84-30.23,0-68.61-55.66-119.96-119.96-119.96-12.95,0-25.43,1.92-37.9,6.24-21.6-21.11-51.34-34.55-83.97-34.55-58.06,0-106.52,41.26-117.56,95.96-53.74,13.92-88.29,64.3-88.29,115.64,0,33.59,14.39,66.21,40.3,89.73-2.4,10.08-3.84,20.15-3.84,30.23,0,68.61,55.66,119.96,119.96,119.96,12.95,0,25.43-1.92,37.9-6.24,21.59,21.11,51.34,34.55,83.97,34.55Z"/></svg> Try GPT<span class="sr-only"> — Solve for One (opens in new window)</span></a> <a href="ITL_SolveForOneExtendToMany.md" target="_blank" rel="noopener" class="btn-start"><svg aria-hidden="true" width="1.26em" height="1.26em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 1px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>&ensp;Markdown<span class="sr-only"> — Solve for One (opens in new window)</span></a></p>
+  </div>
+</div>
+
+<h2><button type="button" class="disclosure" aria-expanded="false" aria-controls="uxcon-content" id="uxcon-btn">Inclusive Design 101: Full Workshop from UXCon Vienna<span aria-hidden="true" class="disclosure-icon"></span></button></h2>
+<div id="uxcon-content" role="region" aria-labelledby="uxcon-btn" hidden>
+
+<p>This two-hour <a href="https://www.uxcon.io/">UXCon Vienna</a> workshop shares the foundations of Inclusive Design and how to run effective sprints. Each time we teach, we sharpen the practice, making it more usable, repeatable, and accessible to designers everywhere.</p>
+
+<figure>
+  <div class="video-wrapper">
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/Yxj0at4JmSI"
+      title="Inclusive Design 101: Full Workshop from UXCon Vienna"
+      loading="lazy"
+      allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+  </div>
+  <figcaption>Inclusive Design 101: Full Workshop from UXCon Vienna 2025</figcaption>
+</figure>
+
+</div>
+
+<h2>Devices + Accessories + Augmentations</h2>
+
+<p>People engage with devices in countless ways, and design must meet that diversity. By focusing on clear, operable, and understandable interactions, and co-designing with disabled communities, we have created a system of devices, accessories, and augmentations that can be tailored to fit individual needs.</p>
+
+<div class="two-col">
+  <div class="card image-card" role="img" style="background-image: url(-contentsDAA.jpg)" aria-label="An open booklet rests on a desk under directional light, displaying a contents page titled Microsoft's inclusive design principles, Digital and physical. The page lists sections including devices, accessories, augmentations, awareness, configuration, and physical augmentation.">
+    <p><b><a href="https://inclusive.microsoft.design/tools-and-activities/DevicesAccessoriesandAugmentations.pdf">Devices + Accessories + Augmentations (PDF)</a></b></p>
+  </div>
+  <div class="card image-card" role="img" style="background-image: url(-morganDAA.jpg)" aria-label="A person seated in a chair uses a Surface Pro with a Surface Pen fitted inside a large adaptive grip to write handwritten notes on the screen, demonstrating assistive technology for improved accessibility and control.">
+    <p><b><a href="https://microsoft.design/articles/when-designing-for-the-disabled-fit-is-the-finish/">When designing for the disabled, fit is the finish</a></b></p>
+  </div>
+</div>
+
+</main>
+
+
+
+
+<script>
+(function () {
+  'use strict';
+  document.querySelectorAll('button.disclosure[aria-controls]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      document.getElementById(btn.getAttribute('aria-controls')).hidden = expanded;
+    });
+  });
+
+
+}());
+</script>
+
+</body>
+</html>

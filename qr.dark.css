@@ -1,0 +1,88 @@
+/*! Base styles: Mobile First */
+html { color: #eee; font-size: 110%; background:#222;}
+body {font-family: 'Segoe UI', Helvetica, Tahoma, Arial, sans-serif;}
+header {padding: 1.5rem 5% 1.5rem 5%; display:block; background:#333;}
+main {padding: 0.5rem 5%; display:block; background:#111;}
+footer {padding: 0rem 5% 2rem 5%;}
+p, li { word-spacing: 0.35rem; line-height:1.4rem;}
+li {padding-left: 1.5rem;}
+a {text-decoration:none; font-weight:bold; border-bottom:1px dashed #aaa; letter-spacing:.08rem;}
+a:link {color:#7af;}
+a:visited {color:#ccc;}
+a:hover {color:#fd0;}
+a:active {color:#fd0;}
+b {letter-spacing:.08rem;}
+h1 {margin:0.7rem 0 1rem 0; line-height:100%;}
+svg#ITLlogo {fill:#FFF;}
+
+
+/* opinionated defaults*/
+/* A better looking default horizontal rule */
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #999; margin: 1em 0; padding: 0; }
+/* Remove the gap between audio, canvas, iframes, * images, videos and the bottom of their containers*/
+audio, canvas, iframe, img, svg, video { vertical-align: middle; }
+/*  Remove default fieldset styles. */
+fieldset { border: 0; margin: 0; padding: 0;}
+/* Allow only vertical resizing of textareas.  */
+textarea { resize: vertical;}
+
+
+
+/* Helper classes */
+
+/* Hide visually and from screen readers */
+.hidden { display: none !important; }
+
+/* Hide only visually, but have it available for screen readers:
+* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+*
+* 1. For long content, line feeds are not interpreted as spaces and small width
+*    causes content to wrap 1 word per line:
+*    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+*/
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; white-space: nowrap;}
+
+/* Extends the .visuallyhidden class to allow the element
+* to be focusable when navigated to via the keyboard:
+* https://www.drupal.org/node/897638
+*/
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; white-space: inherit; }
+
+/* Hide visually and from screen readers, but maintain layout
+*/
+.invisible { visibility: hidden; }
+
+/* Clearfix: contain floats*/
+.clearfix:before, .clearfix:after {
+content: " "; /* 1 */
+display: table; /* 2 */
+}
+
+.clearfix:after { clear: both; }
+
+/* ==========================================================================
+EXAMPLE Media Queries for Responsive Design.
+These examples override the primary ('mobile first') styles.
+Modify as content requires.
+========================================================================== */
+
+@media only screen and (min-width: 35em) {
+html { font-size: 120%;}
+header {padding-right:10%; padding-left:10%;}
+main {padding-right:10%; padding-left:10%;}
+footer {padding-right:10%; padding-left:10%;}
+}
+
+@media only screen and (min-width: 50em) {
+html { font-size: 130%;}
+header {padding-right:18%; padding-left:18%;}
+main {padding-right:18%; padding-left:18%;}
+footer {padding-right:18%; padding-left:18%;}
+}
+
+@media only screen and (min-width: 70em) {
+html { font-size: 150%;}
+header {padding-right:26%; padding-left:26%;}
+main {padding-right:26%; padding-left:26%;}
+footer {padding-right:26%; padding-left:26%;}
+}
