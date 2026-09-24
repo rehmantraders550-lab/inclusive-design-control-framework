@@ -1,0 +1,68 @@
+version: "0.1.0"
+status: NORMALIZED
+
+rules:
+  - id: REL-001
+    type: OVERRIDE
+    if: "REDUCED_MOTION_SUPPORT applies"
+    then: "User reduced-motion preference overrides decorative motion intensity and motion frequency settings."
+    preserves:
+      - "Essential state feedback"
+      - "Critical progress communication"
+
+  - id: REL-002
+    type: COLLISION
+    if:
+      INPUT_PRECISION_DEMAND: ">=7"
+      DRAG_DEPENDENCY: ">=7"
+    risk: "Motor exclusion rises sharply because both accurate target acquisition and continuous pointer control are demanded."
+    mitigation:
+      - "Increase target size/spacing"
+      - "Provide discrete non-drag alternative"
+      - "Avoid making the combined interaction critical"
+
+  - id: REL-003
+    type: COLLISION
+    if:
+      COLOR_INFORMATION_DEPENDENCY: ">=7"
+    risk: "Meaning becomes fragile under color-vision variation, low vision, display changes, and environmental conditions."
+    mitigation:
+      - "Add text, icon, shape, pattern, or state redundancy"
+
+  - id: REL-004
+    type: DEPENDENCY
+    control: TASK_RESUMABILITY
+    depends_on:
+      - "State persistence"
+      - "Stable identity of workflow step"
+      - "Clear recovery entry point"
+
+  - id: REL-005
+    type: COUPLING
+    controls:
+      - PREFERENCE_PERSISTENCE
+      - TASK_RESUMABILITY
+    note: "Both rely on persistence infrastructure but represent different user needs and must remain independent controls."
+
+  - id: REL-006
+    type: COLLISION
+    if:
+      SPATIAL_STABILITY: "<=3"
+      cognitive_or_memory_load: "high"
+    risk: "Dynamic reordering increases relearning/search cost and invalidates muscle memory."
+    mitigation:
+      - "Keep critical navigation order stable"
+      - "Announce meaningful changes"
+      - "Prefer explicit sorting/personalization controls over silent reordering"
+
+  - id: REL-007
+    type: CAP
+    control: ACTION_LABEL_SPECIFICITY
+    capped_by: "Available component width does not justify truncating the semantic action."
+    mitigation:
+      - "Use concise explicit wording"
+      - "Move explanatory detail to accessible description where needed"
+
+  - id: REL-008
+    type: NON_EQUIVALENCE
+    statement: "Direct WCAG mapping and beyond-WCAG inclusive-design observations must remain separate provenance classes."
