@@ -1,0 +1,1173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spreadsheet Rows as Articles</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+	 <style>
+	 	body {font: 1rem/1.35 sans-serif; margin:2rem;}
+	 	article {border: 1px solid #ccc; border-radius: 5px; padding: 1rem; margin: 1rem 0;}
+		dl {display: grid; grid-template-columns: max-content 1fr; column-gap: 0.75rem; row-gap: 0.5rem; align-items: baseline;}
+	 	dt {font-weight: bold;}
+	 	dt::after {content: ":"; font-weight: bold; margin-right: 0.25rem;}
+	 	dd {margin: 0; display:inline;}
+  	</style>
+</head>
+<body>
+<main>
+  <article role="group" class="row" data-row-index="1">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">ADHD &rarr; Autism &rarr; Sensory Processing Disorder</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three lose their reading thread to uninvited motion: ADHD attention is involuntarily captured by movement, autistic readers pay a heavy cost to re-enter interrupted comprehension, and SPD systems must actively process every moving element whether wanted or not.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is partway through an article, actually absorbing it, scrolling at their own pace — when the page decides they've reached a video.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Autoplay videos start mid-scroll without any user action: motion and often sound erupt into the reading field the moment the player enters view. The reader never asked; the page simply detonates. For this group the article is effectively over at that point — the comprehension thread is cut, and rebuilding it costs more than the video was ever worth.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="2">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">ADHD &rarr; Depression &rarr; Burnout</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Mental Health</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three struggle to sustain effort across a long single session: ADHD focus fragments unpredictably, depression rations scarce activation energy, and burnout has no reserve for marathon tasks. They complete long work the only way they can — in installments.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is filling out a scholarship application — high stakes, many sections, exactly the kind of task they planned to chip away at across several sittings.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The form cannot be saved midway: there is no draft state, no save-and-return, nothing between blank and submitted. The application silently demands one unbroken session from the users least able to supply one. Every attempt that ends early is total loss, and after a few losses the rational response is not to start — the design converts a focus limitation into a filtering mechanism.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="3">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">ADHD &rarr; Dyslexia &rarr; Autism</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three depend on visual structure to enter and navigate text: ADHD readers need entry points and chunks to sustain engagement, dyslexic readers use headings to orient before committing decoding effort, and autistic readers use structure to build the predictable map that makes content approachable.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user lands on a page and does what most readers do first — skims for shape: what's here, where's the part I need, how long is this really?</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The content is a wall of text with no headings, no bullets, no paragraph rhythm — structure exists only in the author's head. Skimming is impossible, so the choice becomes read everything or leave. Dyslexic readers must decode linearly with nowhere to anchor, ADHD readers bounce off the undifferentiated mass, and the information's actual quality never gets a chance to matter.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="4">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">ADHD &rarr; Dyslexia &rarr; Autism</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">The same triad is overwhelmed when everything on screen competes at once: ADHD attention is pulled toward each moving element in turn, dyslexic readers lose the text they were decoding, and autistic users must filter the noise manually before any signal is reachable.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user arrives at a homepage with a purpose — find one section, one product, one link — and meets the page's own agenda instead.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The homepage is packed with multiple carousels, each rotating on its own timer, each restarting its animation cycle independently. Nothing holds still long enough to be evaluated, and the item the user glimpsed rotates away before the decision to click completes. The page is structurally incapable of being scanned calmly, and every carousel is a small argument that the user's task matters less than the site's promotions.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="5">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">ADHD &rarr; Mild Cognitive Impairment &rarr; Autism</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three need position markers and a reachable end: ADHD users lose their place the moment attention shifts, MCI makes 'where was I?' genuinely unanswerable, and autistic users need to know a task has a boundary — that completion exists and can be reached.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user scrolls a feed hunting for something they saw earlier — a post, a product, a comment — certain it was 'somewhere down there.'</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Infinite scroll has no position memory and no reachable footer: leaving the page discards the scroll position, returning starts from the top, and the footer's links are a mirage that retreats with every new batch. The thing seen earlier is unfindable by design, and the feed has no edge to reach — a space this group can enter but never finish, navigate, or return to.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="6">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">ADHD &rarr; Sensory Processing Disorder &rarr; Autism</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Sensory &amp; Environmental</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three are overwhelmed by simultaneous competing stimuli: ADHD attention has no volume knob for irrelevant motion, SPD experiences the combined load as physical stress, and autistic users must spend real cognitive effort suppressing the noise before the actual task becomes possible.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is searching for a product — comparing options, holding criteria in mind — surrounded by everything else the page is doing.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The page is filled with flashing ads and animated sidebars competing directly with the product results: peripheral motion on every side of the content that matters. The comparison task, which needs sustained attention across items, is conducted inside a sensory storm the user didn't consent to. The ads win the attention auction by force, and the purchase — the thing the site presumably wants — is what gets abandoned.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="7">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">ALS &rarr; Multiple Sclerosis &rarr; Aphasia</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Speech &amp; Communication</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three enter text slowly for different reasons: ALS users may type through switches or eye gaze at seconds per character, MS fatigue and tremor slow every keystroke, and aphasia adds a language-assembly delay before typing even begins. Their accurate speed is minutes, not seconds.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is logging in and a verification code arrives — a short string that must be transcribed into the site before a hidden clock runs out.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The verification code expires too quickly for slow text entry: by the time the code is read, held, and entered character by deliberate character, the site has already invalidated it and issued another. Each cycle restarts the race with the same fixed clock. Authentication — the doorway to everything else — becomes a speed test that these users can lose indefinitely without ever making an error.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="8">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">ALS &rarr; Quadriplegia &rarr; Muscular Dystrophy</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Motor &amp; Physical Control</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three rely on switch input or similar alternatives that produce discrete, sequential actions: a press, a selection, a confirmation. What they cannot produce is a sustained analog state — holding a pointer motionless over a region for a continuous stretch of time.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is navigating a site's main menu, trying to reach a section that lives inside a dropdown.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The dropdown requires hover-and-hold: it opens only while a pointer rests on it and collapses the instant that state lapses, with no click-to-open alternative exposed. For switch users there is no 'hover' at all — the menu's contents are locked behind an input state their hardware cannot produce. Entire sections of the site are unreachable not because of any button they can't press, but because of a stillness they can't perform.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="9">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Alzheimer’s Disease &rarr; Mild Cognitive Impairment &rarr; Aging Memory Decline</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three navigate by recognition rather than recall: they can find a menu that is visible but cannot reliably remember that an invisible one exists, what icon summons it, or which paths they used last time. Persistent visible structure substitutes for the memory they can no longer trust.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user returns to a site to continue something — check an order, find a page they used before — retracing a route they only partly remember.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The site hides its navigation behind collapsed menus and unlabeled icons, so the wayfinding structure this group depends on must be summoned from memory before it can be used. Users who cannot recall that a hamburger icon conceals the menu experience the site as having no navigation at all. Each visit restarts the discovery process from zero, and the likeliest outcome is quiet abandonment rather than a support request.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="10">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Alzheimer’s Disease &rarr; Parkinson’s Disease &rarr; Dementia</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three lose the trail behind them: remembering not just where they are but how they got there — which page preceded this one, which choice led here — degrades early in each condition. The path exists only if the interface keeps showing it.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">Mid-task, the user realizes they need to go back — to the previous step, the earlier page, the place before the wrong turn — and cannot reconstruct where that was.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The site offers no breadcrumb trail, and its architecture breaks reliable back-button behavior, so there is no visible record of the path taken and no dependable mechanism to retrace it. A wrong turn cannot be undone, only escaped by starting over from the homepage. For users whose internal trail is already unreliable, the site removes the external one too, and every navigation error becomes a full restart.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="11">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Amputee &rarr; Spinal Cord Injury &rarr; Multiple Sclerosis</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Motor &amp; Physical Control</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three navigate by keyboard, where every element between here and the target must be tabbed through one press at a time — and every press has a physical cost in effort, pain, or fatigue that pointer users never pay.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user arrives at a page and needs the main content — past the header, the mega-menu, the utility links, the same gauntlet that tops every single page on the site.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The site lacks a skip-to-content link, so reaching the actual content means tabbing through dozens of navigation items first — on this page, and again on the next page, and again after that. A one-line fix that costs sighted mouse users nothing is absent, and its absence taxes precisely the users for whom each keystroke is most expensive. The navigation isn't a menu for them; it's a toll.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="12">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Anxiety &rarr; Obsessive-Compulsive Disorder &rarr; Impulse Control Disorder</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Mental Health</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three are disproportionately harmed by manufactured urgency: anxiety experiences a countdown as genuine threat, OCD can spiral on the fear of an irreversible missed chance, and impulse control disorders lose exactly the deliberation window that urgency is engineered to close.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is considering a purchase — weighing whether they need it, whether they can afford it — which is precisely the deliberation the page is built to interrupt.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Countdown timers and 'only 2 left' claims manufacture false scarcity to force snap decisions: the clock and the stock figure are pressure devices, not facts, and often reset for the next visitor. The design deliberately targets the gap between impulse and judgment — the exact gap these conditions already struggle to hold open — and converts a clinical vulnerability into a conversion metric.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="13">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Anxiety &rarr; PTSD &rarr; Obsessive-Compulsive Disorder</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Mental Health</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three have sensitized responses to sudden uninvited stimuli: anxiety spikes on surprise, PTSD's startle response treats the unexpected as threat, and OCD can attach intrusive looping to a jarring interruption long after it's dismissed. Predictability is not preference for this group; it is regulation.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is reading an article, settled and focused, several paragraphs deep — the calmest interaction a website offers.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">A survey pop-up erupts without warning, flashing into the center of the reading field and demanding a response before the article can continue. The interruption is engineered to be unignorable, which for this group means engineered to trigger. The site converts its calmest surface into an ambush site, and the cost is not one lost pageview but a user who now braces while reading — or doesn't return.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="14">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Anxiety &rarr; Sensory Processing Disorder &rarr; ADHD</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Sensory &amp; Environmental</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three are compelled by peripheral flashing: anxiety reads it as something possibly wrong that must be checked, SPD cannot tune out rhythmic motion at the edge of vision, and ADHD attention is yanked toward it involuntarily, every single time it pulses.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user has a site open in a background tab — deliberately backgrounded — while working on something else that needs their full attention.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The tab's title and favicon alternate and flash — '(1) New message!' trading places with the page name — specifically engineered to recall attention from whatever the user chose to do instead. The site reaches out of its tab to interrupt work it isn't part of. For this group each pulse forces a check-or-suppress decision, and the accumulated interruptions can dismantle an afternoon of focus one flash at a time.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="15">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Aphasia (post-stroke) &rarr; Autism (language-delayed) &rarr; Developmental Language Disorder</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Speech &amp; Communication</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three process language atypically — comprehension, expression, or both — and rely on redundant channels: an icon that confirms the word, help text that restates the label, an example that grounds the abstraction. Single-channel text-only communication removes every backup at once.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user faces a form full of field labels and instructions, needing to understand what each one wants before anything can be entered.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The form is jargon-heavy with no icons, no help text, and no examples — bare technical labels as the sole channel of meaning. Users who need multimodal reinforcement get one difficult channel and no fallback, so a field they can't parse is simply a wall. Guessing risks errors with real consequences; asking for help costs independence; and the form's information was never actually inaccessible — just delivered through the one format these users can't use alone.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="16">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Aphasia &rarr; Tracheotomy &rarr; Stroke</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Speech &amp; Communication</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three have speech that is inconsistent or absent: aphasia disrupts word retrieval unpredictably, a tracheotomy can limit or eliminate voicing, and stroke effects on speech vary hour to hour. Any feature that assumes a reliable spoken utterance excludes them intermittently or entirely.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user wants to search the site — the most basic act of finding anything — and the interface presents a microphone.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Search is mic-only, with no text input alternative: the site's single wayfinding tool is gated behind reliable speech. Users whose speech is inconsistent get inconsistent access to the entire site; users with no speech get none. A text search box — the older, simpler, universally accessible version — was removed in favor of the voice interface rather than offered alongside it, trading their access for someone else's convenience.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="17">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Arthritis (juvenile) &rarr; Carpal Tunnel Syndrome &rarr; Tendonitis</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Motor &amp; Physical Control</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">For all three, every click and scroll has a cumulative pain cost: juvenile arthritis inflames the joints doing the work, carpal tunnel compresses further with repetition, and tendonitis worsens with each cycle of the same motion. Interaction volume is not neutral — it is the injury mechanism.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is doing ordinary site tasks — reading, comparing, filling, navigating — over a session whose total interaction count nobody designed anyone to notice.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The site requires constant scrolling and clicking to accomplish anything: content fragmented across pages that could be one, actions split into clicks that could be fewer, lists that demand endless scrolling. Each interaction is trivial; the sum is a repetitive-strain workout. These users must ration their daily interaction budget, and a site that spends it carelessly is choosing, on their behalf, which other tasks they won't get to do today.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="18">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Arthritis &rarr; Tremor &rarr; Carpal Tunnel Syndrome</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Motor &amp; Physical Control</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three have degraded pointing precision: arthritis stiffens the fine adjustments, tremor adds involuntary motion at exactly the moment of clicking, and carpal tunnel numbs the feedback that guides small corrections. Their reliable click radius is much larger than a typical designer's.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user tries to activate one control in a row of controls — tap the right one, and only the right one.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The clickable targets are tiny and packed close together, so the gap between 'hit the target' and 'hit its neighbor' is smaller than this group's motor precision. Every click becomes a gamble whose downside is triggering the wrong action — following the wrong link, deleting instead of editing. They compensate by slowing down, zooming, and re-aiming, paying in time and pain for pixels the design refused to spend.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="19">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Arthritis &rarr; Tremor &rarr; Limited Grip</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Motor &amp; Physical Control</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three struggle with precise taps on small touchscreens: arthritic fingers can't fine-position, tremor turns a tap into a small scatter, and limited grip means the device itself is unstable while aiming. The finger is the pointer, and it is neither small nor steady.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">A modal dialog has taken over the small screen, and the user wants out — back to what they were doing.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The modal's close button is a tiny X in a corner — a target sized for a mouse pointer, presented to a fingertip on a shaky, hand-held screen. Missing it taps whatever is underneath, often the modal's own call to action, converting an attempt to decline into an apparent acceptance. The single most important control on the screen — the exit — is the smallest thing on it.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="20">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Auditory Neuropathy &rarr; Auditory Processing Disorder &rarr; Aging Adults</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Hearing &amp; Auditory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three can hear speech but not at its delivered pace: auditory neuropathy garbles rapid transitions, APD needs extra time to segment words from the stream, and age-related changes slow auditory processing. Given the same audio slower, comprehension often returns — speed is the barrier, not sound.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is watching a video whose narration moves at a presenter's natural clip — fine for most listeners, a blur for them.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The video player lacks speed controls: no slow-down option, no 0.75x, nothing between the delivered pace and not watching. The one adjustment that would convert this content from inaccessible to accessible — an option most major players ship as standard — is absent. These users must replay sections repeatedly to extract what a slower single pass would have delivered, or give up on the content entirely.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="21">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Auditory Processing Disorder &rarr; Autism &rarr; ADHD</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Hearing &amp; Auditory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three struggle to separate a target voice from competing sound: APD's core deficit is exactly this segregation, autistic listeners expend heavy effort isolating speech streams, and ADHD attention cannot lock onto one voice while others pull at it. Overlapping speakers defeat all three at once.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user attends a webinar where discussion gets lively — people talking over each other, interjecting, finishing each other's points.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The webinar features overlapping speakers and offers no transcript: the one format that would untangle the voices — text, sequential, attributed — doesn't exist. These users catch fragments, lose the thread whenever two voices collide, and have no way to recover what was said. They attended the same event as everyone else and left with a fraction of it, with no artifact to fill the gaps afterward.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="22">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Autism (rigid thinking) &rarr; Obsessive-Compulsive Disorder &rarr; Anxiety</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three depend on interfaces staying where they were left: autistic users build precise procedural maps that changed layouts invalidate, OCD users can spiral on whether the change means something is wrong, and anxious users read unexpected difference as evidence of error — theirs or the site's.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user returns to a familiar site and reaches for a menu item exactly where it was last time — muscle memory doing what muscle memory is for.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The menus reorder dynamically between visits — by popularity, personalization, or promotion — so the learned position of every item is perishable. The user's investment in mastering the interface is repeatedly confiscated: what was second nature becomes a search task again. Worse, the change is unannounced, so the first evidence of it is reaching for something and finding something else — the exact experience this group finds most destabilizing.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="23">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Autism &rarr; ADHD &rarr; Fetal Alcohol Spectrum Disorder</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Developmental &amp; Learning</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three need multi-step tasks to expose their own structure: autistic users need the sequence to be explicit and stable, ADHD users need visible progress to sustain effort across steps, and FASD affects the sequencing and working memory that hold an implicit structure together unaided.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is registering for something that matters — an account, a program, a service — through a flow that will take multiple screens to complete.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The registration flow is long and complex with no progress feedback: no step count, no 'section 2 of 5,' no sense of how much remains or whether the end is near. Each screen could be the last or the middle — there's no way to know. Users who need structure to persist are asked to walk a corridor with no visible end, and every additional unmarked screen raises the odds they conclude it's endless and quit.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="24">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Autism &rarr; ADHD &rarr; Fetal Alcohol Spectrum Disorder</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Developmental &amp; Learning</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">The same triad is derailed by interruption mid-sequence: an autistic user's disrupted procedure may need restarting from the top, ADHD attention captured by the interruption doesn't return to the task on its own, and FASD makes re-finding one's place in a broken sequence genuinely hard.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is midway through a task — a form, a checkout, a multi-part flow — with their place in the sequence held precariously in mind.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Pop-ups interrupt the task flow at the site's discretion — newsletters, promotions, feedback requests — each one shattering the sequence the user was holding. After dismissal, the task must be re-entered: where was I, what was next, did that last step register? For this group the pop-up doesn't cost the seconds it takes to close; it costs the sequence, and sometimes the whole task with it.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="25">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Autism &rarr; Anxiety &rarr; ADHD</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three respond poorly to uninvited sudden appearance: autistic users are destabilized by unpredicted change, anxiety spikes on surprise before context arrives, and ADHD attention is captured wholesale by the new arrival, dropping whatever it was holding.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is browsing quietly — no request for help made, no signal given — when the page decides it's time for a conversation.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">A live chat box pops up without warning, sliding in with sound or motion and an agent greeting mid-screen. The user's calm browsing state is broken by a social interaction they didn't initiate, with the implied pressure of a human waiting on the other end. Anxious users now owe a response; autistic users have had their predictable environment violated; ADHD users have lost their task. The site calls it engagement.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="26">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Autism &rarr; Non-native Speakers &rarr; Intellectual Disability</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Developmental &amp; Learning</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three read literally and depend on plain statement: autistic users parse idiom as its component words, non-native speakers may not carry the cultural reference at all, and intellectual disability makes decoding figurative indirection an extra task stacked on an already hard one.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">Something has gone wrong — an error, a dead link, a failed action — and the user needs to know what happened and what to do next.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The error page leads with jokes and idioms — 'Well, this is awkward!', a cartoon, a pun — instead of information. The words on screen are literally not about the problem. Users who read literally must first recognize that the message is decoration, then discover that the actual answers — what happened, is my data safe, what do I do — were never provided. The page spends its one communicative moment on charm the user cannot use.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="27">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Autism &rarr; PTSD &rarr; Dementia</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Sensory &amp; Environmental</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three are overstimulated by chaotic environments: autistic sensory systems flood under simultaneous competing input, PTSD hypervigilance treats visual chaos as a threat field to monitor, and dementia makes filtering signal from noise progressively harder until busy pages become simply impenetrable.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user opens a page needing one thing from it, and the page delivers everything it has at once.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The page is busy with pop-ups and animated backgrounds — layered motion, competing panels, decoration that never rests. There is no calm region to work in and no way to quiet the rest. The content the user came for is present but buried in stimulation, and for this group the choice is to pay a real physiological cost to extract it or to leave. Most leave, and the site never learns why.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="28">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Bipolar Disorder (manic) &rarr; ADHD &rarr; Impulse Control Disorder</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Mental Health</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three can act faster than their own judgment in certain states: mania collapses the gap between urge and action, ADHD impulsivity fires before consequences load, and impulse control disorders are defined by exactly this failure. A moment of friction before irreversible action is protective infrastructure for them.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is browsing a store — perhaps at 2 a.m., perhaps in a state they'll later recognize — and a purchase is one tap away.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">One-click purchasing executes with no confirmation step: no review screen, no 'are you sure,' no gap between impulse and completed transaction. The design removes precisely the friction these users depend on to catch themselves. Purchases made in manic or impulsive states are real financial harm with real aftermath, and the pattern converts a clinical symptom directly into revenue — frictionless for the site, ruinous for the user.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="29">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness &rarr; Glaucoma &rarr; Retinitis Pigmentosa</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three navigate partly or wholly by screen reader, which can only present what the markup names: a button's accessible label is the button, as far as their interface is concerned. Where labels are missing, controls don't become harder — they become anonymous.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is navigating a site by screen reader, moving control to control, building a mental model from what each element announces.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The site uses unlabeled buttons and decorative icons as links: the screen reader announces 'button,' 'button,' 'link, graphic' — a row of functional mysteries. The only way to learn what a control does is to activate it and accept the consequences. Navigation becomes exploration by detonation, and the user is doing the site's information architecture in their head, from scraps, on every page.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="30">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness &rarr; Glaucoma &rarr; Retinitis Pigmentosa</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">The same triad depends on programmatic focus and reading order matching the visual state: when a dialog visually takes over the page, their interface only knows it if focus moved there and the background was hidden from the accessibility tree. The visual overlay is otherwise a rumor.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">A dialog opens over the page — a confirmation, a form, a notice — and sighted users see the page dim behind it.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The modal traps neither focus nor reading order: keyboard focus and screen reader navigation continue wandering the page behind the dialog, reading content that is visually inert and missing the dialog entirely. The user may never discover the dialog exists, while it silently blocks everything they try. The page has split into two realities — one visual, one programmatic — and this group is stranded in the wrong one.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="31">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness &rarr; Partially Sighted &rarr; Dyslexia</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three are blocked by text locked in image form: blind users' screen readers find nothing to read, partially sighted users can't reflow or restyle a picture of words, and dyslexic users can't apply the fonts, spacing, and tools that make decoding manageable. Real text serves all three; pictures of text serve none.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user opens a document that matters — a menu, a flyer, a form, a notice — published in whatever format was easiest to upload.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The content is an image of text or an untagged PDF: visually identical to information, functionally a locked box. Screen readers report an unlabeled graphic; zoom yields blur instead of reflow; reading tools have nothing to grip. The information exists on screen and is inaccessible anyway — the purest form of the mismatch, where nothing is missing except the machine-readable layer that would have cost almost nothing to keep.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="32">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness &rarr; Retinitis Pigmentosa &rarr; Screen Reader Users</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three experience products through what the markup says about them: the image carries the color, the style, the condition — and alt text is the only bridge from that visual information to their interface. No alt text means the product's visual half simply doesn't exist.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is shopping — comparing products, judging suitability — on a page where images are doing most of the persuasive and informational work.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Product images lack alt text, announced as 'image' or a filename like IMG_4032.jpg. Every visual fact — what it looks like, which variant is shown, what the detail shots reveal — is withheld. The user must purchase on title and price alone, absorbing the risk of unseen mismatches, or leave for a store that describes its goods. The site is a showroom with the lights off for exactly these customers.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="33">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness &rarr; Retinopathy &rarr; Screen Reader Users</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three navigate by pulling links out of context: screen readers offer a links list precisely so users can survey a page's destinations without reading everything. That mode works only if each link's text carries its own meaning — the surrounding sentence doesn't come along.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user summons the links list to survey where this page can take them — the non-visual equivalent of scanning a page for its blue underlines.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The site's links all say 'click here,' 'read more,' 'learn more' — meaningful only inside sentences the links list strips away. The survey returns 'click here' seven times: seven doors, no labels. The user must abandon the efficient mode and read the full page linearly to learn what sighted users get at a glance, paying a time tax for a copywriting habit that better link text would erase entirely.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="34">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness &rarr; Screen Reader Users &rarr; Braille Display</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three consume the page linearly, in source order, one element after another — by speech or by braille line. Visual layout is invisible to this mode; the underlying structure IS the page. Markup that lies about structure produces a page that reads as nonsense.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user reads a page top to bottom the only way their interface can: in the order the markup declares.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The page uses table layout for visual structure: markup announcing rows and columns of data that are actually navigation, content, and sidebars positioned for sighted eyes. The screen reader dutifully reports table semantics for things that aren't tables, and reading order follows cell order rather than meaning. The user hears a scrambled document wearing a spreadsheet costume — structure that actively misleads instead of merely lacking.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="35">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness &rarr; Severe Low Vision &rarr; Retinitis Pigmentosa</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three take in video primarily or entirely through its audio track: dialogue and narration arrive fine, but anything conveyed only visually — an on-screen action, a chart, a silent reveal — exists for them only if someone narrates it.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is watching a video where a crucial moment happens on screen without a word — a demonstration step, a name shown as text, a look exchanged in silence.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">There is no audio description track or option: silent visual information is simply absent from their version of the video. The content doesn't degrade gracefully — it develops holes exactly where the visuals carried the meaning, and the user may not even know a hole occurred. Two people watch the same video; one receives the story, the other receives the dialogue and a series of unexplained gaps.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="36">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Body Dysmorphic Disorder &rarr; Eating Disorder Recovery &rarr; Anxiety</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Mental Health</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three are clinically vulnerable to appearance-based comparison and judgment: BDD fixates on perceived flaws that ranking systems appear to confirm, eating disorder recovery can be destabilized by body-evaluation content, and anxiety turns being-judged into a persistent threat state.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user encounters a site where photos of people — possibly including themselves — are scored, ranked, or voted on.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The site's core mechanic is ranking or judging user-submitted photos: appearance converted into comparative numbers, publicly. For this group the harm is not hypothetical edge-case misuse; it is the feature working as designed. A BDD user receives apparent objective confirmation of their worst fixed belief; a person in recovery is handed the exact comparison loop treatment works to dismantle. The mechanic is the mismatch.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="37">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Cancer Fatigue &rarr; Chemotherapy Recovery &rarr; Chronic Fatigue Syndrome</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Chronic Illness &amp; Fatigue</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three experience exhaustion that arrives mid-task without notice: cancer-related fatigue is abrupt and non-negotiable, chemotherapy recovery makes stamina unpredictable day to day, and CFS punishes pushing through with days of payback. Rest when the body demands it is not optional.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is partway through a timed quiz or exam — invested, progressing — when their energy fails in the way it does: suddenly and completely.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The timed quiz has no pause option: the clock runs regardless of what the body does. The user must choose between pushing through a crash — with real physical cost and degraded answers — or letting the timer expend itself and accepting failure that measures their illness rather than their knowledge. An assessment built to be fair on time becomes systematically unfair to anyone whose energy can't be scheduled.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="38">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Cancer Fatigue &rarr; Chemotherapy Recovery &rarr; Chronic Fatigue Syndrome</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Chronic Illness &amp; Fatigue</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">The same triad completes extended tasks only in installments: shopping that healthy users finish in one sitting gets done across several short sessions, whenever capacity allows, sometimes days apart. Continuity between sessions is the accommodation that makes completion possible at all.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user has been assembling a cart — researching, comparing, deciding — and their energy window closes before checkout.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The checkout has no save-cart option: leaving means the assembled cart evaporates, and the next session starts from nothing. All the research and decision work — often the most energy-expensive part — must be repaid in full each attempt. For users whose sessions are short by medical necessity, the site has priced completion above their energy budget, and the abandoned-cart metric quietly fills with people who wanted to buy.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="39">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Carpal Tunnel Syndrome &rarr; Repetitive Strain Injury &rarr; Multiple Sclerosis</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Motor &amp; Physical Control</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">For all three, typing volume maps directly to pain and function: carpal tunnel and RSI worsen with each repetition of the same keystrokes, and MS adds fatigue that makes long entry sessions costly. Every field they don't have to retype is preserved capacity.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is filling out a form asking for the same personal data — name, address, email, phone — that every form asks and this site has asked before.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The site requires retyping personal data each time: no autofill support, no stored profile, sometimes markup that actively defeats the browser's own autofill. Data the user has entered a hundred times must be typed a hundred-and-first, spending pain budget on pure redundancy. The information already exists in the browser, ready to be accepted; the site's forms simply decline the help on the user's behalf.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="40">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Cataracts &rarr; Low Contrast Sensitivity &rarr; Presbyopia</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three lose text as contrast drops: cataracts scatter incoming light and wash out faint differences, reduced contrast sensitivity flattens pale text into its background, and presbyopia's blur makes low-contrast small print doubly unreadable. Contrast is not aesthetic for this group — it is legibility itself.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is reading terms that matter — fees, conditions, disclaimers — in dim evening light on a tablet, where every contrast problem compounds.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The fine-print disclaimers are set in pale gray on white: the lowest-contrast text on the page is also the text with the highest consequences for missing it. The design treats legal significance and visual prominence as inversely related. These users literally cannot read the terms they're agreeing to, and the styling choice — deliberate, conventional, and fixable with one color value — decides that on their behalf.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="41">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Charcot-Marie-Tooth Disease &rarr; Peripheral Neuropathy &rarr; Diabetic Neuropathy</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Motor &amp; Physical Control</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three have reduced sensation and fine motor feedback in the hands: the closed loop between intention, movement, and felt position is degraded, so precise pointer positioning runs partly blind. Holding a pointer inside a small region is exactly the operation their feedback loss undermines.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user works through a form whose controls reveal themselves — or function — only under precise, sustained hover.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The form requires exact mouse hover precision: controls that activate on hover, tooltips that carry required information, targets that respond only when the pointer sits just so. Users whose position sense is dulled overshoot and undershoot invisible boundaries they cannot feel, triggering and dismissing states unpredictably. The interaction assumes a feedback fidelity their nerves no longer deliver, and no click-based alternative is offered.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="42">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Chemotherapy Brain Fog &rarr; Fibromyalgia Fog &rarr; Post-COVID Cognitive Impairment</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three produce temporary lapses in clarity that arrive mid-task: a stretch of the form goes by in fog, details entered minutes ago fail to encode, and attention drops out and returns with the thread lost. Their work is sound overall but has unpredictable gaps that need a safety net.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is deep in a dense form — many fields, precise details — when a fog window passes through, as fog windows do.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The dense form has no autosave: everything entered exists only in the fragile browser state until final submission. A fog-induced misstep — a stray navigation, a closed tab, a session hiccup — erases all of it silently. The users most likely to lose the session are exactly those least able to reconstruct what they had entered, and each total loss teaches them that long forms are not safe to attempt on any but their best days.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="43">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Chronic Fatigue Syndrome &rarr; Rheumatoid Arthritis &rarr; Long COVID</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Chronic Illness &amp; Fatigue</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three cannot compete on speed at a fixed moment: CFS mornings may be their worst hours, rheumatoid arthritis makes rapid clicking painful and slow, and Long COVID capacity varies unpredictably by day. A first-come race at a scheduled time is a contest they enter pre-disqualified.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">Appointment or ticket slots release at a set time — 8:00 a.m. sharp — and everyone who needs one converges at once.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Slots drop all at once and go to the fastest clickers: the allocation mechanism is literally a speed contest, run at a fixed hour, with refresh-and-race mechanics. Users who are slow, flaring, or medicated at that hour lose structurally — not sometimes, but by design — and the losers of the race are disproportionately the people who needed the appointment most. Speed was never a fair proxy for need.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="44">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Chronic Obstructive Pulmonary Disease &rarr; Cystic Fibrosis &rarr; Asthma</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Chronic Illness &amp; Fatigue</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three carry reduced physical reserve and fatigue that make prolonged tasks costly: breathing effort consumes energy continuously, and extended concentration or repeated attempts drain a budget that healthy users don't know they have. Long procedures are exhausting in a way short ones are not.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user needs access to their account or service and faces the site's verification gauntlet standing between them and it.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The verification flow is long and multi-step — codes, security questions, document uploads, re-confirmations — a marathon of small efforts with no shortcut for returning users. Each step is minor alone; the sequence is a genuine drain on someone whose reserve is already spoken for. Security architecture that costs healthy users patience costs this group capacity they needed for the actual task — or for the rest of their day.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="45">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Color Vision Deficiency &rarr; Protanopia &rarr; Deuteranopia</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three cannot rely on red-green distinctions: protanopia and deuteranopia collapse red and green toward one another, and broader color vision deficiency makes any hue-only signal unreliable. Meaning carried by color alone is meaning delivered in a channel they don't receive.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user submits a form and something is wrong — one field, somewhere, has been rejected.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Error states are indicated by red alone: the failing field's border turns from gray to red and nothing else changes — no icon, no message, no text cue. To this group the form looks identical before and after the error. They resubmit the same invalid form, get the same invisible rejection, and cycle until they conclude the site is broken. It is — just not in the way they think.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="46">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Colorblindness &rarr; Deuteranopia &rarr; Tritanopia</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three lose distinctions between chart colors: deuteranopia merges the red-green axis, tritanopia the blue-yellow axis, and general colorblindness makes any multi-hue palette partially ambiguous. Lines distinguishable only by color are, for some portion of this group, the same line.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is comparing series on a data chart — which line is revenue, which is cost, which region is which — to draw a conclusion that matters.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The graph uses color-coded lines exclusively: no line styles, no markers, no direct labels — the legend maps colors to meanings these users cannot tell apart. The data is present and unreadable simultaneously. They resort to tracing lines pixel by pixel from the legend or asking someone else what the chart says, converting a glance-level task into an assisted one, for want of a dash pattern.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="47">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Colorblindness &rarr; Low Contrast Sensitivity &rarr; Aging Vision</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three fail to spot interactive text by hue: colorblind users may not perceive the link color as different at all, low contrast sensitivity flattens subtle color shifts into body text, and aging vision loses saturation discrimination. A link that only color announces is a link they cannot find.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user scans an article knowing it contains links — references, related pages, the door to what they actually need — and looks for them.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Links are distinguished from body text by color alone, with no underline or other cue: the affordance exists in a channel this group can't reliably read. Links hide in plain sight, discoverable only by sweeping the pointer across paragraphs hunting for cursor changes — a technique touch users don't even have. The page's connective tissue is invisible, and with it, much of the site.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="48">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Cystic Fibrosis &rarr; Chronic Obstructive Pulmonary Disease &rarr; Asthma</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Chronic Illness &amp; Fatigue</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">The same reduced-reserve triad cannot reliably sit through long continuous sessions: coughing fits interrupt, treatments interpose, and energy runs out on the body's schedule rather than the content's. They consume long material the way they must — in pieces, with breaks, resuming later.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is attending a webinar that runs an hour or more, with their body guaranteed to interrupt at least once.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The webinar offers no pause and no replay: it exists only live, only continuously, only once. A coughing fit or treatment break costs whatever was said during it, permanently; a bad-energy day costs the whole event. The format demands one unbroken hour from people whose hours don't come unbroken, when a recording — the trivial accommodation — would have served them completely.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="49">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Deaf &rarr; Cochlear Implant &rarr; Auditory Processing Disorder</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Hearing &amp; Auditory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three can miss purely auditory alerts: deaf users don't receive them, implant users may not catch brief unexpected sounds outside conversation, and APD may hear the sound without successfully classifying what it meant. A sound-only signal reaches this group unreliably at best.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">Something has gone wrong with the user's task — an error the site urgently wants them to know about.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The critical error is signaled only with sound: a chime or alert tone, with no visual state change, banner, or message. The site announces failure in the one channel these users don't dependably receive, then behaves as if they were informed. They continue confidently on a broken path — submitting into a failed session, waiting on a process that already died — and discover the error only by its downstream wreckage.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="50">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Deaf &rarr; Hard of Hearing &rarr; Auditory Processing Disorder</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Hearing &amp; Auditory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three watch everything with captions on: deaf users as their sole channel, hard-of-hearing users to fill what audio misses, and APD users to anchor speech that arrives faster than they can segment it. Captions-on is not a per-video choice for them; it is a standing condition of watching.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user watches several videos in a row on one site — a series, a playlist, a binge — each one beginning the same small fight.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Caption preference isn't persisted: every new video starts captions-off and must be corrected by hand, every single time. The site treats a permanent accessibility requirement as a momentary whim to be re-expressed per video. Each video's opening seconds play uncaptioned while the user hunts the toggle — a recurring toll of missed content and repeated labor for a preference the site could have remembered once.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="51">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Deaf &rarr; Hard of Hearing &rarr; Cochlear Implant</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Hearing &amp; Auditory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three lack reliable auditory input for video speech: deaf users receive none, hard-of-hearing users receive fragments, and implant users' access varies with audio quality and mixing. Captions are the load-bearing channel through which video speech reaches this entire group.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">A video begins playing — autoplaying, even — and people are speaking in it, saying things the user is expected to know.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The video plays without captions: the speech content is transmitted exclusively as sound, to users defined by not reliably receiving sound. The video is, for them, footage of people moving their mouths. Autoplay compounds the insult — the site pushed the content at them unbidden and inaccessible at once. Whatever the speakers said might as well not exist, and the site presumes it was communicated.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="52">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Deaf &rarr; Hard of Hearing &rarr; Non-native Speakers</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Hearing &amp; Auditory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three depend on transcripts for audio content: deaf and hard-of-hearing users as the only complete channel, and non-native speakers to re-read at their own pace what spoken speed and idiom made slippery. A transcript also makes audio searchable, skimmable, and quotable — modes audio itself never offers.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user wants the content of a recorded webinar or podcast episode — the information in it, not the experience of listening.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The podcast is audio-only with no transcript: an hour of information sealed in the one format this group cannot fully access, unsearchable and unskimmable even for those who can. The content exists; the access layer was skipped. Deaf users are excluded outright, and everyone else is denied the text version that would have made the material referenceable — the difference between a recording and a resource.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="53">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Deaf &rarr; Low Vision &rarr; Late-deafened Adults</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Hearing &amp; Auditory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three need captions they can physically read: deaf and late-deafened users depend on captions for the words themselves, and low-vision users need those captions in a size and contrast their eyes can resolve. Caption legibility is where hearing access and vision access intersect — and both must hold.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user plays a video whose captions were burned into the picture at production time, styled once for everyone forever.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Open captions are baked into the video frame: size, font, color, and contrast are fixed pixels, adjustable by no player setting, no system preference, no zoom that doesn't also blur them. A low-vision deaf viewer — the person captions exist most for — gets captions sized for someone else's eyes with no recourse. The accommodation is present and unusable at once, which is its own particular cruelty.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="54">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Deaf &rarr; Prelingual Deafness &rarr; Hard of Hearing</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Hearing &amp; Auditory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">For prelingually deaf signers, sign language is the first language and dense written text a second one — captions and articles arrive in translation. The assumption that text equals access holds for late-deafened readers but quietly fails the signing Deaf community, whose fluent channel is visual-gestural, not written.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user needs to understand critical site content — terms, health information, instructions with consequences — presented entirely as written language.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">There is no sign-language video option anywhere: captions and text assume a written-language fluency that many native signers were never given equal opportunity to build. The site believes it is accessible because it is textual, but for this group text is the barrier wearing accessibility's clothes. Critical content in a second language, with no first-language alternative, is comprehension left to chance.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="55">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Deafblindness &rarr; Blindness &rarr; Usher Syndrome</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three consume the web through the accessible DOM: braille displays and screen readers read the semantic structure, not the pixels. For deafblind users, braille is the sole channel — no audio fallback exists. An interface with no DOM behind it is, for them, an interface that isn't there.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user opens a modern web app whose interface is drawn to canvas or WebGL — sleek, fast, and rendered entirely as pixels.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The interface is painted onto canvas with no accessible DOM equivalent: the accessibility tree is empty, so braille and screen reader output is literally nothing — not garbled, not partial, blank. The app is fully functional and completely absent simultaneously. This is the deepest exclusion in web technology: not a barrier within the interface but the non-existence of any interface these users' tools can perceive.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="56">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dementia &rarr; Mild Cognitive Impairment &rarr; Traumatic Brain Injury</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three lose their grip on long procedures partway through: dementia and MCI erode the memory of which steps are done and what came next, and TBI degrades the sustained executive thread that holds a multi-part task together. Long tasks are feasible only as resumable pieces.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is working through a long form — pages of it — and reaches the honest limit of what today's memory and focus can hold.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">There is no 'save and continue later' option: the form exists only as an all-or-nothing single session. Stopping to rest, verify a document, or simply recover means forfeiting everything entered. Users whose conditions guarantee they'll need to stop are structurally barred from finishing — the form's length and its session-boundedness together form a wall that neither alone would be. Completion is reserved for the uninterrupted.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="57">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dementia &rarr; Traumatic Brain Injury &rarr; Aging Memory Decline</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">For all three, re-entering lost data is not a redo but a degraded second attempt: they may no longer remember exactly what they entered, re-entry introduces new errors, and the demoralization is real — each loss confirms the fear that they can't manage these tasks anymore.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user submits a carefully completed form and one field — one — fails validation.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The validation failure clears correctly entered fields, including passwords: the punishment for one mistake is the confiscation of everything done right. The user must reconstruct entries they may not accurately recall, on a form now primed for fresh errors, with their confidence spent. A design that preserved the ninety percent that was correct would cost nothing; instead the form burns it all and calls the ashes an error message.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="58">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Depression &rarr; ADHD &rarr; Chronic Illness</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Mental Health</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three finish long tasks against odds: depression makes each resumption an energy expense, ADHD loses the thread across interruptions, and chronic illness inserts involuntary stops. What lets them finish anyway is the guarantee that progress, once made, stays made.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is applying for benefits — a long, consequential form, quite possibly related to the very condition making it hard to complete.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The form rejects partial saves and clears all data on interruption: progress is impossible to bank, and every stop is a total restart. The population applying for benefits skews heavily toward exactly the conditions this design punishes — the barrier is aimed, statistically, at its own audience. Each wipe teaches the user the application may be beyond them, and some conclude the benefits are too.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="59">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Depression &rarr; Social Anxiety &rarr; Anxiety</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Mental Health</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Shame-coded language lands harder on all three: depression's self-critical voice adopts the insult as evidence, social anxiety experiences the judgment as exposure, and anxiety re-runs the moment afterward. Copy designed to sting relies on the sting — and these users feel it at full strength.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user has decided to decline — an offer, a newsletter, an upsell — and looks for the way out.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The decline link uses confirm-shaming copy — 'No thanks, I don't like saving money' — as the only exit: refusing requires clicking a sentence that mocks the refusal. The site charges an emotional toll for the word no. For this group the manufactured shame isn't shrugged off; it lands, lingers, and attaches to the act of setting boundaries — a design pattern whose entire mechanism is making self-advocacy feel bad.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="60">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyscalculia &rarr; ADHD &rarr; Math Anxiety</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three are defeated by mental arithmetic embedded in tasks: dyscalculia disrupts the calculation itself, ADHD working memory drops intermediate figures mid-computation, and math anxiety floods the process with stress that crowds out the arithmetic. Presented totals cost them nothing; implied totals cost everything.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is evaluating prices under a promotion — 30% off this, an extra 15% with code, member pricing on that — trying to learn one number: what will I pay?</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The store presents complex discount math without computed totals: percentages stack, conditions apply, and the final price exists only as an equation the user must solve themselves. The site knows the answer — it will charge it — but withholds it until commitment. These users either abandon the evaluation, guess and get surprised at checkout, or buy elsewhere from a store that simply states its price.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="61">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyscalculia &rarr; ADHD &rarr; Nonverbal Learning Disability</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">The same numeric-processing triad cannot reliably project a running total forward: estimating what tax and shipping will add requires exactly the mental arithmetic dyscalculia disrupts, ADHD drops, and NVLD complicates. They budget from displayed numbers, not derived ones.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user builds a cart against a real budget, watching the subtotal as their only guide to whether they can afford this.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The cart hides tax and shipping until the final step: the number the user budgeted against was never the real one, and the truth appears only after investment in the full checkout. For users who can't estimate the gap themselves, the reveal is a genuine ambush — commit to the surprise total, or abandon at the last step and absorb the sunk effort. The design calls this reducing friction; for this group it relocates the friction to the worst possible moment.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="62">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyscalculia &rarr; Aging Memory Decline &rarr; ADHD</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three struggle to infer an unstated numeric format: dyscalculia makes date-part ordering genuinely confusing, aging memory can't retain which arrangement this site wanted, and ADHD guesses fast rather than deducing carefully. An example or mask costs the designer a moment; its absence costs this group the field.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user types their date of birth — a fact they know perfectly — into a field that has private opinions about how dates should look.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The field demands one exact format but shows no example, no input mask, no picker — only rejection when the guess is wrong. Slashes or dashes? Day first or month? Two-digit year or four? The user knows the answer to the question and fails anyway, repeatedly, on formatting trivia the field refuses to disclose. Each rejection reads as 'you got your own birthday wrong' — a small humiliation the placeholder text would have prevented.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="63">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyscalculia &rarr; Math Anxiety &rarr; ADHD</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">The same triad needs numeric documents to explain themselves: dyscalculia can't extract meaning from undifferentiated figures, math anxiety escalates when a wall of numbers offers no entry point, and ADHD attention slides off tables with no hierarchy. Labeled, summarized, totaled — that's the difference between a bill and a puzzle.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user opens their invoice to answer ordinary questions: what am I being charged, for what, and did it change?</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The invoice is a raw table of figures — line items in codes, amounts without groupings, no summary, no highlighted total, no plain-language anything. The answers exist somewhere in the grid, extractable only through the exact numeric processing these users lack. They pay bills they can't verify or spend an anxious hour decoding what a designed summary would have said in one line: here's your total, here's what changed.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="64">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyslexia &rarr; Brain Fog &rarr; Aphasia</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three read slowly and re-read often: dyslexic decoding takes multiple passes, fog means a paragraph read may not be a paragraph retained, and aphasia makes each sentence a small assembly task. Their reading position is hard-won and precariously held — losing it costs far more than a glance.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is partway through a live news page — several paragraphs in, mid-sentence, holding their place with effort.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The page auto-refreshes on its own schedule, snapping the reader's position away mid-paragraph as new content shoves everything downward. The place they fought to hold is gone; re-finding it means re-reading — and the next refresh is already queued. For fast readers this is an annoyance; for this group the page is effectively unreadable, resetting faster than they can traverse it. The news updates; the reader never finishes.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="65">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyslexia &rarr; Dyscalculia &rarr; Dysgraphia</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Developmental &amp; Learning</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">The three learning differences compound around symbol tasks: dyslexia disrupts reading distorted text, dyscalculia disrupts arithmetic, and dysgraphia disrupts producing precise written answers. A gate that demands reading warped characters or solving math problems tests their disabilities directly, not their humanity.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user reaches a CAPTCHA — the checkpoint between them and the account, ticket, or form they came for.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The CAPTCHA relies only on distorted text or math puzzles: deliberately hard-to-read characters and arithmetic under time pressure, with no alternative verification mode. The test is calibrated to be hard for machines and lands hardest on humans whose disabilities live exactly where the test probes. Failing repeatedly at 'prove you're human' — because of how your human brain works — is the mismatch stated with unusual honesty.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="66">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyslexia &rarr; Dysgraphia &rarr; Intellectual Disability</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Developmental &amp; Learning</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three spell approximately: dyslexia and dysgraphia produce systematic transpositions and phonetic renderings, and intellectual disability makes exact orthography an unreliable skill. Their search terms are always semantically right and frequently literally wrong — a gap tolerant search absorbs invisibly.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user searches the site for a product or page they know exists, typing the word the way it comes out.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The site search has no typo tolerance and no suggestions: a one-letter slip returns zero results, flatly, as if the thing doesn't exist. No 'did you mean,' no fuzzy match, no partial results. The user concludes the product isn't there and leaves — the site loses the sale to a spelling variance its search chose not to forgive, and the user learns that search itself isn't for them here.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="67">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyslexia &rarr; Low Literacy &rarr; Aphasia</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three lean on visuals to bypass difficult text: dyslexic users read icons faster than words, low-literacy users may depend on them entirely, and aphasia makes a good pictogram worth a paragraph. But the bargain only works if the icons actually communicate — a vague glyph is worse than a plain word.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user navigates by the site's icons, trusting the pictures to say what the text would have.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The site uses vague icons with no labels: abstract shapes whose meanings are conventions the user may not share, with no text confirmation anywhere. The visual channel these users switched to for reliability turns out to be a guessing game — is that settings or tools, share or send? Every icon tap is a hypothesis test with navigation consequences, and the population that most needed icons to work gets icons that don't.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="68">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyspraxia &rarr; Autism &rarr; ADHD</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Developmental &amp; Learning</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three lose their place in unguided sequences: dyspraxia affects the planning and ordering of action itself, autistic users need the sequence made explicit rather than implied, and ADHD drops the thread between steps. A visible map of where-am-I and what's-next is what keeps them on the path.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user works through a multi-step site task where the steps exist — in the designer's head — but nowhere on screen.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The site requires exact multi-step sequences with no guidance: no step indicators, no what-comes-next, no confirmation that a step registered before the next begins. Do things slightly out of order and the flow fails in unexplained ways. The user is executing a choreography they were never shown, penalized for missteps in a dance whose steps are secret. Guidance would cost a progress bar; its absence costs this group the task.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="69">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Ehlers-Danlos Syndrome &rarr; Fibromyalgia &rarr; Rheumatoid Arthritis</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Motor &amp; Physical Control</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three pay steep costs for high-effort repeated motion: EDS joints subluxate under sustained strain, fibromyalgia amplifies each repetition into lasting pain, and rheumatoid arthritis inflames with use. A sustained click-hold-drag is among the most expensive gestures their hands can perform.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user needs to reorder, move, or arrange items in an interface built around one gesture.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The interface requires repeated high-effort drag-and-drop with no alternative: no move buttons, no cut-and-paste, no keyboard reordering — just sustained press, controlled travel, precise release, again and again. Each drag is a small physical event with a pain price, and a slip midway means paying it twice. The same operations exposed as clicks would cost this group almost nothing; drag-only pricing puts routine arrangement behind a pain paywall.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="70">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Encephalitis &rarr; Traumatic Brain Injury &rarr; Post-COVID Brain Fog</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three live with cognitive clarity that fluctuates day to day: credentials retrievable on Tuesday may be unreachable on Thursday, and multi-part procedures that were manageable once are suddenly not. Systems that remember on their behalf are what make bad days navigable.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user returns to a site they use regularly — on one of the foggier days — and faces the login gauntlet fresh.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The multi-step login offers no 'remember me': every visit demands the full ritual — credentials recalled, codes retrieved, steps sequenced — with zero credit for yesterday's success. On clear days it's tedium; on foggy days it's a locked door, since the login demands exactly the recall and sequencing the fog has taken. The site's memory could have bridged the user's; instead each bad day starts with failing at the entrance.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="71">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Epilepsy &rarr; Migraine with Aura &rarr; Photosensitive Autism</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Sensory &amp; Environmental</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">For all three, flashing visuals are physiologically active: photosensitive epilepsy can seize in response to flash frequencies, migraine with aura can be triggered into an attack, and photosensitive autistic users experience flash as acute distress. Exposure is the harm — no interaction required.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user lands on a page carrying an animated banner that strobes for attention, doing exactly what it was designed to do.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The flashing banner animates without stop controls: no pause, no reduce, no way to halt the strobing short of leaving the page — and by then exposure has occurred. The safety failure is structural: harm happens at render time, before any user action can prevent it. A pause control is the minimum; not flashing is the fix; the banner offers neither, and this group browses the web as a minefield accordingly.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="72">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Essential Tremor &rarr; Arthritis &rarr; Parkinson’s Disease</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Motor &amp; Physical Control</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three cannot execute fine drag positioning: tremor jitters the pointer during travel, arthritis resists the sustained micro-adjustments, and Parkinson's blends tremor with slowed correction. Landing a drag on an exact pixel value is precisely the compound gesture their conditions dismantle.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user needs to set a specific value — a price cap, a size, a quantity — and the interface hands them a slider.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The slider is the only input, with no numeric field: an exact value requires pixel-precise dragging on a control where each pixel may represent several units. The user oscillates around the target — 480, 520, 495 — unable to land on 500, for want of a text box that would have taken one keystroke sequence. The interface converted a number they know into a dexterity test they can't pass.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="73">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Essential Tremor &rarr; Hemiplegia &rarr; Arthritis</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Motor &amp; Physical Control</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three cannot draw smooth controlled strokes: tremor turns intended curves into jagged oscillation, hemiplegia may leave the dominant hand unavailable and the other untrained, and arthritis makes sustained precise motion painful. Producing a recognizable signature by mouse or finger is genuinely beyond many of them.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is completing something official — a lease, a consent, a contract — and reaches the signature box.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The signature field accepts only a mouse- or finger-drawn signature, with no typed or uploaded alternative. The legal formality has been implemented as a drawing test, and the drawing these users produce may be rejected — by the interface or by their own embarrassment — as not looking like a signature. E-signature law has long accepted typed names; this implementation forgot, and the document waits on a motor skill that has nothing to do with consent.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="74">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Essential Tremor &rarr; Parkinson’s Disease &rarr; Cerebral Palsy</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Motor &amp; Physical Control</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three need targets to hold still while aiming: their pointing is a slower loop of aim, correct, and commit, so a target that moves mid-approach doesn't just complicate the click — it converts a nearly completed action into a strike on whatever took the target's place.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user goes to tap a button as the page finishes loading — the button is there, the finger is committed, the ad above it is still arriving.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Late-loading ads shift the layout mid-aim: content jumps as banners inject, and the click lands on whatever moved into the target's position — often the ad itself. The miss is manufactured by the page's own instability, then sometimes monetized as an ad click. For users whose aim loop is slow, layout shift isn't jank; it's a moving-target course where the penalty for the page's tardiness is charged to their accuracy.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="75">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Glaucoma &rarr; Tunnel Vision &rarr; Retinitis Pigmentosa</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three scan the page serially through a narrowed field: content is found region by region rather than absorbed at a glance, and anything that changes or vanishes while their field is elsewhere effectively never happened. Slow deliberate scanning is their access method — interfaces must survive it.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user works through a wide mega-menu, moving their limited field along it to find the right section.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The wide mega-menu vanishes if not hovered correctly: drift the pointer off its invisible boundary — easy when your visual field can't see the whole menu at once — and it collapses, erasing the options being read. The menu demands simultaneous awareness of its full extent from users whose vision is defined by not having that. Each collapse restarts the scan; enough collapses end it.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="76">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Glossectomy &rarr; Laryngectomy &rarr; Dysarthria</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Speech &amp; Communication</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">None of the three can complete a spoken interview: glossectomy and laryngectomy remove the anatomy of speech partly or wholly, and dysarthria renders speech effortful and frequently misunderstood by strangers. Their cognition, identity, and documents are fully intact — only the voice channel is closed.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is verifying identity for a financial account — a high-stakes gate with their money on the other side.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Verification requires a live video interview with spoken responses and offers no non-verbal path: no typed chat, no document-plus-liveness alternative, no interpreter accommodation. Identity is conflated with the ability to speak on camera. Users with every credential and no voice are locked out of their own finances by a process that mistook one output channel for proof of personhood.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="77">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Glossectomy &rarr; Oral Cancer Recovery &rarr; ALS (late)</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Speech &amp; Communication</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three depend fully on AAC or text: tongue loss and late ALS remove speech production, and oral cancer recovery may suspend it for months. Any authentication step that requires producing or responding to live voice is a step they categorically cannot perform.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user enables or completes two-factor authentication and discovers the second factor is a phone call.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Two-factor authentication is call-only: an automated voice call that expects the user to answer, listen, and often respond aloud, with no SMS, app, or token alternative offered. Security doubles as a speech test. The account's protection mechanism locks out its own non-speaking owner, and the fallback — asking someone else to take the call — surrenders the very security the factor exists to provide.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="78">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Hemiplegia &rarr; Dyspraxia &rarr; Arthritis</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Motor &amp; Physical Control</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">For all three, swipe gestures are unreliable or hostile: hemiplegia means one-handed use where thumb-swipes fight device grip, dyspraxia disrupts the smooth directional motion a swipe requires, and arthritis makes the sustained travel painful. Discrete taps on visible buttons are their dependable vocabulary.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user manages a list on a mobile site — clearing, archiving, deleting items — using the interaction the site actually exposes.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Swipe is the only way to delete or archive: no buttons expose the same actions, no long-press menu, no edit mode with checkboxes. Actions exist but only behind a gesture this group performs badly — half-swipes that snap back, over-swipes that trigger the wrong action, painful repetitions. Functionality gated behind one fragile gesture is functionality rationed by dexterity, when a visible button would have served everyone.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="79">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Huntington’s Disease &rarr; Frontotemporal Dementia &rarr; Alzheimer’s Disease</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three lose short-term hold on task state: which steps are done, what was entered, how much remains. The interface's visible record of progress is not a nicety for this group — it is the working memory they no longer reliably supply themselves.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is partway through a multi-page checkout, and the pages behind them have already begun to blur together.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The multi-page checkout has no progress indicator: no step markers, no done-versus-remaining, no visible acknowledgment that earlier pages happened. Each new page arrives contextless — is this near the end? did the payment page already occur? Users who cannot reconstruct the sequence internally are navigating a corridor with no mile markers, and uncertainty about whether an order actually completed is the anxious residue the design leaves behind.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="80">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Hyperacusis &rarr; Tinnitus &rarr; Hearing Sensitivity</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Hearing &amp; Auditory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">For all three, even moderate audio is aversive: hyperacusis experiences ordinary volumes as physical pain, tinnitus interacts with external sound in ways that can spike the ringing, and general hearing sensitivity makes unexpected audio a stressor. Sound they didn't choose, at a level they didn't set, is the worst case.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user opens a page in a quiet environment — headphones on or speakers live — with no reason to expect the page to make noise.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Media autoplays and alerts fire loud with no volume control on the element itself: sound begins at the site's chosen level, unrequested, with the user scrambling for a mute that may not exist. For this group the damage is done in the first second — pain, a tinnitus spike, a stress response — before any control could help. The page treated their ears as an ad surface.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="81">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Intellectual Disability &rarr; Autism &rarr; Global Developmental Delay</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Developmental &amp; Learning</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three need structured, literal guidance: intellectual disability and GDD make abstract inference genuinely hard, and autistic users may find whimsical indirection an obstacle rather than a delight. A gate that requires decoding a metaphor tests puzzle aptitude, not the credential it guards.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user tries to enter or navigate a site that decided plain doors were boring.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Navigation or login is abstract and puzzle-based — gamified challenges, metaphorical menus, cleverness as interface. The path forward requires inferring rules that are never stated, which is precisely the cognitive move these users find hardest. What reads as playful to the designer reads as arbitrary exclusion to this group: the site functions perfectly and remains unenterable, its cleverness serving as an unintended IQ gate.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="82">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Intellectual Disability &rarr; Down Syndrome &rarr; Fetal Alcohol Spectrum Disorder</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Developmental &amp; Learning</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">None of the three can reliably infer unstated rules from rejections: deducing 'needs a symbol, a capital, and twelve characters' from a series of failures requires exactly the abstraction and working memory their conditions limit. Stated rules are followable; implied rules are a wall.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user creates an account password — inventing a string to satisfy requirements the form is keeping to itself.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Password requirements are revealed only through successive failures, never listed up front: each rejection discloses one more rule, and the user must accumulate the specification through trial and error while remembering every previously satisfied constraint. For this group the process may simply never converge. The full requirements exist in the validator; printing them above the field was the entire fix, and its absence turns account creation into a locked gate.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="83">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Locked-in Syndrome &rarr; Brainstem Stroke &rarr; Severe Cerebral Palsy</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Motor &amp; Physical Control</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three combine near-total paralysis with preserved cognition: thought is intact while movement is nearly absent, so interaction happens through eye-tracking, switches, or scanning — inputs that are precise but slow, and categorically incapable of rapid pointer acrobatics.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user — thinking clearly, wanting fully — meets an interface whose designers assumed a quick hand on a mouse.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The interface requires precise mouse control or rapid clicks with no alternatives: drag paths, double-clicks under time pressure, targets that assume a pointer darting at hand speed. Eye-gaze and switch input can do everything the interface needs, slowly — but the interface never asks what needs doing, only how fast the pointer moves. The gap between intact intention and demanded motion is the entire barrier, and it is entirely the design's.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="84">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Low Vision &rarr; Hemianopia &rarr; Nystagmus</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three track their keyboard position visually while tabbing: low vision needs a strong indicator to find focus at all, hemianopia needs it to survive crossing into the missing half-field, and nystagmus needs a stable anchor for eyes that drift. The focus outline is their cursor — remove it and they are navigating blind.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user tabs through a page's links and controls, following where focus lands as their only map of where they are.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The site's CSS strips the visible focus outline — outline: none, applied for aesthetics — so keyboard position is invisible. Focus still moves; nothing shows where. The user presses Tab into a void, activating controls on faith, losing their place with every keystroke. One deleted line of CSS converted the entire keyboard interface into blindfolded navigation, and the site looks marginally tidier for it.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="85">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Lupus &rarr; Crohn’s Disease &rarr; Irritable Bowel Syndrome</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Chronic Illness &amp; Fatigue</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three live with flare cycles that demand sudden departures: lupus fatigue and pain surge without notice, and Crohn's and IBS impose urgent, non-negotiable breaks mid-anything. Stepping away abruptly is a medical fact of their lives that no amount of planning eliminates.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is deep in a form when their body issues one of its non-negotiable interruptions, and they leave the keyboard — as they must.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The form expires mid-entry with no autosave: return from the break and the session is dead, the data gone, the work forfeit. The design assumes continuous presence from users whose defining symptom is that presence gets interrupted. Each expiry converts a medical necessity into a productivity penalty, and the lesson learned — don't start forms on uncertain days — means most days.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="86">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Lupus &rarr; Irritable Bowel Syndrome &rarr; POTS</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Chronic Illness &amp; Fatigue</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">The same sudden-departure reality governs all three — with POTS adding that remaining seated and attentive for an open-ended stretch may itself be untenable. What they need from any queue is simple: their place should survive their body's interruptions.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is waiting in an online queue for tickets or a booking — position 847, moving slowly, no end time promised.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The waiting-room queue requires sustained tab presence: step away and the place is forfeit, back to the end or out entirely. Holding a spot becomes an endurance event — stay seated, stay attentive, don't let the body do what it does. Users whose conditions guarantee interruptions are structurally filtered out of whatever the queue allocates, and the queue's fairness — first come, first served — quietly means healthiest served first.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="87">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Migraine &rarr; Epilepsy &rarr; Sensory Processing Disorder</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Sensory &amp; Environmental</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three react physiologically to flicker: migraine brains are provoked by rhythmic visual pulsing, photosensitive epilepsy carries seizure risk at certain frequencies, and SPD experiences looping motion as unrelenting sensory pressure. A flicker that never stops is a stressor that never stops.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user loads a landing page and the decorations start moving — and keep moving, and keep moving.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Animated GIFs loop continuously with no pause control: the same motion cycle firing forever in the reading field, unstoppable short of leaving. Unlike a video, a GIF offers no player, no pause, no controls at all — motion as permanent page furniture. For this group the page has a metronome of discomfort embedded in it, and reading anything nearby means enduring the loop for the duration.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="88">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Mild Cognitive Impairment &rarr; Brain Fog &rarr; ADHD</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three forget what a field asked once the prompt is gone: MCI and fog can't retain the question behind the answer being typed, and ADHD returning from any interruption finds filled boxes with no memory of their purpose. Persistent labels are the external memory the form is supposed to provide.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user fills a form whose labels live inside the fields — and vanish the moment typing begins.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Labels exist only as placeholder text that disappears on input, so a half-completed form becomes a grid of unlabeled boxes holding unexplained values. Checking one's work — is that the billing or shipping address? which box wanted the middle name? — requires deleting entries to resurrect their labels. The form forgets its own questions faster than the user does, then makes the user pay for both lapses.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="89">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Multiple Sclerosis &rarr; Cerebral Palsy &rarr; Stroke</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Motor &amp; Physical Control</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three type slowly through fatigue, spasticity, or one-sided weakness — often on adaptive keyboards where each character is a deliberate act. Their login credentials are correct; their entry pace is simply several multiples of the able-bodied assumption baked into timeout values.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user works through the login form at their real speed — accurate, steady, and slower than the form's patience.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The login form times out quickly: before the credentials are fully entered, the session expires, the fields reset, and the race restarts from zero. The user is failing a typing-speed test disguised as authentication, repeatedly, with no error of theirs anywhere in the loop. A timeout tuned generously — or paused while input is active — costs nothing; this one costs these users their account access.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="90">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Muscular Dystrophy &rarr; ALS &rarr; Myasthenia Gravis</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Motor &amp; Physical Control</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">None of the three can sustain held pressure: muscular dystrophy and ALS progressively weaken the muscles a press-and-hold demands, and myasthenia gravis is defined by strength that fails during sustained effort. Discrete clicks they can deliver; continuous seconds of force they cannot.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user goes to confirm a deletion and finds the button wants to be held down, not clicked.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The press-and-hold-to-confirm control requires seconds of continuous input with no click alternative: the safety pattern chose sustained force as its proof of intent. These users' fingers release early — not from doubt but from physiology — and the action never fires. Intent verification that a two-step click would satisfy is instead gated behind stamina, and the users failing the hold are precisely those the interface never imagined.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="91">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Myasthenia Gravis &rarr; Chronic Fatigue Syndrome &rarr; Type 1 Diabetes</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Chronic Illness &amp; Fatigue</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three manage unpredictable stamina requiring active pacing: myasthenia weakens with use through a day, CFS budgets a small energy allotment against post-exertional cost, and Type 1 diabetes interposes glucose events that suspend everything until handled. Flexible stopping is how they function at all.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is mid-task when their condition calls an unscheduled halt — weakness, a crash, a blood sugar that needs attention now.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The interface offers no save or resume: task state exists only in the live session, and stopping means starting over. Users who must pause by medical necessity are charged full restarts for it, converting each health event into a productivity forfeit as well. The design implicitly requires an uninterrupted body, and everything about this group's lives is a counterexample.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="92">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Ménière’s Disease &rarr; Hard of Hearing &rarr; English as a Second Language</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Hearing &amp; Auditory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three lean on captions to catch what fast dialogue drops: Ménière's brings fluctuating hearing and tinnitus that smear rapid speech, hard-of-hearing users fill audio gaps from the text, and ESL viewers use captions to anchor unfamiliar words at speed. The captions must be right to do any of that.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user watches a tutorial with captions on, reading along to reconstruct what the narration is actually saying.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The auto-generated captions are inaccurate and unpunctuated: mistranscribed technical terms, run-on word streams with no sentence boundaries, homophones swapped mid-instruction. The safety net has holes exactly where the content is densest. Users cross-referencing garbled text against partially heard audio are doing translation work the caption track was supposed to eliminate — and for instructions, a wrong caption is worse than none.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="93">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Night Blindness &rarr; Partially Sighted &rarr; Colorblindness</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three struggle with extreme dark themes: night blindness makes low-luminance detail vanish, partial sight needs tunable contrast rather than maximal contrast, and some colorblind users lose distinctions that pure-black backgrounds exaggerate into halation and smear. Dark mode helps them only when it is adjustable.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user browses at night with dark mode on — the setting that is supposed to be the accessible one.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The dark mode is pure black with no adjustments: maximum-contrast white-on-black, no dimming, no softer dark-gray option, no tuning of any kind. For these users the accessibility feature overshoots into a new barrier — text that glows and ghosts against a void. The site offers exactly two worlds, blinding and abyssal, and the adjustable middle where this group can actually read was never built.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="94">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Non-native Speakers &rarr; Aphasia &rarr; Low Literacy</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Developmental &amp; Learning</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three chose their display language deliberately, for capability rather than preference: non-native speakers picked the one they read best, aphasia makes even the strongest language effortful and others impractical, and low-literacy users need the specific language their reading skills exist in.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user visits a site while traveling or behind a VPN, and the site consults their IP address instead of their choice.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Geolocation forces the local language, overriding the chosen one, with no persistent language picker: the site decides that location implies language, discards the user's setting, and often re-forces it on every visit. A capability-based choice is overwritten by a geographic guess. The user hunts for a language switcher that may be absent, unlabeled, or itself in the forced language — locked out of comprehension by a feature that calls itself smart.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="95">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Nonverbal Autism &rarr; ALS &rarr; Cerebral Palsy</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Speech &amp; Communication</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three respond through AAC devices or laborious typing: composing an answer means selecting, assembling, and outputting text at a pace measured in minutes. Their responses are complete and considered — they simply arrive on a timeline no conversational timeout was calibrated for.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is mid-conversation with a support chatbot, composing their reply the way they compose everything: deliberately, through their device.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The chatbot times out waiting for a reply: silence beyond its threshold reads as abandonment, and the session closes — context, queue position, and progress discarded — while the user is mid-composition. Their answer arrives into a dead conversation. The bot's patience was tuned to speech-speed typists, so AAC users are perpetually classified as having left, and support becomes a door that closes faster than they can speak.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="96">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Nystagmus &rarr; Strabismus &rarr; Convergence Insufficiency</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three have unstable visual tracking: nystagmus adds involuntary eye motion under the text, strabismus misaligns the two eyes' images, and convergence insufficiency makes sustained near-focus effortful. Reading stationary text is already work; reading text that itself moves is compounding motion on motion.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user tries to read content that the page has set in motion — scrolling, sliding, refusing to hold still.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Scrolling marquees and flashing text banners put the words themselves in motion: the reader's unstable tracking must now chase a moving target, and the text exits before the pursuit completes. Content in motion is content this group cannot finish reading, ever — each pass allows a fragment. The same words, stationary, would be merely effortful; the animation converts them into a treadmill.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="97">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Panic Disorder &rarr; PTSD &rarr; Social Anxiety</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Mental Health</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three can be pitched into acute distress by surprise content: panic disorder's alarm system misfires on sudden stimuli, PTSD can be triggered into re-experiencing by unexpected violent imagery, and social anxiety spikes on ambush interactions. The unexpectedness is itself the payload.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is browsing an ordinary page with ordinary expectations when the site cashes in their attention without asking.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Surprise pop-ups and autoplaying violent ads detonate mid-browse: graphic imagery and sudden sound delivered without warning or consent, engineered to be impossible to pre-avoid. For this group the cost isn't annoyance — it can be a panic attack, a trigger response, a ruined day radiating from one autoplay decision. The ad model spent their nervous system as inventory.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="98">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Parkinson’s Disease (cognitive) &rarr; Huntington’s Disease (late stage) &rarr; Alzheimer’s Disease (late stage)</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three process and decide slowly: Parkinson's cognitive changes stretch decision time, and late-stage Huntington's and Alzheimer's slow comprehension itself. Given time they arrive at sound answers; under a countdown they get pressure that further degrades the very processing being timed.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user works through a web form that has decided how long thinking should take, and displays the verdict as a ticking clock.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The timed form runs strict countdowns: answer within the window or the form expires, resets, or auto-submits incomplete. The timer measures processing speed while claiming to measure something else, and its visible ticking is itself a stressor that slows this group further — a feedback loop of pressure and degradation. Whatever the form gates — access, benefits, appointments — is thereby rationed by cognitive pace.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="99">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Parkinson’s Disease &rarr; Essential Tremor &rarr; Arthritis</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Motor &amp; Physical Control</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three find drag-and-drop among their hardest gestures: Parkinson's and tremor disrupt the controlled travel between press and release, and arthritis makes the sustained hold painful. Reordering by drag stacks their three weakest sub-skills — sustained pressure, steady travel, precise release — into one required motion.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user fills a form that includes arranging items — priorities, preferences, steps — using the only mechanism the builder provided.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The form builder supports drag-only reordering: no up/down buttons, no number-the-items alternative, no keyboard path. Every arrangement is a full drag gesture, and a mid-drag slip scrambles the order it took several drags to build. The task is conceptually trivial — put these in order — and the interface has bound it to precisely the gesture this group performs worst, with no second door.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="100">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Partially Sighted &rarr; Cataracts &rarr; Presbyopia</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three read the web enlarged: browser zoom is their standing correction for reduced acuity, clouded lenses, and age-blurred near vision. Zoom only works if layouts reflow with it — enlargement that breaks the page trades illegible for unusable.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user zooms the browser to 200%, as they do everywhere, and the page comes apart around the enlargement.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The navigation bar overlaps the content at 200% zoom: fixed-position elements collide, headers smother headlines, and portions of the page become unreachable beneath the wreckage. The user's essential accommodation and the site's layout are in direct conflict, and the site wins — offering a choice between text too small to read and a page too broken to use. Responsive design was supposed to have retired this failure.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="101">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Photophobia &rarr; Post-Concussion &rarr; Migraine</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Sensory &amp; Environmental</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">For all three, screen brightness is physiologically loaded: photophobia experiences bright fields as pain, post-concussion light sensitivity makes white screens disorienting and nauseating, and brightness is a canonical migraine trigger. Dark environments and dark interfaces are how they remain able to read at all.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is browsing at night in a deliberately darkened room — device dimmed, system dark mode on — and opens the site.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The site is locked in a high-brightness white theme: no dark mode, no respect for the system preference, a full-screen luminance blast into the darkened environment. Every visit is a flashbang followed by sustained glare. For this group the site's content is priced in pain per minute, and the sole payment plan is enduring it — or installing third-party dark-mode extensions to do what the site declined to.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="102">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Presbyopia &rarr; Partially Sighted &rarr; Macular Degeneration</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three depend on pinch-zoom as their mobile reading correction: presbyopia blurs near text, partial sight needs enlargement past any designer's default, and macular degeneration requires magnifying content into the retina's surviving regions. On a phone, pinch is the zoom — there is no browser chrome to fall back on.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user tries to enlarge text on a phone the way every phone has taught them to: fingers on glass, spread.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The viewport meta tag disables pinch zoom, locking the page at its designed size: the universal gesture does nothing, by the site's explicit instruction. One attribute — user-scalable=no — overrides the accessibility affordance the platform itself provides, usually to protect a layout from imperfect zooming. The page's appearance is preserved; its readability for this group is revoked, in a single line of markup.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="103">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">PTSD &rarr; Anxiety &rarr; Obsessive-Compulsive Disorder</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Mental Health</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three can be seriously harmed by unchosen graphic imagery: PTSD can be triggered into flashback by trauma-adjacent photos, anxiety escalates on gore it couldn't brace for, and OCD can loop intrusively on disturbing images long after viewing. Choice — a warning, a click-to-reveal — is the entire safeguard.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user visits a health site for information — a symptom, a procedure, a condition — with no way to know what the page will show them.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The medical site autoloads graphic photos: surgical imagery and wound photography render immediately, above the fold, with no warning or click-to-reveal. Information-seeking becomes exposure roulette. A collapsed thumbnail with a one-line warning preserves every clinical use while returning the choice to the viewer; autoloading spends the reader's stability to save them one click they would gladly have made.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="104">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">PTSD &rarr; Autism &rarr; Sensory Processing Disorder</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Sensory &amp; Environmental</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three are harmed by sudden unchosen sound: PTSD startle responses fire on unexpected audio, autistic users are dysregulated by sensory ambush, and SPD experiences abrupt sound as a physical jolt. Sound they initiate is manageable; sound that initiates itself is the problem in its pure form.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user browses in silence — their controlled sensory baseline — and the page has other plans for their ears.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The site plays autoplay audio effects: interface whooshes, notification chimes, promotional sound firing on load and on scroll, none of it requested. Each unchosen sound is a small ambush landing on nervous systems calibrated to treat ambush seriously. The user's environment was theirs until the page overrode it — and the mute control, if any exists, is findable only after the harm.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="105">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">PTSD &rarr; Sensory Processing Disorder &rarr; Anxiety</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Sensory &amp; Environmental</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three are destabilized by sudden environmental change: PTSD hypervigilance treats abrupt appearance as threat, SPD systems jolt on unexpected simultaneous motion-and-sound, and anxiety spikes before context can catch up. The suddenness, not the content, delivers the first hit.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user opens a news article and begins reading — two lines in, guard down, attention committed.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">A pop-up video launches automatically at the top of the page: sudden motion and often sound erupting above the text seconds after load. The article invited calm attention and then ambushed it. For this group the involuntary startle is a physiological event with a recovery cost, spent not on news content but on the platform's decision that video engagement outranks reader consent.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="106">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Quadriplegia &rarr; Muscular Dystrophy &rarr; Spinal Muscular Atrophy</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Motor &amp; Physical Control</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three navigate by switch scanning or comparable discrete input: sequential selections, one at a time, with no capacity for continuous pointer gestures. A press they can deliver; a sustained press-move-release arc across the screen is categorically outside their input vocabulary.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user needs information from an interactive map — pan to the region, find the location — using an interface that assumes a hand on a mouse.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The interactive map works only by dragging: panning requires continuous press-and-travel, with no arrow-key panning, no search-to-location, no list alternative. The map's entire content beyond the initial frame is locked behind a gesture switch users cannot produce. The information isn't hidden or restricted — it is simply parked outside the reachable viewport, permanently, for this entire group.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="107">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Retinitis Pigmentosa &rarr; Stargardt Disease &rarr; Diabetic Retinopathy</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">The three lose different regions of the visual field — RP the periphery, Stargardt the center, retinopathy scattered patches — but converge on the same consequence: parts of the screen are simply not in their vision, and content placed there does not exist until deliberately hunted.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user works the page through their field's surviving regions, unaware of what the design placed in the regions they don't have.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Navigation is placed only in corners and peripheral regions — the exact zones most likely to fall outside a damaged field. Users whose center survives never encounter the corners; users whose periphery survives may miss a centered utility bar. The layout distributes essential controls across retinal geography as if every visitor had all of it, and for this group the site's structure is partially invisible by placement alone.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="108">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Schizophrenia &rarr; Bipolar Disorder &rarr; Anxiety Disorder</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Mental Health</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three struggle to filter high-density competing input: schizophrenia can make crowded simultaneous stimuli genuinely disorganizing, bipolar states amplify distractibility and overwhelm, and anxiety converts input overload into escalating distress. A calm information hierarchy is cognitive safety equipment for this group.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user opens a dashboard needing one piece of information, and the interface delivers a shouting match instead.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The dashboard is pop-up heavy with competing information: alerts over panels over badges, several elements animating for attention at once, no visual hierarchy declaring what matters. There is no calm path to the one needed fact. For this group the design isn't merely busy — it can be actively destabilizing, and the compensation cost of filtering it manually is paid before any actual task begins.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="109">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Selective Mutism &rarr; Stutter &rarr; Aphasia</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Speech &amp; Communication</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">None of the three can produce speech on demand before an audience: selective mutism makes speaking situationally impossible regardless of will, stuttering under attention and pressure can block entirely, and aphasia's word assembly does not perform on cue. Their questions are fully formed; the delivery channel is the barrier.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user attends a webinar with genuine questions — the kind the Q&amp;A segment exists for.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Q&amp;A is raise-hand-and-speak only, with no text question box: participation requires unmuting before an audience and performing fluent speech live. The users' questions die unasked — not for lack of substance but for the format's insistence on one delivery mode. A text box alongside the hand-raise costs the platform nothing and would carry every one of these voices; its absence makes the Q&amp;A a fluency exhibition.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="110">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Sensory Processing Disorder &rarr; ADHD &rarr; Anxiety</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Sensory &amp; Environmental</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three are undone by uncontrollable background noise: SPD cannot habituate to it, ADHD attention is repeatedly dragged toward it, and anxiety rises as the environment refuses to come under control. Audio they cannot stop is a stressor with no off-ramp.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is working on the site in a public café — already managing ambient noise — when the page adds its own soundtrack.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Background music autoplays with no mute option: the site scores itself, uninvited, and offers no control to silence just the page. The user's choices are system-wide mute (losing needed audio), headphones off (more café noise in), or leaving. A page element made their acoustic environment worse and withheld the one-button remedy — sound design as a hostage situation, however politely intended.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="111">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Sensory Processing Disorder &rarr; Autism &rarr; Dyslexia</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Sensory &amp; Environmental</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three need visual calm to do cognitive work: SPD and autistic users spend real capacity suppressing loud visual stimulation before any task begins, and dyslexic readers find decoding measurably harder against high-noise backgrounds. Visual restraint isn't a style preference for them — it's usable headroom.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user — quite possibly a student — logs into a school portal to do required work in an interface someone made 'engaging.'</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The portal combines loud clashing colors with dense unbroken text: maximum visual stimulation wrapped around maximum reading load. The two failures compound — the color noise consumes the regulation capacity the dense text then demands. Students who most need the portal's contents get the least access to them, inside a mandatory tool they cannot choose to leave, styled for an idea of engagement that costs them the actual content.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="112">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Sensory Processing Disorder &rarr; Vestibular Disorder &rarr; ADHD</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Sensory &amp; Environmental</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">For all three, motion must not begin without consent: SPD experiences unchosen motion as sensory intrusion, vestibular systems respond to sudden animation with disorientation or nausea, and ADHD attention is seized by it involuntarily. Motion on request is fine; motion as ambush is the harm.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user moves their pointer across a grid of video thumbnails — merely traveling, not choosing — toward something on the other side.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Hover erupts thumbnails into autoplaying video previews: crossing the page detonates motion in the pointer's wake, each traversed tile bursting alive with animation and sometimes sound. The pointer cannot travel without triggering; every route across the grid is mined. The user is punished with sensory load for the act of moving toward what they want, and there is rarely a setting to disarm it.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="113">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Sickle Cell Disease &rarr; Hemophilia &rarr; Anemia</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Chronic Illness &amp; Fatigue</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three face health interruptions that suspend everything: sickle cell crises arrive with disabling pain, hemophilia bleeds demand immediate care, and anemia's exhaustion can end a session mid-sentence. Stopping suddenly isn't a habit to design against — it's a medical event to design for.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is mid-task when their condition calls — and they step away for as long as the body requires, which is not theirs to choose.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The site logs users out automatically during inactivity: return from the health interruption and the session is gone — cart, progress, place, all reset. Inactivity is read as abandonment when for this group it is often emergency. Each auto-logout converts a medical episode into a digital penalty stacked on top of it, and a longer timeout or a resume-where-you-were would have cost the site nothing but a default.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="114">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Social Anxiety &rarr; Autism &rarr; Selective Mutism</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Mental Health</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">For all three, forced audiovisual exposure is a genuine barrier: social anxiety experiences camera and voice demands as acute threat, autistic users may find them draining or intolerable, and selective mutism makes the audio half literally impossible in many contexts. Text is their full-participation channel.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user needs a service — a consultation, a verification, a class — and the site demands their face and voice as the price of entry.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The site forces webcam or audio input with no text-based path: participation is conditioned on exposure. The demand filters out exactly these users regardless of their qualification, need, or willingness to engage through any other channel. What the service actually requires — their answers, their identity, their presence — could travel by text; the interface's insistence on face and voice is a design preference functioning as an exclusion policy.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="115">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Social Anxiety &rarr; Depression &rarr; Autism</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Mental Health</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">For all three, live conversation is a high-cost act: social anxiety pays in dread before and rumination after, depression may lack the activation energy entirely, and autistic users find unscripted real-time exchange effortful. A task gated behind a call may simply never get done — not from weakness, but from honest cost accounting.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user decides to cancel a subscription they started with one effortless click, and goes looking for the equivalent exit.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Cancellation requires a phone call or live chat: the exit is gated behind exactly the high-cost interaction the entry never required. The asymmetry is the strategy — retention through social friction — and it weaponizes this group's clinical realities as a revenue mechanism. Users pay for months of unwanted service because the cancellation conversation costs more than the fee, and the design is counting on precisely that arithmetic.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="116">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Social Anxiety &rarr; PTSD &rarr; Autism</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Mental Health</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">For all three, accidental public exposure carries lasting distress: social anxiety converts it into extended rumination and dread, PTSD may have concrete safety reasons for invisibility, and autistic users may not intuit the unstated audience norms of a new platform. Knowing exactly who will see a post is their prerequisite for posting at all.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user makes their first post on a new platform — testing the waters, assuming something sensible about who's watching.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Sharing defaults to public with the audience setting buried: the first post goes to everyone unless the user preemptively found a control they didn't know existed. Exposure is the price of not knowing, charged before the lesson. For PTSD users with safety-driven privacy needs the default can be genuinely dangerous; for the rest it converts a first tentative step into the exact exposure event they most feared.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="117">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Spinal Cord Injury &rarr; ALS &rarr; Repetitive Strain Injury</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Motor &amp; Physical Control</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three navigate entirely by keyboard: spinal injury and ALS through adapted or alternative keyboards, RSI by doctor's orders away from the mouse. Tab, Shift-Tab, Enter, and arrows are their complete vocabulary — and the page's tab order is the road they travel.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user tabs through the page and their focus enters an embedded widget — a date picker, a media player, a third-party form.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Focus enters the widget and cannot tab back out: a keyboard trap, where every Tab press cycles inside the component forever and the rest of the page becomes unreachable. The mouse user glides past; the keyboard user is walled in, and their only exits are reloading the page — losing state — or leaving. One untested embed converted the whole page into a corridor with a locked door at the end.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="118">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Stroke &rarr; Parkinson’s Disease &rarr; Multiple Sclerosis</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Motor &amp; Physical Control</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three respond slowly but accurately: stroke recovery, Parkinson's bradykinesia, and MS fatigue each stretch the time between intention and completed input. Their answers are right; their pace is the only variable — and it is exactly the variable auto-advancing interfaces punish.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user fills out a form carefully — verifying each entry before moving on, at the speed their body actually works.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The form auto-advances after a short timeout: linger on a field past the threshold and the form moves on without them, skipping fields, submitting sections, treating deliberateness as absence. The user's accuracy strategy — slow verification — is read as inactivity and punished with lost control of their own form. An interface that waited for explicit next-clicks would serve them completely; this one treats their pace as a bug.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="119">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Stutter &rarr; Dysarthria &rarr; Nonverbal Autism</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Speech &amp; Communication</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">For all three, recorded speech under evaluation is the worst-case format: stuttering intensifies under recording pressure and cannot be edited away, dysarthric speech invites listener bias unrelated to competence, and nonverbal applicants cannot produce the artifact at all. The format tests fluency; the job almost never does.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is applying for a job — qualified, prepared — and the application demands video answers to interview prompts.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The application requires recorded video answers with no written or alternative assessment path: candidacy is gated behind fluent on-camera speech regardless of the role's actual demands. These applicants are filtered out at the format layer, before any qualification is weighed — and automated scoring of such videos can encode the bias structurally. A written-answer option would measure the same substance; its absence measures speech instead.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="120">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Tourette Syndrome &rarr; Parkinson’s Disease &rarr; Essential Tremor</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Motor &amp; Physical Control</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three contend with involuntary movement layered over intentional control: tics interject sudden motions mid-gesture, Parkinson's combines tremor with slowed correction, and essential tremor oscillates the pointer at exactly the moment of commitment. Their aim is a negotiated settlement, not a straight line.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user tries to activate a small control while their motor system contributes input they didn't author.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The buttons are tiny with no alternative input options: no keyboard path, no larger touch mode, no forgiveness radius — precision pointing is the sole door, presented to users whose defining trait is that precision is intermittently taken from them. A tic or tremor spike at the wrong instant clicks the wrong thing, and the interface's answer to involuntary movement is to require its absence.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="121">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Traumatic Brain Injury &rarr; ADHD &rarr; Dyslexia</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">None of the three can hold an error list in mind while hunting fields: TBI and ADHD working memory drop items in transit between the summary and the form, and dyslexic readers pay heavy re-reading costs for every trip back to the top. Errors marked in place cost nothing to find; errors listed remotely cost everything.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user submits a long form and is told — at the top, in a block — that mistakes exist somewhere below.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Errors are summarized at the top, unlinked to their fields, which carry no inline marking: the user must memorize the list, scroll down, and match descriptions to unmarked fields by inference. Each fix requires another round trip and another memory hold. The form knows exactly which fields failed — it generated the list — and withholds that knowledge from the place the user actually works.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="122">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Traumatic Brain Injury &rarr; Stroke &rarr; Dementia</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Cognitive &amp; Memory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three struggle to hold multi-step sequences: TBI and stroke disrupt the executive thread linking step to step, and dementia erodes the memory of which steps already happened. A sequence that must be completed perfectly, in order, without pause, is precisely the structure their conditions break.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is partway through multi-step authentication — a code retrieved, a question answered — when they lose their place, as their condition guarantees they sometimes will.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The multi-step authentication has no save state: any stumble — a delay retrieving a code, a wrong turn, a moment's confusion — voids all completed steps and restarts the sequence from zero. Progress through the gauntlet cannot be banked. For users whose stumbles are clinically assured, authentication becomes a loop they can enter repeatedly and exit rarely, standing between them and everything the account holds.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="123">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Unilateral Deafness &rarr; Partial Hearing Loss &rarr; Asymmetrical Hearing</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Hearing &amp; Auditory</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three struggle to localize and separate voices: unilateral and asymmetrical hearing lose the two-ear comparison that tells speakers apart by position, and partial loss blurs the vocal distinctions that remain. In multi-speaker audio, knowing who is talking is the work — and they need the interface to do it.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user is in a group call where several voices trade off quickly, discussing things it matters to attribute correctly.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The group call has no speaker identification: no highlighted tile, no name display on the active voice, no visual anything binding words to people. Users who cannot localize by ear lose the who of every exchange — following the what while the conversation's structure dissolves. Active-speaker indication is a standard feature of major platforms; a call interface without it makes this group attend meetings of interchangeable voices.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="124">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Usher Syndrome &rarr; Macular Degeneration &rarr; Glaucoma</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Vision &amp; Reading</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three live with gradual vision loss that steadily raises their minimum readable size: Usher syndrome narrows and dims the field over years, macular degeneration erodes central detail, and glaucoma constricts inward. Text fixed at any single size will eventually fall below each of their moving thresholds.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user opens a site whose designers chose one font size for everyone forever, and tries to read it with this year's vision.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The fonts are small with no zoom accommodation: text set below their threshold, in layouts that resist enlargement rather than reflowing with it. The site's content sits on the wrong side of a legibility line the design refuses to let them cross. Scalable text — the web's oldest accessibility feature — was effectively disabled by fixed sizing choices, and the users losing vision by degrees lose this site all at once.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="125">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Vestibular Disorder &rarr; Migraine &rarr; Sensory Processing Disorder</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Sensory &amp; Environmental</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three configured reduce-motion at the OS level as deliberate self-protection: vestibular users to prevent vertigo, migraine users to remove a known trigger, SPD users to lower ambient load. The setting is their standing medical request, broadcast to every app and site that cares to listen.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user browses with reduced motion enabled system-wide — the accommodation set once, correctly, in the right place.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The site ignores the prefers-reduced-motion signal and plays its full animations anyway: the standard media query that carries the user's request goes unqueried, and parallax, transitions, and auto-motion fire at full strength. The user did everything the platform asked; the site simply declined to check. Their protection works everywhere except the pages that opted out of listening — which, for this group, means the protection is a lottery.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="126">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Vestibular Disorder &rarr; Motion Sensitivity &rarr; Migraines</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Sensory &amp; Environmental</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">For all three, layered depth motion is nauseating: parallax's independently sliding planes feed the visual system a depth story the inner ear contradicts, and that conflict is the textbook recipe for vertigo, motion sickness, and migraine onset. Scrolling a parallax page is a vestibular stress test.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user scrolls a site whose backgrounds travel at their own speeds, layer against layer, as a design signature.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The background parallax effects can't be disabled: no toggle, no reduced version, no honoring of motion preferences — the depth illusion is mandatory. Reading any content requires scrolling, and scrolling operates the nausea machine. The user's options are enduring physiological symptoms page by page or leaving the content unread; the site's aesthetic decision made that choice for them and offered no appeal.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="127">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Vestibular Disorder &rarr; Motion Sensitivity &rarr; Post-Concussion Syndrome</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Sensory &amp; Environmental</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">For all three, self-controlled scroll pace is a vestibular anchor: when the page moves exactly as the hand commands, the visual and motor systems agree and symptoms stay quiet. Motion that diverges from their input — faster, smoother, or continuing after they stop — reopens the sensory conflict that makes them sick.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user scrolls a marketing page in small careful increments, the way their symptoms require — and the page overrides them.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">Scrolljacking overrides scroll speed and snaps sections: the page decelerates, glides, and leaps to anchors on its own choreography, moving differently than the hand commanded. The mismatch between commanded and delivered motion is precisely the conflict this group's careful scrolling exists to avoid. Their compensating strategy is defeated by design, and each stylish snap is a small dose of the symptom they came in managing.</dd>
+    </dl>
+  </article>
+  <article role="group" class="row" data-row-index="128">
+    <dl role="list">
+      <dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Williams Syndrome &rarr; Fragile X Syndrome &rarr; Down Syndrome</dd>
+      <dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Developmental &amp; Learning</dd>
+      <dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">All three process tasks at a slower pace while reaching genuine comprehension: Williams, Fragile X, and Down syndrome each extend the time needed to read, integrate, and respond — without reducing what is ultimately understood. Time is their accommodation; nearly everything else can stay the same.</dd>
+      <dt data-label="Context" role="listitem">Context</dt><dd role="listitem">The user takes a quiz or test — material they know, or can know — against a clock calibrated to someone else's processing speed.</dd>
+      <dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt><dd role="listitem">The quizzes and tests are time-limited with no extended-time option: the timer treats one processing pace as universal and scores deviation from it as ignorance. These users fail items they could answer, and the results measure their syndromes rather than their learning. Extended time is among the oldest and best-validated accommodations in education; a web assessment that cannot grant it has automated the exclusion that policy spent decades unwinding.</dd>
+    </dl>
+  </article>
+</main>
+</body>
+</html>

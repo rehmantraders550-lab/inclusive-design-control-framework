@@ -1,0 +1,1605 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solve for One, Extend to many examples for Websites</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+<style>
+body {font: 1rem/1.1 sans-serif; margin:2rem;}
+article {border: 1px solid #ccc; border-radius: 5px; padding: 1rem; margin: 1rem 0;}
+dl {display: grid; grid-template-columns: max-content 1fr; column-gap: 0.5rem; row-gap: 0.5rem; align-items: baseline;}
+dt {font-weight: bold;}
+dt::after {content: ":"; font-weight: bold; margin-right: 0.25rem;}
+dd {margin: 0; display:inline;}
+</style>
+</head>
+<body>
+<main>
+<article role="group" class="row" data-row-index="1">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness → Cataract recovery → Glare on a phone outdoors</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Difficulty identifying or making sense of visual information on a screen. Users may be unable to read text, interpret images, or recognize interface elements when clarity is reduced by blindness, medical conditions, or environmental light.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Someone waiting at a bus stop in bright sunlight tries to read a news article on their phone. The glare makes the screen almost unreadable, simulating the constant experience of people with low or no vision.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">The news site uses faint text against patterned backgrounds, lacks a text resizing option, and does not provide alt text for images. This creates barriers for blind screen reader users as well as anyone trying to use the site outdoors.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="2">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Deafness → Ear infection → Watching videos in a noisy café</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Inability to clearly perceive auditory content. Sounds like dialogue, alerts, or instructions are inaccessible when hearing is permanently lost, temporarily impaired, or drowned out by background noise.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A student tries to follow a tutorial video in a café where the espresso machine and conversations make it impossible to hear. Turning up the volume doesn’t solve the issue.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">The site provides no captions or transcripts, locking critical information behind audio-only delivery. Deaf users, people with ear infections, and those in loud places are equally excluded.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="3">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Limited dexterity (cerebral palsy) → Wrist in a cast → Carrying groceries with one hand</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Difficulty with fine motor precision and two-handed gestures. Users cannot perform small, repeated, or complex inputs reliably.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A shopper with one hand full of bags tries to complete an online delivery form on their phone. Inputting details with one thumb is awkward and error-prone, echoing the challenges of people with limited dexterity.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">The form fields are tiny, the targets are close together, and navigation requires precise taps. Without keyboard access or enlarged controls, both permanent and situational users struggle to finish.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="4">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Speech impairment → Mouth injury → Quiet library where speaking aloud isn’t appropriate</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Inability to depend on speech input. Voice recognition systems fail when speech is not possible due to disability, temporary condition, or social environment.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A researcher in a library tries to use a site’s voice-only search box. They cannot speak aloud without disturbing others.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">The site assumes everyone can use voice and offers no typing or button-driven search. People with speech impairments, mouth injuries, or social restrictions are left out.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="5">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Color blindness → Eye dilation after an exam → Sun glare making subtle colors invisible</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Inability to rely on color alone as an indicator of meaning. Users miss distinctions when shades or contrasts are hard to perceive.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">After an eye exam, a shopper’s pupils remain dilated. Combined with sun glare, they can’t tell which product labels are red or green on an e-commerce site.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">The site uses only color coding to show availability and discounts. Without text or icon backup, users with color blindness, temporary blurriness, or glare are equally excluded.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="6">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyslexia → Concussion recovery → Skimming dense text while multitasking</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Difficulty quickly processing, tracking, and remembering large blocks of text. This barrier emerges with permanent dyslexia, temporary cognitive fog, or divided attention.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A person recovering from a mild concussion tries to skim a long technical description while also answering texts. The dense layout makes it almost impossible to follow.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">The site presents important details in long, unbroken paragraphs without headings, summaries, or simplified reading options. This excludes users who need structured, digestible content.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="7">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Low vision → Blurred vision from allergies → Reading from the back of a meeting room projector</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Difficulty making out small, low-contrast, or distant text. Visual detail is lost when vision is reduced permanently, temporarily, or situationally.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A person at the back of a meeting room opens the same site as the presenter. From far away, they cannot make out the text clearly.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">The site uses fixed font sizes and prevents zoom. Users with low vision, allergy-related blurriness, or distance from the display cannot adjust the content.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="8">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Amputated hand → Sprained thumb → Holding a baby in one arm</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Restriction to single-hand use, preventing multitouch and simultaneous gestures.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A parent holding a baby tries to scroll and zoom on a retail website. They cannot pinch or tap with two fingers.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">The site requires two-handed gestures for navigation with no single-hand alternatives, blocking one-handed users permanently, temporarily, or situationally.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="9">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Hearing loss → Ear surgery recovery → Muted device while commuting</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Inability to rely on sound for key signals or information. Alerts and spoken instructions are inaccessible without visual or textual equivalents.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A commuter checks a ticketing site on the train with their phone muted. They miss spoken confirmation that their payment succeeded.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">The site provides sound alerts without visual confirmation, making it unusable for deaf users, people recovering from ear issues, and travelers with muted devices.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="10">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Paralysis (no mouse use) → Shoulder surgery → Laptop trackpad broken</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Inability to use a pointing device, requiring full keyboard access for navigation.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A customer with a broken trackpad tries to access their bank account. Navigating menus with only the keyboard proves difficult.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">The banking site requires mouse use for dropdowns and controls. People with paralysis, temporary injuries, or broken devices are equally blocked.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="11">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Autism (sensitivity to visual clutter) → Migraine sensitivity → Bright sunlight washing out fine details</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Difficulty focusing when layouts are crowded, flashing, or distracting. Clutter reduces comprehension for many user groups.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A shopper attempts to check out but is overwhelmed by banners, flashing deals, and dense text. Sun glare compounds the difficulty.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">The site relies on busy layouts and animation-heavy promotions. Autistic users, those with migraines, and anyone in harsh light cannot focus.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="15">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Limited reach (quadriplegia) → Broken shoulder → Using a kiosk with bags in both hands</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Inability to reach or perform extended gestures to control the interface.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A traveler juggling bags tries to use an airport kiosk site to check in. They cannot perform drag-and-drop interactions.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">The site requires extended gestures with no tap or keyboard alternatives. People with permanent mobility restrictions and situational burdens are excluded.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="17">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Cognitive disability (short-term memory challenges) → Jetlag fog → Juggling multiple tabs while distracted</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Difficulty remembering steps or retaining progress across complex interactions.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A job seeker fills out an online application across several tabs. Their concentration slips, and they lose their progress.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">The form clears entered data when the page refreshes. Without autosave or session memory, users with memory challenges or distractions cannot succeed.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="18">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Stutter → Hoarse voice from illness → Noisy environment interfering with speech input</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Difficulty producing reliable speech input, whether permanent, temporary, or situational.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A user in a crowded airport attempts to use a voice-only chatbot. Noise prevents the system from registering their words.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">The chatbot requires speech input exclusively, with no typing or click-based fallback. This excludes many users.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="20">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Spinal cord injury (limited head movement) → Neck strain → Browsing while lying down awkwardly</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Limited ability to change posture or move in ways required by the interface.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A person lying down tries to access video controls on a streaming site but cannot perform hover gestures comfortably.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Menus are hover-only with no keyboard or touch alternatives. This prevents access for users with permanent or situational movement limits.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="21">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness → Post-LASIK light sensitivity → Nighttime browsing without room lights</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Inability to rely on visual cues alone. When vision is absent, temporarily sensitive, or situationally reduced, users need text alternatives and structure to understand content.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A person checks a documentation site in a dark bedroom after eye surgery, avoiding bright light. The need for non-visual access mirrors a blind screen reader user’s everyday requirements.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Images convey critical information without alternative text, and headings are not marked up semantically. Both screen reader users and people avoiding light cannot access or navigate the content effectively.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="22">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Profound hearing loss → Temporary tinnitus flare-up → Commuting with headphones unplugged</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Audio-only messages, alerts, or instructions cannot be perceived. Users need equivalent text or visual indicators to understand and act on information.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">During a train ride, a person reviews product demos but cannot turn on audio without disturbing others. They still need full access to the spoken content.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Videos auto-play narration without captions or transcripts, and audio alerts lack on-screen status messages. The experience blocks deaf users and anyone who cannot enable sound.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="23">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Quadriplegia (no fine hand control) → Shoulder immobilized in sling → Holding an umbrella in heavy rain</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Limited ability to perform pointer-based or two-handed interactions. Single-switch, keyboard, or one-hand flows are necessary.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">While walking in the rain, a user tries to change flight seats on a phone with one hand. Precision gestures are impractical and fatiguing.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Seat selection depends on drag-and-drop with no keyboard or tap alternatives. People with permanent or situational hand limits cannot complete the task.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="24">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Low vision with high magnification → Dilated pupils after exam → Projected screen with small type</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Small, fixed text and poor scaling hinder reading. Users require zoom-friendly layouts and responsive typography to maintain legibility at any size.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">In a meeting, a participant opens a specs page on a projector and from the back row cannot read fixed-size labels.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Text is locked to pixel sizes and reflows poorly when zoomed. Important labels overlap or disappear at larger scales, blocking comprehension.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="25">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Arthritis in hands → Sore fingers after intensive typing → Wearing thick winter gloves</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Fine, repeated clicking and tight tap targets cause pain or errors. Larger targets and forgiving input reduce friction for everyone.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A shopper in cold weather uses gloved fingers to approve a purchase on their phone and keeps missing tiny controls.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Buttons and checkboxes are small and tightly spaced with no alternative input. Errors are common for users with arthritis and anyone wearing gloves.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="26">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Photosensitive epilepsy → Migraine with aura → Late-night scrolling with bright animation</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Flashing or high-contrast motion can trigger health risks or severe discomfort. Users need controls to pause, reduce, or disable motion.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A reader opens an article and is met with rapid banner flashes that make it hard to focus and potentially unsafe for some.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Auto-play animations strobe without a pause/stop setting, and prefers-reduced-motion is ignored. This endangers photosensitive users and distracts everyone else.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="27">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyscalculia → Post-anesthesia cognitive fog → Splitting attention across tabs during checkout</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Complex numeric steps and memory-heavy flows increase errors. Clear progressive disclosure and inline help reduce load.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">While multitasking, a user struggles to compare totals and fees across several tabs during checkout.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Fees are hidden behind mouseover tooltips and totals update without clear labels. Users who struggle with numbers or attention miss critical cost info.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="31">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Color vision deficiency → Blurry vision from allergies → Outdoor kiosk with washed-out colors</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Color-only cues fail when hues are indistinguishable or washed out. Redundant text/icon patterns communicate state reliably.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">At a transit kiosk, a rider cannot tell which routes are delayed because the colors are faded by sunlight.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Status is encoded solely by color swatches with no labels. Riders with CVD and anyone in bright light can’t interpret the map.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="32">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Autism (sensitivity to sensory overload) → Post-migraine sensitivity → Open-plan office with visual distractions</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Excessive motion, sound, or density reduces focus. Calm layouts and optionality improve comprehension for many users.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">At work, a user compares pricing tiers while chat notifications and pop-ups compete for attention.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">A sticky chat widget animates in every 20 seconds and the pricing table auto-reorders. Users cannot maintain focus long enough to decide.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="34">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">One-handed motor control → Finger sprain → Holding a leash while walking a dog</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Interfaces must be operable with one hand. Controls clustered at reachable zones and single-action flows help everyone.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">On a sidewalk, a person tries to save a map location while holding a leash and cannot reach the top-corner button.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Critical actions sit in small, far-corner icons with no keyboard or gesture shortcuts. One-handed operation is impractical.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="35">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Stutter (variable fluency) → Laryngitis → Quiet train car with no talking policy</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Speech input is unreliable or socially inappropriate. Users need fully equivalent text or click flows.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">During ticket changes, a user cannot speak to the voice bot and needs to type the request quickly.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Support is voice-only with no text chat or form. Anyone unable to speak is blocked from help.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="36">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Cognitive disability (short-term memory) → New-parent sleep deprivation → Rapid task switching at work</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Long, multi-step tasks are hard to track and resume. Autosave, visible progress, and summaries reduce cognitive load.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Between meetings, a worker resumes a benefits form but cannot remember which sections are done.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Progress is hidden, steps reset on timeout, and drafts are not saved. Users repeatedly start over and abandon the process.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="37">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Hearing impairment → Ear canal infection → Watching lectures in a library</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Spoken content must have accurate, synchronized captions and transcripts. Without them, key learning is lost.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A student reviews lectures in a quiet area where sound is off limits. They still need the full content.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Auto-generated captions are missing punctuation and technical terms, and the transcript is absent. Comprehension and search are compromised.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="38">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Multiple sclerosis (fatigue) → Jetlag after long flight → End-of-day task with low energy</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">High-effort interactions and time-limited steps cause failure under fatigue. Short flows and save-for-later help.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Late at night, a traveler attempts to complete a reimbursement form but tires quickly.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">The form times out in five minutes and discards progress on refresh. Users with limited stamina or time cannot succeed.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="40">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Low vision with screen magnifier → Dry-eye irritation → Viewing tables on a small phone</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Dense tables require panning and introduce loss of context. Responsive tables and summaries preserve meaning at high zoom.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A user magnifies a pricing table and loses column headers while scrolling sideways.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Table headers are not associated programmatically and the table lacks a compact stacked view. People at high zoom cannot compare values.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="41">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness → Temporary corneal haze → Driving-mode audio-only consumption</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">When vision is unavailable, content must be delivered via structured text-to-speech and clear landmarks.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A rider listens to an article via screen reader while carpooling and cannot glance at the screen.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Regions are not identified with landmarks and links are vague ('click here'). The auditory experience is confusing and slow.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="43">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Autism (need for predictability) → Post-migraine brain fog → Noisy café with interruptions</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Unexpected layout shifts and dynamic reordering harm comprehension. Stable structure and clear feedback reduce errors.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">While comparing plans, sections jump due to lazy loading and ads, making it hard to keep track.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Content shifts as elements load, moving focus targets beneath the pointer. Users click the wrong controls and lose trust.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="44">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Hearing loss → Congested ears from a cold → Airplane mode with device muted</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Critical alerts must not rely on sound alone. Redundant channels ensure users notice status changes.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Mid-flight, a traveler submits a visa form and never hears the failure chime.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Submission errors announce by sound only, with no visible message or inline error. Users assume success and lose data.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="45">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Tremor and ataxia → Fatigued hands after gaming → Standing on a crowded train</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Accidental taps and slips are common. Interfaces need generous hit areas and easy correction paths.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A rider tries to transfer money but repeatedly taps adjacent digits in the amount field.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Numeric keypad lacks spacing and there’s no confirm step before transfer. Costly mistakes are easy to make.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="48">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Motor impairment (limited reach) → Shoulder strain → Using a wall-mounted tablet at awkward height</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Controls placed out of reach or requiring extended holds cause failure. Interfaces should support reachable zones and short dwell.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A visitor signs in on a tall kiosk and struggles to tap far-corner controls.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Primary actions are positioned at the very top corners and require long-press to confirm. Many users cannot complete sign-in.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="49">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Cognitive disability (executive function) → Newborn sleep disruption → Multitasking while caregiving</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Task initiation and completion are hard when steps are unclear or hidden. Clear next actions and reminders aid follow-through.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A caregiver starts a benefits application and keeps losing where to continue after interruptions.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">The site buries the 'Resume application' entry point and lacks reminders. Users with executive function challenges abandon the flow.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="50">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Motor impairment → Shoulder pain → Using kiosk while holding luggage</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Extended gestures or reach cannot be performed with limited mobility or encumbered arms.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">At check-in, a traveler with luggage struggles to drag and drop fields on a kiosk site.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Interaction depends solely on drag-and-drop. No tap or key alternative is provided.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="52">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Profound hearing loss → Ear infection → Watching a tutorial in a noisy café</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Spoken information becomes inaccessible when hearing is permanently reduced, temporarily impaired, or masked by ambient noise. Textual equivalents are required.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A learner attempts to follow a coding tutorial while espresso machines and chatter overwhelm the audio. Increasing volume does not help.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">The video lacks accurate captions and a transcript. Terminology and steps are locked behind audio, excluding many users from the lesson.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="53">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Quadriplegia (no mouse control) → Shoulder immobilized in sling → Trackpad suddenly broken</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Pointing devices are unavailable or unreliable, making keyboard operation essential. Interfaces must be fully navigable without a mouse.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A traveler’s trackpad fails at the airport while attempting to change a reservation. Precise pointing is impossible.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Menus open only on hover and controls lack focus styles. Without keyboard access and visible focus, progress halts for permanent and situational cases alike.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="54">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Low vision (screen magnifier) → Allergy-induced blur → Reading slides from back row</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Small, fixed text and poor scaling break comprehension when clarity or distance undermines vision. Scalable, responsive typography is needed.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">From the back of a conference room, a participant opens the project site referenced in a talk. Text is tiny and cramped.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Font sizes are fixed in pixels and zoom is disabled with meta viewport settings. Important labels overlap at high magnification.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="57">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyscalculia → Post-anesthesia cognitive fog → Multitasking during a complex checkout</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Heavy numeric reasoning and hidden fees increase error rates. Clear explanations and progressive disclosure reduce load.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">While switching tabs, a user must compare taxes, shipping, and discounts. Numbers change without context.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Totals update silently; fees hide in tooltips. Without clear labels and summaries, many users miscalculate cost.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="58">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Aphasia (word-finding difficulty) → Jetlag brain fog → Stressful account recovery</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Language recall and precision degrade under cognitive strain. Users benefit from simpler wording and non-text alternatives.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">After a red-eye flight, a traveler attempts a password reset and struggles to enter long, complex strings.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Only complex passwords are accepted; no passkeys or magic links exist. Error messages are vague and lengthy, blocking re-entry.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="59">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Parkinson’s tremor → Post-exercise hand fatigue → Completing forms on a moving bus</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Imprecise input leads to accidental taps and selections. Spacing, error prevention, and undo paths are critical.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">On a bumpy route, a rider chooses the wrong radio buttons repeatedly. Corrections are slow and stressful.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Targets are tiny and adjacent; there’s no confirmation step. The interface assumes perfect precision that many users don’t have.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="60">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Monocular vision → Eye patch after corneal abrasion → Strong glare occluding screen edge</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Reduced field of view and depth make scanning wide layouts difficult. Single-column reflow and flexible grids improve access.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A reader skims a dense three-column homepage while sunlight hides the rightmost column.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Fixed-width multicolumn layout offers no reflow or reading mode. Key links remain out of view and context is lost.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="61">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Color vision deficiency → Dilated pupils → Outdoor kiosk with washed-out palette</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Color-only signals fail when hues are indistinguishable or faded. Redundant text or iconography is required.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">At a transit kiosk, a rider cannot tell which lines are delayed because the colors are too similar in glare.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Status is encoded only by colored dots. Without labels or shapes, many users cannot interpret the map.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="62">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Autism (sensitivity to sensory overload) → Post-migraine sensitivity → Open office with distractions</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Excess motion, sound, and density disrupt focus and comprehension. Calm layouts with user control help broadly.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">At work, a person compares pricing tiers while popups and sticky chat widgets animate repeatedly.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">The page reorders sections and triggers animations automatically. Decision-making stalls as attention fragments.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="63">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blind screen reader user → Broken eyeglasses → Reading in a dark bedroom</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Non-visual access depends on semantic structure and text alternatives. Without them, meaning and navigation vanish.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A parent listens to an article via text-to-speech while the lights are off, mirroring a screen reader experience.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Headings are faked with styled spans; images lack alt text; landmarks are missing. Assistive tech users cannot build a mental model.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="70">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Low vision with magnifier → Dry-eye irritation → Viewing complex tables on a small phone</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Dense tables require panning and introduce context loss at high zoom. Responsive tables and summaries preserve meaning.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A user magnifies a pricing table; headers scroll off-screen and relationships between cells are lost.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Table headers are not associated programmatically and no stacked view exists. Comparisons become guesswork at high magnification.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="75">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Tremor and ataxia → Fatigued hands after gaming → Standing on a crowded train</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Accidental taps are common; generous hit areas and easy correction reduce risk. Confirmation steps prevent costly mistakes.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A rider tries to transfer money and repeatedly taps adjacent digits on the keypad.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Number keys are cramped and the flow lacks a confirm screen. The design is intolerant of imprecision.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="76">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyslexia with slow decoding → Concussion recovery → Reading legal policy during interruptions</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Dense legalese and long sentences hinder comprehension. Summaries, headings, and bullets improve readability broadly.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A user attempts to understand renewal terms while responding to messages and calls.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Policy text appears in one unbroken block without a plain-language summary. Many readers miss obligations and deadlines.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="77">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness (screen reader) → Cracked phone screen → Using device with display off to save power</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Non-visual navigation depends on logical focus order and name/role/value. Without it, controls are invisible to assistive tech.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">On a low battery, a commuter turns the screen off and navigates with a reader by headings and links.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Focus order is illogical and buttons lack accessible names. The result is disorientation and task failure for many users.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="78">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Arthritis in fingers → Soreness after long day → Wearing thick winter gloves</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Fine motor precision is reduced, causing pain or errors with small controls.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">With gloves, a shopper struggles to check boxes on an order form.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Checkboxes are tiny and close together. No larger alternatives exist.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="79">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness → Corneal haze → Listening in driving mode</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">When vision is unavailable, content must be fully navigable by assistive tech and audio.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A driver listens to article text with eyes off the screen.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Landmarks and headings are missing. Screen reader experience is disorganized.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="81">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness → Temporary blurred vision from allergies → Reading on a dim screen in bright sunlight</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Visual clarity is compromised when blindness, temporary blur, or environmental glare prevent content perception. Alternatives and semantic structure are essential.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">On a sunny day, a commuter tries to read transportation updates on their phone but the glare washes out the text completely.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Critical information is shown only in small, low-contrast text over busy backgrounds, with no alt text or structure for non-visual access.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="82">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Deafness → Ear infection → Watching training videos in a loud office</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Audio-only material excludes users when hearing is absent, temporarily impaired, or drowned out by noise. Captions and transcripts are vital.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A new employee watches onboarding videos but the open-plan office noise makes the audio unintelligible.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">No captions or transcripts are available. Entire sections of the training are inaccessible.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="83">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Low vision → Eye strain → Sitting far from a projected presentation</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Small or fixed-size text fails under low vision, temporary blur, or distance. Users need scalable text and reflow.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">At a conference, a participant opens the site on their laptop to follow along, but distant small text is unreadable.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">The site disables zoom and uses tiny fixed pixel text. Information is inaccessible.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="84">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Quadriplegia (no mouse) → Shoulder injury → Broken trackpad</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">When pointing devices aren’t usable, keyboard operation becomes the only option. Navigation must support this fully.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A traveler’s trackpad fails during check-in, and they try to complete forms with only the keyboard.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Drop-down menus require hover to open and have no keyboard alternative.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="85">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Color blindness → Dilated pupils → Outdoor kiosk glare</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Color-only distinctions break down when perception is limited by blindness, dilation, or glare. Redundant signals are needed.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A passenger cannot distinguish active vs. delayed bus routes on a kiosk.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Status indicators use only red and green dots, with no text or icons.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="86">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Arthritis → Sore fingers → Wearing thick gloves</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Fine motor strain makes it difficult to use small or tightly spaced controls. Larger, forgiving inputs are needed.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">In winter, a shopper struggles to press small checkboxes on a form with gloved fingers.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Checkboxes are tiny and have no alternative input method.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="87">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Photosensitive epilepsy → Migraine → Late-night scrolling with flashing ads</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Flashing visuals create health risks across multiple scenarios. Motion controls and respect for reduced-motion settings are critical.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A reader is distracted and triggered by fast autoplay ads while skimming articles at night.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Ads autoplay and flash, ignoring prefers-reduced-motion settings.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="88">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyslexia → Concussion → Reading dense contracts while multitasking</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Dense, unstructured text is hard to comprehend when decoding is slow, cognition is impaired, or attention is split.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A professional tries to skim a long terms of service while also answering emails.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">The contract is written in a single dense paragraph with no summaries or headings.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="89">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Aphasia → Brain fog after anesthesia → Stressful password reset</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Language recall and precision typing break down under permanent, temporary, or situational strain.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A user under stress attempts to recover an account but struggles to recall and enter long passwords.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Only complex text passwords are accepted; there are no alternatives like passkeys or links.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="90">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Parkinson’s tremor → Muscle fatigue → Using a phone on a bumpy bus</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Shaky input reduces accuracy across all contexts. Interfaces need tolerant spacing and correction paths.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">On a bus, a rider fills out a survey but keeps selecting the wrong checkboxes due to shaking.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Controls are small and adjacent, with no confirmation or undo option.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="91">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Monocular vision → Eye patch → Screen glare hiding edges</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Reduced field of vision causes important details on edges to be missed. Flexible layouts with reflow support broader use.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A reader cannot see key links on the far-right column because glare blocks half the screen.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Fixed multi-column layout with no reflow or reading view.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="92">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Autism (sensitivity to clutter) → Migraine → Bright distracting office</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Excessive clutter and shifting layouts make focus difficult. Calm, stable designs improve clarity.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A user compares pricing tiers while popups and animations continuously disrupt them.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Content shifts as ads load; no option exists to disable interruptions.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="93">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blind screen reader user → Lost glasses → Reading in the dark</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Non-visual access depends on proper markup and alt text. Without it, content is inaccessible.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A person listens to an article at night without glasses, mimicking screen reader needs.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Landmarks are missing, headings are inconsistent, and images lack alt text.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="94">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">One-handed mobility → Finger sprain → Carrying groceries</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">When only one hand is free, two-handed gestures fail. One-handed alternatives are needed.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A shopper holding bags tries to confirm a purchase on their phone but can’t reach top-corner buttons.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Critical CTAs are placed far from thumb zones with no shortcut options.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="95">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Stutter → Laryngitis → Noisy train station</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Speech input fails in many contexts. Equivalent text paths must exist for all voice features.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A traveler cannot speak clearly or be heard over station noise while trying to use a voice-only chatbot.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Chatbot accepts speech only, with no option to type requests.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="96">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Cognitive disability (short-term memory) → Sleep deprivation → Juggling multiple tasks</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Multi-step tasks are difficult to track and resume. Autosave and progress indicators reduce cognitive load.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A parent fills out an application while managing childcare and forgets what was completed.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">The form clears on refresh, autosave is absent, and steps aren’t visible.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="97">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Hearing loss → Ear congestion → Device muted</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Audio-only alerts leave users unaware of changes. Redundant feedback channels are necessary.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">During a muted meeting, a professional submits a payment but misses the audio confirmation chime.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Status updates are given only via sound, without visual confirmation.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="98">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">RSI → Wrist soreness → Standing on a moving bus</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">High-effort, repetitive interactions cause pain and errors. Low-effort alternatives are necessary.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">On a bus, a rider tires quickly trying to complete a multi-step form.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">The form requires long repetitive inputs with no save-and-resume feature.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="99">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Muscular dystrophy (fatigue) → Jetlag → End-of-day data entry</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Energy-intensive processes exclude users when fatigue sets in. Short, resumable tasks support inclusion.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">At night, a worker begins filing expenses but can’t finish in one sitting.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">The site times out quickly, discards progress, and lacks draft saving.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="100">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness → Corneal haze → Driving mode listening</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">When vision is unavailable, content must be logically structured for auditory consumption.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A passenger listens to a site’s article while commuting and needs clear structure.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Headings are skipped, links are vague, and navigation landmarks are absent.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="101">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Vestibular disorder → Ear infection → Parallax and auto-scroll effects</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Motion triggers nausea across multiple scenarios. Reduced-motion settings and stable views prevent harm.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A shopper browses a landing page that uses parallax and swaying backgrounds.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Motion effects cannot be disabled and ignore prefers-reduced-motion.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="102">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyslexia → Cognitive fog → Reading dense help docs while multitasking</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Unstructured text is difficult to parse under any condition. Clear formatting helps all users.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A developer skims troubleshooting steps while also answering messages.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Help text appears as long, unbroken blocks with no summaries.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="103">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Color blindness → Sun-bleached screen → Reviewing charts outdoors</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Hue-only encodings fail in poor visibility conditions. Redundant symbols and contrast help everyone.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A manager tries to compare KPIs outdoors, but colors look identical.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Charts differ only by color and have no labels or patterns.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="104">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyspraxia → Hand fatigue → Wearing gloves</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Complex gestures and tiny controls become inaccessible when precision is reduced. Simple alternatives are needed.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">On a cold day, a user can’t hit small toggles to change settings.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Settings use tiny switches and multistep inputs.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="105">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">ADHD → Tiredness → Multitasking checkout</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Distractibility raises abandonment risk. Clear next steps and reduced clutter help maintain focus.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A shopper flips between tabs and misses hidden required fields.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Checkout hides fields below the fold with no progress indicator.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="106">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness → Broken glasses → Reading in a dark bedroom</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Non-visual navigation requires proper markup. Without it, content disappears.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A user listens to content with a screen reader while lying in the dark.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Focus order is illogical and interactive controls are unlabeled.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="107">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Limited reach mobility → Arm strain → Using a wall kiosk above eye level</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Distant controls are out of reach. Interfaces must respect reachable zones.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">At a visitor kiosk, a short user cannot access submit buttons in high corners.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Critical actions are positioned out of reach. No alternative method exists.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="108">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyslexia → Concussion recovery → Reading dense contract while multitasking</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Dense unstructured text slows comprehension for permanent and situational conditions.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A person with divided attention struggles to read through a wall of policy text.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Long paragraphs with no headings or bullets overwhelm readers. Many abandon.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="110">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Autism (predictability need) → Migraine fog → Noisy office interruptions</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Unexpected layout shifts confuse focus and comprehension. Stable layouts support all users.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">While comparing plans, sudden reordering causes the user to lose their place repeatedly.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Content shifts with loading ads and hidden sections. Users lose context and trust.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="111">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness → Pupil dilation after eye exam → Reading on a dimmed phone at night</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">When vision is unavailable or temporarily limited, users cannot rely on visual cues alone. Semantic structure and text alternatives enable non-visual understanding.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">After an eye appointment, someone scrolls news in a dark room with screen brightness low. They need headings, landmarks, and descriptive links to make sense of content via TTS.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Headings are styled but not semantic, images lack alt text, and links are vague (e.g., “learn more”). Audio navigation becomes slow and confusing for everyone in low-light contexts.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="112">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Deafness → Ear infection with muffled hearing → Watching a webinar in a noisy café</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Audio-only information cannot be perceived when hearing is absent, impaired, or masked by noise. Accurate captions and transcripts provide equivalent access.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A professional tries to follow a live product webinar while coffee grinders and conversations drown the audio. Volume increases don’t help.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">The player has no captions or transcript, and Q&A is read aloud without on-screen text. Critical content is lost for deaf users and anyone in loud spaces.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="113">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Low vision (screen magnifier) → Dry eyes from allergies → Viewing from the back of a classroom</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Small, fixed text and tight line spacing collapse at distance or high zoom. Users need scalable typography and reflow.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">From the last row, a student opens a syllabus page but can’t read tiny labels and dense paragraphs.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">The site forces fixed pixel text, prevents zoom via viewport meta, and truncates content when magnified. Legibility fails across contexts.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="114">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Color vision deficiency → Pupil dilation → Outdoor kiosk with faded colors</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Color-only signals break when hues are indistinguishable or washed out. Redundant text/icon patterns convey meaning reliably.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">At a transit kiosk, a rider can’t tell delayed routes because red/green dots look similar in glare.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Status is encoded solely by color with no labels or shapes. Many riders misread conditions and miss connections.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="115">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Photosensitive epilepsy → Migraine with aura → Late-night page with flashing ads</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Rapid flashing and intense motion can be unsafe or intolerable. Users need motion controls and respect for reduced-motion preferences.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A reader opens an article and is hit by looping strobe-like banners that pull attention and trigger discomfort.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Animations auto-play, ignore prefers-reduced-motion, and cannot be paused. Reading becomes unsafe or impossible.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="116">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Tremor (Parkinson’s) → Post-exercise hand fatigue → Completing a form on a jostling train</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Imprecision leads to accidental taps and errors. Interfaces must provide generous hit areas, spacing, and easy correction.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">On a bumpy route, a rider keeps selecting wrong radio buttons and mis-typing in small fields.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Targets are tiny and adjacent; no error prevention or confirm step exists. The flow assumes perfect precision many users don’t have.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="117">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Amputation (one hand) → Thumb sprain → Carrying a suitcase and using phone one-handed</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Two-handed gestures and distant controls are infeasible. Single-hand operation with reachable actions is essential.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">While rolling luggage, a traveler tries to check in on a site that requires pinch-zoom and top-corner taps.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Critical actions are small and out of thumb reach; zoom and navigation depend on multi-touch. One-handed use breaks down.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="118">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Quadriplegia (no mouse) → Shoulder immobilized in sling → Trackpad failure mid-task</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">When pointing devices are unavailable, full keyboard operation is required. Visible focus and logical tab order are key.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A user with a broken trackpad attempts to complete banking tasks via keyboard only.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Menus open on hover, focus styles are invisible, and components aren’t keyboard operable. Progress stalls for many users.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="119">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Limited reach mobility → Shoulder pain → Using a wall-mounted kiosk above eye level</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Controls placed out of reach or requiring extended holds cause failure. Interfaces should support reachable zones and short dwell.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A visitor signs in on a tall kiosk and struggles to hit far-corner buttons.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Primary actions are at the very top corners and require long press. Many people cannot complete sign-in.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="120">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Stutter (variable fluency) → Laryngitis → Quiet library policy (no talking)</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Speech input is unreliable or inappropriate across many contexts. Equivalent text/click flows must exist for parity.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A patron needs to search the catalog but cannot speak aloud or be consistently recognized by voice.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Voice-only search with no text field or button. Users unable to speak are simply blocked.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="122">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyslexia (slow decoding) → Concussion recovery → Reading dense policy while multitasking</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Dense, unstructured text increases cognitive load and errors. Scannable structure and summaries aid comprehension broadly.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A person tries to understand renewal terms while juggling messages and calls.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Policy appears as one long paragraph without headings, bullets, or a plain-language summary. Key obligations are missed.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="123">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Autism (sensitivity to clutter) → Migraine sensitivity → Bright office glare and pop-ups</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Excess motion and crowded layouts impair focus. Calm presentation and user control support decision-making.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">During checkout, banners animate and sections jump due to lazy loading; glare washes out detail.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Animations cannot be paused and content shifts unexpectedly. Users lose their place and abandon tasks.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="124">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Cognitive disability (short-term memory) → New-parent sleep deprivation → Rapid task switching at work</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Multi-step tasks are hard to track and resume. Autosave, progress indicators, and clear next steps reduce memory burden.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Between meetings, a worker returns to a benefits form and can’t tell what remains.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Drafts expire, form resets on refresh, and progress isn’t visible. People repeatedly start over.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="125">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Vestibular disorder (motion sensitivity) → Inner-ear infection → Parallax and auto-scroll effects</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Large motion, parallax, and auto-scroll can cause nausea or dizziness. Users need reduced-motion options and stable views.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A shopper scrolls a landing page with parallax hero images that sway with slightest movement.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Motion effects ignore prefers-reduced-motion and cannot be disabled. Many users feel ill and leave.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="126">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blind screen reader user → Lost glasses → Reading in the dark without turning on lights</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Non-visual access depends on semantic HTML, alt text, and logical focus. Without these, meaning and navigation vanish.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A person listens to long-form articles with the display off, navigating by headings and landmarks.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Headings are faked with spans; images lack alt text; landmarks are missing. The audio experience is disorienting.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="128">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">RSI (repetitive strain) → Sore wrists after typing → Standing on a crowded bus with limited movement</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">High-effort, repetitive input causes pain and errors. Short flows, shortcuts, and low-effort actions help broadly.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A commuter must complete a multi-step form but can only make brief, infrequent taps.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">The flow requires many precise clicks and time-limited steps. There’s no save-and-finish-later path.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="129">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Muscular dystrophy (fatigue) → Jetlag after long flight → End-of-day task with low energy</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Time pressure and long sessions reduce completion for users with limited stamina. Resumability and chunking support success.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Late at night, a traveler begins a reimbursement form but quickly tires and pauses.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Session times out in minutes and discards progress. Users without sustained energy abandon the process.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="130">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Monocular vision → Eye patch after surgery → Sun glare obscuring part of the display</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Reduced field of view makes wide, multi-column layouts difficult to scan. Reflow and single-column options preserve context.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A reader skims a three-column homepage while glare hides the right column entirely.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Fixed layout lacks a reading mode or reflow; key links sit at the obscured edge. Critical content is missed.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="131">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Dyspraxia (motor planning) → Hand strain → Wearing thick winter gloves</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Complex gesture sequences and tiny targets increase mistakes. Simple, single-action controls with generous spacing reduce friction.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">On a cold day, a user attempts to set delivery preferences but keeps missing small toggles.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Settings use tiny switches and multistep gestures. No larger targets or alternative controls exist.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="132">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Color blindness (deuteranopia) → Sun-bleached screen protector → Comparing charts outdoors</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Hue-only encodings in data are unreadable for many users. Text labels, patterns, and sufficient contrast are necessary.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A manager reviews KPI charts in sunlight and cannot distinguish series that differ only by hue.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Lines differ only by color with low contrast and no labels. Data interpretation fails for color-limited or outdoor contexts.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="133">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">ADHD (inattention) → Sleep deprivation → Multitasking during checkout</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Distractible contexts increase abandonment when critical steps are hidden or non-linear. Clear progress and minimal distractions aid completion.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A shopper flips between tabs and misses required fields that appear only after scrolling.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Important steps are buried below fold; banners compete for attention; no progress indicator exists. Users lose the thread.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="134">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Anxiety (time pressure sensitivity) → Rushed schedule → Spotty connectivity on the go</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Time-boxed interactions and unclear recovery paths raise stress and error rates. Calm copy and resilient saves help all users.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Between appointments, a user tries to submit a claim while connection stutters and a countdown ticks down.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">The flow times out abruptly and discards entries; errors are terse and offer no resume option. People under pressure fail disproportionately.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="136">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">One arm amputation → Finger sprain → Carrying groceries</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Single-handed operation is required when one hand is unavailable.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">While carrying bags, a shopper tries to check out online but cannot reach small buttons.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Critical actions are placed far from thumb zones. No shortcuts prevent single-hand use.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="137">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Photosensitive epilepsy → Concussion recovery → Bright late-night screen scrolling</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Flashing or strobing visuals create health and comfort risks across many contexts.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A user recovering from concussion is disrupted by autoplaying animated banners on news pages.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Animations play automatically with no pause control. Health and usability risks appear for all users.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="138">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Cognitive disability (memory) → Sleep deprivation → Switching tabs rapidly</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Tracking multi-step tasks becomes difficult when memory is impaired temporarily or permanently.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A job seeker loses progress repeatedly while juggling tabs for an application.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Form resets on refresh with no autosave. Users with memory strain abandon tasks.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="139">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Stutter → Laryngitis → Noisy street corner</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Speech input fails when fluency, voice, or environment prevents reliable dictation.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">At a street corner, a person cannot be understood by the voice-only chatbot.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">No text input fallback exists. Anyone unable to speak is excluded.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="140">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness (screen reader) → Foggy glasses → Reading at night without light</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Users depend on semantic markup and alternatives for non-visual access.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">Someone reads bedtime stories aloud using text-to-speech when glasses fog.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Buttons lack accessible names. Non-visual navigation collapses.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="142">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Profound hearing loss → Ear canal blockage → Watching product demos in a loud café</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Spoken content and audio alerts are inaccessible when sound cannot be perceived or is masked by noise. Textual or visual equivalents are essential.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A shopper evaluates a product demo video while espresso machines and conversation drown out the narration.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Video lacks accurate captions and a transcript, and audio-only callouts have no on-screen equivalents. Users cannot access critical information.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="143">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Limited fine motor control → Wrist in a brace → Holding a coffee and phone one-handed</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Precise, two-handed gestures are unreliable. Interfaces must support single-hand use with generous targets and keyboard alternatives.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">On a sidewalk, a person tries to complete a shipping form using only their thumb and keeps mis-tapping controls.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Small, tightly spaced inputs and multi-touch gestures are required to proceed. Errors pile up and completion rates drop.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="145">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Speech impairment → Sore throat → Quiet library where speaking is inappropriate</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Speech input is unavailable or socially inappropriate. Users require equivalent text-based controls for all voice features.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A student wants to search the catalog but cannot speak aloud without disturbing others.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Voice-only search is provided with no keyboard field or button trigger. Many users are locked out of the core function.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="146">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Low vision using screen magnifier → Dry-eye irritation → Viewing slides from the back row</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Small, fixed text and non-responsive layouts break at high zoom or distance. Scalable typography and reflow are needed.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">During a presentation, a participant opens the referenced site but cannot read tiny labels from afar.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Text is fixed in pixels, zoom is restricted via viewport meta, and content truncates when magnified. Legibility collapses.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="147">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Autism (sensitivity to visual clutter) → Migraine sensitivity → Bright office glare</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Excess motion and crowded layouts impair focus. Calmer presentation and user control support comprehension.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">At work, a person compares pricing tiers while banners animate and glare washes out fine detail.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Sticky chat widgets animate frequently and sections reorder dynamically. Users struggle to maintain focus and make decisions.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="148">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Aphasia (word-finding difficulty) → Jetlag brain fog → Stressful password reset</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Language recall and precise entry are difficult under cognitive strain. Simpler options reduce failure.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">After travel, a user attempts account recovery but cannot recall and enter complex strings accurately.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Only complex passwords are accepted; no passkeys or magic links exist. Errors are verbose and unhelpful, blocking access.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="149">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Parkinson’s tremor → Fatigued hand after work → Completing forms on a bumpy bus</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Imprecise taps cause accidental selections. Interfaces need forgiving targets, spacing, and easy correction.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">On a transit ride, a passenger taps wrong radio buttons repeatedly when filing a claim.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Targets are tiny and adjacent, no confirmation or undo is provided. Small errors become costly.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="150">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Monocular vision → Eye patch after corneal abrasion → Glare obscuring one side of the display</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Reduced field of view makes scanning wide multi-column layouts difficult. Single-column reflow improves access.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A reader skims a three-column homepage but persistent glare hides the right column entirely.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Fixed-width layout lacks reflow or reading mode; key links sit at the obscured edge. Critical content is missed.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="152">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness (screen reader) → Broken glasses → Reading in a dark room</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Non-visual access relies on name, role, value, logical order, and alt text. Without them, content becomes invisible.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A person listens to long-form articles with the display off and navigates by headings.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Focus order is illogical; landmarks are absent; images lack alt text. Orientation and comprehension break down.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="153">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">One-handed motor control → Finger sprain → Carrying groceries</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Single-hand operation must be fully supported with reachable controls and one-tap flows.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">While holding bags, a shopper tries to confirm checkout but the CTA sits out of thumb reach.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Primary actions live in small top-corner icons with no alternative shortcut. One-handed use is impractical.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="154">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Stutter (variable fluency) → Laryngitis → Quiet train car with no-talking rule</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Speech input cannot be depended upon in many contexts. Equivalent text/chat paths must exist.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A rider needs help from support but cannot speak aloud or be recognized reliably.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Support is voice-only with no text chat or form. Users unable to speak are effectively excluded.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="160">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Low vision with magnifier → Dry eye → Viewing complex tables on a small phone</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Dense tables at high zoom lose context when headers scroll off-screen. Responsive tables and summaries preserve meaning.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A user magnifies a pricing table and loses column headers while panning horizontally.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Header associations are missing and there’s no stacked mobile view. Comparisons become guesswork.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="161">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness → Corneal haze → Driving-mode listening only</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">When vision is unavailable, content must be structured for audio with clear landmarks and names.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A passenger listens to articles via text-to-speech while in a carpool with the screen off.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Regions lack landmarks; links are vague; headings are skipped. The audio experience is slow and error-prone.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="162">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Bilateral limb difference → Arm in sling → Carrying a toddler</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Hands-free or minimal-input paths are essential when hands are unavailable. Single-tap, toggle, or voice with keyboard fallback help.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A caregiver needs to reorder supplies but cannot execute multi-finger gestures while holding a child.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Critical actions require long-press or multi-touch with no single-tap or keyboard option. Completion becomes unlikely.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="163">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Autism (need for predictability) → Migraine fog → Noisy café interruptions</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Layout shifts undermine orientation and trust. Stable structure and clear feedback support decision-making.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">While comparing plans, elements jump as ads load and sections reorder. The user loses their place.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Focus targets move under the pointer and content reorders without notice. Users misclick and abandon the task.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="164">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Hearing impairment → Ear infection → Watching lectures in a library</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Spoken learning content requires accurate captions and transcripts for access and search.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A student studies in a quiet room with volume off and needs to follow technical terms and examples.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Auto-captions are inaccurate; punctuation and domain terms are wrong; there is no transcript. Comprehension is compromised.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="166">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Deafness → Temporary ear blockage → Watching lecture in loud café</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">When sound is absent or obscured, spoken content and cues become inaccessible without text or visual options.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A student streams an online lecture but the café’s noise prevents following the narration.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">No captions or transcripts are provided. Deaf users and people in noisy places cannot engage fully.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="167">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Limited hand dexterity → Arm in cast → Holding a baby one-handed</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Users cannot execute precise or two-handed gestures. Input must work with single-hand or alternative methods.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">While carrying a child, a parent tries to scroll through a shopping site but cannot pinch-zoom.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Critical navigation requires two-finger gestures only. Users with limited hand use are blocked.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="168">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Color blindness → Dilated pupils → Washed-out kiosk colors</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Color as the only signal fails for users with permanent or temporary color perception limits.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A passenger at a train kiosk cannot distinguish green vs. red route indicators due to glare.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Status indicators rely only on color with no text/icon alternatives. Travelers misinterpret info.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="169">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Speech impairment → Swollen throat → Silent library restrictions</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Users cannot rely on speech input if impaired, painful, or socially inappropriate.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">In a library, a visitor tries to search a catalog but cannot speak aloud.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Voice search is the only input path. No keyboard or touch option excludes many users.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="170">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Low vision → Blurred vision from allergies → Viewing projector from back row</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Small fixed text becomes unreadable with reduced clarity or distance.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A participant at a lecture cannot make out projected website text from far back.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Site fixes font size and disables zoom. Information is lost at a distance or with blurry vision.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="172">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Profound hearing loss → Temporary tinnitus → Watching a tutorial in a noisy café</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Audio-only information excludes users when hearing is absent, impaired, or masked by noise. Synchronized captions and transcripts provide equal access.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A learner follows a coding video but espresso machines and chatter drown the narration.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">No captions or transcripts exist. Instructions and terminology remain locked behind audio, blocking comprehension and search.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="173">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Low vision → Dilated pupils after exam → Viewing a projector from the back row</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Small, fixed text fails when clarity or distance is poor. Users need scalable typography, responsive reflow, and sufficient contrast.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">From the last row, a participant opens a reference site but cannot read tiny labels and dense copy.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Text is fixed in pixels, zoom is restricted via viewport meta, and contrast is marginal. Legibility collapses at distance or high zoom.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="174">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Color vision deficiency → Sun glare on screen → Outdoor kiosk with washed-out palette</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Color-only signals fail when hues are indistinguishable or washed out. Redundant text/icons communicate state reliably.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A rider checks route status on a transit kiosk but cannot tell delayed lines from on-time lines under glare.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Status is encoded solely by color with no labels or shapes. Many travelers misinterpret the map.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="176">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Arthritis (hand pain) → Sore fingers after typing → Wearing thick winter gloves</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Small, tightly spaced controls increase pain and errors. Larger hit areas and forgiving inputs aid permanent and situational users.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">On a cold day, a shopper tries to check boxes on a form with gloved fingers and keeps missing.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Inputs are tiny with no alternative method (e.g., larger mode or keyboard). Error rate spikes and completion drops.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="177">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Quadriplegia (no mouse) → Shoulder immobilized → Trackpad broken mid-task</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">When pointing isn’t possible, full keyboard operation is essential. Visible focus and logical tab order are required.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A traveler with a dead trackpad must change a reservation using only the keyboard.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Menus open on hover only, focus outline is suppressed, and components trap focus. Keyboard users cannot proceed.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="178">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Amputation (one hand) → Thumb sprain → Carrying a toddler one-handed</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Two-handed gestures and distant controls are infeasible. Interfaces must support single-hand operation and reachable actions.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A caregiver tries to reorder supplies but critical actions sit in top-corner icons that are hard to reach with a thumb.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Navigation requires pinch-zoom and multi-touch with no single-tap alternative. One-handed use fails.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="179">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Parkinson’s tremor → Post-exercise fatigue → Filling a form on a jostling bus</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Imprecision leads to accidental taps and selections. Generous targets, spacing, and undo paths are critical.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">On a bumpy route, a rider keeps choosing the wrong radio button and can’t easily correct.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Targets are tiny and adjacent; no confirm/undo exists. The design assumes perfect precision.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="186">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blind screen reader user → Broken eyeglasses → Reading in a dark bedroom</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Non-visual access depends on semantic HTML and alt text. Without them, meaning and navigation vanish.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A person listens to long-form articles with the screen off, navigating by headings and landmarks.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Links are vague, headings are inconsistent, and images lack alt text. The auditory experience is slow and error-prone.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="187">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Hearing loss → Congested ears from a cold → Device muted in meeting</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Sound-only alerts exclude many users. Redundant visual/text channels are required for critical status changes.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">During a meeting, someone submits a payment and never hears the success chime.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">No visible confirmation or inline status message appears. Users assume success or failure incorrectly.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="188">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">RSI (repetitive strain) → Wrist soreness → Standing on a crowded bus</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">High-effort, repetitive input increases pain and errors. Short flows, shortcuts, and save-and-finish-later aid completion.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A commuter must complete a multi-step form but can only make brief, infrequent taps.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Many precise clicks are required and the session times out quickly. No resumable path exists.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="194">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Autism (sensitivity to clutter) → Migraine → Busy open office with glare</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Visual overload prevents focus and comprehension. Calm, structured layouts benefit many.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">At work, an employee struggles to compare pricing because the screen is cluttered with popups and glare.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Site layout shifts constantly with flashy banners. Users cannot focus or complete tasks.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="195">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Aphasia → Post-surgery brain fog → Stressful login attempt</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Understandable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Word recall and memory load create barriers during cognitively demanding tasks.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A user under stress struggles to remember their password details during account recovery.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Only complex text passwords are allowed, with no alternative like passkeys. Barriers block access.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="196">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Tremor → Fatigued hand → Using phone on moving bus</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Operable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Shaky or unstable motion prevents accurate taps. Interfaces need large forgiving targets.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A rider fills out a survey but keeps tapping wrong tiny checkboxes on the bus.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Small adjacent tap targets lead to errors. No correction paths increase exclusion.</dd>
+</dl>
+</article>
+<article role="group" class="row" data-row-index="197">
+<dl role="list">
+<dt data-label="Solve for One Extend to Many" role="listitem">Solve for One Extend to Many</dt><dd role="listitem">Blindness → Lost glasses → Browsing in dark bedroom</dd>
+<dt data-label="Category" role="listitem">Category</dt><dd role="listitem">Perceivable</dd>
+<dt data-label="Shared Limitation" role="listitem">Shared Limitation</dt><dd role="listitem">Non-visual navigation requires proper alt text and structure. Without it, content is invisible.</dd>
+<dt data-label="Context" role="listitem">Context</dt>
+<dd role="listitem">A person without glasses uses text-to-speech at night to read articles.</dd>
+<dt data-label="Website Mismatch" role="listitem">Website Mismatch</dt>
+<dd role="listitem">Headings are styled visually not semantically, and images lack alt text. Navigation is broken.</dd>
+</dl>
+</article>
+</main>
+</body>
+</html>
