@@ -1,0 +1,5 @@
+version: "0.1.0"
+status: DRAFT
+rule: "Presets may only use validated parameters. Current entries are therefore illustrative and not production-approved."
+
+presets: []
