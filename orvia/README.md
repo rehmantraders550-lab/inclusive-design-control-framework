@@ -1,13 +1,14 @@
 # ORVIA Inclusive Design Extraction — v0.1
 
-This branch is the derived-work layer for the mirrored InclusiveTechLab source.
+This branch is the derived-work layer for the mirrored InclusiveTechLab source and related ORVIA architecture research.
 
 ## Branch contract
 
 - `main` = upstream source preservation only.
-- `orvia-inclusive-extraction-v0.1` = extraction, normalization, relationship analysis, and future validation work.
+- `orvia-inclusive-extraction-v0.1` = extraction, normalization, relationship analysis, architecture mapping, and future validation work.
 - No source file is renamed, deleted, or rewritten as part of extraction.
 - No extracted record becomes `ORVIA_CORE` automatically.
+- Architecture references do not create new dials or thresholds automatically.
 
 ## Machine source of truth
 
@@ -17,9 +18,14 @@ This branch is the derived-work layer for the mirrored InclusiveTechLab source.
 4. `RELATIONSHIP_RULES.yaml`
 5. `PRESETS.yaml`
 
+## Supplemental architecture records
+
+- `DIAGNOSTIC_TOOL_ARCHITECTURE_RECORD.md` — human-readable architecture extraction from Flutter DevTools and its mapping to the current ORVIA framework.
+- `DEVTOOLS_ARCHITECTURE_MAP.yaml` — machine-readable pattern/evidence map. It is architecture guidance only and does not promote new parameters.
+
 ## Critical provenance rule
 
-A source-native number, an implementation example, a WCAG criterion, and an ORVIA orchestration score are different evidence types. They must never be silently merged.
+A source-native number, an implementation example, a WCAG criterion, an architecture pattern, and an ORVIA orchestration score are different evidence types. They must never be silently merged.
 
 ## Current first-pass scope
 
@@ -35,7 +41,12 @@ This pass focuses on:
 - task resumability;
 - preference persistence;
 - spatial stability;
-- WCAG-vs-beyond-WCAG traceability.
+- WCAG-vs-beyond-WCAG traceability;
+- diagnostic-tool applicability gating;
+- capture/normalization/replay separation;
+- baseline-vs-candidate comparison;
+- portable diagnostic evidence;
+- modular diagnostic extension architecture.
 
 ## Next validation stages
 
@@ -43,6 +54,8 @@ The current records are intentionally conservative. Next passes should:
 - complete source-wide extraction;
 - deduplicate against the existing ORVIA parameter registry;
 - cross-check normative claims directly against current W3C/WCAG sources;
+- implement measurement adapters before inventing additional dials;
+- connect normalized evidence to token/component/responsive resolvers;
 - test implementation consequences;
 - identify dependency/collision rules;
 - promote only independently useful, validated controls.

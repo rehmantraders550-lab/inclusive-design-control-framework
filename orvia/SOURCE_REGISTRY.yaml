@@ -81,3 +81,26 @@ sources:
     path: "inclusive-design-in-the-ITL.html"
     source_class: PROJECT_EVIDENCE
     provenance_scope: "Concrete implementation examples including reduced-motion handling and visible focus styling."
+
+  - id: FLUTTER_DEVTOOLS_MASTER_2026_09_24
+    title: "Dart & Flutter DevTools"
+    canonical_url: "https://github.com/flutter/devtools"
+    source_class: IMPLEMENTATION_LIBRARY
+    provenance_scope: "Production diagnostic-tool architecture: capability gating, runtime measurement, offline/replayable evidence, baseline-vs-candidate diffing, portable diagnostic artifacts, accessibility inspection, and extension/plugin architecture."
+    upstream_branch: master
+    upstream_commit: "405689bc49f9c7ae0d7ca77b3d9b0f698745989b"
+    evidence_files:
+      - "packages/devtools_app/lib/src/shared/framework/screen.dart"
+      - "packages/devtools_app/lib/src/shared/offline/offline_data.dart"
+      - "packages/devtools_app/lib/src/screens/performance/performance_screen.dart"
+      - "packages/devtools_app/lib/src/screens/accessibility/accessibility_controller.dart"
+      - "packages/devtools_app/lib/src/screens/app_size/app_size_screen.dart"
+      - "packages/devtools_app/lib/src/screens/network/har_builder.dart"
+      - "packages/devtools_extensions/README.md"
+      - "packages/devtools_extensions/extension_config_spec.md"
+      - "AGENTS.md"
+    authority_note: "Use as implementation and architecture evidence, not as a normative UI/UX or accessibility standard. Flutter-specific runtime choices must not be generalized into universal ORVIA thresholds."
+    revalidation_trigger:
+      - "Upstream DevTools architecture materially changes"
+      - "A cited source file is moved, replaced, or its behavior changes"
+      - "ORVIA diagnostic schema is revised"

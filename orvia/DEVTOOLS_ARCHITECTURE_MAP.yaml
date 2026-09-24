@@ -1,0 +1,222 @@
+version: "0.1.0"
+status: ARCHITECTURE_REFERENCE
+source_id: FLUTTER_DEVTOOLS_MASTER_2026_09_24
+parameter_promotion: false
+statement: "This map extracts reusable diagnostic architecture. It does not add or promote ORVIA parameters."
+
+source_evidence:
+  pinned_commit: "405689bc49f9c7ae0d7ca77b3d9b0f698745989b"
+  files:
+    screen_metadata: "packages/devtools_app/lib/src/shared/framework/screen.dart"
+    offline_data: "packages/devtools_app/lib/src/shared/offline/offline_data.dart"
+    performance: "packages/devtools_app/lib/src/screens/performance/performance_screen.dart"
+    accessibility: "packages/devtools_app/lib/src/screens/accessibility/accessibility_controller.dart"
+    app_size_diff: "packages/devtools_app/lib/src/screens/app_size/app_size_screen.dart"
+    har_builder: "packages/devtools_app/lib/src/screens/network/har_builder.dart"
+    extensions_readme: "packages/devtools_extensions/README.md"
+    extension_spec: "packages/devtools_extensions/extension_config_spec.md"
+
+architecture_patterns:
+  - id: DTA-001
+    name: APPLICABILITY_GATE
+    source_construct: ScreenMetaData
+    source_fields:
+      - requiresConnection
+      - requiresDartVm
+      - requiresFlutter
+      - requiresDebugBuild
+      - requiresAdvancedDeveloperMode
+      - supportsWebServerDevice
+      - worksWithOfflineData
+      - requiresLibrary
+    orvia_action:
+      add_record_fields:
+        - applicability.interface_classes
+        - applicability.platforms
+        - applicability.input_modes
+        - applicability.runtime_requirements
+        - applicability.activation_conditions
+        - applicability.exclusions
+      evaluation_rule: "Resolve applicability before scoring. Non-applicable diagnostics return NOT_APPLICABLE."
+    evidence_class: ARCHITECTURE_REUSE
+
+  - id: DTA-002
+    name: CAPTURE_NORMALIZE_REPLAY
+    source_construct: OfflineDataController + OfflineScreenControllerMixin
+    source_behavior:
+      - screen-specific serializable JSON
+      - offline import
+      - offline replay
+      - separation from live connection state
+    orvia_action:
+      add_record_fields:
+        - capture.adapter
+        - capture.adapter_version
+        - capture.live_supported
+        - capture.offline_replay_supported
+        - evidence.raw_artifacts
+        - evidence.normalized_metrics
+        - evidence.provenance
+    evidence_class: ARCHITECTURE_REUSE
+
+  - id: DTA-003
+    name: RUNTIME_MEASUREMENT_PIPELINE
+    source_construct: Performance screen
+    source_layers:
+      - controls
+      - frames
+      - frame_analysis
+      - rebuild_stats
+      - timeline_events
+    orvia_action:
+      principle: "Keep runtime metrics separate from aesthetic orchestration controls."
+      existing_controls_supported_indirectly:
+        - MOTION_INTENSITY
+        - MOTION_TEMPO
+    evidence_class: INDIRECT_VALIDATION
+
+  - id: DTA-004
+    name: BASELINE_CANDIDATE_DIFF
+    source_construct: App Size Analysis / Diff modes
+    source_features:
+      - old_vs_new_input
+      - combined_diff
+      - increase_only
+      - decrease_only
+    orvia_action:
+      add_record_fields:
+        - comparison.baseline_capture
+        - comparison.candidate_capture
+        - comparison.metric_deltas
+        - comparison.parameter_deltas
+        - comparison.guardrail_regressions
+        - comparison.improvements
+    evidence_class: ARCHITECTURE_REUSE
+
+  - id: DTA-005
+    name: PORTABLE_EVIDENCE_ARTIFACT
+    source_construct: HAR builder
+    source_behavior: "Converts runtime request evidence to HAR 1.2 JSON."
+    orvia_action:
+      principle: "Prefer established portable formats where available; otherwise use a versioned ORVIA evidence schema."
+    evidence_class: ARCHITECTURE_REUSE
+
+  - id: DTA-006
+    name: DIAGNOSTIC_PLUGIN_CONTRACT
+    source_construct: DevTools Extensions
+    source_config_fields:
+      - name
+      - issueTracker
+      - version
+      - materialIconCodePoint
+      - requiresConnection
+    runtime_managers:
+      - extensionManager
+      - serviceManager
+      - dtdManager
+    orvia_action:
+      required_tool_fields:
+        - id
+        - version
+        - domain
+        - description
+        - applicability
+        - required_inputs
+        - capture_adapter
+        - output_schema
+        - parameters_evaluated
+        - guardrails_evaluated
+        - offline_replay
+        - comparison_support
+        - implementation_targets
+    evidence_class: ARCHITECTURE_REUSE
+
+  - id: DTA-007
+    name: CAPABILITY_STATUS_SEPARATION
+    source_construct: AccessibilityController
+    observed_status:
+      semantics_tree_inspection: IMPLEMENTED
+      brightness_override: IMPLEMENTED
+      text_scale_override: TODO
+      bold_text_override: TODO
+      screen_reader_override: TODO
+      high_contrast_override: TODO
+    orvia_action:
+      add_capability_fields:
+        - inspect
+        - simulate
+        - measure
+        - validate
+      allowed_status:
+        - IMPLEMENTED
+        - PARTIAL
+        - UNSUPPORTED
+    evidence_class: ARCHITECTURE_REUSE
+
+existing_parameter_map:
+  DESIGN_VARIANCE:
+    support: ARCHITECTURE_ONLY
+    note: "Diff architecture is reusable; DevTools provides no design-variance metric."
+  VISUAL_DENSITY:
+    support: ARCHITECTURE_ONLY
+    note: "Capture/diff can carry a future ORVIA density metric; App Size is not a visual-density proxy."
+  MOTION_INTENSITY:
+    support: INDIRECT_VALIDATION
+    note: "Runtime frame/timeline evidence can constrain execution stability without redefining aesthetic magnitude."
+  MOTION_TEMPO:
+    support: INDIRECT_VALIDATION
+    note: "Runtime timing evidence can validate implementation cost without defining desired tempo."
+  RESPONSIVE_RECOMPOSITION:
+    support: ARCHITECTURE_ONLY
+  INTERACTION_EXPLICITNESS:
+    support: PARTIAL_EVIDENCE
+    note: "Semantic labels can contribute evidence but are not a complete explicitness metric."
+  ACTION_LABEL_SPECIFICITY:
+    support: PARTIAL_EVIDENCE
+    note: "Semantics labels can be inspected."
+  FOCUS_ESCAPE_RESILIENCE:
+    support: UNSUPPORTED_BY_SOURCE
+  INPUT_PRECISION_DEMAND:
+    support: UNSUPPORTED_BY_SOURCE
+  DRAG_DEPENDENCY:
+    support: UNSUPPORTED_BY_SOURCE
+  COLOR_INFORMATION_DEPENDENCY:
+    support: UNSUPPORTED_BY_SOURCE
+  REDUCED_MOTION_SUPPORT:
+    support: UNSUPPORTED_BY_SOURCE
+    note: "No reduced-motion simulator/validator was identified in the inspected DevTools accessibility controller."
+  TASK_RESUMABILITY:
+    support: NON_EQUIVALENT
+    note: "Diagnostic offline replay is not evidence of end-user task resumability."
+  PREFERENCE_PERSISTENCE:
+    support: NON_EQUIVALENT
+    note: "Diagnostic-state persistence is not evidence of product preference persistence."
+  SPATIAL_STABILITY:
+    support: UNSUPPORTED_BY_SOURCE
+
+diagnostic_pipeline:
+  - SOURCE_GROUNDING
+  - APPLICABILITY_RESOLUTION
+  - CAPTURE
+  - NORMALIZATION
+  - DETERMINISTIC_MEASUREMENT
+  - PARAMETER_MAPPING
+  - RELATIONSHIP_RESOLUTION
+  - CLASSIFICATION
+  - DIAGNOSIS
+  - IMPLEMENTATION_RESOLUTION
+  - BASELINE_CANDIDATE_DIFF
+
+governance:
+  prohibited:
+    - "Do not convert Flutter-specific implementation details into universal UI thresholds."
+    - "Do not create a new ORVIA dial solely because a tool can expose a metric."
+    - "Do not treat runtime performance metrics as equivalent to aesthetic control values."
+    - "Do not treat diagnostic persistence as user workflow persistence."
+    - "Do not treat a visible accessibility control as proof that simulation or validation is implemented."
+  next_required_bridges:
+    - measurement_adapters
+    - normalized_evidence_package
+    - applicability_resolver
+    - token_component_resolver
+    - baseline_candidate_validator
