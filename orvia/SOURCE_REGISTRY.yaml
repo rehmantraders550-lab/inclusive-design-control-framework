@@ -207,3 +207,29 @@ sources:
       - "The upstream Accordion API changes"
       - "ORVIA disclosure-pattern or semantic-structure controls are revised"
 
+  - id: MICROSOFT_DESIGN_AI_EVAL_USER_2026_09_17
+    title: "Putting the user back into AI Evaluation"
+    canonical_url: "https://microsoft.design/articles/putting-the-user-back-into-ai-evaluation/"
+    source_class: FIRST_PARTY_RESEARCH_PRACTICE
+    publisher: "Microsoft Design"
+    published: "2026-09-17"
+    provenance_scope: "Human-centered AI response-quality evaluation practice: user preference studies, quality dimensions derived from qualitative research, golden datasets, loss-pattern taxonomy, multi-turn evaluation, model-vs-experience evaluation, and framework recalibration."
+    named_practitioners:
+      - "Christopher Monier"
+      - "Chuck Kwong"
+      - "Wendy Wang"
+    authority_note: "Treat as first-party practitioner guidance and reported internal evaluation practice, not as a formal universal evaluation standard or normative benchmark."
+    core_claims:
+      - "Machine evaluations can test criteria that have been specified, but users are uniquely positioned to judge whether an answer worked for them in real context."
+      - "Quality dimensions should be derived from qualitative user evidence rather than only builder assumptions."
+      - "Human evaluation is especially important for contextual relevance, usefulness, trust, point-of-view preservation, and real-world fit."
+      - "Human-generated prompts better preserve real interaction conditions than idealized synthetic prompts alone."
+      - "Golden datasets and a shared loss-pattern taxonomy can turn qualitative findings into repeatable evaluation infrastructure."
+      - "Multi-turn conversations should sometimes be treated as the evaluation stimulus rather than evaluating isolated responses only."
+      - "Evaluation frameworks have short shelf lives and require continual recalibration as model capability and user expectations change."
+      - "Model evaluation and whole-experience evaluation are distinct problems with different confounds and study-design requirements."
+    revalidation_trigger:
+      - "Microsoft publishes a newer evaluation framework or successor article"
+      - "ORVIA AI-evaluation taxonomy is formalized"
+      - "A candidate human-centered metric is promoted into a scored evaluation dimension"
+

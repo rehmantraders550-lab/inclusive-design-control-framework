@@ -33,6 +33,9 @@ This branch is the derived-work layer for the mirrored InclusiveTechLab source a
 
 - `ORVIA_UMBRELLA_INTAKE_LOG_2026-09-24.md` — preservation log covering all current ORVIA research streams before later restructuring.
 
+- `MICROSOFT_AI_EVALUATION_HUMAN_CENTERED_RECORD.yaml` — source-native human-centered AI evaluation principles and workflow patterns from Microsoft Design.
+- `MICROSOFT_AI_EVALUATION_ORVIA_MAPPING.md` — ORVIA mapping for user-derived quality dimensions, golden datasets, loss-pattern taxonomies, multi-turn evals, and model-vs-experience evaluation.
+
 ## Critical provenance rule
 
 A source-native number, an implementation example, a WCAG criterion, an architecture pattern, a design-system rule, a platform token, a visual example, an ORVIA synthesis, and an ORVIA orchestration score are different evidence types. They must never be silently merged.
@@ -94,4 +97,8 @@ The current records are intentionally conservative. Next passes should:
 - connect normalized evidence to token/component/responsive resolvers;
 - test implementation consequences;
 - identify dependency/collision rules;
+- define ORVIA evaluation dimensions from user evidence before automating them;
+- distinguish machine-checkable criteria from user-only contextual judgments;
+- version and periodically recalibrate loss-pattern taxonomies and golden datasets;
+- separate model-level evaluation from whole-experience evaluation;
 - promote only independently useful, validated controls.
