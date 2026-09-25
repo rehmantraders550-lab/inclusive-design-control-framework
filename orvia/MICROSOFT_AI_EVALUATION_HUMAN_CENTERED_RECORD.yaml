@@ -1,0 +1,218 @@
+version: "0.1.0"
+status: EXTRACTED
+source_id: MICROSOFT_DESIGN_AI_EVAL_USER_2026_09_17
+promotion_rule: "Preserve practitioner claims and workflow patterns separately from ORVIA scoring rules. Do not create a metric until its construct and measurement method are defined."
+
+source_native_records:
+  - id: MSAI-EVAL-001
+    term: "User voice in evaluation"
+    provenance: SOURCE_EXPLICIT
+    statement: "Machine evaluation can assess specified criteria, but users are required to judge whether an output actually worked for them in context."
+
+  - id: MSAI-EVAL-002
+    term: "Preference gap"
+    provenance: SOURCE_EXPLICIT
+    statement: "Users can strongly prefer one response over another for reasons the product team was not explicitly measuring."
+    implication: "Builder-defined quality criteria may omit dimensions users actually value."
+
+  - id: MSAI-EVAL-003
+    term: "User-derived quality dimensions"
+    provenance: SOURCE_EXPLICIT
+    statement: "Evaluation dimensions are derived from qualitative conversations and underlying user values."
+    reported_dimension_count:
+      typical_range: "5–8"
+      note: "Reported practitioner approach, not a universal rule."
+    examples:
+      - contextual relevance
+      - preserving user point of view
+      - avoiding generic work products
+      - trust
+      - usefulness
+      - perceived intelligence
+
+  - id: MSAI-EVAL-004
+    term: "Machine-judge boundary"
+    provenance: SOURCE_EXPLICIT
+    statement: "Some criteria such as factual correctness may be mechanically evaluated, while whether an answer matters in the user's real-world context may require user judgment."
+    note: "The article frames this as a division of evaluative capability, not an absolute prohibition on machine assistance."
+
+  - id: MSAI-EVAL-005
+    term: "Golden datasets"
+    provenance: SOURCE_EXPLICIT
+    statement: "Human evaluation data can be converted into concrete good/bad anchors that seed larger machine-run evaluation sets."
+
+  - id: MSAI-EVAL-006
+    term: "Loss-pattern taxonomy"
+    provenance: SOURCE_EXPLICIT
+    statement: "A shared taxonomy for recurring response failures creates a common language across research, data science, engineering, and product."
+    examples_from_article:
+      - generic
+      - too shallow
+    caution: "The article does not provide the complete taxonomy."
+
+  - id: MSAI-EVAL-007
+    term: "Realistic prompt distribution"
+    provenance: SOURCE_EXPLICIT
+    statement: "Human-authored prompts preserve imperfections, missing context, distraction, and ambiguity that idealized synthetic prompts can erase."
+
+  - id: MSAI-EVAL-008
+    term: "Conversation as stimulus"
+    provenance: SOURCE_EXPLICIT
+    statement: "Multi-turn evaluation can treat the full conversation as the stimulus and assess the exchange rather than only a single answer."
+
+  - id: MSAI-EVAL-009
+    term: "Framework shelf life"
+    provenance: SOURCE_EXPLICIT
+    statement: "Evaluation frameworks and loss-pattern taxonomies become stale as model capability and user expectations evolve."
+    reported_time_examples:
+      - "A framework useful six months ago may no longer be relevant."
+      - "Taste for AI may shift enough that a framework can feel stale in roughly three months."
+    caution: "These are practitioner observations, not measured universal expiration intervals."
+
+  - id: MSAI-EVAL-010
+    term: "Model vs experience evaluation"
+    provenance: SOURCE_EXPLICIT
+    statement: "Evaluating model responses and evaluating the whole product experience are different problems."
+    whole_experience_confounds:
+      - surrounding interface
+      - onboarding
+      - adjacent features
+      - multi-stage flows
+      - agentic stages invisible to the user
+    implication: "Study design must isolate the actual source of a problem."
+
+  - id: MSAI-EVAL-011
+    term: "Job-to-be-done interpretation"
+    provenance: SOURCE_EXPLICIT
+    statement: "Evaluation data can reveal what the user is actually trying to accomplish, not just whether one answer scored well."
+    examples:
+      - quick answer
+      - working through a difficult situation
+      - unblocking one step in a complex workflow
+
+orvia_mapping:
+  evaluation_architecture:
+    proposed_pipeline:
+      - REAL_USER_CONTEXT
+      - USER_AUTHORED_TASK_OR_PROMPT
+      - MODEL_OR_PRODUCT_EXPERIENCE
+      - HUMAN_QUALITATIVE_EVIDENCE
+      - USER_DERIVED_QUALITY_DIMENSIONS
+      - LOSS_PATTERN_CLASSIFICATION
+      - GOLDEN_ANCHORS
+      - MACHINE_SCALE_EVALUATION
+      - PERIODIC_RECALIBRATION
+
+  HUMAN_RELEVANCE:
+    status: EVALUATION_DIMENSION_CANDIDATE
+    source_records: [MSAI-EVAL-001, MSAI-EVAL-004]
+    definition_candidate: "Whether the output matters for the user's actual goal and context."
+    promotion: false
+
+  POINT_OF_VIEW_PRESERVATION:
+    status: EVALUATION_DIMENSION_CANDIDATE
+    source_records: [MSAI-EVAL-003]
+    definition_candidate: "Degree to which AI assistance preserves the user's intended perspective rather than flattening it into generic output."
+    promotion: false
+
+  GENERICITY_LOSS:
+    status: LOSS_PATTERN_CANDIDATE
+    source_records: [MSAI-EVAL-003, MSAI-EVAL-006]
+    promotion: false
+
+  SHALLOWNESS_LOSS:
+    status: LOSS_PATTERN_CANDIDATE
+    source_records: [MSAI-EVAL-006]
+    promotion: false
+
+  CONTEXT_GAP:
+    status: EVALUATION_RISK_CANDIDATE
+    source_records: [MSAI-EVAL-007]
+    definition_candidate: "Difference between information supplied in the prompt and relevant context held by the user."
+    promotion: false
+
+  CONVERSATION_LEVEL_EVAL:
+    status: EVALUATION_MODE_CANDIDATE
+    source_records: [MSAI-EVAL-008]
+    values:
+      - SINGLE_TURN
+      - MULTI_TURN
+    promotion: false
+
+  EVALUATION_TARGET:
+    status: EVALUATION_SCOPE_CANDIDATE
+    source_records: [MSAI-EVAL-010]
+    values:
+      - MODEL_RESPONSE
+      - PRODUCT_EXPERIENCE
+      - AGENTIC_WORKFLOW
+    promotion: false
+
+relationship_candidates:
+  - id: MSAI-REL-001
+    type: HUMAN_MACHINE_DIVISION
+    statement: "Automate criteria that can be reliably specified and measured, while retaining human evaluation for contextual/user-value judgments."
+    source_records: [MSAI-EVAL-001, MSAI-EVAL-004]
+
+  - id: MSAI-REL-002
+    type: QUAL_TO_SCALE
+    statement: "Qualitative human evidence should define evaluation dimensions and golden anchors before large-scale machine evaluation."
+    source_records: [MSAI-EVAL-003, MSAI-EVAL-005]
+
+  - id: MSAI-REL-003
+    type: TAXONOMY_GOVERNANCE
+    statement: "Loss-pattern definitions require shared vocabulary and periodic revision."
+    source_records: [MSAI-EVAL-006, MSAI-EVAL-009]
+
+  - id: MSAI-REL-004
+    type: REALISM_CONSTRAINT
+    statement: "Synthetic prompts alone can underrepresent real prompting behavior; user-authored tasks should be represented in evaluation datasets."
+    source_records: [MSAI-EVAL-007]
+
+  - id: MSAI-REL-005
+    type: SCOPE_SEPARATION
+    statement: "Model-response quality should not be treated as equivalent to whole-experience quality."
+    source_records: [MSAI-EVAL-010]
+
+  - id: MSAI-REL-006
+    type: RECALIBRATION
+    statement: "Evaluation taxonomies and benchmarks must be versioned and revalidated as user expectations and model behavior change."
+    source_records: [MSAI-EVAL-009]
+
+diagnostic_implications:
+  evidence_to_capture:
+    - user_goal
+    - user_context
+    - user_authored_prompt
+    - response_or_conversation
+    - user_preference
+    - preference_reason
+    - identified_quality_dimensions
+    - loss_patterns
+    - model_version
+    - product_surface
+    - evaluation_scope
+    - timestamp
+    - dataset_version
+
+  evaluator_roles:
+    machine_suitable_candidates:
+      - factual checks where ground truth is available
+      - deterministic criteria
+      - large-scale application of already-defined labels
+    human_required_or_high_value:
+      - contextual relevance
+      - usefulness in real work
+      - preservation of point of view
+      - trust
+      - expectation fit
+      - reasons behind preference
+
+governance:
+  do_not:
+    - "Do not treat LLM-as-judge as a substitute for all user evaluation."
+    - "Do not derive evaluation dimensions only from builder assumptions."
+    - "Do not use only polished synthetic prompts as the evaluation distribution."
+    - "Do not freeze a loss-pattern taxonomy indefinitely."
+    - "Do not collapse model evaluation, product experience evaluation, and agentic workflow evaluation into one score."
+    - "Do not treat reported 3-month or 6-month shelf-life examples as universal expiration rules."

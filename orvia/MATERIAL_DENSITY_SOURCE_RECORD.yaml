@@ -1,0 +1,214 @@
+version: "0.1.0"
+status: EXTRACTED
+source_id: MATERIAL_M2_APPLYING_DENSITY_2026_09_24
+source_version_scope: "Material Design 2"
+promotion_rule: "Preserve Material's native density model separately from ORVIA's 1..10 design envelopes."
+
+source_native_records:
+  - id: MAT-DENS-001
+    provenance: SOURCE_EXPLICIT
+    term: "Density scale"
+    value:
+      default: 0
+      higher_density_steps: [-1, -2, -3]
+      direction: "More negative = higher component density"
+    note: "The source uses an inverse numeric direction relative to ORVIA VISUAL_DENSITY."
+
+  - id: MAT-DENS-002
+    provenance: SOURCE_EXPLICIT
+    term: "Density interval"
+    value:
+      component_height_change_per_step_dp: -4
+    note: "Each negative density step decreases component height by 4dp."
+
+  - id: MAT-DENS-003
+    provenance: SOURCE_EXPLICIT
+    term: "Component breakage boundary"
+    value: "Do not choose a density value that breaks the component."
+    example:
+      component: "chip"
+      density_scale: -4
+      observed_result: "breaks the component"
+    note: "The -4 chip example is a component-specific failure example, not a universal lower bound for every component."
+
+  - id: MAT-DENS-004
+    provenance: SOURCE_EXPLICIT
+    term: "Component-set consistency"
+    value: "Component density should not be adjusted in isolation; density should be applied consistently across a component set."
+    note: "Nested or coordinated components must be considered together."
+
+  - id: MAT-DENS-005
+    provenance: SOURCE_EXPLICIT
+    term: "Grid/component density coupling"
+    value: "Higher-density components should be paired with a less-dense layout grid, using larger margins and gutters."
+    prohibited_pattern: "Dense layout grid + dense components"
+
+  - id: MAT-DENS-006
+    provenance: SOURCE_EXPLICIT
+    term: "Density spacing method"
+    value:
+      padding: "remain consistent"
+      alignment: "remain consistent"
+      dimension: "changes"
+    note: "The source explicitly warns against reducing component padding as the mechanism for increasing density."
+
+  - id: MAT-DENS-007
+    provenance: SOURCE_EXPLICIT
+    term: "Multiple stacked elements"
+    value:
+      vertical_separation_increment_dp: 4
+      alignment: "center grouped elements vertically within the component container"
+    example:
+      element_separation_dp: 20
+
+  - id: MAT-DENS-008
+    provenance: SOURCE_EXPLICIT
+    term: "Default touch target"
+    value:
+      minimum_width_dp: 48
+      minimum_height_dp: 48
+      minimum_spacing_dp: 8
+    scope: "Devices receiving touch input, including mixed touch/non-touch devices."
+
+  - id: MAT-DENS-009
+    provenance: SOURCE_EXPLICIT
+    term: "iOS touch target note"
+    value:
+      recommended_width_dp: 44
+      recommended_height_dp: 44
+    note: "Platform-specific exception stated by the Material 2 source."
+
+  - id: MAT-DENS-010
+    provenance: SOURCE_EXPLICIT
+    term: "High-density accessibility opt-in"
+    value: "Default 48x48dp touch targets should be the default experience; higher-density component experiences that fall below those targets should be user opt-in."
+    note: "Record as Material 2 guidance pending independent normative accessibility cross-check."
+
+  - id: MAT-DENS-011
+    provenance: SOURCE_EXPLICIT
+    term: "Typography density mechanism"
+    value: "Line height can be tightened to create typographic density while maintaining the baseline-grid discipline."
+    source_examples:
+      larger_line_heights_dp: [44, 40, 44, 32]
+      smaller_line_heights_dp: [36, 32, 40, 20]
+    note: "Examples lack enough local context here to map each value to a universal text style; preserve as examples only."
+
+  - id: MAT-DENS-012
+    provenance: SOURCE_EXPLICIT
+    term: "Density applicability"
+    suitable_examples:
+      - "data-rich applications"
+      - "data tables"
+      - "long forms"
+      - "large information sets where relational context benefits from more visible content"
+    unsuitable_examples:
+      - "focused tasks"
+      - "small or precision-sensitive user inputs"
+      - "date-picker-style precise targeting"
+      - "warning dialogs where readability is reduced"
+
+  - id: MAT-DENS-013
+    provenance: SOURCE_EXPLICIT
+    term: "Named density settings"
+    value:
+      - default
+      - comfortable
+      - compact
+    note: "Material presentation labels; do not silently equate these labels to ORVIA 1..10 anchor values."
+
+orvia_mapping:
+  existing_control: VISUAL_DENSITY
+  relationship: "Strong evidence source for one measurable subdomain of visual density: component compactness."
+  caution: "Material component density is not equivalent to total viewport information density."
+
+  preserve_as_distinct_measures:
+    - id: COMPONENT_DENSITY_NATIVE_SCALE
+      status: SOURCE_NATIVE_MEASURE
+      native_range: [0, -1, -2, -3]
+      source_records: [MAT-DENS-001, MAT-DENS-002]
+      promotion: false
+
+    - id: COMPONENT_VERTICAL_COMPRESSION
+      status: MEASUREMENT_CANDIDATE
+      definition: "Change in component height relative to its baseline/default state."
+      possible_measure: "(baseline_height - measured_height) / baseline_height"
+      source_records: [MAT-DENS-002, MAT-DENS-006]
+      promotion: false
+
+    - id: GRID_SPACIOUSNESS_COUNTERBALANCE
+      status: RELATIONSHIP_CANDIDATE
+      definition: "Compensating increase in margins/gutters as component density rises."
+      source_records: [MAT-DENS-005]
+      promotion: false
+
+    - id: TYPOGRAPHIC_LINE_HEIGHT_COMPRESSION
+      status: MEASUREMENT_CANDIDATE
+      definition: "Reduction in line-height relative to a typography baseline."
+      source_records: [MAT-DENS-011]
+      promotion: false
+
+    - id: INTERACTIVE_TARGET_FLOOR
+      status: GUARDRAIL_CANDIDATE
+      definition: "Minimum interactive target geometry for touch-capable contexts."
+      source_records: [MAT-DENS-008, MAT-DENS-009, MAT-DENS-010]
+      promotion: false
+      validation_required: "Cross-check against current WCAG/W3C and current platform guidance before hard-guardrail registration."
+
+relationship_candidates:
+  - id: MAT-REL-001
+    type: COUNTERBALANCE
+    if: "component_density increases"
+    then: "layout/grid density should decrease through larger margins and gutters"
+    source_records: [MAT-DENS-005]
+
+  - id: MAT-REL-002
+    type: CONSISTENCY
+    if: "density is adjusted for one component in a coordinated set"
+    then: "evaluate related and nested components for compatible density"
+    source_records: [MAT-DENS-004]
+
+  - id: MAT-REL-003
+    type: IMPLEMENTATION_CONSTRAINT
+    if: "component density increases"
+    then:
+      - "change component dimensions"
+      - "preserve intended padding/alignment behavior"
+      - "maintain centered internal alignment"
+    source_records: [MAT-DENS-006, MAT-DENS-007]
+
+  - id: MAT-REL-004
+    type: ACCESSIBILITY_CAP
+    if: "touch-capable input context and dense component would reduce effective target below source guidance"
+    then: "do not make high density the default experience"
+    source_records: [MAT-DENS-008, MAT-DENS-010]
+    validation_status: REQUIRES_NORMATIVE_CROSSCHECK
+
+diagnostic_implications:
+  required_capture_fields:
+    - component_type
+    - baseline_component_height
+    - measured_component_height
+    - vertical_padding
+    - horizontal_padding
+    - target_width
+    - target_height
+    - nearest_target_gap
+    - layout_margin
+    - layout_gutter
+    - line_height
+    - input_mode
+    - density_setting_if_declared
+
+  applicability_conditions:
+    - "High-density recommendations require task/context evidence."
+    - "Touch-target rules activate for touch-capable input contexts."
+    - "Precision-sensitive tasks should resist aggressive component compression."
+    - "Component density and grid density must be evaluated together."
+
+governance:
+  do_not:
+    - "Do not map Material scale 0,-1,-2,-3 directly onto ORVIA 1..10."
+    - "Do not treat -4 as a universal invalid value for every component."
+    - "Do not use component density as the sole measure of VISUAL_DENSITY."
+    - "Do not shrink padding arbitrarily to simulate Material density."
+    - "Do not promote the Material 2 touch-target guidance to ORVIA_CORE without current normative validation."

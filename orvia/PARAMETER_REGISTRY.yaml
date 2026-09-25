@@ -1,0 +1,185 @@
+version: "0.1.0"
+status: NORMALIZED
+scale_policy:
+  common_numeric_scale: [1,3,5,7,10]
+  statement: "ORVIA scales are orchestration scales, not source-native scientific measurements."
+
+parameters:
+  - id: EXCLUSION_TYPE
+    class: CATEGORICAL_CONTROL
+    domain: inclusive_design
+    definition: "Primary type of mismatch created by a product or interaction."
+    allowed_values: [PERCEIVABLE, OPERABLE, UNDERSTANDABLE]
+    source_records: [RAW-ITL-001]
+    provenance: ORVIA_NORMALIZED
+    normalization_loss: "None beyond case/format normalization."
+    status: NORMALIZED
+
+  - id: HUMAN_CAPABILITY_DOMAIN
+    class: CATEGORICAL_CONTROL
+    domain: inclusive_design
+    definition: "Human capability or capacity domain primarily affected by the mismatch."
+    allowed_values:
+      - COGNITIVE_MEMORY
+      - SENSORY_ENVIRONMENTAL
+      - MENTAL_HEALTH
+      - VISION_READING
+      - MOTOR_PHYSICAL_CONTROL
+      - HEARING_AUDITORY
+      - SPEECH_COMMUNICATION
+      - DEVELOPMENTAL_LEARNING
+      - CHRONIC_ILLNESS_FATIGUE
+    source_records: [RAW-ITL-004]
+    provenance: ORVIA_NORMALIZED
+    status: NORMALIZED
+
+  - id: PERSONA_SPECTRUM_SCOPE
+    class: CATEGORICAL_CONTROL
+    domain: inclusive_design
+    definition: "Duration/context class used to test a shared limitation."
+    allowed_values: [PERMANENT, TEMPORARY, SITUATIONAL]
+    source_records: [RAW-ITL-003]
+    provenance: ORVIA_NORMALIZED
+    status: NORMALIZED
+
+  - id: INPUT_PRECISION_DEMAND
+    class: NUMERICAL_ENVELOPE
+    domain: interaction
+    definition: "Degree of fine spatial precision required to successfully activate or manipulate a control."
+    source_records: [RAW-ITL-006, RAW-ITL-012]
+    provenance: ORVIA_NORMALIZED
+    anchors:
+      1: "Large forgiving targets; coarse movement sufficient."
+      3: "Normal target acquisition with tolerant spacing."
+      5: "Moderate precision or repeated target acquisition."
+      7: "Small/clustered targets or frequent precise acquisition."
+      10: "Extremely precise, rapid, or failure-prone pointing required."
+    implementation_domains: [sizing, spacing, component_density, interactive_state]
+    status: ORVIA_CORE_CANDIDATE
+
+  - id: DRAG_DEPENDENCY
+    class: NUMERICAL_ENVELOPE
+    domain: interaction
+    definition: "Degree to which task completion depends on drag movement rather than discrete alternatives."
+    source_records: [RAW-ITL-007]
+    provenance: ORVIA_NORMALIZED
+    anchors:
+      1: "No drag required."
+      3: "Drag optional; equivalent discrete control exists."
+      5: "Drag common but not required for critical tasks."
+      7: "Important tasks strongly prefer drag."
+      10: "Critical task completion is drag-only."
+    implementation_domains: [interactive_state, component_behavior]
+    status: ORVIA_CORE_CANDIDATE
+
+  - id: COLOR_INFORMATION_DEPENDENCY
+    class: NUMERICAL_ENVELOPE
+    domain: perception
+    definition: "Degree to which meaning or state can only be understood from color."
+    source_records: [RAW-ITL-008]
+    provenance: ORVIA_NORMALIZED
+    anchors:
+      1: "Color is decorative or fully redundant."
+      3: "Color reinforces text/icon/shape cues."
+      5: "Some secondary meaning relies on color."
+      7: "Important states are difficult without color."
+      10: "Critical meaning is color-only."
+    implementation_domains: [color_roles, iconography, typography, interactive_state]
+    status: ORVIA_CORE_CANDIDATE
+
+  - id: FOCUS_ESCAPE_RESILIENCE
+    class: NUMERICAL_ENVELOPE
+    domain: interaction
+    definition: "Ability to move into, through, and out of transient UI without keyboard focus loss or traps."
+    source_records: [RAW-ITL-009]
+    provenance: ORVIA_NORMALIZED
+    anchors:
+      1: "Focus can be lost or trapped."
+      3: "Escape path exists but is inconsistent."
+      5: "Keyboard escape works for most transient surfaces."
+      7: "Predictable entry/exit with stable restoration."
+      10: "Robust focus lifecycle across all critical transient states."
+    implementation_domains: [interactive_state, z_order, component_behavior]
+    status: ORVIA_CORE_CANDIDATE
+
+  - id: ACTION_LABEL_SPECIFICITY
+    class: NUMERICAL_ENVELOPE
+    domain: cognition
+    definition: "How explicitly an action label communicates the consequence or next step."
+    source_records: [RAW-ITL-010]
+    provenance: ORVIA_NORMALIZED
+    anchors:
+      1: "Generic or ambiguous labels."
+      3: "Verb present but destination/outcome unclear."
+      5: "Most actions understandable from local context."
+      7: "Labels communicate concrete next step."
+      10: "Critical actions remain explicit even out of surrounding context."
+    implementation_domains: [content, component_behavior]
+    status: ORVIA_CORE_CANDIDATE
+
+  - id: REDUCED_MOTION_SUPPORT
+    class: HARD_GUARDRAIL
+    domain: motion
+    definition: "Respect user-requested reduced-motion state and provide a nonessential-motion-reduced path."
+    source_records: [RAW-ITL-011, RAW-ITL-015]
+    provenance: ORVIA_SYNTHESIS
+    implementation_domains: [motion_duration, easing, interactive_state]
+    prohibited_interpretation: "Do not convert into an aesthetic preference dial."
+    status: ORVIA_CORE_CANDIDATE
+
+  - id: TASK_RESUMABILITY
+    class: NUMERICAL_ENVELOPE
+    domain: continuity
+    definition: "Extent to which interrupted work can be resumed without repeating completed steps."
+    source_records: [RAW-ITL-012]
+    provenance: ORVIA_NORMALIZED
+    anchors:
+      1: "Restart required."
+      3: "Partial local recovery."
+      5: "Checkpointed within current flow/session."
+      7: "Reliable session resume."
+      10: "Cross-session recovery with preserved state and clear continuation."
+    implementation_domains: [state_persistence, error_recovery, navigation]
+    status: ORVIA_CORE_CANDIDATE
+
+  - id: PREFERENCE_PERSISTENCE
+    class: NUMERICAL_ENVELOPE
+    domain: continuity
+    definition: "Duration and scope for which user accessibility/display preferences persist."
+    source_records: [RAW-ITL-013]
+    provenance: ORVIA_NORMALIZED
+    anchors:
+      1: "Preference resets immediately/component-by-component."
+      3: "Preference persists within local component group."
+      5: "Preference persists for page/session."
+      7: "Preference persists across sessions for the product."
+      10: "Preference consistently persists across relevant product surfaces and contexts."
+    implementation_domains: [state_persistence, settings]
+    status: ORVIA_CORE_CANDIDATE
+
+  - id: SPATIAL_STABILITY
+    class: NUMERICAL_ENVELOPE
+    domain: cognition
+    definition: "Degree to which learned spatial positions and navigation order remain stable across repeat use."
+    source_records: [RAW-ITL-014]
+    provenance: ORVIA_NORMALIZED
+    anchors:
+      1: "Frequent unannounced reordering."
+      3: "Some dynamic reordering in secondary regions."
+      5: "Primary navigation stable; secondary content may move."
+      7: "Most learned positions remain stable."
+      10: "Critical controls and navigation maintain predictable spatial placement."
+    implementation_domains: [layout, navigation, personalization]
+    status: ORVIA_CORE_CANDIDATE
+
+  - id: FOCUS_INDICATOR_GEOMETRY
+    class: PROJECT_CONDITION_EXTENSION
+    domain: interaction
+    definition: "Concrete visual geometry used for keyboard focus indication."
+    source_records: [RAW-ITL-016]
+    provenance: PROJECT_OBSERVED
+    native_example:
+      outline_width_px: 3
+      outline_offset_px: 2
+    note: "Retained as an implementation example only; not registered as a universal ORVIA threshold."
+    status: PROJECT_BRANCH

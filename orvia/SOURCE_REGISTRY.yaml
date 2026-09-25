@@ -1,0 +1,235 @@
+version: "0.1.0"
+status: DRAFT
+governance:
+  extraction_protocol: "ORVIA Design Parameter Extraction Protocol v0.1.0 DRAFT"
+  promotion_rule: "Extraction never promotes a rule to ORVIA_CORE without deliberate approval."
+
+sources:
+  - id: ITL_REPO_MASTER_2026_07_19
+    title: "InclusiveTechLab/web"
+    canonical_url: "https://github.com/InclusiveTechLab/web"
+    source_class: PROJECT_EVIDENCE
+    provenance_scope: "Inclusive design examples, AI sprint prompts, exclusion taxonomies, interrelated-needs examples, WCAG traceability, and implementation examples."
+    upstream_branch: master
+    upstream_commit: "14b9e3b4ed92f5780b6e62b996e09fa8afd80c8e"
+    mirrored_repo: "rehmantraders550-lab/inclusive-design-control-framework"
+    mirrored_branch: main
+    mirrored_head_at_extraction_start: "72131a13335861369e63243ce7422691a2698588"
+    authority_note: "Repository material is valuable operational evidence but must not be treated as a normative standard unless an individual record is explicitly mapped to a normative source such as WCAG."
+    revalidation_trigger:
+      - "Upstream repository materially changes"
+      - "Relevant accessibility standard changes"
+      - "A source file is superseded"
+
+  - id: ITL_RECOGNIZE_EXCLUSION
+    title: "ITL_RecognizeExclusion.md"
+    path: "ITL_RecognizeExclusion.md"
+    source_class: PROJECT_EVIDENCE
+    provenance_scope: "Structured exclusion discovery workflow for website, app, and game contexts."
+    key_native_categories:
+      - PERCEIVABLE
+      - OPERABLE
+      - UNDERSTANDABLE
+
+  - id: ITL_SOLVE_FOR_ONE
+    title: "ITL_SolveForOneExtendToMany.md"
+    path: "ITL_SolveForOneExtendToMany.md"
+    source_class: PROJECT_EVIDENCE
+    provenance_scope: "Permanent/temporary/situational shared-limitation reasoning and interrelated-needs taxonomy."
+
+  - id: ITL_WCAG_TRACEABILITY
+    title: "ITL_AI-Inclusive-Design-Sprints_wcag_traceability_table.html"
+    path: "ITL_AI-Inclusive-Design-Sprints_wcag_traceability_table.html"
+    source_class: PROJECT_EVIDENCE
+    provenance_scope: "Heuristic mapping of inclusive-design mismatches to WCAG success criteria, including beyond-WCAG observations."
+    native_summary:
+      total_examples: 279
+      direct_wcag_matches: 190
+      beyond_wcag: 89
+    caution: "Traceability entries are heuristic mappings in this repository and are not themselves authoritative WCAG interpretations."
+
+  - id: ITL_WEBSITE_EXCLUSIONS
+    title: "ITL_AI-Inclusive-Design-Sprints_website_exclusions.html"
+    path: "ITL_AI-Inclusive-Design-Sprints_website_exclusions.html"
+    source_class: PROJECT_EVIDENCE
+    provenance_scope: "Website-pattern mismatch examples across perceivable, operable, and understandable categories."
+
+  - id: ITL_WEBSITE_SOLVE
+    title: "ITL_AI-Inclusive-Design-Sprints_website_solve.html"
+    path: "ITL_AI-Inclusive-Design-Sprints_website_solve.html"
+    source_class: PROJECT_EVIDENCE
+    provenance_scope: "Shared-limitation examples spanning permanent, temporary, and situational contexts."
+
+  - id: ITL_WEBSITE_INTERRELATED
+    title: "ITL_AI-Inclusive-Design-Sprints_website_solve_interrelated.html"
+    path: "ITL_AI-Inclusive-Design-Sprints_website_solve_interrelated.html"
+    source_class: PROJECT_EVIDENCE
+    provenance_scope: "Interrelated-needs examples across nine human-capability domains."
+    native_categories:
+      - COGNITIVE_AND_MEMORY
+      - SENSORY_AND_ENVIRONMENTAL
+      - MENTAL_HEALTH
+      - VISION_AND_READING
+      - MOTOR_AND_PHYSICAL_CONTROL
+      - HEARING_AND_AUDITORY
+      - SPEECH_AND_COMMUNICATION
+      - DEVELOPMENTAL_AND_LEARNING
+      - CHRONIC_ILLNESS_AND_FATIGUE
+
+  - id: ITL_IMPLEMENTATION_EXAMPLES
+    title: "inclusive-design-in-the-ITL.html"
+    path: "inclusive-design-in-the-ITL.html"
+    source_class: PROJECT_EVIDENCE
+    provenance_scope: "Concrete implementation examples including reduced-motion handling and visible focus styling."
+
+  - id: FLUTTER_DEVTOOLS_MASTER_2026_09_24
+    title: "Dart & Flutter DevTools"
+    canonical_url: "https://github.com/flutter/devtools"
+    source_class: IMPLEMENTATION_LIBRARY
+    provenance_scope: "Production diagnostic-tool architecture: capability gating, runtime measurement, offline/replayable evidence, baseline-vs-candidate diffing, portable diagnostic artifacts, accessibility inspection, and extension/plugin architecture."
+    upstream_branch: master
+    upstream_commit: "405689bc49f9c7ae0d7ca77b3d9b0f698745989b"
+    evidence_files:
+      - "packages/devtools_app/lib/src/shared/framework/screen.dart"
+      - "packages/devtools_app/lib/src/shared/offline/offline_data.dart"
+      - "packages/devtools_app/lib/src/screens/performance/performance_screen.dart"
+      - "packages/devtools_app/lib/src/screens/accessibility/accessibility_controller.dart"
+      - "packages/devtools_app/lib/src/screens/app_size/app_size_screen.dart"
+      - "packages/devtools_app/lib/src/screens/network/har_builder.dart"
+      - "packages/devtools_extensions/README.md"
+      - "packages/devtools_extensions/extension_config_spec.md"
+      - "AGENTS.md"
+    authority_note: "Use as implementation and architecture evidence, not as a normative UI/UX or accessibility standard. Flutter-specific runtime choices must not be generalized into universal ORVIA thresholds."
+    revalidation_trigger:
+      - "Upstream DevTools architecture materially changes"
+      - "A cited source file is moved, replaced, or its behavior changes"
+      - "ORVIA diagnostic schema is revised"
+
+  - id: MATERIAL_M2_APPLYING_DENSITY_2026_09_24
+    title: "Material Design 2 — Applying density"
+    canonical_url: "https://m2.material.io/design/layout/applying-density.html#components"
+    source_class: OFFICIAL_DESIGN_SYSTEM
+    provenance_scope: "Material 2 guidance for component-density scale, component/grid coupling, spacing behavior, accessibility touch targets, typography density, and density applicability."
+    version_scope: "Material Design 2 (legacy generation)"
+    retrieval_note: "The canonical page is JavaScript-rendered. Source-native claims were recovered from indexed copies of the page and cross-checked against Google's Material Design / Google Design density documentation."
+    corroborating_sources:
+      - "https://medium.com/google-design/using-material-density-on-the-web-59d85f1918f0"
+      - "https://m2.material.io/design/components/text-fields.html"
+    authority_note: "Treat as first-party Material 2 design-system guidance, not as a universal UI law and not automatically as current Material 3 guidance. Accessibility thresholds require independent normative cross-check before ORVIA hard-guardrail promotion."
+    revalidation_trigger:
+      - "A current Material Design density specification supersedes this legacy guidance"
+      - "ORVIA visual-density measurement model changes"
+      - "Accessibility target-size rules are promoted to hard guardrails"
+
+  - id: MATERIAL_COMPONENTS_ANDROID_MASTER_2026_09_24
+    title: "Material Components for Android"
+    canonical_url: "https://github.com/material-components/material-components-android"
+    source_class: IMPLEMENTATION_LIBRARY
+    provenance_scope: "First-party Android implementation evidence for Material 3 system tokens and component contracts, including motion durations/easings/springs, shape scale, elevation scale, interaction-state opacity, minimum touch target, component size coupling, and focus-ring implementation examples."
+    upstream_branch: master
+    upstream_commit: "60ff09436d5d477a4b9d02940f31eb01e1250620"
+    token_version_observed: "34.0.0"
+    evidence_files:
+      - "lib/java/com/google/android/material/motion/res/values/tokens.xml"
+      - "lib/java/com/google/android/material/elevation/res/values/tokens.xml"
+      - "lib/java/com/google/android/material/shape/res/values/tokens.xml"
+      - "lib/java/com/google/android/material/resources/res/values/tokens.xml"
+      - "lib/java/com/google/android/material/resources/res/values/dimens.xml"
+      - "lib/java/com/google/android/material/button/res/values/tokens.xml"
+      - "lib/java/com/google/android/material/checkbox/res/values/styles.xml"
+      - "lib/java/com/google/android/material/radiobutton/res/values/styles.xml"
+      - "lib/java/com/google/android/material/focus/FocusRingDrawable.java"
+    authority_note: "This repository is first-party implementation evidence. Generated Android token values are strong evidence for Material's Android implementation but must not be treated as universal web, iOS, accessibility, or ORVIA thresholds without cross-platform validation."
+    implementation_caution:
+      - "API-specific Android resource overrides can intentionally differ from base token values to compensate for platform rendering behavior such as RippleDrawable alpha."
+      - "Component tokens describe coordinated systems; isolated numeric copying can break the intended relationships."
+    revalidation_trigger:
+      - "Upstream Material Components token set changes"
+      - "Generated token version changes"
+      - "ORVIA motion, shape, surface-depth, or state-feedback resolver changes"
+
+  - id: FIGMA_EMPTY_STATE_KIT_2026_09_24
+    title: "Empty State Illustration Kit (Community)"
+    canonical_url: "https://www.figma.com/design/KxeJeFASeMwg6EiW0EzeUp/Empty-State-Illustration-Kit--Community-?node-id=71-17946"
+    source_class: PROJECT_EVIDENCE
+    provenance_scope: "Visual and structural examples for empty-state illustration semantics, metaphor selection, illustration composition, and state-family coverage."
+    inspected_page: "71:17946 Thumbnail"
+    observed_cover_label:
+      publisher_label: "UITREND"
+      version_label: "v1.0"
+      quantity_label: "200+"
+    inspected_named_examples:
+      - "No Message"
+      - "No Internet"
+      - "Wallet is Empty"
+      - "No Results"
+      - "No Chat History"
+      - "No Upcoming Trips"
+      - "Save a problem backup"
+      - "network connection failure backup"
+      - "Payment successfully backed up"
+      - "Payment Failed Backup 2"
+      - "Search with no results Backup"
+      - "Camera Access"
+      - "Enable Push Notifications"
+      - "Enabble Location"
+    directly_rendered_samples:
+      - "No Results"
+      - "Camera Access"
+      - "Enabble Location"
+      - "Payment Failed Backup 2"
+    retrieval_limitations:
+      - "Figma get_design_context and variable extraction could not be completed because the connector required an active layer selection for this community file."
+      - "Further screenshot calls reached the connected Figma Starter-plan MCP call limit."
+    authority_note: "Use as visual pattern evidence only. The file does not establish universal empty-state rules, accessibility requirements, exact color tokens, or implementation thresholds."
+    revalidation_trigger:
+      - "The source file changes materially"
+      - "Design-context/variable access becomes available for a deeper pass"
+      - "ORVIA illustration-state taxonomy changes"
+
+  - id: FLUENT_REACT_ACCORDION_SNAPSHOT_2026_09_24
+    title: "Fluent UI React Accordion documentation snapshot"
+    source_class: USER_PROVIDED_COMPONENT_DOCUMENTATION
+    supplied_filename: "Pasted markdown(20260924-184253).md"
+    sha256: "f13df6eda0c2bcd116ce1472b7efbe83c58c457dfacf58c295e25c765e160646"
+    provenance_scope: "Accordion component contract, disclosure state models, heading semantics, header size categories, icon placement, disabled state, controlled/uncontrolled state, multiple-open behavior, and collapse-motion customization."
+    package_identifiers_observed:
+      - "@fluentui/react-components"
+      - "@fluentui/react-icons"
+    version_scope: "Not supplied in the source snapshot"
+    authority_note: "Treat as source-native component documentation for the supplied snapshot. Do not infer the exact Fluent UI release, repository commit, token values, or current upstream behavior unless separately verified."
+    important_native_guidance:
+      - "Arrow keyboard navigation is deprecated/not recommended for accordions; the source suggests Tree when arrow navigation is a hard requirement."
+      - "Accordion headers should use an appropriate heading element according to the cited WAI-ARIA guidance."
+      - "AccordionPanel exposes collapseMotion for duration, easing, opacity animation, and custom rendering."
+    revalidation_trigger:
+      - "The source snapshot is replaced by a versioned upstream document"
+      - "The upstream Accordion API changes"
+      - "ORVIA disclosure-pattern or semantic-structure controls are revised"
+
+  - id: MICROSOFT_DESIGN_AI_EVAL_USER_2026_09_17
+    title: "Putting the user back into AI Evaluation"
+    canonical_url: "https://microsoft.design/articles/putting-the-user-back-into-ai-evaluation/"
+    source_class: FIRST_PARTY_RESEARCH_PRACTICE
+    publisher: "Microsoft Design"
+    published: "2026-09-17"
+    provenance_scope: "Human-centered AI response-quality evaluation practice: user preference studies, quality dimensions derived from qualitative research, golden datasets, loss-pattern taxonomy, multi-turn evaluation, model-vs-experience evaluation, and framework recalibration."
+    named_practitioners:
+      - "Christopher Monier"
+      - "Chuck Kwong"
+      - "Wendy Wang"
+    authority_note: "Treat as first-party practitioner guidance and reported internal evaluation practice, not as a formal universal evaluation standard or normative benchmark."
+    core_claims:
+      - "Machine evaluations can test criteria that have been specified, but users are uniquely positioned to judge whether an answer worked for them in real context."
+      - "Quality dimensions should be derived from qualitative user evidence rather than only builder assumptions."
+      - "Human evaluation is especially important for contextual relevance, usefulness, trust, point-of-view preservation, and real-world fit."
+      - "Human-generated prompts better preserve real interaction conditions than idealized synthetic prompts alone."
+      - "Golden datasets and a shared loss-pattern taxonomy can turn qualitative findings into repeatable evaluation infrastructure."
+      - "Multi-turn conversations should sometimes be treated as the evaluation stimulus rather than evaluating isolated responses only."
+      - "Evaluation frameworks have short shelf lives and require continual recalibration as model capability and user expectations change."
+      - "Model evaluation and whole-experience evaluation are distinct problems with different confounds and study-design requirements."
+    revalidation_trigger:
+      - "Microsoft publishes a newer evaluation framework or successor article"
+      - "ORVIA AI-evaluation taxonomy is formalized"
+      - "A candidate human-centered metric is promoted into a scored evaluation dimension"
+

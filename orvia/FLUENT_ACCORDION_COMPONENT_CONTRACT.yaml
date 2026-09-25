@@ -1,0 +1,233 @@
+version: "0.1.0"
+status: EXTRACTED
+source_id: FLUENT_REACT_ACCORDION_SNAPSHOT_2026_09_24
+source_hash_sha256: "f13df6eda0c2bcd116ce1472b7efbe83c58c457dfacf58c295e25c765e160646"
+promotion_rule: "Preserve the supplied component contract separately from ORVIA controls. Example values do not become normative envelopes."
+
+source_native_contract:
+  component:
+    name: Accordion
+    purpose: "Toggle display of content by expanding or collapsing sections."
+
+  root_props:
+    defaultOpenItems:
+      type: unknown
+      role: "Default uncontrolled open-panel state."
+    collapsible:
+      type: boolean
+      role: "Allows multiple panels to be closed at the same time."
+    multiple:
+      type: boolean
+      role: "Allows multiple panels to be open at the same time."
+    navigation:
+      values: [circular, linear]
+      status: DEPRECATED
+      guidance: "Arrow keyboard navigation is not recommended for accordions; use Tree if arrow navigation is a hard requirement."
+    onToggle:
+      role: "Callback when opened items change."
+    openItems:
+      role: "Controlled open-panel state."
+
+  item:
+    required_identity:
+      prop: value
+    state:
+      disabled:
+        type: boolean
+        effect: "Disables opening/closing of the panel."
+
+  header:
+    semantic_element_options: [div, h1, h2, h3, h4, h5, h6]
+    semantic_guidance: "Use a proper heading level in markup."
+    slots:
+      - button
+      - icon
+      - expandIcon
+    expand_icon_position: [start, end]
+    inline: boolean
+    size_classes:
+      - small
+      - medium
+      - large
+      - extra-large
+    size_meaning: "Size of spacing in the heading; no numeric dimensions are supplied by this snapshot."
+
+  panel:
+    collapseMotion:
+      supports:
+        - duration
+        - easing
+        - animateOpacity
+        - custom children render function
+
+behavior_examples:
+  - id: FACC-EX-001
+    name: Collapsible
+    behavior: "Multiple panels can be collapsed simultaneously."
+
+  - id: FACC-EX-002
+    name: Controlled
+    behavior: "openItems and onToggle are used to control disclosure state."
+
+  - id: FACC-EX-003
+    name: Multiple
+    behavior: "Multiple panels can be expanded simultaneously."
+    first_render_note: "The source states that multiple mode is collapsed by default on first render."
+
+  - id: FACC-EX-004
+    name: Open Items
+    behavior: "defaultOpenItems may define an initially open item; with no open item, all panels are closed."
+
+  - id: FACC-EX-005
+    name: Motion Custom
+    status: EXAMPLE_CONFIGURATION
+    values:
+      example_initial_duration_ms: 1000
+      interactive_demo_min_ms: 100
+      interactive_demo_max_ms: 2000
+      interactive_demo_step_ms: 50
+      easing_token: "motionTokens.curveDecelerateMid"
+      animate_opacity_default_in_example: true
+    caution: "These values configure a demonstration. They are not stated as recommended accordion-motion limits."
+
+source_native_design_categories:
+  disclosure_concurrency:
+    values:
+      - SINGLE_OPEN
+      - MULTIPLE_OPEN
+    evidence: "multiple prop"
+
+  closure_mode:
+    values:
+      - AT_LEAST_ONE_OPEN
+      - ALL_CLOSED_ALLOWED
+    evidence: "collapsible prop"
+
+  state_ownership:
+    values:
+      - UNCONTROLLED
+      - CONTROLLED
+    evidence: "defaultOpenItems vs openItems/onToggle"
+
+  header_size_class:
+    values:
+      - SMALL
+      - MEDIUM
+      - LARGE
+      - EXTRA_LARGE
+
+  expand_icon_position:
+    values:
+      - START
+      - END
+
+  semantic_heading_level:
+    values:
+      - H1
+      - H2
+      - H3
+      - H4
+      - H5
+      - H6
+      - DIV
+    guidance: "Heading elements are recommended when semantically appropriate."
+
+relationship_candidates:
+  - id: FACC-REL-001
+    type: PATTERN_FIT
+    statement: "If arrow-key navigation is a hard requirement, the source recommends a Tree rather than an Accordion."
+    status: SOURCE_EXPLICIT
+
+  - id: FACC-REL-002
+    type: SEMANTIC_STRUCTURE
+    statement: "Accordion headers should participate in the document heading hierarchy rather than relying on a generic div when a heading is semantically appropriate."
+    status: SOURCE_EXPLICIT
+
+  - id: FACC-REL-003
+    type: STATE_MODEL
+    statement: "Controlled disclosure behavior couples openItems with onToggle; multiple and collapsible are state-policy modifiers."
+    status: SOURCE_EXPLICIT
+
+  - id: FACC-REL-004
+    type: DISCLOSURE_DENSITY
+    statement: "Allowing multiple panels open simultaneously can increase visible information at once."
+    status: ORVIA_INFERENCE
+    caution: "The source documents the behavior but does not define visual-density scoring."
+
+  - id: FACC-REL-005
+    type: MOTION_RESOLUTION
+    statement: "Collapse motion is multidimensional: duration, easing, opacity animation, and potentially custom rendering."
+    status: SOURCE_EXPLICIT
+
+orvia_mapping:
+  VISUAL_DENSITY:
+    mapping_status: INDIRECT_BEHAVIORAL_EVIDENCE
+    evidence:
+      - "multiple-open behavior"
+      - "collapsible behavior"
+    note: "Disclosure state affects visible information volume but the source contains no visual-density metric."
+
+  MOTION_TEMPO:
+    mapping_status: IMPLEMENTATION_EVIDENCE
+    evidence:
+      - "collapseMotion duration"
+      - "collapseMotion easing"
+    caution: "Demo range 100–2000ms is not a normative envelope."
+
+  MOTION_INTENSITY:
+    mapping_status: PARTIAL_IMPLEMENTATION_EVIDENCE
+    evidence:
+      - "animateOpacity"
+      - "custom collapse rendering"
+    caution: "No displacement, scale, or amplitude metric is supplied."
+
+  INTERACTION_EXPLICITNESS:
+    mapping_status: PARTIAL_IMPLEMENTATION_EVIDENCE
+    evidence:
+      - "expandIcon"
+      - "expandIconPosition"
+      - "disabled state"
+    caution: "The source does not define a discoverability score."
+
+  COMPONENT_SIZE_CLASS:
+    mapping_status: CROSS_SYSTEM_SUPPORT
+    evidence:
+      - "small"
+      - "medium"
+      - "large"
+      - "extra-large"
+    caution: "Only header spacing size is defined; no numeric dimensions are given."
+
+  SEMANTIC_HIERARCHY:
+    mapping_status: GUARDRAIL_CANDIDATE
+    evidence:
+      - "heading-level guidance"
+    promotion: false
+
+  DISCLOSURE_CONCURRENCY:
+    mapping_status: CATEGORICAL_CONTROL_CANDIDATE
+    values:
+      - SINGLE_OPEN
+      - MULTIPLE_OPEN
+    promotion: false
+
+  DISCLOSURE_COLLAPSIBILITY:
+    mapping_status: CATEGORICAL_CONTROL_CANDIDATE
+    values:
+      - ALL_CLOSED_ALLOWED
+      - ALL_CLOSED_NOT_ALLOWED
+    promotion: false
+
+  NAVIGATION_PATTERN_FIT:
+    mapping_status: APPLICABILITY_RULE_CANDIDATE
+    rule: "Accordion is not the recommended choice when arrow-key navigation is a hard requirement."
+    promotion: false
+
+unsupported_by_source:
+  - "Exact header spacing dimensions"
+  - "Exact default motion duration"
+  - "Reduced-motion behavior"
+  - "Touch target dimensions"
+  - "Focus-ring geometry"
+  - "Color/contrast requirements"
+  - "Universal accordion accessibility compliance"

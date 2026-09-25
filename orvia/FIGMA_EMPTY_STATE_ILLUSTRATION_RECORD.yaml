@@ -1,0 +1,159 @@
+version: "0.1.0"
+status: EXTRACTED_PARTIAL
+source_id: FIGMA_EMPTY_STATE_KIT_2026_09_24
+promotion_rule: "Observed visual patterns may inform categorical composition controls, but no rule is promoted from this community kit without cross-source validation."
+
+source_observations:
+  inventory:
+    state_names_observed:
+      - No Message
+      - No Internet
+      - Wallet is Empty
+      - No Results
+      - No Chat History
+      - No Upcoming Trips
+      - Save a problem backup
+      - network connection failure backup
+      - Payment successfully backed up
+      - Payment Failed Backup 2
+      - Search with no results Backup
+      - Camera Access
+      - Enable Push Notifications
+      - Enabble Location
+
+  visual_patterns_from_directly_rendered_samples:
+    - id: ESI-OBS-001
+      sample: "No Results"
+      observation: "Single dominant object metaphor (document + magnifier) with sparse decorative particles and one high-salience warm accent."
+      provenance: DIRECT_VISUAL_OBSERVATION
+
+    - id: ESI-OBS-002
+      sample: "Camera Access"
+      observation: "Permission state uses a centered device/object metaphor, concentric dashed orbital rings, and sparse micro-decorative marks."
+      provenance: DIRECT_VISUAL_OBSERVATION
+
+    - id: ESI-OBS-003
+      sample: "Enabble Location"
+      observation: "Permission state reuses the orbit/ring construction around a location/map metaphor."
+      provenance: DIRECT_VISUAL_OBSERVATION
+
+    - id: ESI-OBS-004
+      sample: "Payment Failed Backup 2"
+      observation: "Transactional failure uses a small narrative scene (person + red flag + terrain) rather than a literal UI icon."
+      provenance: DIRECT_VISUAL_OBSERVATION
+
+    - id: ESI-OBS-005
+      observation: "Inspected samples use pale neutral base forms with isolated warm accents; exact palette values were not extracted."
+      provenance: DIRECT_VISUAL_OBSERVATION
+
+    - id: ESI-OBS-006
+      observation: "Illustrations are visually isolated and legible without embedded explanatory copy; semantic meaning is carried primarily by metaphor."
+      provenance: DIRECT_VISUAL_OBSERVATION
+
+source_limitations:
+  - "Only one top-level Figma page was exposed by metadata: Thumbnail."
+  - "Design context and variable definitions were unavailable because the connector required a currently selected Figma layer."
+  - "The MCP call limit prevented a complete sample-wide visual audit."
+  - "Do not infer exact colors, typefaces, stroke systems, illustration-grid rules, or reusable components from this pass."
+
+orvia_synthesis_candidates:
+  - id: EMPTY_STATE_SEMANTIC_FAMILY
+    type: CATEGORICAL_CONTROL_CANDIDATE
+    provenance: ORVIA_SYNTHESIS
+    candidate_values:
+      - ABSENCE
+      - SEARCH_NO_RESULT
+      - CONNECTIVITY
+      - TRANSACTION
+      - PERMISSION
+      - HISTORY_ACTIVITY
+      - ERROR_SYSTEM
+    support_basis: "Named source examples cluster naturally by user/system state."
+    promotion: false
+
+  - id: EMPTY_STATE_METAPHOR_MODE
+    type: CATEGORICAL_CONTROL_CANDIDATE
+    provenance: ORVIA_SYNTHESIS
+    candidate_values:
+      - DIRECT_OBJECT
+      - UI_OBJECT
+      - MINI_SCENE
+      - SYMBOLIC_SYSTEM
+    support_basis: "Directly rendered examples distinguish literal object metaphors from narrative mini-scenes."
+    promotion: false
+
+  - id: EMPTY_STATE_BACKDROP_MODE
+    type: CATEGORICAL_CONTROL_CANDIDATE
+    provenance: ORVIA_SYNTHESIS
+    candidate_values:
+      - NONE
+      - ORBITAL
+      - SURFACE_SCENE
+    support_basis: "Permission examples use orbital rings; transactional failure uses a ground/surface scene; no-results uses no major backdrop."
+    promotion: false
+
+  - id: EMPTY_STATE_NARRATIVE_COMPLEXITY
+    type: CATEGORICAL_CONTROL_CANDIDATE
+    provenance: ORVIA_SYNTHESIS
+    candidate_values:
+      - ICONIC
+      - OBJECT_METAPHOR
+      - NARRATIVE_SCENE
+    promotion: false
+
+measurement_candidates:
+  - illustration_bbox_to_slot_ratio
+  - dominant_subject_count
+  - decorative_particle_count
+  - accent_color_count
+  - accent_area_ratio
+  - backdrop_presence
+  - orbit_or_ring_count
+  - embedded_text_count
+
+relationship_candidates:
+  - id: ESI-REL-001
+    type: SEMANTIC_FIT
+    statement: "Choose metaphor mode from the state semantics before styling. A permission state, no-result state, and transactional failure need not share the same narrative construction."
+    source_records: [ESI-OBS-001, ESI-OBS-002, ESI-OBS-003, ESI-OBS-004]
+
+  - id: ESI-REL-002
+    type: COMPLEXITY_CAP
+    statement: "If the semantic state can be conveyed by one recognizable object, additional narrative layers should require a reason rather than being added by default."
+    provenance: ORVIA_INFERENCE
+    source_records: [ESI-OBS-001, ESI-OBS-004]
+
+  - id: ESI-REL-003
+    type: ACCENT_DISCIPLINE
+    statement: "The directly rendered samples suggest keeping accent emphasis localized instead of distributing saturated color across the full illustration."
+    provenance: ORVIA_INFERENCE
+    source_records: [ESI-OBS-001, ESI-OBS-002, ESI-OBS-003, ESI-OBS-004]
+
+orvia_mapping:
+  DESIGN_VARIANCE:
+    support: STYLE_REFERENCE_ONLY
+    note: "The kit offers metaphor and composition references but no quantitative distinctiveness scale."
+
+  VISUAL_DENSITY:
+    support: PARTIAL_VISUAL_EVIDENCE
+    note: "Illustration internal density can be measured, but this is not equivalent to page-level VISUAL_DENSITY."
+
+  IMAGE_DOMINANCE:
+    support: PARTIAL_VISUAL_EVIDENCE
+    note: "An empty-state illustration's footprint can be measured relative to its slot once the host UI is known."
+
+  INTERACTION_EXPLICITNESS:
+    support: NON_EQUIVALENT
+    note: "These illustrations communicate state semantics; they do not by themselves establish affordance clarity."
+
+  CONTENT_DISCLOSURE:
+    support: NON_EQUIVALENT
+    note: "The source is an illustration kit, not a disclosure-pattern specification."
+
+governance:
+  do_not:
+    - "Do not convert illustration style preferences into accessibility rules."
+    - "Do not infer exact palette tokens from rendered previews."
+    - "Do not treat source frame dimensions on the cover as recommended product UI dimensions."
+    - "Do not force all empty states into one visual formula."
+    - "Do not promote the synthesized categorical controls without cross-source validation."

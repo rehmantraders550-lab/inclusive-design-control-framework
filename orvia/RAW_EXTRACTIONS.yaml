@@ -1,0 +1,141 @@
+version: "0.1.0"
+status: EXTRACTED
+rule: "Source-native claims only. No ORVIA numeric normalization in this file."
+
+records:
+  - id: RAW-ITL-001
+    source_id: ITL_RECOGNIZE_EXCLUSION
+    provenance: SOURCE_EXPLICIT
+    source_native_term: "Exclusion types"
+    source_native_value:
+      - Perceivable
+      - Operable
+      - Understandable
+    note: "Repository prompt constrains website/app/game exclusions to these labels."
+
+  - id: RAW-ITL-002
+    source_id: ITL_RECOGNIZE_EXCLUSION
+    provenance: SOURCE_EXPLICIT
+    source_native_term: "Coverage requirements"
+    source_native_value:
+      motor_mobility_minimum: 6
+      vision_minimum: 6
+      hearing_speech_minimum: 6
+      cognition_learning_attention_minimum: 6
+      assistive_technology_or_alternate_io_minimum: 10
+      total_exclusions_minimum: 28
+    note: "These are workflow quotas in the repository prompt, not universal accessibility thresholds."
+
+  - id: RAW-ITL-003
+    source_id: ITL_SOLVE_FOR_ONE
+    provenance: SOURCE_EXPLICIT
+    source_native_term: "Website/Game solve chain"
+    source_native_value: "Permanent disability -> temporary or situational limitation sharing the same underlying limitation"
+    note: "Core structure of the standard solve-for-one mode."
+
+  - id: RAW-ITL-004
+    source_id: ITL_SOLVE_FOR_ONE
+    provenance: SOURCE_EXPLICIT
+    source_native_term: "Interrelated-needs categories"
+    source_native_value:
+      - Cognitive & Memory
+      - Sensory & Environmental
+      - Mental Health
+      - Vision & Reading
+      - Motor & Physical Control
+      - Hearing & Auditory
+      - Speech & Communication
+      - Developmental & Learning
+      - Chronic Illness & Fatigue
+
+  - id: RAW-ITL-005
+    source_id: ITL_WCAG_TRACEABILITY
+    provenance: SOURCE_EXPLICIT
+    source_native_term: "Traceability summary"
+    source_native_value:
+      total_examples: 279
+      direct_wcag_matches: 190
+      beyond_wcag: 89
+
+  - id: RAW-ITL-006
+    source_id: ITL_WCAG_TRACEABILITY
+    provenance: SOURCE_EXPLICIT
+    source_native_term: "Small clickable areas"
+    source_native_value: "Small clickable areas impossible for users with tremors."
+    native_mapping: "WCAG 2.5.8 Target Size (Minimum) (AA)"
+
+  - id: RAW-ITL-007
+    source_id: ITL_WCAG_TRACEABILITY
+    provenance: SOURCE_EXPLICIT
+    source_native_term: "Drag-only date selection"
+    source_native_value: "Picker requires free cursor drag; not usable with keyboard."
+    native_mapping:
+      - "2.1.1 Keyboard (A)"
+      - "2.1.2 No Keyboard Trap (A)"
+      - "2.5.7 Dragging Movements (AA)"
+      - "2.5.1 Pointer Gestures (A)"
+
+  - id: RAW-ITL-008
+    source_id: ITL_WCAG_TRACEABILITY
+    provenance: SOURCE_EXPLICIT
+    source_native_term: "Color-only calendar information"
+    source_native_value: "Calendar highlights holidays with color only; colorblind user misses info."
+    native_mapping:
+      - "1.4.1 Use of Color (A)"
+      - "1.4.3 Contrast (Minimum) (AA)"
+
+  - id: RAW-ITL-009
+    source_id: ITL_WCAG_TRACEABILITY
+    provenance: SOURCE_EXPLICIT
+    source_native_term: "Focus trap"
+    source_native_value: "Modal traps focus; keyboard user can't close it."
+    native_mapping:
+      - "2.1.1 Keyboard (A)"
+      - "2.1.2 No Keyboard Trap (A)"
+
+  - id: RAW-ITL-010
+    source_id: ITL_WCAG_TRACEABILITY
+    provenance: SOURCE_EXPLICIT
+    source_native_term: "Ambiguous control label"
+    source_native_value: "Button label text ('Continue') ambiguous about next step."
+    native_mapping: "Beyond WCAG"
+
+  - id: RAW-ITL-011
+    source_id: ITL_WEBSITE_SOLVE
+    provenance: SOURCE_EXPLICIT
+    source_native_term: "Reduced motion mismatch"
+    source_native_value: "Motion effects ignore prefers-reduced-motion and cannot be disabled."
+
+  - id: RAW-ITL-012
+    source_id: ITL_WEBSITE_SOLVE
+    provenance: SOURCE_EXPLICIT
+    source_native_term: "Task continuity mismatch"
+    source_native_value: "Many precise clicks are required and the session times out quickly. No resumable path exists."
+
+  - id: RAW-ITL-013
+    source_id: ITL_WEBSITE_INTERRELATED
+    provenance: SOURCE_EXPLICIT
+    source_native_term: "Preference persistence mismatch"
+    source_native_value: "Caption preference is not persisted; every new video starts captions-off."
+
+  - id: RAW-ITL-014
+    source_id: ITL_WEBSITE_INTERRELATED
+    provenance: SOURCE_EXPLICIT
+    source_native_term: "Dynamic menu reordering mismatch"
+    source_native_value: "Menus reorder dynamically between visits, invalidating learned position and muscle memory."
+
+  - id: RAW-ITL-015
+    source_id: ITL_IMPLEMENTATION_EXAMPLES
+    provenance: PROJECT_OBSERVED
+    source_native_term: "Reduced-motion implementation"
+    source_native_value: "@media (prefers-reduced-motion: reduce) disables transitions and animations."
+    note: "Implementation example, not a universal numeric threshold."
+
+  - id: RAW-ITL-016
+    source_id: ITL_IMPLEMENTATION_EXAMPLES
+    provenance: PROJECT_OBSERVED
+    source_native_term: "Focus indicator implementation"
+    source_native_value:
+      outline_width_px: 3
+      outline_offset_px: 2
+    note: "Concrete implementation choice in this repository; do not generalize as a universal threshold."

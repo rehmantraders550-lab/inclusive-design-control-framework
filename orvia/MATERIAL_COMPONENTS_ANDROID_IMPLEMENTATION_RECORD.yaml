@@ -1,0 +1,331 @@
+version: "0.1.0"
+status: EXTRACTED
+source_id: MATERIAL_COMPONENTS_ANDROID_MASTER_2026_09_24
+source_commit: "60ff09436d5d477a4b9d02940f31eb01e1250620"
+token_version_observed: "34.0.0"
+promotion_rule: "Preserve source-native Material tokens and component relationships. Do not map them directly to ORVIA 1..10 envelopes."
+
+source_native_records:
+  - id: MCA-001
+    provenance: SOURCE_EXPLICIT
+    term: "Motion duration scale"
+    source_file: "lib/java/com/google/android/material/motion/res/values/tokens.xml"
+    unit: ms
+    values:
+      short1: 50
+      short2: 100
+      short3: 150
+      short4: 200
+      medium1: 250
+      medium2: 300
+      medium3: 350
+      medium4: 400
+      long1: 450
+      long2: 500
+      long3: 550
+      long4: 600
+      extra_long1: 700
+      extra_long2: 800
+      extra_long3: 900
+      extra_long4: 1000
+
+  - id: MCA-002
+    provenance: SOURCE_EXPLICIT
+    term: "Motion easing families"
+    source_file: "lib/java/com/google/android/material/motion/res/values/tokens.xml"
+    values:
+      emphasized: "path(M 0,0 C 0.05, 0, 0.133333, 0.06, 0.166666, 0.4 C 0.208333, 0.82, 0.25, 1, 1, 1)"
+      emphasized_accelerate: "cubic-bezier(0.3, 0, 0.8, 0.2)"
+      emphasized_decelerate: "cubic-bezier(0.1, 0.7, 0.1, 1)"
+      standard: "cubic-bezier(0.2, 0, 0, 1)"
+      standard_accelerate: "cubic-bezier(0.3, 0, 1, 1)"
+      standard_decelerate: "cubic-bezier(0, 0, 0, 1)"
+      legacy: "cubic-bezier(0.4, 0, 0.2, 1)"
+      legacy_accelerate: "cubic-bezier(0.4, 0, 1, 1)"
+      legacy_decelerate: "cubic-bezier(0, 0, 0.2, 1)"
+      linear: "cubic-bezier(0, 0, 1, 1)"
+
+  - id: MCA-003
+    provenance: SOURCE_EXPLICIT
+    term: "Motion spring profiles"
+    source_file: "lib/java/com/google/android/material/motion/res/values/tokens.xml"
+    values:
+      expressive:
+        fast:
+          spatial: { damping: 0.6, stiffness: 800 }
+          effects: { damping: 1, stiffness: 3800 }
+        default:
+          spatial: { damping: 0.8, stiffness: 380 }
+          effects: { damping: 1, stiffness: 1600 }
+        slow:
+          spatial: { damping: 0.8, stiffness: 200 }
+          effects: { damping: 1, stiffness: 800 }
+      standard:
+        fast:
+          spatial: { damping: 0.9, stiffness: 1400 }
+          effects: { damping: 1, stiffness: 3800 }
+        default:
+          spatial: { damping: 0.9, stiffness: 700 }
+          effects: { damping: 1, stiffness: 1600 }
+        slow:
+          spatial: { damping: 0.9, stiffness: 300 }
+          effects: { damping: 1, stiffness: 800 }
+
+  - id: MCA-004
+    provenance: SOURCE_EXPLICIT
+    term: "Elevation scale"
+    source_file: "lib/java/com/google/android/material/elevation/res/values/tokens.xml"
+    unit: dp
+    values:
+      level0: 0
+      level1: 1
+      level2: 3
+      level3: 6
+      level4: 8
+      level5: 12
+
+  - id: MCA-005
+    provenance: SOURCE_EXPLICIT
+    term: "Shape corner scale"
+    source_file: "lib/java/com/google/android/material/shape/res/values/tokens.xml"
+    unit: dp_unless_percent
+    values:
+      none: 0
+      extra_small: 4
+      small: 8
+      medium: 12
+      large: 16
+      large_increased: 20
+      extra_large: 28
+      extra_large_increased: 32
+      extra_extra_large: 48
+      full: "50%"
+
+  - id: MCA-006
+    provenance: SOURCE_EXPLICIT
+    term: "Base interaction-state layer opacity"
+    source_file: "lib/java/com/google/android/material/resources/res/values/tokens.xml"
+    values:
+      dragged: 0.16
+      pressed: 0.10
+      focus: 0.10
+      hover: 0.08
+      disabled: 0.38
+    caution: "Android API-specific resource folders override some values to compensate for RippleDrawable implementation behavior. Do not treat these values as portable rendering constants."
+
+  - id: MCA-007
+    provenance: SOURCE_EXPLICIT
+    term: "Minimum touch target"
+    source_file: "lib/java/com/google/android/material/resources/res/values/dimens.xml"
+    value:
+      width_dp: 48
+      height_dp: 48
+    native_resource: "mtrl_min_touch_target_size"
+
+  - id: MCA-008
+    provenance: SOURCE_EXPLICIT
+    term: "Button size classes"
+    source_file: "lib/java/com/google/android/material/button/res/values/tokens.xml"
+    classes:
+      xsmall:
+        icon_size_dp: 20
+        leading_space_dp: 12
+        icon_label_space_dp: 8
+        trailing_space_dp: 12
+        outline_width_dp: 1
+        label_text_role: "textAppearanceLabelLarge"
+        square_shape_role: "shapeAppearanceCornerMedium"
+        pressed_shape_role: "shapeAppearanceCornerSmall"
+      small:
+        icon_size_dp: 20
+        leading_space_dp: 16
+        icon_label_space_dp: 8
+        trailing_space_dp: 16
+        outline_width_dp: 1
+        label_text_role: "textAppearanceLabelLarge"
+        square_shape_role: "shapeAppearanceCornerMedium"
+        pressed_shape_role: "shapeAppearanceCornerSmall"
+      medium:
+        icon_size_dp: 24
+        leading_space_dp: 24
+        icon_label_space_dp: 8
+        trailing_space_dp: 24
+        outline_width_dp: 1
+        label_text_role: "textAppearanceTitleMedium"
+        square_shape_role: "shapeAppearanceCornerLarge"
+        pressed_shape_role: "shapeAppearanceCornerMedium"
+      large:
+        icon_size_dp: 32
+        leading_space_dp: 48
+        icon_label_space_dp: 12
+        trailing_space_dp: 48
+        outline_width_dp: 2
+        label_text_role: "textAppearanceHeadlineSmall"
+        square_shape_role: "shapeAppearanceCornerExtraLarge"
+        pressed_shape_role: "shapeAppearanceCornerLarge"
+      xlarge:
+        icon_size_dp: 40
+        leading_space_dp: 64
+        icon_label_space_dp: 16
+        trailing_space_dp: 64
+        outline_width_dp: 3
+        label_text_role: "textAppearanceHeadlineLarge"
+        square_shape_role: "shapeAppearanceCornerExtraLarge"
+        pressed_shape_role: "shapeAppearanceCornerLarge"
+    note: "The size class changes several properties together. The inspected token file does not provide container-height values, so none are inferred here."
+
+  - id: MCA-009
+    provenance: PROJECT_OBSERVED
+    term: "Focus-ring component examples"
+    evidence:
+      checkbox:
+        radius_dp: 4
+        inset_dp: 2
+      radio_button:
+        inset_dp: 1
+      small_framework_button:
+        min_height_dp: 48
+    note: "These are component/platform implementation examples, not a universal focus-ring geometry standard."
+
+orvia_mapping:
+  MOTION_TEMPO:
+    evidence:
+      - MCA-001
+      - MCA-002
+      - MCA-003
+    relationship: "Material provides deterministic duration, easing, and spring token families that can resolve a desired ORVIA tempo into implementation values."
+    mapping_status: TOKEN_RESOLUTION_EVIDENCE
+    caution: "Do not equate one duration token with one ORVIA 1..10 value without context."
+
+  MOTION_INTENSITY:
+    evidence:
+      - MCA-003
+    relationship: "Spring profile character may influence perceived motion intensity, but spatial magnitude/frequency remain separate."
+    mapping_status: PARTIAL_IMPLEMENTATION_EVIDENCE
+
+  SURFACE_DEPTH:
+    evidence:
+      - MCA-004
+    relationship: "Elevation levels provide a source-native implementation ladder for depth."
+    mapping_status: TOKEN_RESOLUTION_EVIDENCE
+
+  CORNER_ROUNDNESS:
+    evidence:
+      - MCA-005
+    relationship: "Corner-size scale provides a source-native shape ladder."
+    mapping_status: TOKEN_RESOLUTION_EVIDENCE
+
+  INTERACTION_EXPLICITNESS:
+    evidence:
+      - MCA-006
+      - MCA-009
+    relationship: "State layers and focus rings provide implementation evidence for visible interactive-state feedback."
+    mapping_status: PARTIAL_IMPLEMENTATION_EVIDENCE
+
+  INPUT_PRECISION_DEMAND:
+    evidence:
+      - MCA-007
+    relationship: "48dp minimum target implementation can serve as Android-specific evidence when evaluating target geometry."
+    mapping_status: PLATFORM_SPECIFIC_EVIDENCE
+
+  VISUAL_DENSITY:
+    evidence:
+      - MCA-007
+      - MCA-008
+    relationship: "Component size-class coupling and target floors constrain how far density may be compressed."
+    mapping_status: RELATIONSHIP_EVIDENCE
+
+candidate_categorical_controls:
+  - id: MOTION_SCHEME
+    values: [STANDARD, EXPRESSIVE]
+    source_records: [MCA-003]
+    status: CANDIDATE
+    note: "Potentially useful categorical control because the source explicitly separates standard and expressive spring systems."
+
+  - id: MOTION_SPEED_CLASS
+    values: [FAST, DEFAULT, SLOW]
+    source_records: [MCA-003]
+    status: CANDIDATE
+    note: "Potential implementation category; not yet an ORVIA core control."
+
+  - id: COMPONENT_SIZE_CLASS
+    values: [XSMALL, SMALL, MEDIUM, LARGE, XLARGE]
+    source_records: [MCA-008]
+    status: CANDIDATE
+    note: "Material button evidence shows size as a coordinated semantic class rather than a single numeric dimension."
+
+relationship_candidates:
+  - id: MCA-REL-001
+    type: COUPLING
+    controls: [COMPONENT_SIZE_CLASS]
+    statement: "A component size-class change should coordinate icon size, outer spacing, icon-label spacing, typography role, outline weight, and shape role rather than scaling one dimension in isolation."
+    source_records: [MCA-008]
+
+  - id: MCA-REL-002
+    type: RESOLUTION
+    controls: [MOTION_TEMPO]
+    statement: "Motion tempo resolution should consider duration token and easing/spring family together."
+    source_records: [MCA-001, MCA-002, MCA-003]
+
+  - id: MCA-REL-003
+    type: NON_EQUIVALENCE
+    statement: "MOTION_TEMPO is not identical to duration. Easing and spring dynamics alter perceived tempo."
+    source_records: [MCA-001, MCA-002, MCA-003]
+
+  - id: MCA-REL-004
+    type: NON_EQUIVALENCE
+    statement: "CORNER_ROUNDNESS is not identical to a fixed dp radius because the source includes a Full token expressed as 50%."
+    source_records: [MCA-005]
+
+  - id: MCA-REL-005
+    type: PLATFORM_OVERRIDE
+    statement: "Semantic state-layer opacity and rendered Android resource values may differ because platform implementation details can require compensation."
+    source_records: [MCA-006]
+
+  - id: MCA-REL-006
+    type: DENSITY_CAP
+    statement: "Component density compression is constrained by minimum interactive target geometry in touch contexts."
+    source_records: [MCA-007]
+    corroborates_source_id: MATERIAL_M2_APPLYING_DENSITY_2026_09_24
+
+diagnostic_capture_candidates:
+  motion:
+    - declared_duration_ms
+    - resolved_easing_curve
+    - spring_damping
+    - spring_stiffness
+    - motion_scheme
+    - motion_speed_class
+  shape:
+    - corner_radius_px
+    - corner_radius_relative_to_height
+    - source_shape_token
+  depth:
+    - elevation_or_shadow_token
+    - effective_depth_level
+  state_feedback:
+    - hover_feedback_present
+    - focus_feedback_present
+    - pressed_feedback_present
+    - dragged_feedback_present
+    - disabled_feedback_present
+    - state_layer_opacity_if_measurable
+  component_scale:
+    - component_size_class
+    - icon_size
+    - leading_space
+    - trailing_space
+    - icon_label_space
+    - outline_width
+    - typography_role
+    - target_width
+    - target_height
+
+governance:
+  do_not:
+    - "Do not convert Material duration tokens directly into ORVIA 1..10 scores."
+    - "Do not use Android dp values as universal CSS pixel values."
+    - "Do not copy base state-layer opacity constants across platforms without accounting for rendering implementation."
+    - "Do not treat the 48dp Android target resource as a universal accessibility law without current normative validation."
+    - "Do not infer missing button container heights."
+    - "Do not split coordinated component-size classes into unrelated style tweaks without preserving their coupling."
